@@ -998,24 +998,27 @@ footer p {
     transform: translateY(0);
 }
 
-/* Problems Section */
 #problems {
     padding: 80px 20px;
-    background-color: rgba(17, 17, 17, 0.8); /* Semi-transparent background */
+    background-color: #111; /* Schwarzer Hintergrund */
     color: #fff;
     text-align: center;
-    backdrop-filter: blur(5px); /* Optional blur effect */
+    backdrop-filter: blur(5px); /* Blur-Effekt für einen modernen Look */
 }
 
 #problems h2 {
     font-size: 36px;
     margin-bottom: 40px;
+    letter-spacing: 1px; /* Leichte Abstände zwischen den Buchstaben */
+    font-weight: bold;
+   /* Großbuchstaben für einen kräftigen Titel */
+    color: #fff; /* Weißer Text */
 }
 
 .problems-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px; /* Mehr Abstand zwischen den Items */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -1025,38 +1028,80 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex: 1 1 calc(50% - 20px);
-    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, background-color 0.3s;
+    flex: 1 1 calc(50% - 30px); /* Mehr Abstand für bessere Lesbarkeit */
+    background-color: #222; /* Dunkleres Schwarz für den Hintergrund */
+    padding: 30px; /* Mehr Innenabstand */
+    border-radius: 20px; /* Weiche Ecken */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Tieferer Schatten für mehr Tiefe */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Weicher Übergang */
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.problem-item:hover {
+    transform: translateY(-10px); /* Hebt das Item leicht an */
+    background-color: #333; /* Hellere Farbe beim Hover */
 }
 
 .problem-item img {
     width: 30%;
     height: auto;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 10px; /* Runde Ecken für das Bild */
     margin-right: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Leichter Bildschatten */
 }
 
 .problem-text {
-    width: 70%; /* Adjusted width */
-    text-align: left;
+    width: 70%; /* Mehr Platz für den Text */
 }
 
-.problem-text strong {
-    font-size: 20px;
-    color: #fff;
-    margin-bottom: 10px;
-    display: block; /* Ensure the heading is block-level */
+.problem-text h5 {
+    font-size: 22px; /* Größere Schriftgröße */
+    font-weight: bold; /* Fettgedruckter Text */
+    color: #fff; /* Weißer Text für klare Lesbarkeit */
+    margin-bottom: 15px;
 }
 
 .problem-text p {
     font-size: 16px;
-    color: #ccc;
-    margin-top: 10px;
+    color: #ccc; /* Hellerer Text für bessere Lesbarkeit */
+    transition: color 0.3s ease; /* Weicher Übergang bei Hover */
+}
+
+.problem-item:hover .problem-text p {
+    color: #fff; /* Text wird weiß beim Hover */
+}
+
+/* Hover-Effekt für den ganzen Container */
+.problem-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); /* Weißer Verlauf */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.problem-item:hover::before {
+    opacity: 1; /* Subtiler Highlight-Effekt beim Hover */
+}
+
+/* Media Queries für mobile Geräte */
+@media (max-width: 768px) {
+    .problem-item {
+        flex: 1 1 100%; /* Volle Breite auf kleineren Geräten */
+    }
+
+    .problem-text p {
+        display: block; /* "Discover more" auch auf mobilen Geräten anzeigen */
+        color: #aaa; /* Etwas hellerer Text für mobiles Design */
+    }
 }
 
 /* Hover Effects */
