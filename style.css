@@ -1,0 +1,1305 @@
+/* Reset-Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grundlegende Stile */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #fff;
+    background-color: #000;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Overflow horizontal verhindern */
+}
+
+/* Header-Stile */
+header {
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header {
+    background-color: transparent;
+    transition: background-color 0.3s, top 0.3s;
+}
+
+/* Hintergrundfarbe der Navbar nach Scrollen */
+header.scrolled {
+    background-color: #000;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.logo {
+    height: 80px;
+    margin-right: 10px;
+}
+
+.logo-title h1 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+.logo-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-title a:hover {
+    color: #ccc;
+}
+
+/* Navigation-Stile */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* Mobile Navigation-Stile */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1500;
+        transition: transform 0.3s ease;
+    }
+
+    .nav-open .menu-toggle {
+        transform: rotate(90deg);
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        border-top: 1px solid #000;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    header.nav-open nav ul {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        color: #ccc;
+        font-weight: 500;
+        padding: 10px 0;
+        display: block;
+        transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #fff;
+    }
+}
+
+/* Allgemeine Abschnittsstile */
+section {
+    padding: 80px 20px;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* Landingpage-Stile */
+.landing {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.landing-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.landing-content .landing-logo {
+    width: 320px;
+    margin-bottom: 20px;
+}
+
+.landing-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: fadeInDown 1s ease-out;
+}
+.landing-content h6 {
+    font-size: 8px;
+    margin-bottom: 20px;
+    color: #cccccc;
+    animation: fadeInDown 1s ease-out;
+    opacity: 20%;
+}
+.landing-content p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #ccc;
+    animation: fadeInUp 1s ease-out;
+}
+
+.landing-content .button {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+    animation: fadeIn 1.5s ease-out;
+}
+
+
+
+/* Responsive Anpassungen für mobile Geräte */
+@media (max-width: 768px) {
+    .landing-content {
+        padding: 0 10px;
+    }
+
+    .landing-content h2 {
+        font-size: 8vw;
+    }
+
+    .landing-content p {
+        font-size: 5vw;
+    }
+
+    .landing-content .button {
+        font-size: 4vw;
+        padding: 10px 20px;
+    }
+}
+/* Contact Request Section */
+.cta-section {
+    padding: 60px 20px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.cta-section .button {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.cta-section .button:hover {
+    background-color: #ccc;
+}
+/* Hover-Effekt für den Button auf der Landingpage */
+.landing-content .button:hover {
+    background-color: #ccc;
+}
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 60px auto; /* Zentriert und Abstand nach unten */
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc;
+    text-align: center;
+    padding: 0 20px;
+}
+/* Über uns - Carousel */
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Zentriert die Inhalte vertikal */
+}
+
+.carousel-slide img {
+    width: 100%;         /* Füllt den gesamten Bereich */
+    max-width: 600px;    /* Begrenzt die Breite des Bildes */
+    height: 400px;       /* Einheitliche Höhe für alle Bilder */
+    object-fit: cover;   /* Schneidet das Bild zu, um den Container zu füllen */
+    margin-bottom: 20px; border-radius: 15px
+}
+
+.carousel-slide h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.carousel-slide p {
+    font-size: 16px;
+    color: #ccc;
+    max-width: 800px;
+    text-align: center;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.carousel-button.left {
+    left: 0;
+}
+
+.carousel-button.right {
+    right: 0;
+}
+#video-section {
+    position: relative;
+    height: 100vh; /* Höhe für Vollbild */
+    overflow: hidden;
+}
+
+#scroll-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+/* Unser Team */
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.team-member {
+    flex: 1 1 calc(30% - 40px); /* Schmalere Boxen */
+    max-width: calc(30% - 40px); /* Maximale Breite auch schmaler */
+    text-align: center;
+    background-color: #000; /* Schwarzer Hintergrund */
+    padding: 30px; /* Mehr Polsterung für eine höhere Box */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Dunkler Schatten */
+    transition: transform 0.3s ease;
+    color: #fff; /* Weißer Text */
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+.team-member img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Rundes Profilbild */
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Stärkerer Schatten um das Bild */
+    border: 1px solid #fff; /* Weißer Rand um das Profilbild */
+}
+
+.team-member h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #fff; /* Weißer Text */
+    font-weight: bold;
+}
+
+.team-member ul {
+    list-style-type: none; /* Entfernt die Bulletpoints */
+    padding-left: 0; /* Kein Einrücken der Liste */
+    margin: 0;
+    text-align: center; /* Text linksbündig */
+}
+
+.team-member ul li {
+    font-size: 16px;
+    color: #fff; /* Weißer Text */
+    margin-bottom: 15px; /* Mehr Abstand zwischen den Punkten */
+    padding: 10px 15px; /* Innenabstand innerhalb der Box */
+    background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Box-Hintergrund */
+    border-radius: 10px; /* Abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Leichter Schatten für die Box */
+    transition: background-color 0.3s ease;
+}
+
+
+
+.team-member p {
+    font-size: 16px;
+    color: #ccc;
+    padding: 0 20px;
+}
+
+/* Standardgrößen für das LinkedIn-Icon */
+.linkedin-link img {
+    width: 30px;  /* Größe des LinkedIn-Icons */
+    height: 30px;
+    border-radius: 0; /* Verhindert abgerundete Ecken für das LinkedIn-Icon */
+    border: none; /* Entfernt den weißen Rahmen um das LinkedIn-Icon */
+    transition: transform 0.3s ease;
+}
+
+.linkedin-link img:hover {
+    transform: scale(1.2); /* Vergrößerung beim Hover */
+}
+
+/* Anpassungen für mobile Geräte */
+@media (max-width: 768px) {
+    .linkedin-link img {
+        width: 24px; /* Kleinere Größe des LinkedIn-Icons auf mobilen Geräten */
+        height: 24px;
+    }
+}
+
+/* Anpassungen für sehr kleine Bildschirme */
+@media (max-width: 480px) {
+    .linkedin-link img {
+        width: 20px; /* Noch kleinere Größe auf sehr kleinen Bildschirmen */
+        height: 20px;
+    }
+}
+
+
+
+
+
+
+
+/* Supporters and Collaborations Section */
+#partners {
+    padding: 80px 20px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
+
+#partners {
+    padding: 80px 20px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
+
+#partners h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+
+
+
+
+/* Supporters Section */
+.supporters {
+    display: flex;
+    flex-wrap: wrap; /* Items in mehrere Zeilen umbrechen */
+    gap: 20px; /* Abstand zwischen den Items */
+    justify-content: space-between; /* Gleichmäßige Verteilung */
+}
+
+.supporter-item {
+    flex: 1 1 calc(33.33% - 20px); /* 3 Elemente pro Zeile mit Abstand */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.supporter-item img {
+    max-width: 150px; /* Einheitliche maximale Breite */
+    max-height: 80px; /* Einheitliche maximale Höhe */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Bewahrt das Seitenverhältnis der Logos */
+    filter: brightness(0) invert(1); /* Invertiert das Logo, um es weiß zu machen */
+}
+
+/* Spezifische Logos größer machen */
+.supporter-item img[alt="Supporter 1"] {
+    max-width: 100px; /* Größere Breite für Supporter 1 */
+    max-height: 100px; /* Größere Höhe für Supporter 1 */
+}
+
+.supporter-item img[alt="Supporter 4"] {
+    max-width: 120px; /* Größeres Logo für Supporter 4 */
+    max-height: 110px;
+}
+
+.supporter-item img[alt="Supporter 5"] {
+    max-width: 270px; /* Größeres Logo für Supporter 5 */
+    max-height: 215px;
+}
+
+.supporter-item img[alt="Supporter 2"] {
+    max-width: 115px; /* Größeres Logo für Supporter 2 */
+    max-height: 120px;
+
+}
+
+.supporter-item img[alt="Supporter 7"] {
+    max-width: 245px; /* Größeres Logo für Supporter 2 */
+    max-height: 220px;
+
+}
+
+.supporter-item img[alt="Supporter 8"] {
+    max-width: 215px; /* Größeres Logo für Supporter 2 */
+    max-height: 210px;
+
+}
+
+.supporter-item p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .supporter-item {
+        flex: 1 1 calc(50% - 20px); /* 2 Items pro Zeile auf kleineren Bildschirmen */
+    }
+}
+
+@media (max-width: 480px) {
+    .supporter-item {
+        flex: 1 1 100%; /* 1 Item pro Zeile auf sehr kleinen Bildschirmen */
+    }
+}
+
+/* Collaborations Section */
+.collaborations {
+    display: flex;
+    justify-content: space-between; /* Gleichmäßige Verteilung zwischen den Logos */
+    flex-wrap: wrap; /* Umbrüche auf kleineren Bildschirmen zulassen */
+    gap: 20px; /* Abstand zwischen den Items */
+    margin-bottom: 60px;
+}
+
+.collaboration-item {
+    flex: 1 1 calc(33.33% - 20px); /* 3 Items pro Zeile mit Abstand */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stapelt Bild und Text vertikal */
+    align-items: center; /* Zentriert den Inhalt */
+}
+
+.collaboration-item img {
+    max-width: 150px; /* Einheitliche maximale Breite */
+    max-height: 80px; /* Einheitliche maximale Höhe */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Behalte das Seitenverhältnis der Logos bei */
+    filter: brightness(0) invert(1); /* Invertiert die Logos, um sie weiß darzustellen */
+    margin-bottom: 10px;
+}
+
+/* Spezifische Kollaborations-Logos größer machen */
+.collaboration-item img[alt="Collaboration 1"] {
+    max-width: 220px; /* Größeres Logo für Collaboration 1 */
+    max-height: 200px;
+}
+
+.collaboration-item img[alt="Collaboration 2"] {
+    max-width: 220px;
+    max-height: 140px;
+}
+
+
+.collaboration-item img[alt="Collaboration 3"] {
+    max-width: 200px;
+    max-height: 110px;
+}
+
+.collaboration-item p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .collaboration-item {
+        flex: 1 1 calc(50% - 20px); /* 2 Items pro Zeile auf kleineren Bildschirmen */
+    }
+}
+
+@media (max-width: 480px) {
+    .collaboration-item {
+        flex: 1 1 100%; /* 1 Item pro Zeile auf sehr kleinen Bildschirmen */
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .supporters {
+        flex-wrap: wrap; /* Images will wrap on smaller screens */
+    }
+
+    .supporter-item {
+        flex: 1 1 calc(33.33% - 10px); /* On medium screens, 3 items per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .supporter-item {
+        flex: 1 1 calc(50% - 10px); /* On smaller screens, 2 items per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .supporter-item {
+        flex: 1 1 100%; /* On very small screens, 1 item per row */
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .supporter-item, .collaboration-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .supporter-item, .collaboration-item {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+
+
+
+/* Kontaktformular */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 0;
+    animation: fadeIn 1s ease-out;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #222;
+    color: #fff;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+form button {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #ccc;
+}
+
+/* Footer-Stile */
+/* Footer-Stile */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    border-top: 1px solid #000000;
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* Stile für rechtliche Texte */
+.legal-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+    padding: 0 20px;
+}
+
+.legal-text p {
+    margin-bottom: 20px;
+}
+
+.legal-text strong {
+    color: #fff;
+}
+
+
+/* Animationen */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    } to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    } to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+          opacity: 1;
+      }
+}
+
+/* Responsives Design */
+@media (max-width: 1024px) {
+    .team-member {
+        flex: 1 1 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+    }
+
+    .partner {
+        flex: 1 1 calc(33.33% - 40px);
+        max-width: calc(33.33% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-title {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    .team-member, .partner {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .carousel-button {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    section h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+}
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.cookie-consent p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.cookie-button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cookie-button:hover {
+    background-color: #ccc;
+}
+#form-messages {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Fade-In und Slide-Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Initialzustand für Animationen */
+.animate {
+    opacity: 0;
+}
+
+/* Klassen zum Starten der Animationen */
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.6s ease forwards;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.6s ease forwards;
+}
+/* Sichtbarkeit der Animationen */
+.animate.visible {
+    opacity: 1;
+}
+
+.animate.fade-in-up.visible {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate.fade-in-left.visible {
+    animation: fadeInLeft 0.6s ease forwards;
+}
+
+.animate.fade-in-right.visible {
+    animation: fadeInRight 0.6s ease forwards;
+}
+.animate {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Problems Section */
+#problems {
+    padding: 80px 20px;
+    background-color: rgba(17, 17, 17, 0.8); /* Semi-transparent background */
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Optional blur effect */
+}
+
+#problems h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.problems-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Problem Items */
+.problem-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1 1 calc(50% - 20px);
+    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.problem-item img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.problem-text {
+    width: 70%; /* Adjusted width */
+    text-align: left;
+}
+
+.problem-text strong {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+    display: block; /* Ensure the heading is block-level */
+}
+
+.problem-text p {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* Hover Effects */
+.problem-item:hover {
+    transform: scale(1.05);
+    background-color: rgba(51, 51, 51, 0.8);
+}
+
+/* Hintergrundvideo Styling */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Video wird hinter den Text gelegt */
+    opacity: 0.5; /* Optional, um den Text besser sichtbar zu machen */
+    object-fit: cover; /* Video füllt den gesamten Bereich aus */
+}
+
+/* Allgemeines Styling für die Section */
+#product-about {
+    position: relative;
+    z-index: 1;
+    padding: 50px 0;
+    background-color: transparent; /* Hintergrundfarbe entfernt */
+    color: #fff;
+    text-align: left;
+}
+
+
+#product-about h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #fff; /* Weißer Text */
+    text-align: center; /* Titel bleibt zentriert */
+}
+
+#product-about h3 {
+    color: #fff; /* Weißer Text */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Großbuchstaben */
+    text-align: left;
+    position: relative;
+}
+
+#product-about h3::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: #fff; /* Akzentfarbe */
+    border-radius: 50%; /* Scharfer Kreis */
+    position: absolute;
+    top: -10px;
+    left: -70px; /* Positioniert den Kreis links vom Text */
+}
+
+#product-about p {
+    font-size: 1.1em;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    color: #fff; /* Weißer Text */
+    position: relative;
+}
+
+#product-about p::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: #fff; /* Akzentfarbe */
+    border-radius: 50%; /* Scharfer Kreis */
+    position: absolute;
+    top: 10px;
+    left: -50px; /* Positioniert den Kreis links vom Text */
+}
+
+/* Produkt- und Vision-Container */
+.product-about-container {
+    display: flex;
+    flex-direction: row; /* Nebeneinander */
+    align-items: center;
+    justify-content: space-between; /* Abstand zwischen Text und Bild */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Beschreibung des Produkts */
+.product-description {
+    flex: 1;
+    max-width: 600px;
+}
+
+.product-description ul {
+    list-style-type: none; /* Entfernt Standard-Aufzählungszeichen */
+    padding-left: 0;
+    font-size: 1.1em;
+    margin: 0;
+    position: relative;
+    color: #fff; /* Weißer Text */
+}
+
+.product-description ul li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 40px; /* Platz für den Kreis */
+    color: #fff; /* Weißer Text */
+}
+
+.product-description ul li::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #fff; /* Akzentfarbe */
+    border-radius: 50%; /* Scharfer Kreis */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Bild-Anpassungen */
+.product-image {
+    flex: 1;
+    max-width: 50%; /* Bild kleiner gemacht */
+    text-align: right;
+}
+
+.product-image img {
+    max-width: 100%; /* Bildgröße begrenzt auf Container */
+    height: auto;
+    filter: brightness(0.6); /* Bild wird dunkler */
+    border-radius: 50%; /* Scharfer Kreis für das Bild */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Stärkerer Schatten */
+    transition: filter 0.3s ease-in-out;
+}
+
+.product-image img:hover {
+    filter: brightness(0.8); /* Bild wird etwas heller beim Hover */
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 1024px) {
+    .product-about-container {
+        flex-direction: column; /* Spalten-Layout auf kleineren Bildschirmen */
+        text-align: center;
+    }
+
+    .product-image {
+        max-width: 80%; /* Größere Bildbreite auf kleineren Geräten */
+    }
+}
+
+@media (max-width: 767px) {
+    .product-about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image {
+        max-width: 100%; /* Maximale Bildgröße auf sehr kleinen Bildschirmen */
+    }
+}
+/* Hintergrundvideo Styling für das Kontaktformular */
+#contact-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Video wird hinter den Text gelegt */
+    opacity: 0.5; /* Optional, um den Text besser sichtbar zu machen */
+    object-fit: cover; /* Video füllt den gesamten Bereich aus */
+    pointer-events: none; /* Verhindert, dass das Video klickbar ist */
+}
+
+/* Styling für den Contact-Bereich */
+#contact {
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px;
+    background-color: transparent; /* Hintergrundfarbe entfernt */
+    color: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#contact label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+#contact button {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact button:hover {
+    background-color: #ccc;
+}
+
+/* Stellt sicher, dass das Video und der Inhalt richtig platziert werden */
+#contact {
+    position: relative;
+    z-index: 1;
+}
+
+/* Optionale responsive Anpassungen */
+@media (max-width: 767px) {
+    #contact h2 {
+        font-size: 24px;
+    }
+
+    #contact input, #contact textarea {
+        font-size: 14px;
+    }
+
+    #contact button {
+        font-size: 16px;
+    }
+}
