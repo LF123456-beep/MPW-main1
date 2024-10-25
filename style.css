@@ -1303,3 +1303,17 @@ footer p {
         font-size: 16px;
     }
 }
+/* Spezifische Anpassungen für das zweite und dritte Hintergrundvideo für mobile Geräte */
+@media (max-width: 768px) {
+    #background-video, #contact-background-video {
+        width: 100vw; /* Video nimmt die volle Breite des Viewports ein */
+        height: 100vh; /* Video nimmt die volle Höhe des Viewports ein */
+        object-fit: cover; /* Video wird an den Container angepasst, ohne das Seitenverhältnis zu verlieren */
+        overflow: hidden; /* Kein Überlauf des Inhalts */
+    }
+    
+    /* Optional: Verhindere das horizontale Scrollen */
+    body {
+        overflow-x: hidden; /* Horizontal Scrollen verhindern */
+    }
+}
