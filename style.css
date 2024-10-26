@@ -1362,3 +1362,24 @@ footer p {
         overflow-x: hidden; /* Horizontal Scrollen verhindern */
     }
 }
+
+
+@media (max-width: 768px) {
+    .landing-content {
+        top: 60%; /* Verschiebt das Logo weiter nach unten */
+        transform: translateY(-50%);
+    }
+
+    .landing-content .landing-logo {
+        width: 180px; /* Kleinere Breite des Hauptlogos für die mobile Ansicht */
+        margin-bottom: 15px;
+    }
+
+    .landing-content h2 {
+        font-size: 6vw; /* Responsive Schriftgröße für den Titel */
+    }
+
+    .landing-content p {
+        font-size: 4vw; /* Responsive Schriftgröße für den Text */
+    }
+}
