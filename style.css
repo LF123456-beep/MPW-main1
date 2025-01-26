@@ -553,12 +553,12 @@ section h2 {
 
 .supporter-item img[alt="Supporter Dassault"] {
     max-width: 180px;
-    max-height: 90px;
+    max-height: 190px;
 }
 
 .supporter-item img[alt="Supporter Unternehmertum"] {
     max-width: 150px;
-    max-height: 80px;
+    max-height: 180px;
 }
 
 .supporter-item img[alt="Supporter München"] {
@@ -578,7 +578,7 @@ section h2 {
 
 .supporter-item img[alt="Supporter EU"] {
     max-width: 220px;
-    max-height: 110px;
+    max-height: 150px;
 }
 
 .supporter-item img[alt="Supporter EXIST"] {
@@ -588,7 +588,7 @@ section h2 {
 
 .supporter-item img[alt="Supporter Deutschland"] {
     max-width: 210px;
-    max-height: 100px;
+    max-height: 150px;
 }
 
 /* Responsive Anpassung: 2 Spalten bei kleineren Bildschirmen */
