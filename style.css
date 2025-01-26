@@ -553,7 +553,7 @@ section h2 {
 
 .supporter-item img[alt="Supporter Dassault"] {
     max-width: 180px;
-    max-height: 290px;
+    max-height: 90px;
 }
 
 .supporter-item img[alt="Supporter Unternehmertum"] {
@@ -568,27 +568,27 @@ section h2 {
 
 .supporter-item img[alt="Supporter TUM Venture Labs"] {
     max-width: 190px;
-    max-height: 195px;
+    max-height: 95px;
 }
 
 .supporter-item img[alt="Supporter Makerspace"] {
     max-width: 200px;
-    max-height: 180px;
+    max-height: 110px;
 }
 
 .supporter-item img[alt="Supporter EU"] {
     max-width: 220px;
-    max-height: 150px;
+    max-height: 110px;
 }
 
 .supporter-item img[alt="Supporter EXIST"] {
     max-width: 210px;
-    max-height: 145px;
+    max-height: 105px;
 }
 
 .supporter-item img[alt="Supporter Deutschland"] {
     max-width: 210px;
-    max-height: 150px;
+    max-height: 100px;
 }
 
 /* Responsive Anpassung: 2 Spalten bei kleineren Bildschirmen */
@@ -603,6 +603,28 @@ section h2 {
     .supporters {
         grid-template-columns: repeat(1, 1fr);
     }
+}
+
+
+
+
+
+
+
+
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .supporter-item {
+        flex: 1 1 calc(50% - 20px); /* 2 Items pro Zeile auf kleineren Bildschirmen */
+    }
+}
+
+@media (max-width: 480px) {
+    .supporter-item {
+        flex: 1 1 100%; /* 1 Item pro Zeile auf sehr kleinen Bildschirmen */
+    }
+}
 
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
