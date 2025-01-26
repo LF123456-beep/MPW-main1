@@ -527,70 +527,82 @@ section h2 {
 
 
 
-
-/* Supporters Section */
+/* Supporters Grid */
 .supporters {
-    display: flex;
-    flex-wrap: wrap; /* Items in mehrere Zeilen umbrechen */
-    gap: 20px; /* Abstand zwischen den Items */
-    justify-content: space-between; /* Gleichmäßige Verteilung */
-}
-
-.supporter-item {
-    flex: 1 1 calc(33.33% - 20px); /* 3 Elemente pro Zeile mit Abstand */
-    text-align: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+    gap: 20px; /* Abstand zwischen Logos */
+    justify-items: center;
     align-items: center;
-    justify-content: center;
+    padding: 20px;
 }
 
+/* Einheitliche Grundwerte */
 .supporter-item img {
-    max-width: 150px; /* Einheitliche maximale Breite */
-    max-height: 80px; /* Einheitliche maximale Höhe */
     width: auto;
     height: auto;
-    object-fit: contain; /* Bewahrt das Seitenverhältnis der Logos */
-    filter: brightness(0) invert(1); /* Invertiert das Logo, um es weiß zu machen */
+    object-fit: contain;
+    filter: invert(1) grayscale(100%) contrast(1000%); /* Farben zu Weiß, Weiß zu Schwarz */
 }
 
-/* Spezifische Logos größer machen */
-.supporter-item img[alt="Supporter 1"] {
-    max-width: 100px; /* Größere Breite für Supporter 1 */
-    max-height: 100px; /* Größere Höhe für Supporter 1 */
+/* Individuelle Größen für jedes Logo */
+.supporter-item img[alt="Supporter TUM"] {
+    max-width: 150px;
+    max-height: 80px;
 }
 
-.supporter-item img[alt="Supporter 4"] {
-    max-width: 120px; /* Größeres Logo für Supporter 4 */
-    max-height: 110px;
+.supporter-item img[alt="Supporter Dassault"] {
+    max-width: 180px;
+    max-height: 290px;
 }
 
-.supporter-item img[alt="Supporter 5"] {
-    max-width: 270px; /* Größeres Logo für Supporter 5 */
-    max-height: 215px;
+.supporter-item img[alt="Supporter Unternehmertum"] {
+    max-width: 150px;
+    max-height: 80px;
 }
 
-.supporter-item img[alt="Supporter 2"] {
-    max-width: 115px; /* Größeres Logo für Supporter 2 */
-    max-height: 120px;
-
+.supporter-item img[alt="Supporter München"] {
+    max-width: 200px;
+    max-height: 100px;
 }
 
-.supporter-item img[alt="Supporter 7"] {
-    max-width: 245px; /* Größeres Logo für Supporter 2 */
-    max-height: 220px;
-
+.supporter-item img[alt="Supporter TUM Venture Labs"] {
+    max-width: 190px;
+    max-height: 195px;
 }
 
-.supporter-item img[alt="Supporter 8"] {
-    max-width: 215px; /* Größeres Logo für Supporter 2 */
-    max-height: 210px;
-
+.supporter-item img[alt="Supporter Makerspace"] {
+    max-width: 200px;
+    max-height: 180px;
 }
 
-.supporter-item p {
-    font-size: 14px;
-    color: #ccc;
+.supporter-item img[alt="Supporter EU"] {
+    max-width: 220px;
+    max-height: 150px;
 }
+
+.supporter-item img[alt="Supporter EXIST"] {
+    max-width: 210px;
+    max-height: 145px;
+}
+
+.supporter-item img[alt="Supporter Deutschland"] {
+    max-width: 210px;
+    max-height: 150px;
+}
+
+/* Responsive Anpassung: 2 Spalten bei kleineren Bildschirmen */
+@media (max-width: 768px) {
+    .supporters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive Anpassung: 1 Spalte bei sehr kleinen Bildschirmen */
+@media (max-width: 480px) {
+    .supporters {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
