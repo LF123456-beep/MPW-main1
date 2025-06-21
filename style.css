@@ -590,7 +590,15 @@ section h2 {
     max-width: 210px;
     max-height: 150px;
 }
+.supporter-item img[alt="Supporter Esa"] {
+    max-width: 210px;
+    max-height: 150px;
+}
 
+.supporter-item img[alt="Supporter Stmwi Bayern"] {
+    max-width: 510px;
+    max-height: 550px;
+}
 /* Responsive Anpassung: 2 Spalten bei kleineren Bildschirmen */
 @media (max-width: 768px) {
     .supporters {
@@ -606,7 +614,17 @@ section h2 {
 }
 
 
+@media (max-width: 768px) {
+    .supporters {
+        grid-template-columns: 1fr; /* Nur 1 Spalte bei kleinen Bildschirmen */
+        row-gap: 30px; /* Mehr Abstand nach unten */
+    }
 
+    .supporter-item img {
+        max-width: 200px;
+        max-height: 120px;
+    }
+}
 
 
 
