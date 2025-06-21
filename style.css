@@ -1,395 +1,1438 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muniqo Performante - Vibration Reduction through Innovation</title>
-    <link rel="stylesheet" href="style.css">
+/* Reset-Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Add Favicon -->
-    <link rel="icon" href="Logo.png" type="image/x-icon">
-</head>
-<body>
-<!-- Header Section -->
-<header id="header">
-    <div class="container">
-        <div class="logo-title">
-            <a href="#home"><img src="Logo.png" alt="Muniqo Performante Logo" class="logo"></a>
-            <a href="#home"><h1>Muniqo Performante</h1></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Homepage</a></li>
-                <li><a href="#product-about">Our Product</a></li>
-                <li><a href="#team">About Us</a></li>
-                <li><a href="#partners">Supporters</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-        <div class="menu-toggle">
-            &#9776; <!-- Hamburger Icon -->
-        </div>
-    </div>
-</header>
+/* Grundlegende Stile */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #fff;
+    background-color: #000;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Overflow horizontal verhindern */
+}
 
-<!-- Landing Page Section -->
-<section id="home" class="landing">
-    <a href="https://www.vidsplay.com/floating-particles-free-stock-video/">
-        <video autoplay muted loop playsinline id="background-video">
-            <source src="background-video.mp4" type="video/mp4">
-            <source src="background-video.webm" type="video/webm">
-            Your browser does not support the video tag.
-        </video>
-    </a>
-    <div class="landing-content">
-        <img src="Logo.png" alt="Muniqo Performante Logo" class="landing-logo">
-        <h2>Engineering the Future of Vibration Control and Isolation Techniques</h2>
-        <p>Our cutting-edge solution delivers unmatched vibration control, optimizing your processes for maximum performance. Contact us for non-binding information on vibration measurement or a personalised consultation.</p>
-        <a href="#contact" class="button">Request without obligation</a>
-        <p></p>
-        <h6>©vidsplay</h6>
-    </div>
-</section>
+/* Header-Stile */
+header {
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+}
 
-<section id="problems">
-    <h2>Future application market - Vibrations are a universal problem that affects system performance</h2>
-    <div class="problems-container">
-        <div class="problem-item">
-            <img src="1.png" alt="Problem 1">
-            <div class="problem-text">
-                <strong>Laboratory Technology</strong>
-                <p>Vibrations in laboratory technology can affect the precision of sensitive measurements, leading to inaccurate data and compromised results.</p>
-            </div>
-        </div>
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
 
-        <div class="problem-item">
-            <img src="2.png" alt="Problem 2">
-            <div class="problem-text">
-                <strong>Aerospace</strong>
-                <p>Vibrations in aerospace can cause wear and tear on components, affect the stability of equipment, and lead to malfunctions during critical operations.</p>
-            </div>
-        </div>
+header {
+    background-color: transparent;
+    transition: background-color 0.3s, top 0.3s;
+}
 
-        <div class="problem-item">
-            <img src="3.png" alt="Problem 3">
-            <div class="problem-text">
-                <strong>Battery Production</strong>
-                <p>In battery production, vibrations can affect the assembly line and compromise the quality of battery cells, leading to reduced lifespan or safety risks.</p>
-            </div>
-        </div>
+/* Hintergrundfarbe der Navbar nach Scrollen */
+header.scrolled {
+    background-color: #000;
+}
 
-        <div class="problem-item">
-            <img src="4.png" alt="Problem 4">
-            <div class="problem-text">
-                <strong>Quantum Technology</strong>
-                <p>Vibrations in quantum technology can interfere with the precision of quantum computing, reducing the effectiveness of delicate operations.</p>
-            </div>
-        </div>
+.logo-title {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 
-        <div class="problem-item">
-            <img src="5.png" alt="Problem 5">
-            <div class="problem-text">
-                <strong>Transport of Dangerous Goods and Food</strong>
-                <p>Vibrations during transport can damage sensitive goods, leading to contamination or safety hazards in the transportation of dangerous goods or perishable foods.</p>
-            </div>
-        </div>
+}
 
-        <div class="problem-item">
-            <img src="7.png" alt="Problem 7">
-            <div class="problem-text">
-                <strong>Your Customized Application</strong>
-                <p>With our universal solution, we enhance the performance of any system. We also offer full customization to meet your specific needs and preferences. This includes precise vibration measurement to improve your control and optimize results.</p>
-            </div>
-        </div>
-    </div>
-</section>
+.logo {
+    height: 80px;
+    margin-right: 10px;
+}
 
-<!-- Product and Vision Section -->
-<section id="product-about">
-    <video autoplay muted loop playsinline id="background-video">
-        <source src="blau.mov" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+.logo-title h1 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
 
-    <h2>Our Product and Vision</h2>
+.logo-title a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    <div class="product-about-container">
-        <div class="product-description">
-           
-            <p>
-                Muniqo Performante is an innovative startup offering a universal solution for vibration elimination. Using cutting-edge technology, powered by magnetism and innovative features, we surpass state-of-the-art anti-vibration systems.
-                <br> <br>
-            Currently, Muniqo Performante focuses on emergency medicine and neonatology, providing a solution for the safe, vibration-free transport of critically ill patients and premature infants. This reduces the risk of injuries and long-term health complications, such as brain hemorrhages, and enhances overall medical care.
-            </p>
-            <h3>Innovative Vibration Reduction System</h3>
-            <ul>
-                <li>99.9% vibration reduction, ensuring higher performance</li>
-                <li>Advanced technology for superior vibration isolation</li>
-                <li>Continuous monitoring of applied loads in real-time to prevent damage</li>
-                <li>Unlimited scalability, adaptable to various systems and requirements</li>
-                <li>Easy installation for quick integration without complex processes</li>
+.logo-title a:hover {
+    color: #ccc;
+}
 
-                <li>Customized solutions for various industries and needs</li>
+/* Navigation-Stile */
+nav {
+    display: flex;
+    align-items: center;
+}
 
-            </ul>
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
 
-        </div>
-        <div class="product-image">
-            <img src="PT.png" alt="Our Product Image">
-        </div>
-    </div>
-</section>
+nav li {
+    margin: 0 15px;
+}
 
-<!-- Team Section -->
-<section id="team">
-    <h2>About Us</h2>
-    <!-- Carousel -->
-    <div class="carousel-container">
-        <button class="carousel-button left">&#10094;</button>
-        <div class="carousel-track-container">
-            <ul class="carousel-track">
-                <li class="carousel-slide">
-                    <img src="image1.png" alt="TUM IDEAward 2023">
-                    <h3>TUM IDEAward 2023</h3>
-                    <p>Muniqo Performante is one of the winners of the TUM IDEAward 2023. The start-up was recognised for its innovative technology and its great economic and scientific potential.</p>
-                </li>
-                <li class="carousel-slide">
-                    <img src="image2.png" alt="Vibration measurement in the transport of newborns">
-                    <h3>Vibration measurement in the transport of newborns</h3>
-                    <p>Together with MedCare Visions® GmbH, the Chair of Acoustics of Mobile Systems, the Munich Fire Brigade, and the German Heart Centre, we carried out a comprehensive vibration measurement during the transport of newborn babies using a manikin.</p>
-                </li>
-                <li class="carousel-slide">
-                    <img src="Xplore.png" alt="Part of Xplore 2024">
-                    <h3>Part of Xplore 2024</h3>
-                    <p>By participating in UnternehmerTUM's Xplore programme, we gained valuable business knowledge that we lacked as engineers, helping us to take our start-up to the next level.</p>
-                </li>
-                <!-- More slides -->
-            </ul>
-            <br>
-        </div>
-        <button class="carousel-button right">&#10095;</button>
-    </div>
+nav a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 500;
+    position: relative;
+}
 
+nav a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
 
-    <h2>Co-Founders</h2>
-    <!-- Team Members -->
-    <div class="team-members">
-        <div class="team-member">
-            <img src="team-member1.png" alt="Luca Fabiano">
-            <h3>Luca Fabiano</h3>
-            <ul>
-                <li>Master's degree in Biomedical Engineering from TUM</li>
-                <li>Currently studying Human Medicine at TUM and LMU</li>
-                <li>Expertise and passion through research experience in MedTech</li>
-            </ul>
-            <a href="https://www.linkedin.com/in/luca-fabiano-medtech/" target="_blank" class="linkedin-link">
-                <img src="li.png" alt="LinkedIn Luca Fabiano">
-            </a>
-        </div>
+nav a:hover::after {
+    width: 100%;
+}
 
-        <div class="team-member">
-            <img src="team-member2.png" alt="Sebastian Wann">
-            <h3>Sebastian Wann</h3>
-            <ul>
-                <li>Bachelor's degree in Mechanical Engineering</li>
-                <li>Currently studying Automotive Engineering at TUM</li>
-                <li>Head of research and development at Muniqo Performante</li>
-            </ul>
-            <a href="https://www.linkedin.com/in/sebastian-wann-132006245/" target="_blank" class="linkedin-link">
-                <img src="li.png" alt="LinkedIn Sebastian Wann">
-            </a>
-        </div>
-    </div>
-</section>
+nav a:hover {
+    color: #fff;
+}
 
+/* Mobile Navigation-Stile */
+.menu-toggle {
+    display: none;
+}
 
+@media (max-width: 768px) {
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1500;
+        transition: transform 0.3s ease;
+    }
 
+    .nav-open .menu-toggle {
+        transform: rotate(90deg);
+    }
 
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        border-top: 1px solid #000;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
+    header.nav-open nav ul {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
 
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
 
+    nav ul li a {
+        color: #ccc;
+        font-weight: 500;
+        padding: 10px 0;
+        display: block;
+        transition: color 0.3s ease;
+    }
 
+    nav ul li a:hover {
+        color: #fff;
+    }
+}
 
-<section id="partners">
-    <h2>Supporters</h2>
-    <div class="supporters">
-        <div class="supporter-item">
-            <a href="https://tum.de">
-                <img src="partner-logo1.png" alt="Supporter TUM">
-            </a>
-        </div>
-        <div class="supporter-item">
-            <a href="https://www.3ds.com/de/">
-                <img src="Dassault-Systemes.png" alt="Supporter Dassault">
-            </a>
-        </div>
-        <div class="supporter-item">
-            <a href="https://unternehmertum.de">
-                <img src="logo-unternehmertum.svg" alt="Supporter Unternehmertum">
-            </a>
-        </div>
-        <div class="supporter-item">
-            <a href="https://www.muenchen.de/">
-                <img src="muenchen.png" alt="Supporter München">
-            </a>
-        </div>
-        <div class="supporter-item">
-            <a href="https://www.tum-venture-labs.de/">
-                <img src="partner-logo2.png" alt="Supporter TUM Venture Labs">
-            </a>
-        </div>
-        <div class="supporter-item">
-            <a href="https://maker-space.de/">
-                <img src="Makerspace.png" alt="Supporter Makerspace">
-            </a>
-        </div>
-        <div class="supporter-item">
-            <a href="https://europa.eu/">
-                <img src="EU.png" alt="Supporter EU">
-            </a>
-        </div>
-        <div class="supporter-item">
-            <a href="https://www.exist.de/">
-                <img src="Exist.svg" alt="Supporter EXIST">
-            </a>
-        </div>
-        <div class="supporter-item">
-            <a href="https://www.deutschland.de/">
-                <img src="DE.png" alt="Supporter Deutschland">
-            </a>
-        </div>
-        <div class="supporter-item">
-            <a href="https://esa-bic.de/">
-                <img src="Esa.png" alt="Supporter Esa">
-            </a>
-        </div>
-        <div class="supporter-item">
-            <a href="https://www.stmwi.bayern.de/">
-                <img src="Bst.png" alt="Supporter Stmwi Bayern">
-            </a>
-        </div>
-    </div>
+/* Allgemeine Abschnittsstile */
+section {
+    padding: 80px 20px;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* Landingpage-Stile */
+.landing {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.landing-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.landing-content .landing-logo {
+    width: 320px;
+    margin-bottom: 20px;
+}
+
+.landing-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: fadeInDown 1s ease-out;
+}
+.landing-content h6 {
+    font-size: 8px;
+    margin-bottom: 20px;
+    color: #cccccc;
+    animation: fadeInDown 1s ease-out;
+    opacity: 20%;
+}
+.landing-content p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #ccc;
+    animation: fadeInUp 1s ease-out;
+}
+
+.landing-content .button {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+    animation: fadeIn 1.5s ease-out;
+}
 
 
 
+/* Responsive Anpassungen für mobile Geräte */
+@media (max-width: 768px) {
+    .landing-content {
+        padding: 0 10px;
+    }
+
+    .landing-content h2 {
+        font-size: 8vw;
+    }
+
+    .landing-content p {
+        font-size: 5vw;
+    }
+
+    .landing-content .button {
+        font-size: 4vw;
+        padding: 10px 20px;
+    }
+}
+/* Contact Request Section */
+.cta-section {
+    padding: 60px 20px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.cta-section .button {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.cta-section .button:hover {
+    background-color: #ccc;
+}
+/* Hover-Effekt für den Button auf der Landingpage */
+.landing-content .button:hover {
+    background-color: #ccc;
+}
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 60px auto; /* Zentriert und Abstand nach unten */
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc;
+    text-align: center;
+    padding: 0 20px;
+}
+/* Über uns - Carousel */
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Zentriert die Inhalte vertikal */
+}
+
+.carousel-slide img {
+    width: 100%;         /* Füllt den gesamten Bereich */
+    max-width: 600px;    /* Begrenzt die Breite des Bildes */
+    height: 400px;       /* Einheitliche Höhe für alle Bilder */
+    object-fit: cover;   /* Schneidet das Bild zu, um den Container zu füllen */
+    margin-bottom: 20px; border-radius: 15px
+}
+
+.carousel-slide h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.carousel-slide p {
+    font-size: 16px;
+    color: #ccc;
+    max-width: 800px;
+    text-align: center;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.carousel-button.left {
+    left: 0;
+}
+
+.carousel-button.right {
+    right: 0;
+}
+#video-section {
+    position: relative;
+    height: 100vh; /* Höhe für Vollbild */
+    overflow: hidden;
+}
+
+#scroll-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 
-    <h2>Our Collaborations</h2>
-    <div class="collaborations">
-        <div class="collaboration-item">
-            <a href="https://www.mcv-group.de/">
-                <img src="partner-logo3.png" alt="Collaboration 1">
-            </a>
-        </div>
-        <div class="collaboration-item">
-            <a href="https://stadt.muenchen.de/rathaus/verwaltung/kreisverwaltungsreferat/branddirektion.html">
-                <img src="Feuerwehr.png" alt="Collaboration 2">
-            </a>
-        </div>
-        <div class="collaboration-item">
-            <a href="https://www.deutsches-herzzentrum-muenchen.de/">
-                <img src="DHLogo.png" alt="Collaboration 3">
-            </a>
-        </div>
-    </div>
-</section>
 
 
 
 
 
 
-<!-- Contact Form Section -->
-<section id="contact">
-    <video autoplay muted loop playsinline id="contact-background-video">
-        <source src="dein.video.mov" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <h2>Contact Us</h2>
-    <p>Reach out via email at:</p>
-
-    <!-- Sichtbare fettgedruckte E-Mail-Adresse -->
-    <p id="email-display" style="font-weight: bold;">info@muniqoperformante.com</p>
-
-    <!-- Button zum Kopieren der E-Mail-Adresse mit zusätzlichem Abstand -->
-    <button id="copy-email-button" style="margin-top: 10px;">Copy Email to Clipboard</button>
-
-    <!-- JavaScript für das Kopieren der E-Mail-Adresse in die Zwischenablage -->
-    <script>
-        document.getElementById('copy-email-button').addEventListener('click', function() {
-            // Die sichtbare E-Mail-Adresse aus dem Text des Elements kopieren
-            const email = document.getElementById('email-display').innerText;
-
-            // Erstelle ein temporäres Textfeld zum Kopieren
-            const tempInput = document.createElement('input');
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-
-            // Wähle und kopiere den Inhalt
-            tempInput.select();
-            document.execCommand('copy');
-
-            // Entferne das temporäre Textfeld
-            document.body.removeChild(tempInput);
-
-            // Optional: Feedback für den Benutzer
-            alert('Email copied to clipboard: ' + email);
-        });
-    </script>
 
 
+/* Unser Team */
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+}
 
+.team-member {
+    flex: 1 1 calc(30% - 40px); /* Schmalere Boxen */
+    max-width: calc(30% - 40px); /* Maximale Breite auch schmaler */
+    text-align: center;
+    background-color: #000; /* Schwarzer Hintergrund */
+    padding: 30px; /* Mehr Polsterung für eine höhere Box */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Dunkler Schatten */
+    transition: transform 0.3s ease;
+    color: #fff; /* Weißer Text */
+}
 
-    <!-- modify this form HTML and place wherever you want your form -->
-    <form
-            action="https://formspree.io/f/xbljleqz"
-            method="POST"
-    >
- <h2>Or Message us here</h2>
-        <h3>Name</h3>
-        <label>
-            <input type="text" name="First Name" required>
-        </label>
-        <label>
-            Your email:
-            <input type="email" name="email">
-        </label>
-        <label>
-            Your message:
-            <textarea name="message">No special message, just a contact request</textarea>
-        </label>
-        <!-- your other form fields go here -->
-        <button type="submit">Send</button>
-    </form>
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+.team-member img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Rundes Profilbild */
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Stärkerer Schatten um das Bild */
+    border: 1px solid #fff; /* Weißer Rand um das Profilbild */
+}
+
+.team-member h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #fff; /* Weißer Text */
+    font-weight: bold;
+}
+
+.team-member ul {
+    list-style-type: none; /* Entfernt die Bulletpoints */
+    padding-left: 0; /* Kein Einrücken der Liste */
+    margin: 0;
+    text-align: center; /* Text linksbündig */
+}
+
+.team-member ul li {
+    font-size: 16px;
+    color: #fff; /* Weißer Text */
+    margin-bottom: 15px; /* Mehr Abstand zwischen den Punkten */
+    padding: 10px 15px; /* Innenabstand innerhalb der Box */
+    background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Box-Hintergrund */
+    border-radius: 10px; /* Abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Leichter Schatten für die Box */
+    transition: background-color 0.3s ease;
+}
 
 
 
+.team-member p {
+    font-size: 16px;
+    color: #ccc;
+    padding: 0 20px;
+}
 
-    <!-- Footer -->
-<footer>
-    <p>&copy; 2024 Muniqo Performante. All rights reserved.</p>
-    <div class="footer-links">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Data Privacy</a>
-        <a href="cookies.html">Cookies</a>
-    </div>
-</footer>
+/* Standardgrößen für das LinkedIn-Icon */
+.linkedin-link img {
+    width: 30px;  /* Größe des LinkedIn-Icons */
+    height: 30px;
+    border-radius: 0; /* Verhindert abgerundete Ecken für das LinkedIn-Icon */
+    border: none; /* Entfernt den weißen Rahmen um das LinkedIn-Icon */
+    transition: transform 0.3s ease;
+}
 
-<!-- Cookie Consent -->
-<div id="cookie-consent" class="cookie-consent">
-    <p>We use cookies to improve your experience. Do you agree to the use of cookies?</p>
-    <button id="accept-cookies" class="cookie-button">Accept</button>
-    <button id="decline-cookies" class="cookie-button">Reject</button>
-</div>
+.linkedin-link img:hover {
+    transform: scale(1.2); /* Vergrößerung beim Hover */
+}
 
-<!-- JavaScript -->
-<script src="script.js"></script>
-</body>
+/* Anpassungen für mobile Geräte */
+@media (max-width: 768px) {
+    .linkedin-link img {
+        width: 24px; /* Kleinere Größe des LinkedIn-Icons auf mobilen Geräten */
+        height: 24px;
+    }
+}
+
+/* Anpassungen für sehr kleine Bildschirme */
+@media (max-width: 480px) {
+    .linkedin-link img {
+        width: 20px; /* Noch kleinere Größe auf sehr kleinen Bildschirmen */
+        height: 20px;
+    }
+}
 
 
-</html>
 
 
 
+
+
+/* Supporters and Collaborations Section */
+#partners {
+    padding: 80px 20px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
+
+#partners {
+    padding: 80px 20px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
+
+#partners h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+
+
+
+/* Supporters Grid */
+.supporters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+    gap: 20px; /* Abstand zwischen Logos */
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Einheitliche Grundwerte */
+.supporter-item img {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: invert(1) grayscale(100%) contrast(1000%); /* Farben zu Weiß, Weiß zu Schwarz */
+}
+
+/* Individuelle Größen für jedes Logo */
+.supporter-item img[alt="Supporter TUM"] {
+    max-width: 150px;
+    max-height: 80px;
+}
+
+.supporter-item img[alt="Supporter Dassault"] {
+    max-width: 180px;
+    max-height: 190px;
+}
+
+.supporter-item img[alt="Supporter Unternehmertum"] {
+    max-width: 150px;
+    max-height: 180px;
+}
+
+.supporter-item img[alt="Supporter München"] {
+    max-width: 200px;
+    max-height: 100px;
+}
+
+.supporter-item img[alt="Supporter TUM Venture Labs"] {
+    max-width: 190px;
+    max-height: 95px;
+}
+
+.supporter-item img[alt="Supporter Makerspace"] {
+    max-width: 200px;
+    max-height: 110px;
+}
+
+.supporter-item img[alt="Supporter EU"] {
+    max-width: 220px;
+    max-height: 150px;
+}
+
+.supporter-item img[alt="Supporter EXIST"] {
+    max-width: 210px;
+    max-height: 105px;
+}
+
+.supporter-item img[alt="Supporter Deutschland"] {
+    max-width: 210px;
+    max-height: 150px;
+}
+
+.supporter-item img[alt="Supporter Esa"] {
+    max-width: 210px;
+    max-height: 150px;
+}
+
+.supporter-item img[alt="Supporter Stmwi Bayern"] {
+    max-width: 510px;
+    max-height: 550px;
+}
+
+/* Responsive Anpassung: 2 Spalten bei kleineren Bildschirmen */
+@media (max-width: 768px) {
+    .supporters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive Anpassung: 1 Spalte bei sehr kleinen Bildschirmen */
+@media (max-width: 480px) {
+    .supporters {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .supporters {
+        grid-template-columns: 1fr; /* Nur 1 Spalte bei kleinen Bildschirmen */
+        row-gap: 30px; /* Mehr Abstand nach unten */
+    }
+
+    .supporter-item img {
+        max-width: 200px;
+        max-height: 120px;
+    }
+}
+
+
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .supporter-item {
+        flex: 1 1 calc(50% - 20px); /* 2 Items pro Zeile auf kleineren Bildschirmen */
+    }
+}
+
+@media (max-width: 480px) {
+    .supporter-item {
+        flex: 1 1 100%; /* 1 Item pro Zeile auf sehr kleinen Bildschirmen */
+    }
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .supporter-item {
+        flex: 1 1 calc(50% - 20px); /* 2 Items pro Zeile auf kleineren Bildschirmen */
+    }
+}
+
+@media (max-width: 480px) {
+    .supporter-item {
+        flex: 1 1 100%; /* 1 Item pro Zeile auf sehr kleinen Bildschirmen */
+    }
+}
+
+/* Collaborations Section */
+.collaborations {
+    display: flex;
+    justify-content: space-between; /* Gleichmäßige Verteilung zwischen den Logos */
+    flex-wrap: wrap; /* Umbrüche auf kleineren Bildschirmen zulassen */
+    gap: 20px; /* Abstand zwischen den Items */
+    margin-bottom: 60px;
+}
+
+.collaboration-item {
+    flex: 1 1 calc(33.33% - 20px); /* 3 Items pro Zeile mit Abstand */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stapelt Bild und Text vertikal */
+    align-items: center; /* Zentriert den Inhalt */
+}
+
+.collaboration-item img {
+    max-width: 150px; /* Einheitliche maximale Breite */
+    max-height: 80px; /* Einheitliche maximale Höhe */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Behalte das Seitenverhältnis der Logos bei */
+    filter: brightness(0) invert(1); /* Invertiert die Logos, um sie weiß darzustellen */
+    margin-bottom: 10px;
+}
+
+/* Spezifische Kollaborations-Logos größer machen */
+.collaboration-item img[alt="Collaboration 1"] {
+    max-width: 220px; /* Größeres Logo für Collaboration 1 */
+    max-height: 200px;
+}
+
+.collaboration-item img[alt="Collaboration 2"] {
+    max-width: 220px;
+    max-height: 140px;
+}
+
+
+.collaboration-item img[alt="Collaboration 3"] {
+    max-width: 200px;
+    max-height: 110px;
+}
+
+.collaboration-item p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .collaboration-item {
+        flex: 1 1 calc(50% - 20px); /* 2 Items pro Zeile auf kleineren Bildschirmen */
+    }
+}
+
+@media (max-width: 480px) {
+    .collaboration-item {
+        flex: 1 1 100%; /* 1 Item pro Zeile auf sehr kleinen Bildschirmen */
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .supporters {
+        flex-wrap: wrap; /* Images will wrap on smaller screens */
+    }
+
+    .supporter-item {
+        flex: 1 1 calc(33.33% - 10px); /* On medium screens, 3 items per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .supporter-item {
+        flex: 1 1 calc(50% - 10px); /* On smaller screens, 2 items per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .supporter-item {
+        flex: 1 1 100%; /* On very small screens, 1 item per row */
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .supporter-item, .collaboration-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .supporter-item, .collaboration-item {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+
+
+/* Kontaktformular */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 0;
+    animation: fadeIn 1s ease-out;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #222;
+    color: #fff;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+form button {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #ccc;
+}
+
+/* Footer-Stile */
+/* Footer-Stile */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    border-top: 1px solid #000000;
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* Stile für rechtliche Texte */
+.legal-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+    padding: 0 20px;
+}
+
+.legal-text p {
+    margin-bottom: 20px;
+}
+
+.legal-text strong {
+    color: #fff;
+}
+
+
+/* Animationen */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    } to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    } to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+          opacity: 1;
+      }
+}
+
+/* Responsives Design */
+@media (max-width: 1024px) {
+    .team-member {
+        flex: 1 1 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+    }
+
+    .partner {
+        flex: 1 1 calc(33.33% - 40px);
+        max-width: calc(33.33% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-title {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    .team-member, .partner {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .carousel-button {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    section h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+}
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.cookie-consent p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.cookie-button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cookie-button:hover {
+    background-color: #ccc;
+}
+#form-messages {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Fade-In und Slide-Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Initialzustand für Animationen */
+.animate {
+    opacity: 0;
+}
+
+/* Klassen zum Starten der Animationen */
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.6s ease forwards;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.6s ease forwards;
+}
+/* Sichtbarkeit der Animationen */
+.animate.visible {
+    opacity: 1;
+}
+
+.animate.fade-in-up.visible {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate.fade-in-left.visible {
+    animation: fadeInLeft 0.6s ease forwards;
+}
+
+.animate.fade-in-right.visible {
+    animation: fadeInRight 0.6s ease forwards;
+}
+.animate {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#problems {
+    padding: 80px 20px;
+    background-color: #111; /* Schwarzer Hintergrund */
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Blur-Effekt für einen modernen Look */
+}
+
+#problems h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    letter-spacing: 1px; /* Leichte Abstände zwischen den Buchstaben */
+    font-weight: bold;
+   /* Großbuchstaben für einen kräftigen Titel */
+    color: #fff; /* Weißer Text */
+}
+
+.problems-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Mehr Abstand zwischen den Items */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Problem Items */
+.problem-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1 1 calc(50% - 30px); /* Mehr Abstand für bessere Lesbarkeit */
+    background-color: #222; /* Dunkleres Schwarz für den Hintergrund */
+    padding: 30px; /* Mehr Innenabstand */
+    border-radius: 20px; /* Weiche Ecken */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Tieferer Schatten für mehr Tiefe */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Weicher Übergang */
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.problem-item:hover {
+    transform: translateY(-10px); /* Hebt das Item leicht an */
+    background-color: #333; /* Hellere Farbe beim Hover */
+}
+
+.problem-item img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px; /* Runde Ecken für das Bild */
+    margin-right: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Leichter Bildschatten */
+}
+
+.problem-text {
+    width: 70%; /* Mehr Platz für den Text */
+}
+
+.problem-text h5 {
+    font-size: 22px; /* Größere Schriftgröße */
+    font-weight: bold; /* Fettgedruckter Text */
+    color: #fff; /* Weißer Text für klare Lesbarkeit */
+    margin-bottom: 15px;
+}
+
+.problem-text p {
+    font-size: 16px;
+    color: #ccc; /* Hellerer Text für bessere Lesbarkeit */
+    transition: color 0.3s ease; /* Weicher Übergang bei Hover */
+}
+
+.problem-item:hover .problem-text p {
+    color: #fff; /* Text wird weiß beim Hover */
+}
+
+/* Hover-Effekt für den ganzen Container */
+.problem-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); /* Weißer Verlauf */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.problem-item:hover::before {
+    opacity: 1; /* Subtiler Highlight-Effekt beim Hover */
+}
+
+/* Media Queries für mobile Geräte */
+@media (max-width: 768px) {
+    .problem-item {
+        flex: 1 1 100%; /* Volle Breite auf kleineren Geräten */
+    }
+
+    .problem-text p {
+        display: block; /* "Discover more" auch auf mobilen Geräten anzeigen */
+        color: #aaa; /* Etwas hellerer Text für mobiles Design */
+    }
+}
+
+/* Hover Effects */
+.problem-item:hover {
+    transform: scale(1.05);
+    background-color: rgba(51, 51, 51, 0.8);
+}
+
+/* Hintergrundvideo Styling */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Video wird hinter den Text gelegt */
+    opacity: 0.5; /* Optional, um den Text besser sichtbar zu machen */
+    object-fit: cover; /* Video füllt den gesamten Bereich aus */
+}
+
+/* Allgemeines Styling für die Section */
+#product-about {
+    position: relative;
+    z-index: 1;
+    padding: 50px 0;
+    background-color: transparent; /* Hintergrundfarbe entfernt */
+    color: #fff;
+    text-align: left;
+}
+
+
+#product-about h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #fff; /* Weißer Text */
+    text-align: center; /* Titel bleibt zentriert */
+}
+
+#product-about h3 {
+    color: #fff; /* Weißer Text */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Großbuchstaben */
+    text-align: left;
+    position: relative;
+}
+
+#product-about h3::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: #fff; /* Akzentfarbe */
+    border-radius: 50%; /* Scharfer Kreis */
+    position: absolute;
+    top: -10px;
+    left: -70px; /* Positioniert den Kreis links vom Text */
+}
+
+#product-about p {
+    font-size: 1.1em;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    color: #fff; /* Weißer Text */
+    position: relative;
+}
+
+#product-about p::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: #fff; /* Akzentfarbe */
+    border-radius: 50%; /* Scharfer Kreis */
+    position: absolute;
+    top: 10px;
+    left: -50px; /* Positioniert den Kreis links vom Text */
+}
+
+/* Produkt- und Vision-Container */
+.product-about-container {
+    display: flex;
+    flex-direction: row; /* Nebeneinander */
+    align-items: center;
+    justify-content: space-between; /* Abstand zwischen Text und Bild */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Beschreibung des Produkts */
+.product-description {
+    flex: 1;
+    max-width: 600px;
+}
+
+.product-description ul {
+    list-style-type: none; /* Entfernt Standard-Aufzählungszeichen */
+    padding-left: 0;
+    font-size: 1.1em;
+    margin: 0;
+    position: relative;
+    color: #fff; /* Weißer Text */
+}
+
+.product-description ul li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 40px; /* Platz für den Kreis */
+    color: #fff; /* Weißer Text */
+}
+
+.product-description ul li::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #fff; /* Akzentfarbe */
+    border-radius: 50%; /* Scharfer Kreis */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Bild-Anpassungen */
+.product-image {
+    flex: 1;
+    max-width: 50%; /* Bild kleiner gemacht */
+    text-align: right;
+}
+
+.product-image img {
+    max-width: 100%; /* Bildgröße begrenzt auf Container */
+    height: auto;
+    filter: brightness(0.6); /* Bild wird dunkler */
+    border-radius: 50%; /* Scharfer Kreis für das Bild */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Stärkerer Schatten */
+    transition: filter 0.3s ease-in-out;
+}
+
+.product-image img:hover {
+    filter: brightness(0.8); /* Bild wird etwas heller beim Hover */
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 1024px) {
+    .product-about-container {
+        flex-direction: column; /* Spalten-Layout auf kleineren Bildschirmen */
+        text-align: center;
+    }
+
+    .product-image {
+        max-width: 80%; /* Größere Bildbreite auf kleineren Geräten */
+    }
+}
+
+@media (max-width: 767px) {
+    .product-about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image {
+        max-width: 100%; /* Maximale Bildgröße auf sehr kleinen Bildschirmen */
+    }
+}
+/* Hintergrundvideo Styling für das Kontaktformular */
+#contact-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Video wird hinter den Text gelegt */
+    opacity: 0.5; /* Optional, um den Text besser sichtbar zu machen */
+    object-fit: cover; /* Video füllt den gesamten Bereich aus */
+    pointer-events: none; /* Verhindert, dass das Video klickbar ist */
+}
+
+/* Styling für den Contact-Bereich */
+#contact {
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px;
+    background-color: transparent; /* Hintergrundfarbe entfernt */
+    color: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#contact label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+#contact button {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact button:hover {
+    background-color: #ccc;
+}
+
+/* Stellt sicher, dass das Video und der Inhalt richtig platziert werden */
+#contact {
+    position: relative;
+    z-index: 1;
+}
+
+/* Optionale responsive Anpassungen */
+@media (max-width: 767px) {
+    #contact h2 {
+        font-size: 24px;
+    }
+
+    #contact input, #contact textarea {
+        font-size: 14px;
+    }
+
+    #contact button {
+        font-size: 16px;
+    }
+}
+/* Spezifische Anpassungen für das zweite und dritte Hintergrundvideo für mobile Geräte */
+@media (max-width: 768px) {
+    #background-video, #contact-background-video {
+        width: 100vw; /* Video nimmt die volle Breite des Viewports ein */
+        height: 100vh; /* Video nimmt die volle Höhe des Viewports ein */
+        object-fit: cover; /* Video wird an den Container angepasst, ohne das Seitenverhältnis zu verlieren */
+        overflow: hidden; /* Kein Überlauf des Inhalts */
+    }
+    
+    /* Optional: Verhindere das horizontale Scrollen */
+    body {
+        overflow-x: hidden; /* Horizontal Scrollen verhindern */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .landing-content {
+        top: 60%; /* Verschiebt das Logo weiter nach unten */
+        transform: translateY(-50%);
+    }
+
+    .landing-content .landing-logo {
+        width: 180px; /* Kleinere Breite des Hauptlogos für die mobile Ansicht */
+        margin-bottom: 15px;
+    }
+
+    .landing-content h2 {
+        font-size: 6vw; /* Responsive Schriftgröße für den Titel */
+    }
+
+    .landing-content p {
+        font-size: 4vw; /* Responsive Schriftgröße für den Text */
+    }
+}
