@@ -4398,3 +4398,44 @@ details[open] summary::before {
     margin-bottom: 10px;
     font-size: 1.1em;
 }
+@media (max-width: 768px) {
+    .circle-wrapper-edel {
+        margin: 0 auto; /* zentriert die Kreise */
+    }
+
+    .investment-growth-wrapper {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .market-text {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    .circle-wrapper-edel {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .market-text,
+    .investment-boxes {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .market-text {
+        text-align: left;
+    }
+
+    .market-text p {
+        text-align: left;
+    }
+}
+
