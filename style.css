@@ -4439,3 +4439,25 @@ details[open] summary::before {
     }
 }
 
+
+@media (max-width: 768px) {
+    .comparison-table {
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+    }
+
+    .comparison-row {
+        min-width: 500px; /* oder 600px je nach Inhalt */
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .comparison-row > div {
+        flex: 1;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}
+
+
