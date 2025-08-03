@@ -4461,3 +4461,31 @@ details[open] summary::before {
 }
 
 
+
+
+
+
+@media (max-width: 768px) {
+    .join-grid {
+        grid-template-columns: 1fr; /* Stapelt Spalten vertikal */
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .join-cta {
+        text-align: center;
+    }
+
+    .join-text {
+        padding-left: 1rem;
+        border-left: 2px solid #f9d884;
+    }
+}
+
+
