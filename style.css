@@ -4489,3 +4489,43 @@ details[open] summary::before {
 }
 
 
+
+
+
+
+
+/* Desktop: normale Grid-Tabelle */
+.comparison-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+/* Mobile: 3-Spalten-Layout bleibt erhalten, aber kleiner & angepasst */
+@media (max-width: 768px) {
+    .comparison-wrapper {
+        overflow-x: hidden;
+    }
+
+    .comparison-table {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+    .comparison-row {
+        display: contents;
+    }
+
+    .comparison-row > div {
+        word-break: break-word;
+        padding: 10px 6px;
+        box-sizing: border-box;
+    }
+
+    .comparison-row.header > div {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
