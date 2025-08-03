@@ -4529,3 +4529,19 @@ details[open] summary::before {
         font-weight: 600;
     }
 }
+
+
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
