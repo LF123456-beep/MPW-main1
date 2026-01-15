@@ -6843,6 +6843,24 @@ section.product-section.visible{
     width: calc(100% + 80px);
 }
 
+.product-section {
+    position: relative;
+    width: calc(100% + 80px);
+    margin-left: -40px;
+    margin-right: -40px;
+
+    height: 120vh;       /* stays */
+    overflow: hidden;
+}
+
+/* 🔑 background moved here */
+.product-bg {
+    position: absolute;
+    inset: 0;
+    background: #000;
+}
+
+
 @media (max-width: 768px) {
     .news-pill-ani-diagram {
         margin-bottom: 2rem; /* or even 1.5rem */
