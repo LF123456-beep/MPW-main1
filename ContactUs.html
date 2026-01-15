@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muniqo Performante - Vibration Reduction through Innovation</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Add Favicon -->
+  <link rel="icon" href="Logo.png" type="image/x-icon">
+
+</head>
+
+
+<body>
+<!-- Header Section -->
+<header id="header">
+  <div class="container">
+    <div class="logo-title">
+      <a href=index.html><img src="Logo.png" alt="Muniqo Performante Logo" class="logo"></a>
+      <a href=index.html><h1>Muniqo Performante</h1></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="vibrasense.html">VibraSense</a></li>
+        <li><a href="vibralifeguard.html">VibraLifeGuard</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle">
+      &#9776; <!-- Hamburger Icon -->
+    </div>
+  </div>
+</header>
+
+
+<!-- Contact Form Section -->
+<section id="contact">
+  <video autoplay muted loop playsinline id="contact-background-video">
+    <source src="Heli2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="contact-wrapper">
+    <div class="email-box">
+      <h2>Contact Us</h2>
+      <p>Reach out via email at:</p>
+      <p id="email-display" style="font-weight: bold;">info@muniqoperformante.com</p>
+      <button id="copy-email-button" style="margin-top: 10px;">Copy Email to Clipboard</button>
+    </div>
+
+
+    <!-- JavaScript für das Kopieren der E-Mail-Adresse in die Zwischenablage -->
+    <script>
+      document.getElementById('copy-email-button').addEventListener('click', function() {
+        // Die sichtbare E-Mail-Adresse aus dem Text des Elements kopieren
+        const email = document.getElementById('email-display').innerText;
+
+        // Erstelle ein temporäres Textfeld zum Kopieren
+        const tempInput = document.createElement('input');
+        tempInput.value = email;
+        document.body.appendChild(tempInput);
+
+        // Wähle und kopiere den Inhalt
+        tempInput.select();
+        document.execCommand('copy');
+
+        // Entferne das temporäre Textfeld
+        document.body.removeChild(tempInput);
+
+        // Optional: Feedback für den Benutzer
+        alert('Email copied to clipboard: ' + email);
+      });
+    </script>
+
+
+
+
+    <!-- modify this form HTML and place wherever you want your form -->
+    <form
+            action="https://formspree.io/f/xbljleqz"
+            method="POST"
+            class="contact-form"
+    >
+      <h2>Or Message us here</h2>
+      <label>
+        Name
+        <input type="text" name="First Name" required>
+      </label>
+      <label>
+        Your email:
+        <input type="email" name="email">
+      </label>
+      <label>
+        Your message:
+        <textarea name="message">No special message, just a contact request</textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
+
+
+
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 Muniqo Performante. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Data Privacy</a>
+    <a href="cookies.html">Cookie</a>
+  </div>
+</footer>
+
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+<script src="cookie.js"></script>
+
+
+
+<script>
+  // Menü-Umschaltfunktion für mobile Ansicht und Schließen der Navigation bei Link-Klick
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("header");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    // Menü-Umschaltfunktion für das Hamburger-Icon
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("nav-open");
+    });
+
+    // Schließen der Navigation, wenn ein Link geklickt wird
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("nav-open");
+      });
+    });
+  });
+
+  const features = document.querySelectorAll('.feature');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  features.forEach(f => observer.observe(f));
+</script>
+
+
+
+
+

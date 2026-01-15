@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muniqo Performante - Vibration Reduction through Innovation</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Add Favicon -->
+  <link rel="icon" href="Logo.png" type="image/x-icon">
+
+</head>
+
+
+<body>
+<!-- Header Section -->
+<header id="header">
+  <div class="container">
+    <div class="logo-title">
+      <a href=index.html><img src="Logo.png" alt="Muniqo Performante Logo" class="logo"></a>
+      <a href=index.html><h1>Muniqo Performante</h1></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="vibrasense.html">VibraSense</a></li>
+        <li><a href="vibralifeguard.html">VibraLifeGuard</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+    </nav>
+    <div class="menu-toggle">
+      &#9776; <!-- Hamburger Icon -->
+    </div>
+  </div>
+</header>
+
+<section id="career" class="career-section">
+  <div class="career-container">
+
+    <h2 class="career-title">Careers at Muniqo Performante</h2>
+    <p class="career-subtitle">
+      Join us in shaping the future of vibration control and high-performance engineering.
+    </p>
+
+    <div class="career-grid">
+
+      <!-- Job Card 1 -->
+      <div class="career-card">
+        <h3>Engineer</h3>
+
+        <p class="career-short">
+          Join our team as a full-time Engineer and help create innovative solutions in vibration control.        </p>
+
+        <div class="career-more">
+          <p>
+            As a full-time Engineer, you will design, implement, and maintain cutting-edge products. Collaborate with cross-functional teams, participate in R&D projects, and help shape the future of vibration control technology. Candidates with a Master’s degree in an engineering-related field are welcome. Strong analytical and problem-solving skills and a hands-on approach are essential.          </p>
+        </div>
+
+        <span class="career-meta">Munich · Full-time</span>
+      </div>
+
+      <!-- Job Card 2 -->
+      <div class="career-card">
+        <h3>Operations</h3>
+
+        <p class="career-short">
+          Support our growth in Operations, helping improve processes and support cross-functional projects.        </p>
+        <div class="career-more">
+          <p>
+            In this full-time Operations role, you will contribute to the company’s operational excellence. Tasks include project coordination, process optimization, reporting, and supporting teams across different functions. Ideal candidates are proactive, flexible, and have a degree in business, management, or a related field. Strong communication and analytical skills are key.          </p>
+        </div>
+
+        <span class="career-meta">Munich · Full-time</span>
+      </div>
+
+      <!-- Job Card 3 -->
+      <div class="career-card">
+        <h3>Working Student/Intern</h3>
+
+        <p class="career-short">
+          Gain hands-on experience in engineering projects, either through an internship or a part-time working student position.</p>
+
+        <div class="career-more">
+          <p>
+            Support our engineering teams on real projects, gaining practical experience in vibration monitoring systems and product development. Tasks include testing, documentation, analysis, and collaborating with experienced engineers. We welcome unsolicited applications for (master/bachelor) theses, study programs, and engineering internships.              </p>
+          <button class="career-button" id="maschinenBtn">
+            Working Student Maschinenbau-Ingenieur:in (m/w/d)
+          </button></div>
+
+
+
+        <span class="career-meta">Munich · Part-time/Full-time</span>
+      </div>
+
+    </div>
+
+    <div class="career-cta">
+      <p>Interested in joining us? Send us your application.</p>
+      <a href="contactus.html" class="career-button">
+        Apply now
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<script>
+  document.querySelectorAll('.career-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('active');
+    });
+  });
+</script>
+
+<div class="page-modal" id="jobModal" aria-hidden="true">
+  <div class="page-modal-content word-style">
+    <button class="page-close" aria-label="Close">&times;</button>
+
+    <div class="page-body">
+      <h1>Werkstudent:in Maschinenbau-Ingenieur für den Versuch</h1>
+
+      <p class="intro">
+        Wir bei <strong>Muniqo Performante</strong> entwickeln ein neuartiges
+        Anti-Vibrations-System für den Transport von Frühgeborenen und kritisch
+        kranken Patient:innen. Dabei kombinieren wir Leichtbaumethoden mit
+        klassischer Regelungstechnik und Machine Learning.
+      </p>
+
+      <p>
+        Unser Ziel: medizinische Versorgung verbessern, echte gesellschaftliche
+        Wirkung erzielen und eine universell einsetzbare Technologie schaffen.
+      </p>
+
+      <p>
+        Für unser staatlich gefördertes Validierungsprojekt suchen wir eine:n
+        <strong>Werkstudent:in in Maschinenbau-Ingenieur (m/w/d) für den Versuch</strong>.
+      </p>
+
+      <h2>Deine Aufgaben</h2>
+      <ul>
+        <li>Planung und Durchführung explorativer Validierungstests</li>
+        <li>Aufbau, Weiterentwicklung und Optimierung von Hardware-Prototypen</li>
+        <li>Mechanische Arbeiten an magnetischen Baugruppen</li>
+        <li>Konstruktion & Rapid Prototyping (3D-Druck, CNC)</li>
+        <li>Thermische Analysen & FEM-Simulationen (SolidWorks, COMSOL, Simulia)</li>
+        <li>Zusammenarbeit mit Embedded- und Regelungsingenieur:innen</li>
+      </ul>
+
+      <h2>Das bringst du mit</h2>
+
+      <h3>Fachlich</h3>
+      <ul>
+        <li>Erfahrung in Hardwareauslegung und Versuchsdurchführung</li>
+        <li>Gute CAD-Kenntnisse (SolidWorks)</li>
+        <li>Grundverständnis Regelungstechnik & Microcontroller (STM32, Arduino)</li>
+        <li>Laborerfahrung und hohe Sorgfalt</li>
+        <li>Deutsch fließend (C1)</li>
+      </ul>
+
+      <h3>Persönlich</h3>
+      <ul>
+        <li>Hands-on-Mentalität & Pragmatismus</li>
+        <li>Strukturierte Arbeitsweise</li>
+        <li>Teamfähigkeit & Kommunikationsstärke</li>
+        <li>Interesse an MedTech & gesellschaftlichem Impact</li>
+        <li>Bereit, sich 15 Stunden die Woche zu engagieren</li>
+      </ul>
+
+      <h2>Was wir bieten</h2>
+
+
+      <p>
+        Wir bieten dir ein agiles Startup-Umfeld mit flachen Hierarchien,
+        flexiblen Arbeitszeiten, hybrider Arbeit und der Möglichkeit, früh
+        Verantwortung zu übernehmen.
+      </p>
+
+      <p>
+        Du arbeitest an einem System, das Hard- und Software einzigartig
+        kombiniert und reale Wirkung entfaltet — mit echter Perspektive auf
+        eine spätere Führungsrolle.
+      </p>
+
+      <h2>Interesse?</h2>
+      <p>
+        Dann freuen wir uns auf deine Bewerbung:
+        <br>
+        📧 <strong>info@muniqoperformante.com</strong>
+      </p>
+
+      <hr>
+
+      <p class="footer">
+        Muniqo Performante GmbH<br>
+        Sitz der Gesellschaft: München, Bayern, DE<br>
+        Geschäftsführer: Luca Fabiano, Sebastian Wann<br>
+        HRB 302737 · Amtsgericht München<br>
+        www.muniqoperformante.com
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 Muniqo Performante. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Data Privacy</a>
+    <a href="cookies.html">Cookie</a>
+  </div>
+</footer>
+
+<!-- Cookie Consent -->
+
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+<script src="cookie.js"></script>
+
+
+
+<script>
+  // Menü-Umschaltfunktion für mobile Ansicht und Schließen der Navigation bei Link-Klick
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("header");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    // Menü-Umschaltfunktion für das Hamburger-Icon
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("nav-open");
+    });
+
+    // Schließen der Navigation, wenn ein Link geklickt wird
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("nav-open");
+      });
+    });
+  });
+
+  const features = document.querySelectorAll('.feature');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  features.forEach(f => observer.observe(f));
+
+  const jobModal = document.getElementById('jobModal');
+  const openJobBtn = document.getElementById('maschinenBtn');
+  const closeJobBtn = jobModal.querySelector('.page-close');
+
+  openJobBtn.addEventListener('click', () => {
+    jobModal.classList.add('active');
+    jobModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open'); // 🔒 lock background
+  });
+
+  closeJobBtn.addEventListener('click', () => {
+    jobModal.classList.remove('active');
+    jobModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open'); // 🔓 unlock background
+  });
+
+</script>
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
