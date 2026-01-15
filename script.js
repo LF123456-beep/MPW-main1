@@ -22,10 +22,10 @@ window.addEventListener('scroll', () => {
 });
 
 // Carousel-Funktionalität
-const track = document.querySelector('.carousel-track');
+const track = document.querySelector('.carousel-track-team');
 const slides = Array.from(track.children);
-const nextButton = document.querySelector('.carousel-button.right');
-const prevButton = document.querySelector('.carousel-button.left');
+const nextButton = document.querySelector('.carousel-button-team.right');
+const prevButton = document.querySelector('.carousel-button-team.left');
 let currentSlideIndex = 0;
 
 const updateSlidePosition = () => {
@@ -63,6 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
         cookieConsent.style.display = 'none';
     });
 });
+
+
+
+
 
 // Kontaktformular mit AJAX
 document.addEventListener('DOMContentLoaded', () => {
@@ -133,3 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 });
+
+
+
