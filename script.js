@@ -140,3 +140,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+const mainImage = document.getElementById('currentImage');
+const thumbnails = document.querySelectorAll('.thumbnail');
+
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+        // Hauptbild ändern
+        mainImage.src = thumbnail.src;
+
+        // Aktiven Status wechseln
+        thumbnails.forEach(t => t.classList.remove('active'));
+        thumbnail.classList.add('active');
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav");
+
+    if (!toggle || !nav) return; // Falls Header auf einer Seite fehlt, nichts tun
+
+    // Hamburger toggle
+    toggle.addEventListener("click", function () {
+        nav.classList.toggle("mobile-open");
+    });
+
+    // Navigation automatisch schließen, wenn Fenster > 900px
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 900) {
+            nav.classList.remove("mobile-open");
+        }
+    });
+
+    // Navigation schließen, wenn ein Link geklickt wird
+    const links = nav.querySelectorAll("a");
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            nav.classList.remove("mobile-open");
+        });
+    });
+});
+
+
+

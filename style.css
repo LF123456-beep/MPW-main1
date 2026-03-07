@@ -3143,8 +3143,6 @@ footer p {
 
 
 
-
-
 .teststand-section {
     background: #fff;
     color: #111;
@@ -5480,7 +5478,7 @@ img, video, iframe {
 .hero-content h1,
 .hero-content h2,
 .hero-content p {
-    margin-left: 19rem;
+    margin-left: 4rem;
 }
 
 /* 📱 Mobile fix */
@@ -5496,6 +5494,7 @@ img, video, iframe {
         margin-left: 0;
     }
 }
+
 
 
 /* ===== SECOND HERO (SCROLL APPEAR) ===== */
@@ -5939,6 +5938,8 @@ section.product-section.visible{
     opacity: 1;
     transform: translateY(0);
 }
+
+
 
 .process-ani-diagram .node-icon {
     opacity: 0;
@@ -7151,3 +7152,1506 @@ body.modal-open {
         font-size: 32px;
     }
 }
+
+.product-section {
+    background: #ffffff;
+    padding: 8rem 6vw;
+    font-family: 'Inter', sans-serif;
+    color: #1d1d1f;
+    text-align: center;
+}
+
+/* Überschrift + Einleitung */
+
+
+.product-header p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 6rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Produktbild */
+.product-image-wrapper img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 0 auto 6rem auto;
+    border-radius: 12px; /* optional für softer Look */
+}
+
+/* Features gestapelt */
+.product-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.feature h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .product-features {
+        text-align: center;
+    }
+}
+
+/* ===== PRODUCT SECTION RESET FIX ===== */
+
+.product-section {
+    background: #ffffff;
+    padding: 8rem 6vw;
+    font-family: 'Inter', sans-serif;
+}
+
+.product-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.product-header h2 {
+    color: #1d1d1f;
+}
+
+.product-header p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 1rem;
+}
+
+.product-image-wrapper {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.product-image-wrapper img {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+}
+
+.product-features {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.feature {
+    margin-bottom: 4rem;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.product-features {
+    margin-top: 4rem;      /* genug Abstand zum Bild */
+    text-align: left;       /* linksbündig für bessere Lesbarkeit */
+}
+
+.feature h3 {
+    color: #1d1d1f;         /* kräftiges Apple-like Dark */
+    font-weight: 700;
+}
+
+.feature p {
+    color: #2c2c2e;         /* dunkler Text, guter Kontrast */
+}
+
+.product-section,
+.product-image-wrapper,
+.product-features {
+    position: static;
+    overflow: visible;
+}
+
+.product-features {
+    display: block;
+}
+
+.process-section {
+    background: #ffffff;
+    padding: 8rem 6vw;
+    font-family: 'Inter', sans-serif;
+    color: #1d1d1f;
+}
+
+.process-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Titel */
+.process-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/* Prozessschritte */
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.process-step h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1d1d1f;
+}
+
+.process-step p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Info-Blöcke */
+.process-info-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.info-block h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1d1d1f;
+}
+
+.info-block p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .process-title {
+        font-size: 2rem;
+    }
+
+    .process-step h3, .info-block h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Container */
+.process-section {
+    background: #ffffff;
+    padding: 8rem 6vw;
+    font-family: 'Inter', sans-serif;
+    color: #1d1d1f;
+}
+
+.process-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Titel */
+.process-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/* Workflow-Flow */
+.workflow-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 6rem;
+    position: relative;
+}
+
+/* Linie zwischen Steps */
+.workflow-flow::before {
+    content: '';
+    position: absolute;
+    left: 20px;      /* Linie links neben Text */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ccc;
+    z-index: 0;
+}
+
+/* Steps */
+.workflow-step {
+    position: relative;
+    padding-left: 3rem; /* Abstand von Linie */
+}
+
+.workflow-step h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.workflow-step p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Kreis für jeden Step */
+.workflow-step::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0.6rem; /* passend zur Überschrift */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1d1d1f;
+}
+
+/* Separate Info-Blöcke */
+.process-info-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.info-block h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.info-block p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .workflow-flow::before {
+        left: 50%;
+    }
+
+    .workflow-step {
+        padding-left: 0;
+        padding-top: 3rem;
+        text-align: center;
+    }
+
+    .workflow-step::before {
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+}
+
+
+#problem-applications {
+    background: #f5f5f7; /* Apple hellgrau */
+    padding: 10rem 6vw;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+    text-align: center;
+}
+
+/* Container */
+#problem-applications .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Headline */
+#problem-applications .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #1d1d1f;
+    margin-bottom: 3.5rem;
+}
+
+/* Cards Grid */
+#problem-applications .application-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+/* Single Card */
+#problem-applications .application-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    transition: all 0.35s ease;
+}
+
+/* Hover Effect */
+#problem-applications .application-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Title */
+#problem-applications .application-card h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1d1d1f;
+}
+
+/* Card Text */
+#problem-applications .application-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #6e6e73; /* Apple Grau */
+}
+
+/* Footer Text */
+#problem-applications .section-footer-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #6e6e73;
+}
+
+/* Responsive */
+/* ============================= */
+/* MOBILE FIX */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+    #problem-applications .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #problem-applications .section-title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    #problem-applications .application-cards {
+        width: 100%;
+        grid-template-columns: 1fr;
+        margin-bottom: 3rem;
+    }
+
+    #problem-applications .section-footer-text {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+/* Container */
+.contact-section {
+    background: #ffffff;
+    padding: 8rem 6vw;
+    font-family: 'Inter', sans-serif;
+    color: #1d1d1f;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Überschrift */
+.contact-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Untertitel */
+.contact-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+/* Button */
+.contact-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #1d1d1f;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+.contact-title {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem); /* größer als vorher */
+    font-weight: 700;                  /* kräftiger, Premium */
+    color: #1d1d1f;                    /* Apple-like Schwarz */
+    margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #1d1d1f;   /* schwarzer Button */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.workflow-flow-clean {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 6rem;
+    position: relative;
+}
+
+.workflow-flow-clean::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d2d2d7;
+}
+
+.workflow-step-clean {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.workflow-step-clean::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0.6rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1d1d1f;
+}
+
+.workflow-step-clean h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1d1d1f;
+}
+
+.workflow-step-clean p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.process-section h2 {
+    all: unset;
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Container */
+.simple-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Abstand zwischen Karten */
+    flex-wrap: wrap; /* für Mobile */
+    margin-top: 40px;
+}
+
+/* Karten */
+.vs-feature-card {
+    flex: 1 1 180px; /* gleichmäßig verteilt, mindestens 180px */
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover-Effekt */
+.vs-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .vs-feature-card {
+        flex: 1 1 40%; /* 2 Karten pro Reihe */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .vs-feature-card {
+        flex: 1 1 100%; /* 1 Karte pro Reihe */
+    }
+}
+
+/* Sektion Hintergrund */
+.vs-product-section {
+    background-color: #f5f5f5; /* sehr hellgrau */
+    padding: 60px 20px;
+}
+
+/* Header */
+.vs-product-header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+/* Karten Container */
+.vs-product-features.simple-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Feature-Karten */
+.vs-feature-card {
+    flex: 1 1 180px;       /* gleiche Breite, flexibel */
+    background: #fff;      /* weiß */
+    color: #000;           /* Schrift schwarz */
+    padding: 25px;
+    border-radius: 16px;   /* abgerundete Ecken */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08); /* dezenter Schatten */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Effekt */
+.vs-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Überschrift */
+.vs-feature-card h3 {
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Text */
+.vs-feature-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Responsive Anpassung */
+@media screen and (max-width: 1024px) {
+    .vs-feature-card { flex: 1 1 40%; }
+}
+
+@media screen and (max-width: 600px) {
+    .vs-feature-card { flex: 1 1 100%; }
+}
+.vs-product-header h2,
+.vs-product-header p {
+    color: #000; /* Überschrift und Untertitel schwarz */
+}
+
+/* Sektion Hintergrund & Überschrift */
+.feature-lines {
+    background-color: #f5f5f5; /* hellgrau wie Apple */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.feature-lines h2 {
+    color: #000;
+    font-size: 2rem;
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+
+/* Haupt-Layout: Bild + Boxen */
+.feature-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Produktbild */
+.feature-image img {
+    width: 350px;
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.feature-image img:hover {
+    transform: scale(1.03);
+}
+
+/* Boxen-Container */
+.feature-boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Einzelne Boxen */
+.feature-card {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Box-Titel */
+.feature-card span {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #000;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Box-Text */
+.feature-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .feature-main { flex-direction: column; align-items: center; }
+    .feature-boxes { grid-template-columns: 1fr; gap: 20px; }
+    .feature-image { margin-bottom: 40px; }
+}
+
+/* Sektion Hintergrund & Titel */
+.vibrasense-features {
+    background-color: #f5f5f5; /* hellgrau wie Apple */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.vibrasense-features h2 {
+    font-size: 2rem;
+    margin-bottom: 60px;
+    color: #000;
+    font-weight: 600;
+}
+
+/* Grid für die vier Feature-Boxen */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Feature-Karten */
+.feature-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px 25px;
+    flex: 1 1 220px;
+    max-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    cursor: default;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Titel */
+.feature-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+/* Text */
+.feature-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .feature-card { flex: 1 1 45%; }
+}
+
+@media screen and (max-width: 600px) {
+    .feature-card { flex: 1 1 100%; }
+}
+
+/* Übersicht-Sektion hellgrau mit weißen Karten */
+#overview {
+    background-color: #f5f5f5; /* hellgrau */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Überschrift */
+#overview h2 {
+    color: #000; /* schwarz */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Untertitel/Intro */
+#overview .intro {
+    color: #000; /* schwarz */
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* Karten-Grid */
+#overview .cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Einzelne Karten */
+#overview .card {
+    background-color: #fff; /* weiße Karten */
+    padding: 40px 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    flex: 1 1 250px;
+    max-width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+#overview .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Nummern */
+#overview .card .number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000; /* schwarz */
+    margin-bottom: 12px;
+}
+
+/* Titel */
+#overview .card .title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000; /* schwarz */
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    #overview .card { flex: 1 1 45%; }
+}
+
+@media screen and (max-width: 600px) {
+    #overview .card { flex: 1 1 100%; }
+}
+
+/* --- Use-Case Sektion Apple-inspiriert --- */
+.use-case-section {
+    background-color: #f5f5f5 !important; /* hellgrau */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.use-case-section .section-heading,
+.use-case-section .section-subheading {
+    color: #000 !important; /* schwarz */
+}
+
+.use-case-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 30px !important;
+}
+
+/* Karten */
+.use-case-card {
+    background-color: #fff !important; /* weiße Boxen */
+    padding: 40px 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    flex: 1 1 250px;
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+    color: #000 !important; /* Text schwarz */
+}
+
+.use-case-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Titel */
+.use-case-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #000 !important;
+}
+
+/* Text */
+.use-case-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #000 !important;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .use-case-card { flex: 1 1 45% !important; }
+}
+
+@media screen and (max-width: 600px) {
+    .use-case-card { flex: 1 1 100% !important; }
+}
+
+.product-content h3 {
+    font-size: 1.6rem;   /* wie bei den Produkt-Boxen */
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #000;         /* schwarzer Text */
+}
+
+.product-content p {
+    font-size: 1rem;     /* wie bei den Produkt-Boxen */
+    line-height: 1.5;
+    color: #555;         /* dezentes Dunkelgrau */
+}
+
+.hero-bg, .product-box img {
+    display: block;
+    width: 100%;
+    height: 1000px;          /* Höhe des Containers */
+    object-fit: cover;      /* Bild füllt Container */
+    transform: translateY(800px); /* Bild nach unten verschieben */
+    transition: transform 0.3s ease;
+}
+
+/* Bild immer leicht verschwommen */
+
+.hero-bg, .product-box img {
+    filter: blur(4px);      /* immer leicht verschwommen */
+    transition: filter 0.3s ease;
+}
+
+/* Bild leicht herauszoomen + immer leicht verschwommen */
+
+.hero-bg, .product-box img {
+    filter: blur(4px);       /* immer leicht verschwommen */
+    transform: scale(1.0);   /* leicht herauszoomen */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+
+
+
+
+
+/* Gesamtbereich */
+.products-section {
+    padding: 120px 6vw;
+    background: #ffffff;
+}
+
+/* Grid für die Produkt-Boxes */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 nebeneinander */
+    gap: 48px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Einzelne Produkt-Box */
+.product-box {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #000; /* Textfarbe */
+    background: #f5f5f7; /* dezenter hellgrauer Hintergrund */
+    border-radius: 0; /* eckig */
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover-Effekt */
+.product-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Bild in der Box */
+.product-box img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    background: #fff;
+}
+
+/* Textbereich */
+.product-content {
+    padding: 32px;
+}
+
+/* Überschrift */
+.product-content h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* Beschreibung */
+.product-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Optional: zentrieren für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Bilder in den Produkt-Boxes scharf darstellen */
+.product-box img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover; /* statt cover, damit nichts gestreckt oder abgeschnitten wird */
+    background: #fff;
+    image-rendering: auto; /* stellt sicher, dass Browser die Originalqualität nutzt */
+    filter: none; /* keine Unschärfe */
+}
+
+
+
+
+/* ============================
+   Allgemeine Container
+============================ */
+.vs-product-section {
+    padding: 80px 6vw;
+    background: #ffffff;
+    font-family: 'Inter', sans-serif;
+    color: #111; /* schwarze Schrift für Features */
+}
+
+/* ============================
+   Galerie Section
+============================ */
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.image-gallery .main-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.image-gallery .main-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: none; /* keine Unschärfe */
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.thumbnail-row .thumbnail {
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.thumbnail-row .thumbnail.active,
+.thumbnail-row .thumbnail:hover {
+    border-color: #f5c800; /* goldgelber Akzent */
+    transform: scale(1.05);
+}
+
+/* ============================
+   Key Features Section
+============================ */
+.features-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-row .vs-feature-card {
+    flex: 1 1 calc(20% - 16px); /* 5 Karten nebeneinander mit minimalem Abstand */
+    background: #f5f5f7;
+    padding: 24px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.features-row .vs-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.features-row .vs-feature-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.features-row .vs-feature-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* ============================
+   Mobile Anpassungen
+============================ */
+@media (max-width: 1024px) {
+    .features-row .vs-feature-card {
+        flex: 1 1 48%;
+        margin-bottom: 20px;
+    }
+
+    .thumbnail-row .thumbnail {
+        width: 90px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .features-row {
+        flex-direction: column;
+    }
+
+    .features-row .vs-feature-card {
+        flex: 1 1 100%;
+    }
+}
+
+/* ============================
+   Allgemeine Container
+============================ */
+.vs-product-section {
+    padding: 80px 6vw;
+    background: #f2f2f2; /* hellgrau */
+    font-family: 'Inter', sans-serif;
+    color: #111; /* schwarze Schrift für Features */
+}
+
+/* ============================
+   Galerie Section
+============================ */
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.image-gallery .main-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.image-gallery .main-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: none; /* keine Unschärfe */
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.thumbnail-row .thumbnail {
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.thumbnail-row .thumbnail.active,
+.thumbnail-row .thumbnail:hover {
+    border-color: #f5c800; /* goldgelber Akzent */
+    transform: scale(1.05);
+}
+
+/* ============================
+   Key Features Section
+============================ */
+.features-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%; /* gesamte Breite */
+    max-width: 100%;
+    margin: 40px auto 0 auto; /* Abstand zur Galerie */
+}
+
+.features-row .vs-feature-card {
+    flex: 1 1 calc(20% - 16px); /* 5 Karten nebeneinander über gesamte Breite */
+    background: #ffffff; /* weiße Karten */
+    padding: 24px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.features-row .vs-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.features-row .vs-feature-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.features-row .vs-feature-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* ============================
+   Mobile Anpassungen
+============================ */
+@media (max-width: 1024px) {
+    .features-row .vs-feature-card {
+        flex: 1 1 48%;
+        margin-bottom: 20px;
+    }
+
+    .thumbnail-row .thumbnail {
+        width: 90px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .features-row {
+        flex-direction: column;
+    }
+
+    .features-row .vs-feature-card {
+        flex: 1 1 100%;
+    }
+}
+
+.features-section {
+    background-color: #f5f5f7; /* hellgrauer Hintergrund */
+    padding: 60px 6vw; /* weniger Abstand oben und unten */
+}
+
+.features-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px; /* Abstand zur Sub-Überschrift */
+}
+
+.features-subtitle {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 40px; /* Abstand zu den Feature-Karten */
+}
+
+.features-row {
+    display: flex;
+    gap: 24px; /* Abstand zwischen den Feature-Karten */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.vs-feature-card {
+    flex: 1 1 calc(20% - 24px); /* 5 Karten nebeneinander auf großer Breite */
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    min-width: 180px; /* mobile fallback */
+}
+
+.features-section {
+    background-color: #f5f5f7; /* hellgrauer Hintergrund */
+    padding: 60px 6vw; /* oben/unten Abstand */
+}
+
+.features-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.features-subtitle {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.features-row {
+    display: flex;
+    gap: 24px; /* Abstand zwischen den Karten */
+    justify-content: space-between; /* gleichmäßig verteilen */
+    flex-wrap: nowrap; /* alle 5 nebeneinander */
+}
+
+.vs-feature-card {
+    flex: 1; /* gleiche Breite für alle */
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    min-width: 0; /* verhindert Überlauf */
+    text-align: center;
+}
+
+/* Einheitlicher hellgrauer Hintergrund für beide Sections */
+.vs-product-section.gallery-section,
+.vs-product-section.features-section {
+    background-color: #f5f5f7; /* gleiche hellgrau Farbe */
+    padding-top: 60px;  /* etwas kleinerer Abstand oben */
+    padding-bottom: 60px; /* etwas kleinerer Abstand unten */
+}
+
+/* Features horizontal über gesamte Breite verteilen */
+.features-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Abstand zwischen den Karten */
+    flex-wrap: wrap;
+}
+
+/* Feature-Karten anpassen */
+.vs-feature-card {
+    flex: 1 1 calc(20% - 16px); /* 5 Karten pro Reihe */
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.features-subtitle {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.vs-product-section.gallery-section {
+    padding: 60px 6vw 10px 6vw; /* oben normal, unten klein */
+}
+
+@media (max-width: 768px) {
+
+    .features-section .container {
+        display: block;   /* verhindert nebeneinander */
+    }
+
+    .features-subtitle {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .features-row {
+        flex-direction: column;  /* Features untereinander */
+        gap: 20px;
+    }
+
+}
+
+.career-button {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    border-radius: 999px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+}
+
+.career-button:hover {
+    background-color: #333;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    border-radius: 999px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+}
+
+/* Desktop: normale Darstellung */
+.language-switch {
+    display: inline-block;
+}
+
+/* Mobile Styles */
+@media (max-width: 900px) {
+    /* Navigation für mobile Ansicht */
+    nav ul li.language-switch {
+        display: flex;          /* Links nebeneinander */
+        justify-content: center; /* optional zentrieren */
+        gap: 8px;               /* Abstand zwischen DE und EN */
+        padding: 0;             /* Padding anpassen falls nötig */
+    }
+
+    nav ul li.language-switch a {
+        display: inline-block;  /* sicherstellen, dass die Links nebeneinander bleiben */
+    }
+}
+
+/* Mobile Sprachswitch */
+@media (max-width: 900px) {
+    nav ul li.language-switch {
+        display: flex;
+        align-items: center;  /* vertikal mittig ausrichten */
+        gap: 8px;             /* Abstand zwischen den Links */
+    }
+
+    nav ul li.language-switch a {
+        display: inline-block;
+    }
+
+    /* Trennstrich zwischen den Links */
+    nav ul li.language-switch a + a::before {
+        margin: 0 4px;        /* Abstand links/rechts */
+        color: inherit;       /* gleiche Farbe wie Links */
+        font-size: 1em;       /* gleiche Höhe wie Text */
+        line-height: 1;       /* gleiche Linie wie Text */
+        vertical-align: middle;
+    }
+}
+
+
