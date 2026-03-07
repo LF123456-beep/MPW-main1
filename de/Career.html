@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muniqo Performante - Karriere</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../Logo.png" type="image/x-icon">
+</head>
+
+<body>
+<!-- Header Section -->
+<header id="header">
+    <div class="container">
+        <div class="logo-title">
+            <a href="index.html"><img src="../Logo.png" class="logo" alt="Logo"></a>
+            <a href="index.html"><h1>Muniqo Performante</h1></a>
+        </div>
+
+        <!-- Hamburger -->
+        <div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="VibraSense.html">VibraSense</a></li>
+                <li><a href="VibraLifeGuard.html">VibraLifeGuard</a></li>
+                <li><a href="AboutUs.html">Über Uns</a></li>
+                <li><a href="Career.html">Karriere</a></li>
+                <li><a href="ContactUs.html">Kontakt</a></li>
+                <li class="language-switch">
+                    <a href="../en/Career.html">EN</a> | <a href="Career.html">DE</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="career" class="career-section">
+    <div class="career-container">
+
+        <h2 class="career-title">Karriere bei Muniqo Performante</h2>
+        <p class="career-subtitle">
+            Gestalte mit uns die Zukunft der Vibrationskontrolle und Hochleistungstechnik.
+        </p>
+
+        <div class="career-grid">
+
+            <!-- Job Card 1 -->
+            <div class="career-card">
+                <h3>Ingenieur:in</h3>
+
+                <p class="career-short">
+                    Werde Teil unseres Teams als Vollzeit-Ingenieur:in und entwickle innovative Lösungen zur Vibrationskontrolle.
+                </p>
+
+                <div class="career-more">
+                    <p>
+                        Als Vollzeit-Ingenieur:in entwirfst, implementierst und wartest du hochmoderne Produkte. Arbeite in interdisziplinären Teams, beteilige dich an F&E-Projekten und gestalte die Zukunft der Vibrationskontrolltechnologie. Bewerber:innen mit einem Masterabschluss in einem ingenieurwissenschaftlichen Bereich sind willkommen. Analytisches Denken, Problemlösungsfähigkeiten und eine praktische Herangehensweise sind essenziell.
+                    </p>
+                </div>
+
+                <span class="career-meta">München · Vollzeit</span>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="career-card">
+                <h3>Operations</h3>
+
+                <p class="career-short">
+                    Unterstütze unser Wachstum im Bereich Operations und optimiere Prozesse sowie bereichsübergreifende Projekte.
+                </p>
+                <div class="career-more">
+                    <p>
+                        In dieser Vollzeitrolle trägst du zur operativen Exzellenz des Unternehmens bei. Aufgaben umfassen Projektkoordination, Prozessoptimierung, Reporting und Unterstützung verschiedener Teams. Ideal sind proaktive, flexible Kandidat:innen mit einem Abschluss in Wirtschaft, Management oder einem verwandten Bereich. Kommunikations- und Analysefähigkeiten sind entscheidend.
+                    </p>
+                </div>
+
+                <span class="career-meta">München · Vollzeit</span>
+            </div>
+
+            <!-- Job Card 3 -->
+            <div class="career-card">
+                <h3>Werkstudent:in / Praktikum</h3>
+
+                <p class="career-short">
+                    Sammle praktische Erfahrungen in Ingenieurprojekten, entweder als Praktikant:in oder Werkstudent:in.
+                </p>
+
+                <div class="career-more">
+                    <p>
+                        Unterstütze unsere Engineering-Teams bei realen Projekten und sammle praktische Erfahrung in Vibrationsüberwachungssystemen und Produktentwicklung. Aufgaben umfassen Tests, Dokumentation, Analysen und Zusammenarbeit mit erfahrenen Ingenieur:innen. Initiativbewerbungen für (Master-/Bachelor-)Thesen, Studienprojekte und Praktika sind willkommen.
+                    </p>
+                    <button class="career-button" id="maschinenBtn">
+                        Werkstudent:in Maschinenbau-Ingenieur:in (m/w/d)
+                    </button>
+                </div>
+
+                <span class="career-meta">München · Teilzeit/Vollzeit</span>
+            </div>
+
+        </div>
+
+        <div class="career-cta">
+            <p>Interessiert? Schick uns deine Bewerbung.</p>
+            <a href="ContactUs.html" class="career-button">
+                Jetzt bewerben
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.career-card').forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('active');
+        });
+    });
+</script>
+
+<div class="page-modal" id="jobModal" aria-hidden="true">
+    <div class="page-modal-content word-style">
+        <button class="page-close" aria-label="Schließen">&times;</button>
+
+        <div class="page-body">
+            <h1>Werkstudent:in Maschinenbau-Ingenieur:in für den Versuch</h1>
+
+            <p class="intro">
+                Wir bei <strong>Muniqo Performante</strong> entwickeln ein neuartiges Anti-Vibrations-System für den Transport von Frühgeborenen und kritisch kranken Patient:innen. Dabei kombinieren wir Leichtbaumethoden mit klassischer Regelungstechnik und Machine Learning.
+            </p>
+
+            <p>
+                Unser Ziel: medizinische Versorgung verbessern, echte gesellschaftliche Wirkung erzielen und eine universell einsetzbare Technologie schaffen.
+            </p>
+
+            <p>
+                Für unser staatlich gefördertes Validierungsprojekt suchen wir eine:n <strong>Werkstudent:in Maschinenbau-Ingenieur:in (m/w/d) für den Versuch</strong>.
+            </p>
+
+            <h2>Deine Aufgaben</h2>
+            <ul>
+                <li>Planung und Durchführung explorativer Validierungstests</li>
+                <li>Aufbau, Weiterentwicklung und Optimierung von Hardware-Prototypen</li>
+                <li>Mechanische Arbeiten an magnetischen Baugruppen</li>
+                <li>Konstruktion & Rapid Prototyping (3D-Druck, CNC)</li>
+                <li>Thermische Analysen & FEM-Simulationen (SolidWorks, COMSOL, Simulia)</li>
+                <li>Zusammenarbeit mit Embedded- und Regelungsingenieur:innen</li>
+            </ul>
+
+            <h2>Das bringst du mit</h2>
+
+            <h3>Fachlich</h3>
+            <ul>
+                <li>Erfahrung in Hardwareauslegung und Versuchsdurchführung</li>
+                <li>Gute CAD-Kenntnisse (SolidWorks)</li>
+                <li>Grundverständnis Regelungstechnik & Microcontroller (STM32, Arduino)</li>
+                <li>Laborerfahrung und hohe Sorgfalt</li>
+                <li>Deutsch fließend (C1)</li>
+            </ul>
+
+            <h3>Persönlich</h3>
+            <ul>
+                <li>Hands-on-Mentalität & Pragmatismus</li>
+                <li>Strukturierte Arbeitsweise</li>
+                <li>Teamfähigkeit & Kommunikationsstärke</li>
+                <li>Interesse an MedTech & gesellschaftlichem Impact</li>
+                <li>Bereit, 15 Stunden/Woche zu arbeiten</li>
+            </ul>
+
+            <h2>Was wir bieten</h2>
+            <p>
+                Wir bieten ein agiles Startup-Umfeld mit flachen Hierarchien, flexiblen Arbeitszeiten, hybrider Arbeit und der Möglichkeit, früh Verantwortung zu übernehmen.
+            </p>
+            <p>
+                Du arbeitest an einem System, das Hard- und Software einzigartig kombiniert und reale Wirkung entfaltet — mit echter Perspektive auf eine spätere Führungsrolle.
+            </p>
+
+            <h2>Interesse?</h2>
+            <p>
+                Dann freuen wir uns auf deine Bewerbung:<br>
+                📧 <strong>info@muniqoperformante.com</strong>
+            </p>
+
+            <hr>
+
+            <p class="footer">
+                Muniqo Performante GmbH<br>
+                Sitz der Gesellschaft: München, Bayern, DE<br>
+                Geschäftsführer: Luca Fabiano, Sebastian Wann<br>
+                HRB 302737 · Amtsgericht München<br>
+                www.muniqoperformante.com
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Muniqo Performante. Alle Rechte vorbehalten.</p>
+    <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="cookies.html">Cookie</a>
+    </div>
+</footer>
+
+<script src="../script.js"></script>
+<script src="../cookie.js"></script>
+
+<script>
+    // Menü-Umschaltfunktion für mobile Ansicht
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header");
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("nav-open");
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                nav.classList.remove("nav-open");
+            });
+        });
+    });
+
+    const features = document.querySelectorAll('.feature');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    features.forEach(f => observer.observe(f));
+
+    const jobModal = document.getElementById('jobModal');
+    const openJobBtn = document.getElementById('maschinenBtn');
+    const closeJobBtn = jobModal.querySelector('.page-close');
+
+    openJobBtn.addEventListener('click', () => {
+        jobModal.classList.add('active');
+        jobModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open'); // Hintergrund sperren
+    });
+
+    closeJobBtn.addEventListener('click', () => {
+        jobModal.classList.remove('active');
+        jobModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open'); // Hintergrund freigeben
+    });
+</script>
+

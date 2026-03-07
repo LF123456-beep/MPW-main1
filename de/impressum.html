@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muniqo Performante - Vibrationsreduktion durch Innovation</title>
+
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../Logo.png" type="image/x-icon">
+
+</head>
+
+<body>
+<!-- Header-Bereich -->
+<header id="header">
+  <div class="container">
+    <div class="logo-title">
+      <a href="index.html"><img src="../Logo.png" class="logo" alt="Logo"></a>
+      <a href="index.html"><h1>Muniqo Performante</h1></a>
+    </div>
+
+    <!-- Hamburger -->
+    <div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+    <nav id="nav">
+      <ul>
+        <li><a href="VibraSense.html">VibraSense</a></li>
+        <li><a href="VibraLifeGuard.html">VibraLifeGuard</a></li>
+        <li><a href="AboutUs.html">Über Uns</a></li>
+        <li><a href="Career.html">Karriere</a></li>
+        <li><a href="ContactUs.html">Kontakt</a></li>
+        <li class="language-switch">
+          <a href="../en/impressum.html">EN</a> | <a href="impressum.html">DE</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<section>
+  <h2>Impressum</h2>
+  <div class="legal-text">
+
+    <h3>Angaben gemäß § 5 TMG:</h3>
+    <p>
+      Muniqo Performante GmbH<br>
+      Hartweg 14 a<br>
+      80939 München<br>
+      Deutschland
+    </p>
+
+    <h3>Vertreten durch:</h3>
+    <p>
+      Luca Fabiano<br>
+      Sebastian Wann
+    </p>
+
+    <h3>Kontakt:</h3>
+    <p>
+      E-Mail: info@muniqoperformante.com
+    </p>
+
+    <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h3>
+    <p>
+      Luca Fabiano
+    </p>
+
+    <h3>Handelsregister:</h3>
+    <p>
+      Eingetragen beim Amtsgericht München, HRB 302737
+    </p>
+
+    <h3>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:</h3>
+    <p>
+      Umsatzsteuer-ID wird derzeit geprüft
+    </p>
+
+  </div>
+</section>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 Muniqo Performante. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="cookies.html">Cookies</a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+<script src="../cookie.js"></script>
+
+<script>
+  // Menü-Umschaltfunktion für mobile Ansicht
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("header");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("nav-open");
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("nav-open");
+      });
+    });
+  });
+</script>
+

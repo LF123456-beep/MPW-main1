@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muniqo Performante - Vibrationsreduktion durch Innovation</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../Logo.png" type="image/x-icon">
+
+</head>
+
+<body>
+<!-- Header-Bereich -->
+<header id="header">
+    <div class="container">
+        <div class="logo-title">
+            <a href="index.html"><img src="../Logo.png" class="logo" alt="Logo"></a>
+            <a href="index.html"><h1>Muniqo Performante</h1></a>
+        </div>
+
+        <!-- Hamburger -->
+        <div id="menu-toggle" class="menu-toggle">&#9776;</div>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="VibraSense.html">VibraSense</a></li>
+                <li><a href="VibraLifeGuard.html">VibraLifeGuard</a></li>
+                <li><a href="AboutUs.html">Über Uns</a></li>
+                <li><a href="Career.html">Karriere</a></li>
+                <li><a href="ContactUs.html">Kontakt</a></li>
+                <li class="language-switch">
+                    <a href="../en/ContactUs.html">EN</a> | <a href="ContactUs.html">DE</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Kontaktformular-Bereich -->
+<section id="contact">
+    <video autoplay muted loop playsinline id="contact-background-video">
+        <source src="../Heli2.mp4" type="video/mp4">
+        Ihr Browser unterstützt das Video-Tag nicht.
+    </video>
+
+    <div class="contact-wrapper">
+        <div class="email-box">
+            <h2>Kontakt</h2>
+            <p>Erreichen Sie uns per E-Mail unter:</p>
+            <p id="email-display" style="font-weight: bold;">info@muniqoperformante.com</p>
+            <button id="copy-email-button" style="margin-top: 10px;">E-Mail in die Zwischenablage kopieren</button>
+        </div>
+
+        <!-- JavaScript für Kopieren der E-Mail -->
+        <script>
+            document.getElementById('copy-email-button').addEventListener('click', function() {
+                const email = document.getElementById('email-display').innerText;
+                const tempInput = document.createElement('input');
+                tempInput.value = email;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                alert('E-Mail in die Zwischenablage kopiert: ' + email);
+            });
+        </script>
+
+        <!-- Kontaktformular -->
+        <form
+                action="https://formspree.io/f/xbljleqz"
+                method="POST"
+                class="contact-form"
+        >
+            <h2>Oder senden Sie uns eine Nachricht</h2>
+            <label>
+                Name
+                <input type="text" name="First Name" required>
+            </label>
+            <label>
+                Ihre E-Mail:
+                <input type="email" name="email">
+            </label>
+            <label>
+                Ihre Nachricht:
+                <textarea name="message">Keine spezielle Nachricht, nur eine Kontaktanfrage</textarea>
+            </label>
+            <button type="submit">Senden</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Muniqo Performante. Alle Rechte vorbehalten.</p>
+    <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="cookies.html">Cookies</a>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="../script.js"></script>
+<script src="../cookie.js"></script>
+
+<script>
+    // Menü-Umschaltfunktion für mobile Ansicht und Schließen der Navigation bei Link-Klick
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header");
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("nav-open");
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                nav.classList.remove("nav-open");
+            });
+        });
+    });
+
+    const features = document.querySelectorAll('.feature');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    features.forEach(f => observer.observe(f));
+</script>
+
