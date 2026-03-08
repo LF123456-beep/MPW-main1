@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muniqo Performante</title>
+  <meta name="description" content="Muniqo Performante">
+  <script>
+    (function () {
+      var lang = (navigator.language || navigator.userLanguage || "de").toLowerCase();
+      var target = lang.startsWith("de") ? "./de/index.html" : "./en/index.html";
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  <p>Weiterleitung...</p>
+  <p>
+    Falls die Weiterleitung nicht funktioniert:
+    <a href="./de/index.html">Deutsch</a> |
+    <a href="./en/index.html">English</a>
+  </p>
+</body>
+</html>
