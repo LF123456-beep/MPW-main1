@@ -255,7 +255,7 @@ section h2 {
 
 
 
-/* Responsive Anpassungen für mobile Geräte */
+/* Responsive Anpassungen fÃ¼r mobile GerÃ¤te */
 @media (max-width: 768px) {
     .landing-content {
         padding: 0 10px;
@@ -306,7 +306,7 @@ section h2 {
 .cta-section .button:hover {
     background-color: #ccc;
 }
-/* Hover-Effekt für den Button auf der Landingpage */
+/* Hover-Effekt fÃ¼r den Button auf der Landingpage */
 .landing-content .button:hover {
     background-color: #ccc;
 }
@@ -319,7 +319,7 @@ section h2 {
     text-align: center;
     padding: 0 20px;
 }
-/* Über uns - Carousel */
+/* Ãœber uns - Carousel */
 .carousel-container-team {
     position: relative;
     max-width: 1000px;
@@ -342,10 +342,10 @@ section h2 {
 }
 
 .carousel-slide-team img {
-    width: 100%;         /* Füllt den gesamten Bereich */
+    width: 100%;         /* FÃ¼llt den gesamten Bereich */
     max-width: 600px;    /* Begrenzt die Breite des Bildes */
-    height: 400px;       /* Einheitliche Höhe für alle Bilder */
-    object-fit: cover;   /* Schneidet das Bild zu, um den Container zu füllen */
+    height: 400px;       /* Einheitliche HÃ¶he fÃ¼r alle Bilder */
+    object-fit: cover;   /* Schneidet das Bild zu, um den Container zu fÃ¼llen */
     margin-bottom: 20px; border-radius: 15px
 }
 
@@ -382,7 +382,7 @@ section h2 {
 }
 #video-section {
     position: relative;
-    height: 100vh; /* Höhe für Vollbild */
+    height: 100vh; /* HÃ¶he fÃ¼r Vollbild */
     overflow: hidden;
 }
 
@@ -415,11 +415,11 @@ section h2 {
     max-width: calc(30% - 40px); /* Maximale Breite auch schmaler */
     text-align: center;
     background-color: #000; /* Schwarzer Hintergrund */
-    padding: 30px; /* Mehr Polsterung für eine höhere Box */
+    padding: 30px; /* Mehr Polsterung fÃ¼r eine hÃ¶here Box */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Dunkler Schatten */
     transition: transform 0.3s ease;
-    color: #fff; /* Weißer Text */
+    color: #fff; /* WeiÃŸer Text */
 }
 
 .team-member:hover {
@@ -432,32 +432,32 @@ section h2 {
     border-radius: 50%; /* Rundes Profilbild */
     object-fit: cover;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Stärkerer Schatten um das Bild */
-    border: 1px solid #fff; /* Weißer Rand um das Profilbild */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* StÃ¤rkerer Schatten um das Bild */
+    border: 1px solid #fff; /* WeiÃŸer Rand um das Profilbild */
 }
 
 .team-member h3 {
     font-size: 22px;
     margin-bottom: 10px;
-    color: #fff; /* Weißer Text */
+    color: #fff; /* WeiÃŸer Text */
     font-weight: bold;
 }
 
 .team-member ul {
     list-style-type: none; /* Entfernt die Bulletpoints */
-    padding-left: 0; /* Kein Einrücken der Liste */
+    padding-left: 0; /* Kein EinrÃ¼cken der Liste */
     margin: 0;
-    text-align: center; /* Text linksbündig */
+    text-align: center; /* Text linksbÃ¼ndig */
 }
 
 .team-member ul li {
     font-size: 16px;
-    color: #fff; /* Weißer Text */
+    color: #fff; /* WeiÃŸer Text */
     margin-bottom: 15px; /* Mehr Abstand zwischen den Punkten */
     padding: 10px 15px; /* Innenabstand innerhalb der Box */
     background-color: rgba(255, 255, 255, 0.1); /* Leicht transparenter Box-Hintergrund */
     border-radius: 10px; /* Abgerundete Ecken */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Leichter Schatten für die Box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Leichter Schatten fÃ¼r die Box */
     transition: background-color 0.3s ease;
 }
 
@@ -469,31 +469,31 @@ section h2 {
     padding: 0 20px;
 }
 
-/* Standardgrößen für das LinkedIn-Icon */
+/* StandardgrÃ¶ÃŸen fÃ¼r das LinkedIn-Icon */
 .linkedin-link img {
-    width: 30px;  /* Größe des LinkedIn-Icons */
+    width: 30px;  /* GrÃ¶ÃŸe des LinkedIn-Icons */
     height: 30px;
-    border-radius: 0; /* Verhindert abgerundete Ecken für das LinkedIn-Icon */
-    border: none; /* Entfernt den weißen Rahmen um das LinkedIn-Icon */
+    border-radius: 0; /* Verhindert abgerundete Ecken fÃ¼r das LinkedIn-Icon */
+    border: none; /* Entfernt den weiÃŸen Rahmen um das LinkedIn-Icon */
     transition: transform 0.3s ease;
 }
 
 .linkedin-link img:hover {
-    transform: scale(1.2); /* Vergrößerung beim Hover */
+    transform: scale(1.2); /* VergrÃ¶ÃŸerung beim Hover */
 }
 
-/* Anpassungen für mobile Geräte */
+/* Anpassungen fÃ¼r mobile GerÃ¤te */
 @media (max-width: 768px) {
     .linkedin-link img {
-        width: 24px; /* Kleinere Größe des LinkedIn-Icons auf mobilen Geräten */
+        width: 24px; /* Kleinere GrÃ¶ÃŸe des LinkedIn-Icons auf mobilen GerÃ¤ten */
         height: 24px;
     }
 }
 
-/* Anpassungen für sehr kleine Bildschirme */
+/* Anpassungen fÃ¼r sehr kleine Bildschirme */
 @media (max-width: 480px) {
     .linkedin-link img {
-        width: 20px; /* Noch kleinere Größe auf sehr kleinen Bildschirmen */
+        width: 20px; /* Noch kleinere GrÃ¶ÃŸe auf sehr kleinen Bildschirmen */
         height: 20px;
     }
 }
@@ -510,7 +510,7 @@ section h2 {
 }
 
 #solution h2 {
-    margin-top: -1cm;   /* statt -0.5cm → noch weiter nach oben */
+    margin-top: -1cm;   /* statt -0.5cm â†’ noch weiter nach oben */
     margin-bottom: 60px;
     font-size: 32px;
     font-weight: 600;
@@ -740,13 +740,13 @@ section h2 {
     display: block;
 }
 
-/* Animation für kontinuierliches Scrollen von rechts nach links */
+/* Animation fÃ¼r kontinuierliches Scrollen von rechts nach links */
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Loop: Hälfte der Track-Duplizierung */
+    100% { transform: translateX(-50%); } /* Loop: HÃ¤lfte der Track-Duplizierung */
 }
 
-/* Optional: unterschiedliche Geschwindigkeit für Collaborations */
+/* Optional: unterschiedliche Geschwindigkeit fÃ¼r Collaborations */
 .collaborations .carousel-track {
     animation-duration: 25s;
 }
@@ -773,7 +773,7 @@ section h2 {
     display: block;
 }
 
-/* Animation für Endlosschleife */
+/* Animation fÃ¼r Endlosschleife */
 @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); } /* Track ist doppelt, also 50% verschieben */
@@ -831,10 +831,10 @@ section#partners h2.collab-heading {
 /* Endlosschleife */
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Track doppelt für nahtloses Loop */
+    100% { transform: translateX(-50%); } /* Track doppelt fÃ¼r nahtloses Loop */
 }
 
-/* Geschwindigkeit für Collaborations etwas langsamer */
+/* Geschwindigkeit fÃ¼r Collaborations etwas langsamer */
 .collaborations .carousel-track {
     animation-duration: 35s;
 }
@@ -855,10 +855,10 @@ section#partners h2.collab-heading {
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: invert(1) grayscale(100%) contrast(1000%); /* Farben zu Weiß, Weiß zu Schwarz */
+    filter: invert(1) grayscale(100%) contrast(1000%); /* Farben zu WeiÃŸ, WeiÃŸ zu Schwarz */
 }
 
-/* Individuelle Größen für jedes Logo */
+/* Individuelle GrÃ¶ÃŸen fÃ¼r jedes Logo */
 .supporter-item img[alt="Supporter TUM"] {
     max-width: 150px;
     max-height: 80px;
@@ -874,7 +874,7 @@ section#partners h2.collab-heading {
     max-height: 180px;
 }
 
-.supporter-item img[alt="Supporter München"] {
+.supporter-item img[alt="Supporter MÃ¼nchen"] {
     max-width: 200px;
     max-height: 100px;
 }
@@ -976,8 +976,8 @@ section#partners h2.collab-heading {
 /* Collaborations Section */
 .collaborations {
     display: flex;
-    justify-content: space-between; /* Gleichmäßige Verteilung zwischen den Logos */
-    flex-wrap: wrap; /* Umbrüche auf kleineren Bildschirmen zulassen */
+    justify-content: space-between; /* GleichmÃ¤ÃŸige Verteilung zwischen den Logos */
+    flex-wrap: wrap; /* UmbrÃ¼che auf kleineren Bildschirmen zulassen */
     gap: 20px; /* Abstand zwischen den Items */
     margin-bottom: 60px;
 }
@@ -992,17 +992,17 @@ section#partners h2.collab-heading {
 
 .collaboration-item img {
     max-width: 150px; /* Einheitliche maximale Breite */
-    max-height: 80px; /* Einheitliche maximale Höhe */
+    max-height: 80px; /* Einheitliche maximale HÃ¶he */
     width: auto;
     height: auto;
-    object-fit: contain; /* Behalte das Seitenverhältnis der Logos bei */
-    filter: brightness(0) invert(1); /* Invertiert die Logos, um sie weiß darzustellen */
+    object-fit: contain; /* Behalte das SeitenverhÃ¤ltnis der Logos bei */
+    filter: brightness(0) invert(1); /* Invertiert die Logos, um sie weiÃŸ darzustellen */
     margin-bottom: 10px;
 }
 
-/* Spezifische Kollaborations-Logos größer machen */
+/* Spezifische Kollaborations-Logos grÃ¶ÃŸer machen */
 .collaboration-item img[alt="Collaboration 1"] {
-    max-width: 220px; /* Größeres Logo für Collaboration 1 */
+    max-width: 220px; /* GrÃ¶ÃŸeres Logo fÃ¼r Collaboration 1 */
     max-height: 200px;
 }
 
@@ -1270,7 +1270,7 @@ footer p {
     color: #fff;
 }
 
-/* Stile für rechtliche Texte */
+/* Stile fÃ¼r rechtliche Texte */
 .legal-text {
     max-width: 800px;
     margin: 0 auto;
@@ -1408,7 +1408,7 @@ footer p {
     }
 }
 
-/* Initialzustand für Animationen */
+/* Initialzustand fÃ¼r Animationen */
 .animate {
     opacity: 0;
 }
@@ -1455,16 +1455,16 @@ footer p {
     background-color: #111; /* Schwarzer Hintergrund */
     color: #fff;
     text-align: center;
-    backdrop-filter: blur(5px); /* Blur-Effekt für einen modernen Look */
+    backdrop-filter: blur(5px); /* Blur-Effekt fÃ¼r einen modernen Look */
 }
 
 #problems h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    letter-spacing: 1px; /* Leichte Abstände zwischen den Buchstaben */
+    letter-spacing: 1px; /* Leichte AbstÃ¤nde zwischen den Buchstaben */
     font-weight: bold;
-   /* Großbuchstaben für einen kräftigen Titel */
-    color: #fff; /* Weißer Text */
+   /* GroÃŸbuchstaben fÃ¼r einen krÃ¤ftigen Titel */
+    color: #fff; /* WeiÃŸer Text */
 }
 
 .problems-container {
@@ -1480,12 +1480,12 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex: 1 1 calc(50% - 30px); /* Mehr Abstand für bessere Lesbarkeit */
-    background-color: #222; /* Dunkleres Schwarz für den Hintergrund */
+    flex: 1 1 calc(50% - 30px); /* Mehr Abstand fÃ¼r bessere Lesbarkeit */
+    background-color: #222; /* Dunkleres Schwarz fÃ¼r den Hintergrund */
     padding: 30px; /* Mehr Innenabstand */
     border-radius: 20px; /* Weiche Ecken */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Tieferer Schatten für mehr Tiefe */
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Weicher Übergang */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Tieferer Schatten fÃ¼r mehr Tiefe */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Weicher Ãœbergang */
     text-align: left;
     overflow: hidden;
     position: relative;
@@ -1500,33 +1500,33 @@ footer p {
     width: 30%;
     height: auto;
     object-fit: cover;
-    border-radius: 10px; /* Runde Ecken für das Bild */
+    border-radius: 10px; /* Runde Ecken fÃ¼r das Bild */
     margin-right: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Leichter Bildschatten */
 }
 
 .problem-text {
-    width: 70%; /* Mehr Platz für den Text */
+    width: 70%; /* Mehr Platz fÃ¼r den Text */
 }
 
 .problem-text h5 {
-    font-size: 22px; /* Größere Schriftgröße */
+    font-size: 22px; /* GrÃ¶ÃŸere SchriftgrÃ¶ÃŸe */
     font-weight: bold; /* Fettgedruckter Text */
-    color: #fff; /* Weißer Text für klare Lesbarkeit */
+    color: #fff; /* WeiÃŸer Text fÃ¼r klare Lesbarkeit */
     margin-bottom: 15px;
 }
 
 .problem-text p {
     font-size: 16px;
-    color: #ccc; /* Hellerer Text für bessere Lesbarkeit */
-    transition: color 0.3s ease; /* Weicher Übergang bei Hover */
+    color: #ccc; /* Hellerer Text fÃ¼r bessere Lesbarkeit */
+    transition: color 0.3s ease; /* Weicher Ãœbergang bei Hover */
 }
 
 .problem-item:hover .problem-text p {
-    color: #fff; /* Text wird weiß beim Hover */
+    color: #fff; /* Text wird weiÃŸ beim Hover */
 }
 
-/* Hover-Effekt für den ganzen Container */
+/* Hover-Effekt fÃ¼r den ganzen Container */
 .problem-item::before {
     content: '';
     position: absolute;
@@ -1534,7 +1534,7 @@ footer p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); /* Weißer Verlauf */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)); /* WeiÃŸer Verlauf */
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 0;
@@ -1544,15 +1544,15 @@ footer p {
     opacity: 1; /* Subtiler Highlight-Effekt beim Hover */
 }
 
-/* Media Queries für mobile Geräte */
+/* Media Queries fÃ¼r mobile GerÃ¤te */
 @media (max-width: 768px) {
     .problem-item {
-        flex: 1 1 100%; /* Volle Breite auf kleineren Geräten */
+        flex: 1 1 100%; /* Volle Breite auf kleineren GerÃ¤ten */
     }
 
     .problem-text p {
-        display: block; /* "Discover more" auch auf mobilen Geräten anzeigen */
-        color: #aaa; /* Etwas hellerer Text für mobiles Design */
+        display: block; /* "Discover more" auch auf mobilen GerÃ¤ten anzeigen */
+        color: #aaa; /* Etwas hellerer Text fÃ¼r mobiles Design */
     }
 }
 
@@ -1573,10 +1573,10 @@ footer p {
     height: auto;
     z-index: -1; /* Video wird hinter den Text gelegt */
     opacity: 0.5; /* Optional, um den Text besser sichtbar zu machen */
-    object-fit: cover; /* Video füllt den gesamten Bereich aus */
+    object-fit: cover; /* Video fÃ¼llt den gesamten Bereich aus */
 }
 
-/* Allgemeines Styling für die Section */
+/* Allgemeines Styling fÃ¼r die Section */
 #product-about {
     position: relative;
     z-index: 1;
@@ -1591,15 +1591,15 @@ footer p {
 #product-about h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
-    color: #fff; /* Weißer Text */
+    color: #fff; /* WeiÃŸer Text */
     text-align: center; /* Titel bleibt zentriert */
 }
 
 #product-about h3 {
-    color: #fff; /* Weißer Text */
+    color: #fff; /* WeiÃŸer Text */
     font-size: 1.8em;
     margin-bottom: 20px;
-    text-transform: uppercase; /* Großbuchstaben */
+    text-transform: uppercase; /* GroÃŸbuchstaben */
     text-align: left;
     position: relative;
 }
@@ -1620,7 +1620,7 @@ footer p {
     max-width: 1200px;
     margin: 0 auto 40px auto;
     line-height: 1.6;
-    color: #fff; /* Weißer Text */
+    color: #fff; /* WeiÃŸer Text */
     position: relative;
 }
 
@@ -1655,19 +1655,19 @@ footer p {
 }
 
 .product-description ul {
-    list-style-type: none; /* Entfernt Standard-Aufzählungszeichen */
+    list-style-type: none; /* Entfernt Standard-AufzÃ¤hlungszeichen */
     padding-left: 0;
     font-size: 1.1em;
     margin: 0;
     position: relative;
-    color: #fff; /* Weißer Text */
+    color: #fff; /* WeiÃŸer Text */
 }
 
 .product-description ul li {
     margin-bottom: 15px;
     position: relative;
-    padding-left: 40px; /* Platz für den Kreis */
-    color: #fff; /* Weißer Text */
+    padding-left: 40px; /* Platz fÃ¼r den Kreis */
+    color: #fff; /* WeiÃŸer Text */
 }
 
 .product-description ul li::before {
@@ -1856,7 +1856,7 @@ footer p {
     display: flex;
     align-items: center;
     gap: 14px;
-    z-index: 999999 !important; /* höher als Header & Videos */
+    z-index: 999999 !important; /* hÃ¶her als Header & Videos */
     box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
@@ -1900,7 +1900,7 @@ footer p {
 
 
 
-/* Hintergrundvideo Styling für das Kontaktformular */
+/* Hintergrundvideo Styling fÃ¼r das Kontaktformular */
 #contact-background-video {
     position: absolute;
     top: 0;
@@ -1911,11 +1911,11 @@ footer p {
     height: auto;
     z-index: -1; /* Video wird hinter den Text gelegt */
     opacity: 0.5; /* Optional, um den Text besser sichtbar zu machen */
-    object-fit: cover; /* Video füllt den gesamten Bereich aus */
+    object-fit: cover; /* Video fÃ¼llt den gesamten Bereich aus */
     pointer-events: none; /* Verhindert, dass das Video klickbar ist */
 }
 
-/* Styling für den Contact-Bereich */
+/* Styling fÃ¼r den Contact-Bereich */
 #contact {
     position: relative;
     z-index: 1;
@@ -1980,13 +1980,13 @@ footer p {
         font-size: 16px;
     }
 }
-/* Spezifische Anpassungen für das zweite und dritte Hintergrundvideo für mobile Geräte */
+/* Spezifische Anpassungen fÃ¼r das zweite und dritte Hintergrundvideo fÃ¼r mobile GerÃ¤te */
 @media (max-width: 768px) {
     #background-video, #contact-background-video {
         width: 100vw; /* Video nimmt die volle Breite des Viewports ein */
-        height: 100vh; /* Video nimmt die volle Höhe des Viewports ein */
-        object-fit: cover; /* Video wird an den Container angepasst, ohne das Seitenverhältnis zu verlieren */
-        overflow: hidden; /* Kein Überlauf des Inhalts */
+        height: 100vh; /* Video nimmt die volle HÃ¶he des Viewports ein */
+        object-fit: cover; /* Video wird an den Container angepasst, ohne das SeitenverhÃ¤ltnis zu verlieren */
+        overflow: hidden; /* Kein Ãœberlauf des Inhalts */
     }
 
     /* Optional: Verhindere das horizontale Scrollen */
@@ -2003,16 +2003,16 @@ footer p {
     }
 
     .landing-content .landing-logo {
-        width: 180px; /* Kleinere Breite des Hauptlogos für die mobile Ansicht */
+        width: 180px; /* Kleinere Breite des Hauptlogos fÃ¼r die mobile Ansicht */
         margin-bottom: 15px;
     }
 
     .landing-content h2 {
-        font-size: 6vw; /* Responsive Schriftgröße für den Titel */
+        font-size: 6vw; /* Responsive SchriftgrÃ¶ÃŸe fÃ¼r den Titel */
     }
 
     .landing-content p {
-        font-size: 4vw; /* Responsive Schriftgröße für den Text */
+        font-size: 4vw; /* Responsive SchriftgrÃ¶ÃŸe fÃ¼r den Text */
     }
 }
 
@@ -2388,7 +2388,7 @@ footer p {
 }
 
 .testimonial blockquote {
-    quotes: "“" "”";
+    quotes: "â€œ" "â€";
 }
 
 .testimonial blockquote::before {
@@ -2691,7 +2691,7 @@ footer p {
 #news {
     position: relative;
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.95); /* leicht transparent für Kontrast */
+    background-color: rgba(255, 255, 255, 0.95); /* leicht transparent fÃ¼r Kontrast */
     backdrop-filter: blur(4px);
     overflow: hidden;
 }
@@ -2720,7 +2720,7 @@ footer p {
     opacity: 1; /* wichtig: NICHT zu niedrig setzen */
     filter: brightness(1); /* dunkelt effektiv ab */
 }
-/* Weißer Text im Bereich #news */
+/* WeiÃŸer Text im Bereich #news */
 #news,
 #news h2,
 #news .news-box,
@@ -2798,7 +2798,7 @@ footer p {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60vh; /* Oder 50vh, 40vh – je nach Wunsch */
+    height: 60vh; /* Oder 50vh, 40vh â€“ je nach Wunsch */
     object-fit: cover;
     z-index: 0;
     opacity: 1;
@@ -2811,7 +2811,7 @@ footer p {
 
 .solid-background {
     background-color: white; /* Oder eine andere feste Farbe */
-    color: #111; /* Für dunklen Text */
+    color: #111; /* FÃ¼r dunklen Text */
     border-radius: 0;
 }
 
@@ -2826,14 +2826,14 @@ footer p {
     font-size: 1.8rem;
     font-weight: 600;
     color: #ffd700; /* Gold */
-    text-align: center; /* zentriert, wie gewünscht */
+    text-align: center; /* zentriert, wie gewÃ¼nscht */
     margin-bottom: 0.5rem;
 }
 
 .subtitle-text {
     font-size: 1rem;
     font-weight: 300;
-    color: white; /* explizit weiß für schwarzen Hintergrund */
+    color: white; /* explizit weiÃŸ fÃ¼r schwarzen Hintergrund */
     line-height: 1.6;
     text-align: left;
 }
@@ -2884,7 +2884,7 @@ footer p {
     color: black !important;
 }
 .gold-heading {
-    color: #c49b0d; /* edles Gold – kannst du anpassen */
+    color: #c49b0d; /* edles Gold â€“ kannst du anpassen */
 }
 
 
@@ -2974,7 +2974,7 @@ footer p {
     font-family: 'Inter', sans-serif;
 }
 .black-heading {
-    font-size: 1.6rem;  /* vorher z. B. 2rem, jetzt leicht verkleinert */
+    font-size: 1.6rem;  /* vorher z.â€¯B. 2rem, jetzt leicht verkleinert */
     font-weight: 400;
     color: white;
     text-align: center;
@@ -2985,7 +2985,7 @@ footer p {
 
 
 .feature-lines {
-    background: #fff;         /* weißer Hintergrund */
+    background: #fff;         /* weiÃŸer Hintergrund */
     color: #000 !important;   /* alle Texte schwarz */
 }
 
@@ -3239,15 +3239,15 @@ footer p {
 
 
 #contact-background-video {
-    height: 40vh; /* bisher vermutlich 100vh oder zu groß */
+    height: 40vh; /* bisher vermutlich 100vh oder zu groÃŸ */
 }
 
 
 
 #contact {
     position: relative;
-    height: 60vh;              /* vorher evtl. 100vh – deutlich kürzer */
-    min-height: 500px;         /* optionaler Fallback für große Screens */
+    height: 60vh;              /* vorher evtl. 100vh â€“ deutlich kÃ¼rzer */
+    min-height: 500px;         /* optionaler Fallback fÃ¼r groÃŸe Screens */
     overflow: hidden;
     display: flex;
     align-items: center;       /* zentriert vertikal */
@@ -3273,7 +3273,7 @@ footer p {
     max-width: 700px;
     width: 100%;
     color: white;
-    backdrop-filter: blur(3px); /* optionaler Weichzeichner für bessere Lesbarkeit */
+    backdrop-filter: blur(3px); /* optionaler Weichzeichner fÃ¼r bessere Lesbarkeit */
 }
 
 .contact-overlay h2 {
@@ -3299,12 +3299,12 @@ footer p {
     gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
-    flex-wrap: wrap; /* Für responsive Verhalten */
+    flex-wrap: wrap; /* FÃ¼r responsive Verhalten */
 }
 .contact-wrapper {
     position: relative;
     z-index: 2;
-    background-color: transparent;  /* ← Abdunkelung entfernt */
+    background-color: transparent;  /* â† Abdunkelung entfernt */
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -3335,15 +3335,15 @@ footer p {
 }
 #contact {
     position: relative;
-    height: 100vh; /* Standardhöhe */
+    height: 100vh; /* StandardhÃ¶he */
     overflow: hidden;
 }
 
 /* Mobile Optimierung */
 @media (max-width: 768px) {
     #contact {
-        height: auto; /* Höhe dynamisch je nach Inhalt */
-        min-height: 120vh; /* optional: macht das Video höher */
+        height: auto; /* HÃ¶he dynamisch je nach Inhalt */
+        min-height: 120vh; /* optional: macht das Video hÃ¶her */
     }
 
     #contact-background-video {
@@ -3408,7 +3408,7 @@ footer p {
     transition: transform 0.3s ease;
 }
 .zeidler-logo img {
-    max-height: 100px; /* z. B. größer als die üblichen 60px */
+    max-height: 100px; /* z.â€¯B. grÃ¶ÃŸer als die Ã¼blichen 60px */
 }
 .fraunhofer-logo img {
     max-width: 10000px;
@@ -3554,7 +3554,7 @@ nav ul li a {
 }
 
 .landing-left img.landing-logo {
-    max-width: 400px;  /* Größeres Logo */
+    max-width: 400px;  /* GrÃ¶ÃŸeres Logo */
     height: auto;
     filter: brightness(1);
 }
@@ -3563,7 +3563,7 @@ nav ul li a {
     max-width: 600px;
     font-family: 'Inter', sans-serif;
     color: #fff;
-    text-align: left;  /* Links bündig */
+    text-align: left;  /* Links bÃ¼ndig */
 }
 
 .landing-right h2 {
@@ -3571,14 +3571,14 @@ nav ul li a {
     font-weight: 400;
     margin-bottom: 1rem;
     line-height: 1.3;
-    text-align: left;    /* Überschrift linksbündig */
+    text-align: left;    /* Ãœberschrift linksbÃ¼ndig */
 }
 
 .landing-right p {
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.6;
-    text-align: left;    /* Text linksbündig */
+    text-align: left;    /* Text linksbÃ¼ndig */
 }
 
 .news-text {
@@ -3606,7 +3606,7 @@ nav ul li a {
     gap: 1rem;
     min-width: 280px;
     max-width: 360px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* stärkerer Schatten */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* stÃ¤rkerer Schatten */
     backdrop-filter: blur(2px); /* optional: leicht unscharfer Hintergrund */
 }
 
@@ -3712,7 +3712,7 @@ nav ul li a {
 }
 
 .collapsible.open .collapsible-content {
-    max-height: 500px; /* reicht für 3–4 Zeilen, sonst erhöhen */
+    max-height: 500px; /* reicht fÃ¼r 3â€“4 Zeilen, sonst erhÃ¶hen */
     opacity: 1;
 }
 
@@ -3766,13 +3766,13 @@ details summary::marker {
 }
 
 details summary::after {
-    content: " ▼";
+    content: " â–¼";
     font-size: 0.75em;
     color: #aaa;
 }
 
 details[open] summary::after {
-    content: " ▲";
+    content: " â–²";
     font-size: 0.75em;
     color: #aaa;
 }
@@ -3811,17 +3811,17 @@ details summary::marker {
 }
 
 details summary::after {
-    content: " ▼";
+    content: " â–¼";
     font-size: 0.75em;
     color: #aaa;
 }
 
 details[open] summary::after {
-    content: " ▲";
+    content: " â–²";
     color: #aaa;
 }
 
-/* Effekt: Wenn geöffnet, alles leicht größer + dunkler */
+/* Effekt: Wenn geÃ¶ffnet, alles leicht grÃ¶ÃŸer + dunkler */
 .timeline-item:hover h3,
 .timeline-item:hover p em,
 .timeline-item:hover summary,
@@ -3928,11 +3928,11 @@ details[open] summary::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Abdunkelung für besseren Textkontrast */
+    background: rgba(0, 0, 0, 0.5); /* Abdunkelung fÃ¼r besseren Textkontrast */
     z-index: -1;
 }
 
-/* Überschrift */
+/* Ãœberschrift */
 .section-heading {
     font-size: 2.5rem;
     font-weight: 600;
@@ -3955,7 +3955,7 @@ details[open] summary::after {
 
 
 
-/* Grid für die Boxen */
+/* Grid fÃ¼r die Boxen */
 .use-case-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -3978,7 +3978,7 @@ details[open] summary::after {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
 }
 
-/* Überschrift in Karte */
+/* Ãœberschrift in Karte */
 .use-case-card h3 {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
@@ -4156,7 +4156,7 @@ details[open] summary::after {
     max-width: 180px;
     max-height: 100px;
 }
-.logo-grid img[alt="Feuerwehr München"] {
+.logo-grid img[alt="Feuerwehr MÃ¼nchen"] {
     max-width: 140px;
     max-height: 140px;
 }
@@ -4164,7 +4164,7 @@ details[open] summary::after {
     max-width: 150px;
     max-height: 80px;
 }
-.logo-grid img[alt="DH München"] {
+.logo-grid img[alt="DH MÃ¼nchen"] {
     max-width: 180px;
     max-height: 90px;
 }
@@ -4181,7 +4181,7 @@ details[open] summary::after {
 
 
 
-/* Container für die gesamte Section */
+/* Container fÃ¼r die gesamte Section */
 .neonatal-section {
     background: #fafafa;
     padding: 8rem 2rem;
@@ -4320,7 +4320,7 @@ details[open] summary::after {
     gap: 2.5rem;
 }
 
-/* Einheitlicher Look für alle Logos */
+/* Einheitlicher Look fÃ¼r alle Logos */
 .logo-cloud img {
     max-height: 60px;
     object-fit: contain;
@@ -4561,14 +4561,14 @@ details summary::marker {
 }
 
 details summary::before {
-    content: "▶ ";
+    content: "â–¶ ";
     display: inline-block;
     transform: rotate(0deg);
     transition: transform 0.2s ease;
 }
 
 details[open] summary::before {
-    content: "▼ ";
+    content: "â–¼ ";
 }
 
 .evidence-intro {
@@ -4990,7 +4990,7 @@ details[open] summary::before {
 
 
 /* ============================
-   CASE STUDY – CLEAN / APPLE
+   CASE STUDY â€“ CLEAN / APPLE
 ============================ */
 
 .case-section {
@@ -5046,7 +5046,7 @@ details[open] summary::before {
 }
 
 .case-points li::before {
-    content: "—";
+    content: "â€”";
     position: absolute;
     left: 0;
     color: #aaa;
@@ -5110,8 +5110,8 @@ details[open] summary::before {
 }
 
 .case-text h2 {
-    color: #000;          /* schwarz (oder #111 für softer look) */
-    text-align: left;     /* linksbündig */
+    color: #000;          /* schwarz (oder #111 fÃ¼r softer look) */
+    text-align: left;     /* linksbÃ¼ndig */
     margin-top: 0;        /* entfernt extra Abstand oben */
 }
 
@@ -5131,15 +5131,15 @@ details[open] summary::before {
 
 /* Carousel Logos schmaler und kompakter */
 .carousel .item img {
-    height: 50px;       /* Höhe der Logos reduzieren */
+    height: 50px;       /* HÃ¶he der Logos reduzieren */
     width: auto;        /* proportional skalieren */
     margin: 0 15px;     /* horizontaler Abstand zwischen Logos */
     object-fit: contain; /* Logos bleiben sauber und verzerrungsfrei */
 }
 
 .carousel {
-    height: 80px;        /* passt zur Logo-Höhe */
-    overflow: hidden;    /* keine Überstände */
+    height: 80px;        /* passt zur Logo-HÃ¶he */
+    overflow: hidden;    /* keine ÃœberstÃ¤nde */
 }
 .carousel .carousel-track {
     display: flex;
@@ -5173,7 +5173,7 @@ details[open] summary::before {
     font-weight: 500;
 }
 .case-section p {
-    font-size: 16px;      /* einheitliche Schriftgröße */
+    font-size: 16px;      /* einheitliche SchriftgrÃ¶ÃŸe */
     color: #222;          /* gleiche Textfarbe */
     line-height: 1.6;
 }
@@ -5185,41 +5185,41 @@ details[open] summary::before {
 }
 
 .logo-row img {
-    height: 64px;        /* alle Logos größer */
+    height: 64px;        /* alle Logos grÃ¶ÃŸer */
     width: auto;
     object-fit: contain;
 }
 
-/* Feuerwehr-Logo gezielt größer */
+/* Feuerwehr-Logo gezielt grÃ¶ÃŸer */
 .logo-row img[alt*="Fire"] {
     height: 120px;
 }
 
-/* 🔹 Gesamte Seite Hintergrund */
+/* ðŸ”¹ Gesamte Seite Hintergrund */
 body {
     background-color: #000 !important;  /* schwarzer Hintergrund */
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    color: #fff !important;              /* Standardtext weiß */
+    color: #fff !important;              /* Standardtext weiÃŸ */
 }
 
-/* 🔹 Use-Case Section Hintergrund */
+/* ðŸ”¹ Use-Case Section Hintergrund */
 .use-case-section {
     background-color: #000 !important;  /* Schwarz erzwingen */
     padding: 80px 20px;
 }
 
-/* 🔹 Überschrift Importance */
+/* ðŸ”¹ Ãœberschrift Importance */
 .use-case-section .section-heading {
-    color: #fff !important;             /* Weiß erzwingen */
+    color: #fff !important;             /* WeiÃŸ erzwingen */
     font-size: 2.5rem;
     font-weight: 600;
     text-align: center;
     margin-bottom: 24px;
 }
 
-/* 🔹 Untertitel hell (#ddd) */
+/* ðŸ”¹ Untertitel hell (#ddd) */
 .use-case-section .section-subheading {
     text-align: center;
     font-size: 1.1rem;
@@ -5227,16 +5227,16 @@ body {
     color: #ddd !important;
 }
 
-/* 🔹 Grid */
+/* ðŸ”¹ Grid */
 .use-case-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
 }
 
-/* 🔹 Karten */
+/* ðŸ”¹ Karten */
 .use-case-card {
-    background-color: #fff !important;  /* weiße Karten */
+    background-color: #fff !important;  /* weiÃŸe Karten */
     color: #000 !important;             /* schwarzer Text */
     border-radius: 12px;
     padding: 24px;
@@ -5260,9 +5260,9 @@ body {
     line-height: 1.6;
 }
 
-/* 🔹 Karten: Hintergrund weiß, Text schwarz */
+/* ðŸ”¹ Karten: Hintergrund weiÃŸ, Text schwarz */
 .use-case-card {
-    background-color: #fff !important;  /* weiße Karten */
+    background-color: #fff !important;  /* weiÃŸe Karten */
     color: #000 !important;             /* schwarzer Text */
     border-radius: 12px;
     padding: 24px;
@@ -5270,7 +5270,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🔹 Überschrift in den Karten */
+/* ðŸ”¹ Ãœberschrift in den Karten */
 .use-case-card h3 {
     font-size: 1.3rem;
     font-weight: 600;
@@ -5278,7 +5278,7 @@ body {
     color: #000 !important;   /* schwarz erzwingen */
 }
 
-/* 🔹 Paragraphen in den Karten */
+/* ðŸ”¹ Paragraphen in den Karten */
 .use-case-card p {
     font-size: 1rem;
     line-height: 1.6;
@@ -5289,7 +5289,7 @@ body {
 body > section,
 body > .career-section,
 body > .use-case-section {
-    padding-top: 200px; /* Höhe des Headers */
+    padding-top: 200px; /* HÃ¶he des Headers */
 }
 
 
@@ -5481,7 +5481,7 @@ img, video, iframe {
     margin-left: 4rem;
 }
 
-/* 📱 Mobile fix */
+/* ðŸ“± Mobile fix */
 @media (max-width: 1050px) {
     .hero-content {
         padding-left: 1.5rem;
@@ -5502,7 +5502,7 @@ img, video, iframe {
     opacity: 0;
     transform: translateY(80px);
     transition: opacity 1.2s ease, transform 1.2s ease;
-    background: #fff;         /* weißer Hintergrund */
+    background: #fff;         /* weiÃŸer Hintergrund */
     color: #000 !important;}
 
 .hero-secondary h2,
@@ -5959,7 +5959,7 @@ section.product-section.visible{
 
 .process-ani-svg-wrap {
     height: 260px;          /* control layout height here */
-    overflow: hidden;       /* hide SVG’s intrinsic box */
+    overflow: hidden;       /* hide SVGâ€™s intrinsic box */
 }
 
 .process-ani-diagram {
@@ -5981,7 +5981,7 @@ section.product-section.visible{
 
 .applications.visible {
     opacity: 1;
-    transform: translateY(-100px); /* ← move UP visually */
+    transform: translateY(-100px); /* â† move UP visually */
 }
 
 .large-number-ani-diagram {
@@ -5989,7 +5989,7 @@ section.product-section.visible{
     font-size: 1.4rem;
     font-weight: 600;
     color: black; /* Gold */
-    text-align: center; /* zentriert, wie gewünscht */
+    text-align: center; /* zentriert, wie gewÃ¼nscht */
     margin-bottom: 0.5rem;
 }
 
@@ -6035,7 +6035,7 @@ section.product-section.visible{
 
 .news-pill-grid-ani-diagram.visible {
     opacity: 1;
-    transform: translateY(-100px); /* ← move UP visually */}
+    transform: translateY(-100px); /* â† move UP visually */}
 
 
 
@@ -6241,11 +6241,11 @@ section.product-section.visible{
 
 .news-pill-ani-diagram {
     display: flex;
-    flex-direction: column; /* 👈 forces content to open downward */
+    flex-direction: column; /* ðŸ‘ˆ forces content to open downward */
 }
 
 .news-pill-grid-ani-diagram {
-    align-items: start; /* 👈 prevents height stretching */
+    align-items: start; /* ðŸ‘ˆ prevents height stretching */
 }
 .news-pill-ani-diagram {
     position: relative; /* anchor for absolute content */
@@ -6290,7 +6290,7 @@ section.product-section.visible{
     gap: 24px;
 }
 
-/* As soon as 3 columns don’t fit → stack everything */
+/* As soon as 3 columns donâ€™t fit â†’ stack everything */
 @media (max-width: 950px) {
     .problem-application-container {
         grid-template-columns: 1fr;
@@ -6765,7 +6765,7 @@ section.product-section.visible{
 .product-section {
     position: relative;
     width: 100%;
-    height: 120vh;            /* 🔧 control section height here */
+    height: 120vh;            /* ðŸ”§ control section height here */
     overflow: hidden;
     background: #000;
 }
@@ -6854,7 +6854,7 @@ section.product-section.visible{
     overflow: hidden;
 }
 
-/* 🔑 background moved here */
+/* ðŸ”‘ background moved here */
 .product-bg {
     position: absolute;
     inset: 0;
@@ -7161,7 +7161,7 @@ body.modal-open {
     text-align: center;
 }
 
-/* Überschrift + Einleitung */
+/* Ãœberschrift + Einleitung */
 
 
 .product-header p {
@@ -7182,7 +7182,7 @@ body.modal-open {
     height: auto;
     display: block;
     margin: 0 auto 6rem auto;
-    border-radius: 12px; /* optional für softer Look */
+    border-radius: 12px; /* optional fÃ¼r softer Look */
 }
 
 /* Features gestapelt */
@@ -7273,11 +7273,11 @@ body.modal-open {
 
 .product-features {
     margin-top: 4rem;      /* genug Abstand zum Bild */
-    text-align: left;       /* linksbündig für bessere Lesbarkeit */
+    text-align: left;       /* linksbÃ¼ndig fÃ¼r bessere Lesbarkeit */
 }
 
 .feature h3 {
-    color: #1d1d1f;         /* kräftiges Apple-like Dark */
+    color: #1d1d1f;         /* krÃ¤ftiges Apple-like Dark */
     font-weight: 700;
 }
 
@@ -7337,7 +7337,7 @@ body.modal-open {
     color: #444;
 }
 
-/* Info-Blöcke */
+/* Info-BlÃ¶cke */
 .process-info-blocks {
     display: flex;
     flex-direction: column;
@@ -7428,19 +7428,19 @@ body.modal-open {
     color: #444;
 }
 
-/* Kreis für jeden Step */
+/* Kreis fÃ¼r jeden Step */
 .workflow-step::before {
     content: '';
     position: absolute;
     left: 10px;
-    top: 0.6rem; /* passend zur Überschrift */
+    top: 0.6rem; /* passend zur Ãœberschrift */
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: #1d1d1f;
 }
 
-/* Separate Info-Blöcke */
+/* Separate Info-BlÃ¶cke */
 .process-info-blocks {
     display: flex;
     flex-direction: column;
@@ -7593,7 +7593,7 @@ body.modal-open {
     margin: 0 auto;
 }
 
-/* Überschrift */
+/* Ãœberschrift */
 .contact-title {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 600;
@@ -7625,8 +7625,8 @@ body.modal-open {
     transform: translateY(-2px);
 }
 .contact-title {
-    font-size: clamp(1.5rem, 3.5vw, 2.2rem); /* größer als vorher */
-    font-weight: 700;                  /* kräftiger, Premium */
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem); /* grÃ¶ÃŸer als vorher */
+    font-weight: 700;                  /* krÃ¤ftiger, Premium */
     color: #1d1d1f;                    /* Apple-like Schwarz */
     margin-bottom: 1rem;
 }
@@ -7717,13 +7717,13 @@ body.modal-open {
     display: flex;
     justify-content: space-between;
     gap: 20px; /* Abstand zwischen Karten */
-    flex-wrap: wrap; /* für Mobile */
+    flex-wrap: wrap; /* fÃ¼r Mobile */
     margin-top: 40px;
 }
 
 /* Karten */
 .vs-feature-card {
-    flex: 1 1 180px; /* gleichmäßig verteilt, mindestens 180px */
+    flex: 1 1 180px; /* gleichmÃ¤ÃŸig verteilt, mindestens 180px */
     background: #fff;
     padding: 20px;
     border-radius: 12px;
@@ -7775,7 +7775,7 @@ body.modal-open {
 /* Feature-Karten */
 .vs-feature-card {
     flex: 1 1 180px;       /* gleiche Breite, flexibel */
-    background: #fff;      /* weiß */
+    background: #fff;      /* weiÃŸ */
     color: #000;           /* Schrift schwarz */
     padding: 25px;
     border-radius: 16px;   /* abgerundete Ecken */
@@ -7790,7 +7790,7 @@ body.modal-open {
     box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
-/* Überschrift */
+/* Ãœberschrift */
 .vs-feature-card h3 {
     margin-bottom: 12px;
     font-weight: 600;
@@ -7813,10 +7813,10 @@ body.modal-open {
 }
 .vs-product-header h2,
 .vs-product-header p {
-    color: #000; /* Überschrift und Untertitel schwarz */
+    color: #000; /* Ãœberschrift und Untertitel schwarz */
 }
 
-/* Sektion Hintergrund & Überschrift */
+/* Sektion Hintergrund & Ãœberschrift */
 .feature-lines {
     background-color: #f5f5f5; /* hellgrau wie Apple */
     padding: 80px 20px;
@@ -7910,7 +7910,7 @@ body.modal-open {
     font-weight: 600;
 }
 
-/* Grid für die vier Feature-Boxen */
+/* Grid fÃ¼r die vier Feature-Boxen */
 .features-grid {
     display: flex;
     flex-wrap: wrap;
@@ -7960,14 +7960,14 @@ body.modal-open {
     .feature-card { flex: 1 1 100%; }
 }
 
-/* Übersicht-Sektion hellgrau mit weißen Karten */
+/* Ãœbersicht-Sektion hellgrau mit weiÃŸen Karten */
 #overview {
     background-color: #f5f5f5; /* hellgrau */
     padding: 80px 20px;
     text-align: center;
 }
 
-/* Überschrift */
+/* Ãœberschrift */
 #overview h2 {
     color: #000; /* schwarz */
     font-size: 2rem;
@@ -7992,7 +7992,7 @@ body.modal-open {
 
 /* Einzelne Karten */
 #overview .card {
-    background-color: #fff; /* weiße Karten */
+    background-color: #fff; /* weiÃŸe Karten */
     padding: 40px 25px;
     border-radius: 16px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
@@ -8052,7 +8052,7 @@ body.modal-open {
 
 /* Karten */
 .use-case-card {
-    background-color: #fff !important; /* weiße Boxen */
+    background-color: #fff !important; /* weiÃŸe Boxen */
     padding: 40px 25px;
     border-radius: 16px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
@@ -8109,8 +8109,8 @@ body.modal-open {
 .hero-bg, .product-box img {
     display: block;
     width: 100%;
-    height: 1000px;          /* Höhe des Containers */
-    object-fit: cover;      /* Bild füllt Container */
+    height: 1000px;          /* HÃ¶he des Containers */
+    object-fit: cover;      /* Bild fÃ¼llt Container */
     transform: translateY(800px); /* Bild nach unten verschieben */
     transition: transform 0.3s ease;
 }
@@ -8142,7 +8142,7 @@ body.modal-open {
     background: #ffffff;
 }
 
-/* Grid für die Produkt-Boxes */
+/* Grid fÃ¼r die Produkt-Boxes */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 nebeneinander */
@@ -8182,7 +8182,7 @@ body.modal-open {
     padding: 32px;
 }
 
-/* Überschrift */
+/* Ãœberschrift */
 .product-content h3 {
     font-size: 1.6rem;
     font-weight: 600;
@@ -8196,7 +8196,7 @@ body.modal-open {
     color: #555;
 }
 
-/* Optional: zentrieren für kleinere Bildschirme */
+/* Optional: zentrieren fÃ¼r kleinere Bildschirme */
 @media (max-width: 768px) {
     .products-grid {
         grid-template-columns: 1fr;
@@ -8210,8 +8210,8 @@ body.modal-open {
     height: 260px;
     object-fit: cover; /* statt cover, damit nichts gestreckt oder abgeschnitten wird */
     background: #fff;
-    image-rendering: auto; /* stellt sicher, dass Browser die Originalqualität nutzt */
-    filter: none; /* keine Unschärfe */
+    image-rendering: auto; /* stellt sicher, dass Browser die OriginalqualitÃ¤t nutzt */
+    filter: none; /* keine UnschÃ¤rfe */
 }
 
 
@@ -8224,7 +8224,7 @@ body.modal-open {
     padding: 80px 6vw;
     background: #ffffff;
     font-family: 'Inter', sans-serif;
-    color: #111; /* schwarze Schrift für Features */
+    color: #111; /* schwarze Schrift fÃ¼r Features */
 }
 
 /* ============================
@@ -8250,7 +8250,7 @@ body.modal-open {
     height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
-    filter: none; /* keine Unschärfe */
+    filter: none; /* keine UnschÃ¤rfe */
 }
 
 .thumbnail-row {
@@ -8345,7 +8345,7 @@ body.modal-open {
     padding: 80px 6vw;
     background: #f2f2f2; /* hellgrau */
     font-family: 'Inter', sans-serif;
-    color: #111; /* schwarze Schrift für Features */
+    color: #111; /* schwarze Schrift fÃ¼r Features */
 }
 
 /* ============================
@@ -8371,7 +8371,7 @@ body.modal-open {
     height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
-    filter: none; /* keine Unschärfe */
+    filter: none; /* keine UnschÃ¤rfe */
 }
 
 .thumbnail-row {
@@ -8410,8 +8410,8 @@ body.modal-open {
 }
 
 .features-row .vs-feature-card {
-    flex: 1 1 calc(20% - 16px); /* 5 Karten nebeneinander über gesamte Breite */
-    background: #ffffff; /* weiße Karten */
+    flex: 1 1 calc(20% - 16px); /* 5 Karten nebeneinander Ã¼ber gesamte Breite */
+    background: #ffffff; /* weiÃŸe Karten */
     padding: 24px;
     border-radius: 8px;
     text-align: center;
@@ -8469,7 +8469,7 @@ body.modal-open {
     font-size: 2rem;
     font-weight: 600;
     color: #000;
-    margin-bottom: 8px; /* Abstand zur Sub-Überschrift */
+    margin-bottom: 8px; /* Abstand zur Sub-Ãœberschrift */
 }
 
 .features-subtitle {
@@ -8486,7 +8486,7 @@ body.modal-open {
 }
 
 .vs-feature-card {
-    flex: 1 1 calc(20% - 24px); /* 5 Karten nebeneinander auf großer Breite */
+    flex: 1 1 calc(20% - 24px); /* 5 Karten nebeneinander auf groÃŸer Breite */
     background: #fff;
     padding: 24px;
     border-radius: 8px;
@@ -8515,21 +8515,21 @@ body.modal-open {
 .features-row {
     display: flex;
     gap: 24px; /* Abstand zwischen den Karten */
-    justify-content: space-between; /* gleichmäßig verteilen */
+    justify-content: space-between; /* gleichmÃ¤ÃŸig verteilen */
     flex-wrap: nowrap; /* alle 5 nebeneinander */
 }
 
 .vs-feature-card {
-    flex: 1; /* gleiche Breite für alle */
+    flex: 1; /* gleiche Breite fÃ¼r alle */
     background: #fff;
     padding: 24px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    min-width: 0; /* verhindert Überlauf */
+    min-width: 0; /* verhindert Ãœberlauf */
     text-align: center;
 }
 
-/* Einheitlicher hellgrauer Hintergrund für beide Sections */
+/* Einheitlicher hellgrauer Hintergrund fÃ¼r beide Sections */
 .vs-product-section.gallery-section,
 .vs-product-section.features-section {
     background-color: #f5f5f7; /* gleiche hellgrau Farbe */
@@ -8537,7 +8537,7 @@ body.modal-open {
     padding-bottom: 60px; /* etwas kleinerer Abstand unten */
 }
 
-/* Features horizontal über gesamte Breite verteilen */
+/* Features horizontal Ã¼ber gesamte Breite verteilen */
 .features-row {
     display: flex;
     justify-content: space-between;
@@ -8619,12 +8619,12 @@ body.modal-open {
 
 /* Mobile Styles */
 @media (max-width: 900px) {
-    /* Navigation für mobile Ansicht */
+    /* Navigation fÃ¼r mobile Ansicht */
     nav ul li.language-switch {
         display: flex;          /* Links nebeneinander */
         justify-content: center; /* optional zentrieren */
         gap: 8px;               /* Abstand zwischen DE und EN */
-        padding: 0;             /* Padding anpassen falls nötig */
+        padding: 0;             /* Padding anpassen falls nÃ¶tig */
     }
 
     nav ul li.language-switch a {
@@ -8648,10 +8648,9 @@ body.modal-open {
     nav ul li.language-switch a + a::before {
         margin: 0 4px;        /* Abstand links/rechts */
         color: inherit;       /* gleiche Farbe wie Links */
-        font-size: 1em;       /* gleiche Höhe wie Text */
+        font-size: 1em;       /* gleiche HÃ¶he wie Text */
         line-height: 1;       /* gleiche Linie wie Text */
         vertical-align: middle;
     }
 }
-
 
