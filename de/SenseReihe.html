@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Sense Reihe – Muniqo Performante</title>
+  <link rel="icon" href="../assets/images/Logo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/shared.css">
+  <style>
+  /* FIXED VIDEO BACKGROUND */
+    #videoFixed{position:fixed;inset:0;z-index:0;width:100%;height:100%;filter:brightness(.95);transition:opacity .6s ease;display:block;}
+    #videoFixedOverlay{position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(to bottom,rgba(9,9,10,.4) 0%,rgba(9,9,10,.1) 40%,rgba(9,9,10,.8) 100%);transition:opacity .6s ease;}
+
+    /* HERO */
+    .vs-hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 64px 56px;overflow:hidden;background:transparent;}
+    .vs-hero-content{position:relative;z-index:2;max-width:700px;}
+    .vs-hero-tag{font-family:var(--font-cond);font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;opacity:0;animation:fadeUp .8s ease .3s forwards;}
+    .vs-hero-title{font-family:var(--font-display);font-size:clamp(56px,7vw,110px);font-weight:700;line-height:.95;letter-spacing:-.02em;color:var(--white);opacity:0;animation:fadeUp 1.2s cubic-bezier(.16,1,.3,1) .5s forwards;}
+    .vs-hero-title em{font-style:normal;font-weight:300;color:var(--white-dim);display:block;font-size:.55em;letter-spacing:.05em;margin-top:6px;}
+    .vs-hero-taglines{display:flex;flex-direction:column;gap:2px;margin-top:18px;opacity:0;animation:fadeUp .8s ease .9s forwards;max-width:600px;}
+    .vs-hero-taglines p{font-family:var(--font-cond);font-size:clamp(15px,1.6vw,20px);letter-spacing:.08em;color:var(--white-dim);line-height:1.45;}
+    .vs-hero-sub{font-size:13px;color:var(--white-dim);margin-top:14px;opacity:0;animation:fadeUp .8s ease 1.2s forwards;}
+    .vs-hero-pills{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease 1.4s forwards;}
+    .vs-hero-pill{font-family:var(--font-cond);font-size:13px;letter-spacing:.25em;text-transform:uppercase;padding:10px 22px;border:1px solid rgba(255,255,255,.35);border-radius:999px;color:rgba(244,242,238,.75);background:rgba(255,255,255,.07);backdrop-filter:blur(8px);transition:border-color .3s,color .3s,background .3s;text-decoration:none;}
+    .vs-hero-pill:hover{border-color:var(--accent);color:var(--white);background:rgba(255,255,255,.12);}
+
+    /* OVERVIEW SECTION */
+    .overview-section{position:relative;z-index:1;padding:80px 64px 100px;background:rgba(9,9,10,.35);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.07);}
+    .overview-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1400px;margin:0 auto;}
+    .overview-eyebrow{font-family:var(--font-cond);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .overview-title{font-family:var(--font-display);font-size:clamp(32px,4vw,56px);font-weight:300;color:var(--white);margin-bottom:0;line-height:1.2;}
+    .overview-intro{font-size:18px;color:var(--white-dim);line-height:1.7;margin:0;}
+    .overview-copy{display:flex;flex-direction:column;align-items:flex-start;gap:20px;}
+    .overview-apps-link{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-cond);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:7px;transition:gap .3s,border-color .3s,color .3s;}
+    .overview-apps-link:hover{gap:16px;border-color:var(--accent);color:var(--accent);}
+    @media(max-width:900px){.overview-wrap{grid-template-columns:1fr;gap:32px;}}
+    .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.07);border-radius:14px;overflow:hidden;}
+    .product-card{position:relative;background:rgba(9,9,10,.6);backdrop-filter:blur(12px);padding:48px 40px;transition:background .4s;display:flex;flex-direction:column;gap:20px;min-height:280px;text-decoration:none;color:inherit;}
+    .product-card:hover{background:rgba(9,9,10,.85);}
+    .product-card .pc-icon{width:56px;height:56px;color:var(--accent);transition:transform .5s cubic-bezier(.16,1,.3,1);}
+    .product-card:hover .pc-icon{transform:translateY(-4px) rotate(-3deg);}
+    .product-card .pc-num{position:absolute;top:32px;right:40px;font-family:var(--font-display);font-size:13px;letter-spacing:.15em;color:var(--white-faint);}
+    .product-card h3{font-family:var(--font-display);font-size:clamp(22px,2.4vw,30px);font-weight:400;color:var(--white);line-height:1.15;letter-spacing:-.01em;}
+    .product-card h3 em{font-style:normal;color:var(--accent);font-weight:600;}
+    .product-card p{font-size:14px;color:var(--white-dim);line-height:1.7;}
+    .product-card .pc-link{margin-top:auto;font-family:var(--font-cond);font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--white);display:inline-flex;align-items:center;gap:8px;transition:gap .3s,color .3s;}
+    .product-card:hover .pc-link{gap:14px;color:var(--accent);}
+
+    /* PRODUCT DETAIL SECTIONS */
+    .product-detail{position:relative;z-index:1;padding:120px 64px;background:transparent;border-top:1px solid rgba(255,255,255,.07);}
+    .product-detail.alt{background:rgba(9,9,10,.45);backdrop-filter:blur(10px);}
+    #predictive{border-bottom:1px solid rgba(255,255,255,.07);}
+    .pd-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center;max-width:1400px;margin:0 auto;}
+    .pd-left{display:block;}
+    .pd-num-row{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+    .pd-num{font-family:var(--font-display);font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.2em;}
+    .pd-icon{width:22px;height:22px;color:var(--accent);flex-shrink:0;}
+    .pd-name{font-family:var(--font-display);font-size:clamp(36px,5vw,68px);font-weight:700;color:var(--white);line-height:.95;letter-spacing:-.02em;margin-bottom:16px;}
+    .pd-name em{font-style:normal;font-weight:300;color:var(--white-dim);display:block;font-size:.5em;letter-spacing:.05em;margin-top:8px;}
+    .pd-tagline{font-family:var(--font-cond);font-size:18px;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;}
+    .pd-img-wrap{margin-top:32px;position:relative;display:flex;align-items:center;justify-content:center;padding:0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;max-width:420px;}
+    .pd-img-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,rgba(200,168,75,.3),transparent);pointer-events:none;}
+    .pd-img-wrap::after{content:'';pointer-events:none;}
+    .pd-img-wrap img{width:100%;height:auto;display:block;position:relative;z-index:1;filter:drop-shadow(0 40px 60px rgba(0,0,0,.9)) drop-shadow(0 8px 24px rgba(0,0,0,.7));transform:scale(1.3);transition:transform .7s cubic-bezier(.16,1,.3,1),filter .5s;}
+    .pd-img-wrap:hover img{transform:scale(1.33) translateY(-4px);filter:drop-shadow(0 48px 70px rgba(0,0,0,.95)) drop-shadow(0 10px 28px rgba(0,0,0,.75));}
+    .pd-right{padding-top:44px;}
+    .pd-desc{font-size:16px;color:var(--white);line-height:1.75;margin-bottom:48px;font-weight:300;}
+    .pd-specs-title{font-family:var(--font-cond);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--white-dim);margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.1);}
+    .pd-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.07);border-radius:10px;overflow:hidden;}
+    .pd-spec{background:rgba(9,9,10,.55);backdrop-filter:blur(8px);padding:28px 24px;}
+    .pd-spec h4{font-family:var(--font-display);font-size:14px;font-weight:400;color:var(--white);margin-bottom:8px;}
+    .pd-spec p{font-size:12.5px;color:var(--white-dim);line-height:1.65;}
+
+    /* PRODUCT TABS — editorial redesign */
+    .product-tabs-section{
+      position:relative;z-index:1;
+      background:var(--black);
+      border-top:none;
+      overflow:hidden;
+    }
+
+    /* ── Header strip ── */
+    .pt-header{
+      padding:80px 64px 0;
+      max-width:none;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:40px;
+      margin-bottom:0;
+    }
+    .pt-header-left{}
+    .pt-eyebrow{font-family:var(--font-cond);font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+    .pt-title{font-family:var(--font-display);font-size:clamp(28px,3.2vw,46px);font-weight:300;color:var(--white);line-height:1.15;max-width:520px;}
+
+    /* ── Selector rail (horizontal product switcher) ── */
+    .pt-rail{
+      display:flex;
+      border-top:1px solid rgba(255,255,255,.08);
+      margin:48px 0 0;
+    }
+    .pt-tab{
+      flex:1;
+      background:none;
+      border:none;
+      border-right:1px solid rgba(255,255,255,.06);
+      padding:36px 44px 30px;
+      text-align:left;
+      position:relative;
+      transition:background .3s;
+      overflow:hidden;
+    }
+    .pt-tab:last-child{border-right:none;}
+    .pt-tab::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:var(--accent);
+      transform:scaleX(0);transform-origin:left;
+      transition:transform .45s cubic-bezier(.16,1,.3,1);
+    }
+    .pt-tab.active::before{transform:scaleX(1);}
+    .pt-tab:hover{background:rgba(255,255,255,.04);}
+    .pt-tab-num{
+      display:block;
+      font-family:var(--font-cond);font-size:12px;letter-spacing:.28em;
+      color:rgba(200,168,75,.65);margin-bottom:12px;
+      transition:color .3s;
+    }
+    .pt-tab.active .pt-tab-num{color:var(--accent);}
+    .pt-tab-name{
+      display:block;
+      font-family:var(--font-display);font-size:clamp(16px,1.5vw,20px);font-weight:600;
+      color:rgba(244,242,238,.6);letter-spacing:-.01em;
+      transition:color .3s;line-height:1.2;
+    }
+    .pt-tab.active .pt-tab-name,.pt-tab:hover .pt-tab-name{color:var(--white);}
+    .pt-tab-sub{
+      display:block;margin-top:6px;
+      font-family:var(--font-cond);font-size:11px;letter-spacing:.12em;
+      color:rgba(244,242,238,.35);text-transform:uppercase;
+      transition:color .3s;
+    }
+    .pt-tab.active .pt-tab-sub{color:rgba(244,242,238,.55);}
+
+    /* ── Main body: full-width asymmetric split ── */
+    .pt-body{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      min-height:560px;
+      border-top:1px solid rgba(255,255,255,.06);
+      position:relative;
+    }
+    .pt-body::after{
+      content:'';position:absolute;top:0;bottom:0;left:50%;
+      width:1px;background:rgba(255,255,255,.06);pointer-events:none;
+    }
+
+    /* LEFT: image column */
+    .pt-img-col{
+      position:relative;
+      background:rgba(255,255,255,.018);
+      display:flex;align-items:center;justify-content:center;
+      padding:0;
+      overflow:hidden;
+      align-self:start;
+      aspect-ratio:1;
+    }
+    .pt-img-col::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,168,75,.045) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    .pt-img-wrap{
+      position:relative;z-index:1;
+      width:100%;height:100%;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .pt-360-wrap{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;}
+    .pt-360-video{width:100%;height:100%;display:block;}
+    .pt-img-badge{
+      position:absolute;bottom:24px;left:24px;z-index:2;
+      display:flex;align-items:center;gap:10px;
+      padding:10px 20px;
+      background:rgba(9,9,10,.75);backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.09);border-radius:4px;
+      font-family:var(--font-cond);font-size:13px;letter-spacing:.22em;
+      text-transform:uppercase;color:rgba(244,242,238,.5);
+    }
+    .pt-img-badge svg{width:15px;height:15px;color:var(--accent);}
+    .pt-360-hint{
+      position:absolute;bottom:24px;right:24px;z-index:2;
+      display:flex;align-items:center;gap:8px;
+      padding:8px 16px;
+      background:rgba(9,9,10,.75);backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.09);border-radius:4px;
+      font-family:var(--font-cond);font-size:12px;letter-spacing:.2em;
+      text-transform:uppercase;color:rgba(244,242,238,.5);
+      pointer-events:none;user-select:none;
+    }
+    .pt-360-hint svg{width:16px;height:16px;}
+
+    /* RIGHT: content column */
+    .pt-content-col{
+      padding:56px 60px 56px 64px;
+      display:flex;flex-direction:column;justify-content:center;
+    }
+
+    .pt-panel{display:none;}
+    .pt-panel.active{display:flex;flex-direction:column;gap:0;animation:ptFadeIn .4s cubic-bezier(.16,1,.3,1);position:relative;}
+    @keyframes ptFadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+    .pt-num-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+    .pt-num{font-family:var(--font-cond);font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.3em;text-transform:uppercase;}
+    .pt-icon{width:18px;height:18px;color:rgba(200,168,75,.6);flex-shrink:0;}
+
+    .pt-name{
+      font-family:var(--font-display);
+      font-size:clamp(36px,4.5vw,60px);
+      font-weight:700;color:var(--white);
+      line-height:.92;letter-spacing:-.03em;
+      margin-bottom:0;
+    }
+    .pt-name em{
+      font-style:normal;font-weight:300;
+      color:rgba(244,242,238,.4);
+      display:block;font-size:.50em;
+      letter-spacing:.04em;margin-top:10px;
+      font-family:var(--font-cond);text-transform:uppercase;
+    }
+
+    .pt-tagline{
+      font-family:var(--font-cond);font-size:17px;
+      letter-spacing:.22em;color:var(--accent);
+      text-transform:uppercase;
+      margin:24px 0;
+      display:flex;align-items:center;gap:10px;
+    }
+    .pt-tagline::after{content:'';flex:1;height:1px;background:rgba(200,168,75,.2);}
+
+    .pt-desc{
+      font-size:15px;color:rgba(244,242,238,.7);
+      line-height:1.8;margin-bottom:40px;font-weight:300;
+      max-width:480px;
+    }
+    .pt-name-row{display:contents;}
+    .pt-cta-btn{
+      position:absolute;top:-32px;right:0;
+      display:inline-flex;align-items:center;
+      background:linear-gradient(135deg,rgba(200,168,75,.45),rgba(200,168,75,.15));color:var(--accent);border:1px solid rgba(200,168,75,.55);backdrop-filter:blur(12px);
+      font-family:var(--font-cond);font-size:11px;letter-spacing:.18em;
+      text-transform:uppercase;font-weight:900;
+      padding:8px 18px;border:none;cursor:pointer;
+      text-decoration:none;white-space:nowrap;
+      border-radius:999px;
+      transition:opacity .2s;
+    }
+    .pt-cta-btn:hover{opacity:.82;}
+
+    /* Specs: horizontal list instead of 2x2 grid */
+    .pt-specs-title{
+      font-family:var(--font-cond);font-size:14px;letter-spacing:.35em;
+      text-transform:uppercase;color:var(--accent);
+      margin-bottom:16px;
+    }
+    .pt-specs{
+      display:flex;flex-direction:column;gap:0;
+      border:1px solid rgba(255,255,255,.07);border-radius:8px;overflow:hidden;
+    }
+    .pt-spec{
+      display:grid;grid-template-columns:180px 1fr;
+      gap:20px;align-items:baseline;
+      padding:16px 22px;
+      border-bottom:1px solid rgba(255,255,255,.05);
+      transition:background .2s;
+    }
+    .pt-spec:last-child{border-bottom:none;}
+    .pt-spec:hover{background:rgba(255,255,255,.025);}
+    .pt-spec h4{
+      font-family:var(--font-display);font-size:14px;font-weight:400;
+      color:var(--white);letter-spacing:.01em;white-space:nowrap;
+    }
+    .pt-spec p{font-size:14px;color:rgba(244,242,238,.45);line-height:1.6;}
+
+    /* GALLERY */
+
+    /* WORKFLOW */
+    .workflow-section{padding:60px 64px 50px;background:linear-gradient(to bottom,rgba(9,9,10,0) 0%,rgba(9,9,10,.72) 26%,var(--black) 52%);border-top:none;position:relative;z-index:1;}
+    .workflow-eyebrow{font-family:var(--font-cond);font-size:16px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .workflow-title{font-family:var(--font-display);font-size:clamp(28px,3.5vw,48px);font-weight:300;color:var(--white);margin-bottom:64px;}
+    .workflow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+    .workflow-steps::before{content:'';position:absolute;top:20px;left:0;right:0;height:1px;background:rgba(255,255,255,.1);}
+    .workflow-step{padding:48px 32px 32px;position:relative;}
+    .workflow-num{font-family:var(--font-display);font-size:13px;font-weight:600;color:var(--accent);margin-bottom:20px;letter-spacing:.1em;}
+    .workflow-step h3{font-family:var(--font-display);font-size:22px;font-weight:400;color:var(--white);margin-bottom:12px;line-height:1.35;}
+    .workflow-step p{font-size:16px;color:var(--white-dim);line-height:1.7;}
+    .workflow-dot{position:absolute;top:16px;left:32px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(200,168,75,.5);}
+    @keyframes workflowFadeIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+    .workflow-steps.switching{animation:workflowFadeIn .4s cubic-bezier(.16,1,.3,1);}
+    .workflow-header.switching{animation:workflowFadeIn .3s cubic-bezier(.16,1,.3,1);}
+
+    /* PROBLEMS */
+    .problems-section{padding:100px 64px;background:rgba(9,9,10,.5);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.07);}
+    .problems-title{font-family:var(--font-display);font-size:clamp(28px,3.5vw,48px);font-weight:300;color:var(--white);margin-bottom:64px;max-width:none;line-height:1.3;}
+    .problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .problem-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;backdrop-filter:blur(8px);transition:border-color .3s,transform .4s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;}
+    .problem-card:hover{border-color:rgba(255,255,255,.18);transform:translateY(-4px);}
+    .problem-card img{width:100%;height:180px;object-fit:contain;background:#09090a;filter:brightness(.85);transition:filter .4s;}
+    .problem-card:hover img{filter:brightness(.9);}
+    .problem-card-body{padding:28px 28px 32px;flex:1;display:flex;flex-direction:column;}
+    .problem-card h3{font-family:var(--font-display);font-size:17px;font-weight:400;color:var(--white);margin-bottom:10px;}
+    .problem-card p{font-size:13px;color:var(--white-dim);line-height:1.7;}
+    .problem-more{display:none;}
+
+
+
+    /* APPLICATIONS */
+    .apps-section{padding:120px 64px;background:rgba(9,9,10,.5);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.07);position:relative;z-index:1;}
+    .apps-eyebrow{font-family:var(--font-cond);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .apps-title{font-family:var(--font-display);font-size:clamp(28px,3.5vw,48px);font-weight:300;color:var(--white);margin-bottom:16px;}
+    .apps-sub{font-size:14px;color:var(--white-dim);max-width:640px;line-height:1.7;margin-bottom:64px;}
+    .apps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.07);border-radius:14px;overflow:hidden;}
+    .app-card{background:rgba(9,9,10,.6);backdrop-filter:blur(12px);padding:24px 32px 88px;position:relative;overflow:hidden;transition:background .35s;display:flex;flex-direction:column;}
+    .app-card::before{content:'';position:absolute;top:0;left:0;width:0;height:1px;background:var(--accent);transition:width .5s cubic-bezier(.16,1,.3,1);}
+    .app-card:hover{background:rgba(9,9,10,.82);}
+    .app-card:hover::before{width:100%;}
+    .app-card-num{position:absolute;bottom:12px;right:20px;font-family:var(--font-display);font-size:72px;font-weight:700;line-height:1;letter-spacing:-.04em;color:rgba(200,168,75,.06);pointer-events:none;user-select:none;transition:color .35s;}
+    .app-card:hover .app-card-num{color:rgba(200,168,75,.11);}
+    .app-card-label{font-family:var(--font-cond);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+    .app-card-top{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+    .app-card-label{font-family:var(--font-cond);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:rgba(200,168,75,.6);margin-bottom:0;}
+    .app-card svg{width:18px;height:18px;color:rgba(200,168,75,.6);flex-shrink:0;transition:color .3s;}
+    .app-card:hover svg{color:var(--accent);}
+    .app-card:hover .app-card-label{color:var(--accent);}
+    .app-card h3{font-family:var(--font-display);font-size:clamp(16px,1.4vw,19px);font-weight:400;color:var(--white);margin-bottom:10px;line-height:1.2;letter-spacing:-.01em;}
+    .app-card p{font-size:13px;color:var(--white-dim);line-height:1.72;}
+
+    /* CUSTOM CONFIGURATOR */
+    .config-section{position:relative;z-index:1;padding:60px 64px 120px;background:linear-gradient(135deg,rgba(9,9,10,.88),rgba(16,16,17,.74));backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,.08);overflow:hidden;}
+    .config-section::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(200,168,75,.09),transparent 22%,transparent 78%,rgba(244,242,238,.04));pointer-events:none;}
+    .config-wrap{position:relative;max-width:1400px;margin:0 auto;}
+    .config-head{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:48px;align-items:end;margin-bottom:44px;}
+    .config-eyebrow{font-family:var(--font-cond);font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
+    .config-title{font-family:var(--font-display);font-size:clamp(34px,4.6vw,68px);font-weight:300;color:var(--white);line-height:1.06;letter-spacing:-.01em;max-width:920px;}
+    .config-title strong{font-weight:700;}
+    .config-note{border:1px solid rgba(200,168,75,.45);background:linear-gradient(135deg,rgba(200,168,75,.16),rgba(244,242,238,.045));padding:28px 30px;border-radius:8px;color:rgba(244,242,238,.82);font-size:15px;line-height:1.55;box-shadow:0 22px 70px rgba(0,0,0,.28);}
+    .config-note strong{display:block;font-family:var(--font-display);font-size:clamp(24px,2.2vw,34px);font-weight:700;letter-spacing:-.01em;line-height:1.05;color:var(--white);margin-bottom:12px;}
+    .config-note span{display:block;font-family:var(--font-cond);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+    .config-tool{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;box-shadow:0 32px 90px rgba(0,0,0,.35);}
+    .config-form{background:rgba(9,9,10,.72);padding:34px;display:flex;flex-direction:column;gap:30px;}
+    .config-block{border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:28px;}
+    .config-block:last-child{border-bottom:0;padding-bottom:0;}
+    .config-label-row{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:0;cursor:pointer;user-select:none;}
+    .config-label-row:hover .config-chevron{border-color:rgba(200,168,75,.55);color:rgba(200,168,75,.9);}
+    .config-chevron{flex-shrink:0;width:22px;height:22px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,.4);transition:transform .3s,border-color .3s,color .3s;margin-top:2px;}
+    .config-block.open .config-chevron{transform:rotate(180deg);border-color:var(--accent);color:var(--accent);}
+    .config-block-body{overflow:hidden;max-height:0;opacity:0;transition:max-height .38s cubic-bezier(.4,0,.2,1),opacity .25s ease,margin-top .25s ease;margin-top:0;}
+    .config-block.open .config-block-body{max-height:1000px;opacity:1;margin-top:16px;padding-top:4px;}
+    .config-info-btn{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(244,242,238,.5);font-size:11px;font-family:Georgia,serif;font-style:italic;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s,color .2s;position:relative;margin-top:2px;}
+    .config-info-btn:hover{border-color:var(--accent);color:var(--accent);}
+    .config-info-tooltip{position:absolute;left:calc(100% + 10px);top:0;width:240px;background:rgba(18,18,20,.97);border:1px solid rgba(200,168,75,.3);border-radius:8px;padding:13px 15px;font-size:12.5px;font-family:var(--font-body);font-style:normal;color:rgba(244,242,238,.78);line-height:1.55;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.55);pointer-events:none;opacity:0;transform:translateX(-6px);transition:opacity .18s,transform .18s;}
+    .config-info-btn.open .config-info-tooltip{opacity:1;transform:translateX(0);pointer-events:auto;}
+    .opt-std-badge{position:absolute;top:10px;right:10px;font-family:var(--font-cond);font-size:9px;letter-spacing:.06em;text-transform:none;color:var(--accent);border:1px solid rgba(200,168,75,.3);border-radius:3px;padding:1px 5px;}
+    .config-label{font-family:var(--font-display);font-size:18px;font-weight:400;color:var(--white);line-height:1.25;}
+    .config-help{font-size:12.5px;color:rgba(244,242,238,.48);line-height:1.55;max-width:560px;}
+    .config-default{font-family:var(--font-cond);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,168,75,.78);white-space:nowrap;padding-top:2px;}
+    .config-options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+    .config-options.four{grid-template-columns:repeat(4,1fr);}
+    .config-option{position:relative;min-height:104px;text-align:left;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035);border-radius:8px;padding:15px 15px 14px;color:inherit;transition:border-color .22s,background .22s,transform .22s;}
+    .config-option:hover{border-color:rgba(200,168,75,.36);background:rgba(255,255,255,.055);transform:translateY(-2px);}
+    .config-option.active{border-color:var(--accent);background:rgba(200,168,75,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);}
+    .config-option span{display:block;font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--white);line-height:1.25;margin-bottom:7px;}
+    .config-option small{display:block;font-size:12px;line-height:1.45;color:rgba(244,242,238,.5);}
+    .config-toggles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+    .config-toggle{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-height:82px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035);border-radius:8px;padding:14px 14px 14px 46px;transition:border-color .22s,background .22s;}
+    .config-toggle:hover{border-color:rgba(200,168,75,.32);background:rgba(255,255,255,.055);}
+    .config-toggle input{position:absolute;left:16px;top:17px;width:16px;height:16px;accent-color:#c8a84b;}
+    .config-toggle span{display:block;font-family:var(--font-display);font-size:13.5px;font-weight:600;color:var(--white);line-height:1.25;margin-bottom:5px;}
+    .config-toggle small{display:block;font-size:12px;line-height:1.45;color:rgba(244,242,238,.5);}
+    .config-toggle.popular{border-color:rgba(200,168,75,.28);}
+    .toggle-badge{position:absolute;top:10px;right:10px;font-family:var(--font-cond);font-size:9px;font-weight:400;letter-spacing:.06em;text-transform:none;color:var(--accent);border:1px solid rgba(200,168,75,.3);border-radius:3px;padding:1px 5px;}
+    .toggle-quality{display:flex;gap:10px;margin-top:10px;}
+    .tq-opt{display:flex;align-items:center;gap:5px;font-family:var(--font-cond);font-size:12px;letter-spacing:.08em;color:rgba(244,242,238,.6);cursor:pointer;}
+    .tq-opt input{width:13px;height:13px;accent-color:#c8a84b;position:static;top:auto;left:auto;}
+    .tq-opt:has(input:checked){color:var(--white);}
+    .config-result{background:rgba(9,9,10,.88);padding:30px;display:flex;flex-direction:column;gap:24px;position:relative;min-width:0;overflow:hidden;}
+    .config-result::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent);opacity:.55;}
+    .config-result-kicker{font-family:var(--font-cond);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);}
+    .config-price{font-family:var(--font-display);font-size:clamp(13px,2.3vw,42px);font-weight:700;color:var(--white);letter-spacing:-.03em;line-height:1.15;word-break:break-word;overflow-wrap:anywhere;}
+    .config-price span{display:block;margin-top:10px;font-family:var(--font-body);font-size:12px;font-weight:300;letter-spacing:0;color:rgba(244,242,238,.48);line-height:1.45;}
+    .config-price-grid{display:grid;grid-template-columns:1fr;gap:10px;}
+    .config-price-card{border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:18px;background:rgba(255,255,255,.035);}
+    .config-price-card.primary{border-color:rgba(200,168,75,.34);background:rgba(200,168,75,.08);}
+    .config-price-label{display:block;font-family:var(--font-cond);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,242,238,.48);margin-bottom:10px;}
+    .config-price-card.primary .config-price-label{color:var(--accent);}
+    .config-recommend{padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:rgba(255,255,255,.035);}
+    .config-recommend h3{font-family:var(--font-display);font-size:16px;font-weight:400;color:var(--white);margin-bottom:8px;}
+    .config-recommend p{font-size:13px;color:rgba(244,242,238,.62);line-height:1.65;}
+    .config-summary{display:flex;flex-direction:column;gap:10px;padding-top:6px;}
+    .config-summary-row{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:10px;font-size:12.5px;color:rgba(244,242,238,.58);}
+    .config-summary-row strong{font-weight:400;color:var(--white);text-align:right;}
+    .config-actions{display:flex;flex-direction:column;gap:10px;margin-top:auto;}
+    .config-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-cond);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--white);padding:16px 20px;border-radius:6px;text-decoration:none;transition:background .3s,gap .3s;}
+    .config-cta:hover{background:var(--accent);gap:16px;}
+    .config-reset{border:1px solid rgba(255,255,255,.12);background:transparent;border-radius:6px;color:rgba(244,242,238,.62);font-family:var(--font-cond);font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:13px 18px;transition:border-color .25s,color .25s;}
+    .config-reset:hover{border-color:rgba(244,242,238,.34);color:var(--white);}
+
+    /* CTA */
+    .cta-section{padding:140px 64px;background:rgba(9,9,10,.55);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.07);text-align:center;position:relative;z-index:1;}
+    .cta-eyebrow{font-family:var(--font-cond);font-size:18.7px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+    .cta-title{font-family:var(--font-display);font-size:clamp(36px,5vw,68px);font-weight:300;color:var(--white);margin-bottom:16px;line-height:1.1;letter-spacing:-.01em;}
+    .cta-sub{font-size:19.5px;color:var(--white-dim);margin-bottom:48px;max-width:900px;margin-left:auto;margin-right:auto;line-height:1.7;}
+    .cta-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-cond);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--white);padding:18px 40px;border-radius:6px;text-decoration:none;transition:background .3s,gap .3s;}
+    .cta-btn:hover{background:var(--accent);gap:18px;}
+
+    
+    
+    
+    
+    
+
+    @media(hover:none),(pointer:coarse){
+      body,*,a,button,[role="button"],input,textarea,select{cursor:auto !important;}
+      .c-dot,.trail,.ripple{display:none !important;}
+    }
+    @media(max-width:900px){
+      .pt-header{padding:60px 24px 0;flex-direction:column;gap:20px;}
+      .pt-rail{overflow-x:visible;margin:0 20px;border-radius:8px;overflow:hidden;border-left:1px solid rgba(255,255,255,.06);border-right:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);}
+      .pt-tab{flex:1;min-width:0;padding:16px 8px 12px;}
+      .pt-body{grid-template-columns:1fr;border-top:none;}
+      .pt-body::after{display:none;}
+      .pt-tagline::after{display:none;}
+      .pt-img-col{min-height:300px;height:300px;width:auto;aspect-ratio:unset;padding:0;margin:0 20px;border-radius:12px;}
+      .pt-content-col{padding:40px 24px;}
+      .pt-name{font-size:clamp(28px,7vw,44px);}
+      .pt-spec{grid-template-columns:1fr;gap:6px;}
+    }
+    @media(max-width:900px){
+      header{padding:calc(18px + env(safe-area-inset-top)) 20px 18px !important;align-items:center;}
+      .nav-logo img{height:48px;margin-top:0;transform:translateY(5px) scale(1.12);transform-origin:left center;}
+      .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;flex-direction:column;justify-content:center;align-items:center;background:#09090a;gap:28px;z-index:99998;overscroll-behavior:contain;}
+      .nav-links a{font-family:var(--font-cond);font-size:20px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .3s;}
+      .nav-links.open{display:flex !important;}.nav-links a:hover,.nav-links a.active{color:#fff;}
+      .nav-right{position:static;transform:none;margin-top:0;}
+      .mob-toggle{display:block !important;position:static;z-index:10001;}
+      .lang-switch{font-size:12px;margin-right:8px;}
+      .scroll-progress{right:10px;height:200px;}
+      #videoFixed{inset:auto;top:45svh;left:50%;width:100vw;height:80svh;transform:translate(-50%,-50%);mask-image:linear-gradient(to bottom,transparent 0%,black 12%,black 84%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 12%,black 84%,transparent 100%);}
+      .vs-hero{justify-content:flex-end;padding:140px 20px 18vh;min-height:100svh;}
+      .vs-hero-title{font-size:clamp(48px,13vw,80px);}
+      .vs-hero-taglines p{font-size:15px;}
+      .vs-hero-sub{display:none;}
+      .overview-section,.product-detail,.workflow-section,.apps-section,.cta-section,.problems-section{padding:72px 20px;}
+      .product-tabs-section{padding:0;}
+      .pt-header{margin-bottom:32px;}
+      .pt-tab{flex:1;min-width:0;padding:14px 6px 12px;}
+      .pt-tab-num{letter-spacing:.15em;}
+      .pt-tab-name{font-size:11px;letter-spacing:-.01em;min-height:2.5em;}
+      .pt-tab-sub{font-size:10px;letter-spacing:.06em;}
+      .pt-body{grid-template-columns:1fr;gap:32px;min-height:auto;}
+      .pt-img-wrap{max-width:100%;}
+      .pt-name{font-size:clamp(28px,8vw,44px);}
+      .pt-desc{font-size:14px;margin-bottom:24px;}
+      .pt-specs{grid-template-columns:1fr;}
+      .pt-spec{padding:18px 16px;}
+      .product-grid{grid-template-columns:1fr;}
+      .product-card{padding:36px 24px;min-height:auto;}
+      .pd-wrap{grid-template-columns:1fr;gap:40px;}
+      .pd-left{position:static;}
+      .pd-icon{width:48px;height:48px;margin-bottom:0;}
+      .pd-name{font-size:clamp(32px,9vw,52px);}
+      .pd-img-wrap{max-width:100%;margin-top:24px;}
+      .pd-img-wrap img{transform:scale(1.05);}
+      .pd-img-wrap:hover img{transform:scale(1.05);}
+      .pd-right{padding-top:0;}
+      .pd-desc{font-size:15px;margin-bottom:32px;}
+      .pd-specs{grid-template-columns:1fr;}
+      .pd-spec{padding:24px 20px;}
+      .workflow-steps{grid-template-columns:1fr 1fr;gap:16px;}
+      .workflow-step{padding:32px 8px 24px;}
+      .apps-grid{grid-template-columns:repeat(2,1fr);}
+      .app-card{padding:18px 24px 36px;}
+      .app-card-num{font-size:56px;}
+      .app-card-label{letter-spacing:.1em;font-size:10px;}
+      .problems-grid{grid-template-columns:1fr 1fr;gap:12px;}
+      .problem-card img{height:140px;}
+      .problem-card-body{padding:22px;}
+      .config-section{padding:72px 20px;}
+      .config-head{grid-template-columns:1fr;gap:22px;margin-bottom:28px;}
+      .config-tool{grid-template-columns:1fr;}
+      .config-form,.config-result{padding:24px;}
+      .config-options,.config-options.four{grid-template-columns:1fr 1fr;}
+      .config-toggles{grid-template-columns:1fr;}
+      .vs-hero-pills{display:none;}
+      .vs-hero-tag{font-size:12px;letter-spacing:.28em;max-width:100%;overflow-wrap:anywhere;}
+      footer{flex-direction:column;gap:16px;padding:38px 20px 34px;text-align:center;}
+      
+      
+      
+    }
+    .mob-br{display:none;}
+    @media(max-width:600px){
+      html,body{max-width:100%;overflow-x:hidden;}
+      .pt-img-badge{display:none;}
+      .pt-360-hint{right:auto;left:50%;transform:translateX(-50%);bottom:12px;opacity:.65;}
+
+      .pt-tab-sub{display:none;}
+      .pt-tab-name{font-size:14px;}
+      .mob-br{display:inline;}
+      .mob-block{display:block;}
+      .workflow-steps{grid-template-columns:1fr;gap:0;padding-left:38px;}
+      .workflow-steps::before{top:0;bottom:0;left:20px;right:auto;width:1px;height:auto;}
+      .workflow-step{padding:0 0 56px 0;}
+      .workflow-dot{top:6px;left:-18px;transform:translateX(-50%);}
+      .workflow-num{margin-top:0;}
+
+      .apps-grid{grid-template-columns:1fr 1fr;}
+      .problems-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+      .problem-card img{height:96px;}
+      .problem-card-body{padding:16px 14px 18px;}
+      .problem-card h3{font-size:14px;line-height:1.25;}
+      .problem-text{display:none;}
+      .problem-more{display:block;margin-top:auto;padding-top:16px;}
+      .problem-more summary{list-style:none;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);}
+      .problem-more summary::-webkit-details-marker{display:none;}
+      .problem-more summary::after{content:'+';font-family:var(--font-display);font-size:16px;line-height:1;color:var(--accent);}
+      .problem-more[open] summary::after{content:'-';}
+      .problem-more p{margin-top:10px;font-size:11.5px;line-height:1.55;}
+      .problem-card{cursor:pointer;}
+      .problem-more summary{pointer-events:none;}
+      .overview-section,.product-detail,.workflow-section,.apps-section,.cta-section,.problems-section,.config-section{padding:56px 18px;}
+      .vs-hero{padding:130px 18px 48px;}
+      .product-card{padding:32px 22px;}
+      .config-title{font-size:36px;}
+      .config-form,.config-result{padding:20px;}
+      .config-label-row{flex-direction:column;gap:8px;}
+      .config-default{white-space:normal;}
+      .config-options,.config-options.four{grid-template-columns:1fr;}
+      .config-option{min-height:auto;}
+      .config-summary-row{flex-direction:column;gap:4px;}
+      .config-summary-row strong{text-align:left;}
+    }
+
+    /* ── Problem Card Download Button ── */
+    .problem-download{
+      display:inline-flex;align-items:center;gap:7px;
+      margin-top:16px;
+      font-family:var(--font-cond);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--accent);text-decoration:none;
+      padding:8px 14px;
+      border:1px solid rgba(200,168,75,.3);border-radius:4px;
+      transition:border-color .3s,background .3s,color .3s;
+      align-self:flex-start;
+    }
+    .problem-download:hover{border-color:var(--accent);background:rgba(200,168,75,.08);color:var(--white);}
+    .problem-download svg{width:12px;height:12px;flex-shrink:0;}
+    @media(max-width:600px){
+      .problem-download{display:none;}
+      .problem-more[open] ~ .problem-download{display:inline-flex;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Mobile Nav Overlay ── -->
+<nav id="navLinks" class="nav-links">
+  <button class="nav-close" id="navClose" aria-label="Schließen"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1"/><line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1"/></svg></button>
+    <a href="index.html">Home</a>
+    <a href="SenseReihe.html" class="active">Sense Reihe</a>
+    <a href="VibraLifeGuard.html">VibraLifeGuard</a>
+    <a href="AboutUs.html">Über Uns</a>
+    <a href="Career.html">Karriere</a>
+    <a href="ContactUs.html">Kontakt</a>
+  </nav>
+
+<div class="c-dot" id="cDot"></div>
+
+<!-- FIXED SCROLL-SCRUBBED VIDEO BACKGROUND -->
+<canvas id="videoFixed"></canvas>
+<div id="videoFixedOverlay"></div>
+<div class="scroll-progress">
+  <div class="scroll-progress-top" id="scrollProgressTop"></div>
+  <div class="scroll-progress-dot" id="scrollProgressDot"></div>
+  <div class="scroll-progress-bottom" id="scrollProgressBottom"></div>
+</div>
+
+<header id="header">
+  <div class="nav-logo"><a href="index.html"><img src="../assets/images/Logo.png" alt="Muniqo Performante"></a></div>
+  <!-- nav moved to body -->
+  <div class="nav-right">
+    <div class="lang-switch"><a href="../en/SenseReihe.html">EN</a><span>/</span><a href="SenseReihe.html" class="active">DE</a></div>
+  </div>
+  <button class="mob-toggle" id="mobToggle" aria-label="Menü"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="vs-hero" id="vsHero">
+  <div class="vs-hero-content">
+    <h1 class="vs-hero-title">Sense Reihe</h1>
+    <div class="vs-hero-taglines">
+    </div>
+    <div class="vs-hero-pills">
+      <a href="#products" class="vs-hero-pill" data-pill-tab="vibrasense">VibraSense</a>
+      <a href="#products" class="vs-hero-pill" data-pill-tab="predictive">Predictive Sense</a>
+      <a href="#products" class="vs-hero-pill" data-pill-tab="custom">Custom Sense</a>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview-section">
+  <div class="overview-wrap">
+    <div>
+      <h2 class="overview-title">Verschiedene Produkte: für jede Aufgabe das Richtige.</h2>
+    </div>
+    <div class="overview-copy">
+      <p class="overview-intro">Mit unseren Messsystemen machen Sie verborgene Belastungen und Optimierungspotenziale sichtbar. Kunden aus Robotik, Lasertechnologie und Katastrophenschutz nutzen diese Daten bereits, um Prozesse gezielt zu verbessern.</p>
+      <a href="#beispielanwendungen" class="overview-apps-link">Beispielanwendungen ansehen →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRODUCTS (editorial redesign) -->
+<section class="product-tabs-section" id="products">
+
+  <div class="pt-header" style="padding:0;min-height:0;">
+    <div class="pt-header-left"></div>
+  </div>
+
+  <!-- Product selector rail -->
+  <div class="pt-rail" role="tablist">
+    <button class="pt-tab active" role="tab" data-tab="vibrasense" aria-selected="true">
+      <span class="pt-tab-num">01</span>
+      <span class="pt-tab-name">Vibra<br class="mob-br">Sense</span>
+      <span class="pt-tab-sub">Basis-Messbox</span>
+    </button>
+    <button class="pt-tab" role="tab" data-tab="predictive" aria-selected="false">
+      <span class="pt-tab-num">02</span>
+      <span class="pt-tab-name">Predictive Sense</span>
+      <span class="pt-tab-sub">Live-Monitoring-System</span>
+    </button>
+    <button class="pt-tab" role="tab" data-tab="custom" aria-selected="false" style="position:relative;">
+      <span class="pt-tab-num">03</span>
+      <span class="pt-tab-name">Custom<br class="mob-br"> Sense</span>
+      <span class="pt-tab-sub">Individuelle Lösung</span>
+      <a href="#custom-configurator" class="pt-cta-btn" style="position:absolute;top:16px;right:80px;font-size:12px;" onclick="event.stopPropagation()">Jetzt konfigurieren</a>
+    </button>
+  </div>
+
+  <!-- Split body: image left, content right -->
+  <div class="pt-body">
+
+    <!-- LEFT: image (shared, badge updates) -->
+    <div class="pt-img-col">
+      <div class="pt-img-wrap">
+        <div class="pt-360-wrap" id="pt360Wrap">
+          <canvas id="pt360Video" class="pt-360-video"></canvas>
+        </div>
+      </div>
+      <div class="pt-360-hint" id="pt360Hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12a9 9 0 0 1 9-9"/><path d="M21 12a9 9 0 0 1-9 9"/><path d="M1 10l2 2 2-2"/><path d="M23 14l-2-2-2 2"/></svg>
+        <span>360° Konzeptansicht</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: content panels -->
+    <div class="pt-content-col">
+
+      <!-- 01 VIBRASENSE -->
+      <div class="pt-panel active" id="pt-vibrasense">
+        <h3 class="pt-name">VibraSense</h3>
+        <p class="pt-tagline">Basis-Messbox</p>
+        <p class="pt-desc">Eine vielseitige Standard-Messbox zur Erfassung von Vibrationen, Beschleunigung und GPS-Daten. Ideal für die Transport- und Maschinenüberwachung und bei Bedarf um weitere Messgrößen und individuelle Module erweiterbar.</p>
+        <p class="pt-specs-title">Technische Spezifikationen</p>
+        <div class="pt-specs">
+          <div class="pt-spec"><h4>Präzise Messung</h4><p>Rauscharme 3-Achsen-Messung mit bis zu 1000 Hz und hoher Stoßfestigkeit.</p></div>
+          <div class="pt-spec"><h4>Datenaufzeichnung</h4><p>Mehr als 40 Stunden Akkulaufzeit und 32 GB interner Speicher für kontinuierliche Aufzeichnungen.</p></div>
+          <div class="pt-spec"><h4>GPS & Kontextdaten</h4><p>Integriertes GPS für synchronisierte Vibrationsmessungen und routenbasierte Auswertung.</p></div>
+          <div class="pt-spec"><h4>Temperaturmessung optional</h4><p>Vibration, Position und Temperatur können bei Bedarf zeitgleich aufgezeichnet und gemeinsam ausgewertet werden.</p></div>
+        </div>
+      </div>
+
+      <!-- 03 CONDITION SENSE -->
+      <!-- 04 CUSTOM SENSE -->
+      <div class="pt-panel" id="pt-custom">
+        <div class="pt-name-row">
+          <h3 class="pt-name">Custom Sense</h3>
+        </div>
+        <p class="pt-tagline">Individuelle Lösung</p>
+        <p class="pt-desc">Custom Sense ist die vollständig individualisierbare Variante der Sense Reihe. Sensoren, Übertragungswege, Datenkanäle und Gehäuse werden exakt auf Ihre Anforderungen abgestimmt, von der Einzelkomponente bis zur integrierten Systemlösung. Sprechen Sie uns an: Wir konzipieren gemeinsam mit Ihnen das passende Produkt.</p>
+        <p class="pt-specs-title">Mögliche Konfigurationen</p>
+        <div class="pt-specs">
+          <div class="pt-spec"><h4>Sensor-Auswahl</h4><p>Kombination beliebiger Sensoren aus der Sense Reihe — Vibration, Klima, Partikel, GPS und mehr.</p></div>
+          <div class="pt-spec"><h4>Übertragung & Konnektivität</h4><p>Kabelgebunden, WLAN, LTE oder proprietäre Protokolle — je nach Einsatzumgebung und Anforderung.</p></div>
+          <div class="pt-spec"><h4>Gehäuse & Integration</h4><p>Angepasstes Gehäuse, kundenspezifische Formfaktoren oder direkte Integration in bestehende Systeme.</p></div>
+          <div class="pt-spec"><h4>Software & Reporting</h4><p>Individuelle Datenauswertung, API-Anbindung und maßgeschneiderte Berichte für Ihre Prozesse.</p></div>
+        </div>
+      </div>
+
+      <!-- PREDICTIVE SENSE -->
+      <div class="pt-panel" id="pt-predictive">
+        <h3 class="pt-name">Predictive Sense</h3>
+        <p class="pt-tagline">Live-Monitoring-System</p>
+        <p class="pt-desc">Predictive Sense bringt die Sense Reihe in die Echtzeit. Vibrations-, Beschleunigungs- und Temperaturdaten werden live übertragen und sofort ausgewertet: die Grundlage für vorausschauende Wartung und datengetriebene Entscheidungen ohne Zeitverzug.</p>
+        <p class="pt-specs-title">Technische Spezifikationen</p>
+        <div class="pt-specs">
+          <div class="pt-spec"><h4>Live-Übertragung</h4><p>Echtzeitübertragung von Vibrations-, Beschleunigungs- und Temperaturdaten an die Auswertungsplattform.</p></div>
+          <div class="pt-spec"><h4>Echtzeit-Analyse</h4><p>Sofortige Auswertung im Stream: Schwellwerte, Trends und Anomalien werden in Sekunden erkannt.</p></div>
+          <div class="pt-spec"><h4>Predictive Maintenance</h4><p>Frühzeitige Erkennung von Defekten und Verschleiß, bevor sie zu Ausfällen führen.</p></div>
+          <div class="pt-spec"><h4>Lokales Alarmsystem</h4><p>Kritische Ereignisse werden direkt am Einsatzort durch ein deutliches akustisches Signal gemeldet – ohne Abhängigkeit von Mobilfunk oder Funkverbindungen.</p></div>
+        </div>
+      </div>
+
+    </div><!-- /pt-content-col -->
+  </div><!-- /pt-body -->
+</section>
+
+<!-- CUSTOM CONFIGURATOR -->
+<section class="config-section" id="custom-configurator">
+  <div class="config-wrap">
+    <div class="config-head">
+      <div>
+        <h2 class="config-title">Bauen Sie Ihre speziell angepasste Box.</h2>
+      </div>
+      <div class="config-note">
+        <span>Preisversprechen</span>
+        <strong>High-End messen. Fair bezahlen.</strong>
+        Wir bauen die günstigste Lösung, die technisch wirklich passt. Finden Sie bei gleicher Qualität ein besseres Angebot, prüfen wir nach und ziehen nach.
+      </div>
+    </div>
+
+    <div class="config-tool" data-configurator>
+      <div class="config-form">
+        <div class="config-block open">
+          <div class="config-label-row">
+            <div>
+              <h3 class="config-label">Maximale Beschleunigung</h3>
+              <p class="config-help">Je kleiner der g-Bereich, desto besser die Sensitivität. Je größer der g-Bereich, desto mehr Maximalbelastung kann sicher gemessen werden.</p>
+            </div>
+          </div>
+          <div class="config-options four" data-config-field="gRange">
+            <button class="config-option" type="button" data-value="2"><span>2 g</span><small>Beste Sensitivität für sehr feine Vibrationen.</small></button>
+            <button class="config-option" type="button" data-value="4"><span>4 g</span><small>Für leichte Vibrationen und präzise Messungen.</small></button>
+            <button class="config-option active" type="button" data-value="8"><span>8 g</span><span class="opt-std-badge">Standard</span><small>Ausgewogener Standard für viele reale Anwendungen.</small></button>
+            <button class="config-option" type="button" data-value="16"><span>16 g</span><small>Für starke Stöße, Transportbelastung und robuste Messungen.</small></button>
+          </div>
+        </div>
+
+        <div class="config-block open">
+          <div class="config-label-row">
+            <div>
+              <h3 class="config-label">Messdauer und Einsatz</h3>
+              <p class="config-help">Kurze Messungen brauchen wenig Speicher. Mehrere Wochen Dauerbetrieb benötigen größere Speicher, Stromkonzept und oft Livebetrieb.</p>
+            </div>
+          </div>
+          <div class="config-options" data-config-field="duration">
+            <button class="config-option active" type="button" data-value="day"><span>5 Stunden</span><small>Schnelltest, Qualitätsprüfung oder kurze Transportabschnitte.</small></button>
+            <button class="config-option" type="button" data-value="week"><span>24 Stunden</span><small>Längere Kampagnen, Maschinencheck oder Schichtüberwachung.</small></button>
+            <button class="config-option" type="button" data-value="weeks"><span>Mehrere Tage</span><small>Langzeitüberwachung mit maximaler Autonomie.</small></button>
+          </div>
+        </div>
+
+        <div class="config-block open">
+          <div class="config-label-row">
+            <div>
+              <h3 class="config-label">Speicher und Softwaremodule</h3>
+              <p class="config-help">32 GB sind als Standard vorgesehen. Für längere Aufzeichnungen stehen optional 64 GB zur Verfügung. Livebetrieb, Spektrogramm, GPS und Temperatur können modular ergänzt werden.</p>
+            </div>
+          </div>
+          <div class="config-options" data-config-field="storage">
+            <button class="config-option active" type="button" data-value="32"><span>32 GB</span><span class="opt-std-badge">Standard</span><small>Ausreichend Speicher für typische Messungen und längere Aufzeichnungen.</small></button>
+            <button class="config-option" type="button" data-value="64"><span>64 GB</span><small>Maximale Reserve in der Standardauswahl.</small></button>
+          </div>
+          <div class="config-toggles" data-config-modules>
+            <label class="config-toggle"><input type="checkbox" value="live"><span>Livebetrieb</span><small>Daten live übertragen, Alarme auslösen und Maschinen dauerhaft überwachen.</small></label>
+            <label class="config-toggle"><input type="checkbox" value="spectrogram"><span>Spektrogramm</span><small>Frequenzanalyse für Muster, Peaks und Predictive-Maintenance-Auswertung.</small></label>
+            <label class="config-toggle"><input type="checkbox" value="gps"><span>GPS</span><small>Ortssynchrone Daten für Transport, Fahrzeuge und routebasierte Auswertung.</small></label>
+            <label class="config-toggle"><input type="checkbox" value="temperature"><span>Temperatur</span><small>Temperaturwerte synchron zur Vibrationsmessung erfassen.</small></label>
+          </div>
+        </div>
+
+        <div class="config-block">
+          <div class="config-label-row">
+            <div>
+              <h3 class="config-label">Wie hoch ist die Frequenz Ihrer Anwendung?</h3>
+              <p class="config-help">Niedrige Frequenzen ermöglichen eine höhere Sensitivität für feine Schwingungen. Höhere Frequenzen erfassen schnellere Ereignisse, können aber etwas weniger empfindlich sein. Diese Auswahl dient nur der technischen Einordnung und verändert den Preis nicht.</p>
+            </div>
+          </div>
+          <div class="config-options" data-config-field="sampleRate">
+            <button class="config-option" type="button" data-value="low"><span>Unter 100 Hz</span><small>Hohe Sensitivität für langsame und besonders feine Schwingungen.</small></button>
+            <button class="config-option active" type="button" data-value="mid"><span>Unter 1 kHz</span><span class="opt-std-badge">Standard</span><small>Ausgewogener Bereich für die meisten technischen Anwendungen.</small></button>
+            <button class="config-option" type="button" data-value="high"><span>Über 1 kHz</span><small>Für schnelle Ereignisse und hohe Frequenzen, mit etwas geringerer Sensitivität.</small></button>
+          </div>
+        </div>
+
+        <div class="config-block">
+          <div class="config-label-row">
+            <div>
+              <h3 class="config-label">Benötigte Präzision</h3>
+              <p class="config-help">Je höher die Präzision, desto sorgfältiger müssen Sensor, Kalibrierung und Auswertung ausgelegt werden. Wenn unklar, reicht Standard meist aus.</p>
+            </div>
+          </div>
+          <div class="config-options" data-config-field="precision">
+            <button class="config-option" type="button" data-value="simple"><span>Orientierend</span><small>Trends erkennen, grobe Ereignisse dokumentieren, möglichst günstig.</small></button>
+            <button class="config-option active" type="button" data-value="standard"><span>Gut</span><span class="opt-std-badge">Standard</span><small>Saubere Daten für die meisten technischen Anwendungen.</small></button>
+            <button class="config-option" type="button" data-value="high"><span>Sehr hoch</span><small>Mehr Kalibrierung und bessere Auflösung für anspruchsvolle Analyse.</small></button>
+          </div>
+        </div>
+
+        <div class="config-block">
+          <div class="config-label-row">
+            <div>
+              <h3 class="config-label">Präzision und Robustheit</h3>
+              <p class="config-help">Für normale Anwendungen reicht Standard. Für Maschinen mit hohen Kräften oder lange Einsätze empfehlen wir robustere Auslegung.</p>
+            </div>
+          </div>
+          <div class="config-options" data-config-field="ruggedness">
+            <button class="config-option active" type="button" data-value="standard"><span>Standard</span><small>Saubere Messdaten in typischen Labor-, Transport- und Industrieumgebungen.</small></button>
+            <button class="config-option" type="button" data-value="robust"><span>Robust</span><small>Für Maschinen, härtere Montage und 15 g über längere Zeiträume.</small></button>
+            <button class="config-option" type="button" data-value="ultra"><span>Ultra robust</span><small>Für sehr raue Einsätze, Sondergehäuse und erhöhte Absicherung.</small></button>
+          </div>
+        </div>
+
+        <div class="config-block">
+          <div class="config-label-row">
+            <div>
+              <h3 class="config-label">Live-Auslesung mehrerer Boxen</h3>
+              <p class="config-help">Falls mehrere Boxen gleichzeitig live ausgelesen werden sollen, planen wir Synchronisation, Funk-/Softwarelogik und Auswertung anders. Bis zu 4 Boxen sind möglich.</p>
+            </div>
+          </div>
+          <div class="config-options four" data-config-field="liveBoxes">
+            <button class="config-option active" type="button" data-value="none"><span>Nicht nötig</span><span class="opt-std-badge">Standard</span><small>Eine Box offline oder normal auslesen.</small></button>
+            <button class="config-option" type="button" data-value="1"><span>1 Box live</span><small>Ein Live-Stream mit Standardsoftware.</small></button>
+            <button class="config-option" type="button" data-value="2"><span>2 Boxen live</span><small>Synchrones Auslesen von zwei Messpunkten.</small></button>
+            <button class="config-option" type="button" data-value="4"><span>Bis 4 Boxen</span><small>Mehrpunktmessung, deutlich aufwendiger in Software und Setup.</small></button>
+          </div>
+        </div>
+
+        <div class="config-block">
+          <div class="config-label-row">
+            <div>
+              <h3 class="config-label">Sensor-Optionen</h3>
+              <p class="config-help">Ergänzen Sie Ihre Messbox mit zusätzlichen Sensoren. Feuchtigkeit und Druck sind die meistgewählten Erweiterungen.</p>
+            </div>
+          </div>
+          <div class="config-toggles" data-config-sensors>
+            <label class="config-toggle popular"><input type="checkbox" value="humidity"><span>Feuchtigkeit</span><span class="toggle-badge">beliebt</span><small>Relative Luftfeuchtigkeit – essenziell für Lagerung, Transport und Klimaanalyse.</small></label>
+            <label class="config-toggle popular"><input type="checkbox" value="pressure"><span>Druck</span><span class="toggle-badge">beliebt</span><small>Luftdruck für höhenpräzise Messungen, Versiegelungsprüfung und Umgebungsauswertung.</small></label>
+            <div class="config-toggle">
+              <input type="checkbox" value="temp">
+              <div>
+                <span>Temperatursensor</span>
+                <small>Temperaturmessung synchron zur Vibration erfassen.</small>
+                <div class="toggle-quality">
+                  <label class="tq-opt"><input type="radio" name="tempQuality" value="standard" checked>Standard</label>
+                  <label class="tq-opt"><input type="radio" name="tempQuality" value="precision">Präzision</label>
+                </div>
+              </div>
+            </div>
+            <label class="config-toggle"><input type="checkbox" value="dust"><span>Feinstaub &amp; Partikel</span><small>Partikelkonzentration und Luftqualität synchron zur Vibrationsmessung erfassen.</small></label>
+            <label class="config-toggle"><input type="checkbox" value="sound"><span>Schall</span><small>Schallpegel und akustische Ereignisse parallel zur Vibration aufzeichnen.</small></label>
+            <label class="config-toggle"><input type="checkbox" value="light"><span>Licht</span><small>Beleuchtungsstärke für umgebungskorrelierte Auswertung und Ereignislogging.</small></label>
+          </div>
+        </div>
+      </div>
+
+      <aside class="config-result" aria-live="polite">
+        <p class="config-result-kicker">Vorläufige Indikation</p>
+        <div class="config-price-grid">
+          <div class="config-price-card primary">
+            <span class="config-price-label">Unsere Lösung</span>
+            <div class="config-price" id="configPrice">voraussichtlich ab 499 €<span>Vorläufiger Richtwert. Wir prüfen den finalen Preis manuell nach Anwendung, Stückzahl und technischem Lieferumfang.</span></div>
+          </div>
+          <div class="config-price-card">
+            <span class="config-price-label">Vergleichbare Wettbewerber</span>
+            <div class="config-price" id="competitorPrice">ca. 1.190 €<span>Grobe Vergleichsindikation für ähnliche Messsysteme mit vergleichbarem Funktionsumfang.</span></div>
+          </div>
+        </div>
+        <div class="config-recommend">
+          <h3 id="configRecommendationTitle">Empfohlene Standardauslegung</h3>
+          <p id="configRecommendationText">Ein Frequenzbereich unter 1 kHz, 8 g Messbereich und 32 GB Speicher sind für viele Anwendungen ein sinnvoller Ausgangspunkt.</p>
+        </div>
+        <div class="config-summary">
+          <div class="config-summary-row"><span>Frequenzbereich</span><strong id="summarySample">unter 1 kHz</strong></div>
+          <div class="config-summary-row"><span>Messbereich</span><strong id="summaryG">8 g Standard</strong></div>
+          <div class="config-summary-row"><span>Amplitude / Präzision</span><strong id="summaryPrecision">mittel / gut</strong></div>
+          <div class="config-summary-row"><span>Speicherbedarf</span><strong id="summaryStorage">ca. 2,0 GB pro Tag</strong></div>
+          <div class="config-summary-row"><span>Live-Boxen</span><strong id="summaryLiveBoxes">keine parallele Live-Auslesung</strong></div>
+          <div class="config-summary-row"><span>Module</span><strong id="summaryModules">Basis ohne Zusatzmodule</strong></div>
+        </div>
+        <div class="config-actions">
+          <a class="config-cta" id="configRequestLink" href="ContactUs.html">Angebot anfragen →</a>
+          <button class="config-reset" type="button" id="configReset">Standard wiederherstellen</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+<!-- WORKFLOW (product-specific) -->
+<section class="workflow-section">
+  <div class="workflow-header">
+    <p class="workflow-eyebrow" id="workflowEyebrow">VibraSense · Workflow</p>
+    <h2 class="workflow-title" id="workflowTitle">In vier Schritten zur präzisen Vibrationsmessung.</h2>
+  </div>
+  <div class="workflow-steps" id="workflowSteps">
+    <div class="workflow-step">
+      <div class="workflow-dot"></div>
+      <p class="workflow-num">01</p>
+      <h3>Platzieren &amp; Aufzeichnung starten</h3>
+      <p>VibraSense kabellos einschalten und am Messobjekt fixieren. Die Aufzeichnung startet automatisch.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-dot"></div>
+      <p class="workflow-num">02</p>
+      <h3>SD-Karte entnehmen</h3>
+      <p>Nach abgeschlossener Messung Gerät ausschalten und die SD-Karte mit allen geloggten Daten entnehmen.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-dot"></div>
+      <p class="workflow-num">03</p>
+      <h3>Datei am Computer hochladen</h3>
+      <p>SD-Karte mit dem Laptop verbinden und die Messdatei in die Software übertragen.</p>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-dot"></div>
+      <p class="workflow-num">04</p>
+      <h3>Analyse starten</h3>
+      <p>Software öffnen, Datei hochladen und mit einem Klick die automatisierte Analyse aller aufgezeichneten Daten starten.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="problems-section" id="beispielanwendungen">
+  <h2 class="problems-title">Wo Präzision und Sensorik den Unterschied<br>machen: Wir liefern die Lösung</h2>
+  <div class="problems-grid">
+    <div class="problem-card">
+      <img src="../assets/images/1.png" alt="Transport & Logistik">
+      <div class="problem-card-body"><h3>Transport & Logistik</h3><p class="problem-text">Überwachung von Gütern, Fahrzeugen und Lieferketten: Vibration, GPS, Temperatur, Feuchtigkeit auf dem Transportweg.</p><details class="problem-more"><summary>Details</summary><p>Überwachung von Gütern, Fahrzeugen und Lieferketten – Vibration, GPS, Temperatur, Feuchtigkeit auf dem Transportweg.</p></details><a href="../datasheets/usecase-transport-logistik.pdf" class="problem-download" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 11l5 5 5-5"/><path d="M3 20h18"/></svg>Datenblatt</a></div>
+    </div>
+    <div class="problem-card">
+      <img src="../assets/images/2.png" alt="Verpackung & Validierung">
+      <div class="problem-card-body"><h3>Verpackung & Validierung</h3><p class="problem-text">Nachweis realer Belastungen auf dem Transportweg: ein eigenständiger Prüfprozess für präzise Validierung und Dokumentation.</p><details class="problem-more"><summary>Details</summary><p>Nachweis realer Belastungen auf dem Transportweg – ein eigenständiger Prüfprozess für präzise Validierung und Dokumentation.</p></details><a href="../datasheets/usecase-verpackung-validierung.pdf" class="problem-download" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 11l5 5 5-5"/><path d="M3 20h18"/></svg>Datenblatt</a></div>
+    </div>
+    <div class="problem-card">
+      <img src="../assets/images/3.png" alt="Pharma & Life Sciences">
+      <div class="problem-card-body"><h3>Pharma & Life Sciences</h3><p class="problem-text">Kühlkette, Impfstoffe, Biopharmazeutika: lückenlose Kombination aus Transport- und Lagerüberwachung für höchste Anforderungen.</p><details class="problem-more"><summary>Details</summary><p>Kühlkette, Impfstoffe, Biopharmazeutika – lückenlose Kombination aus Transport- und Lagerüberwachung für höchste Anforderungen.</p></details><a href="../datasheets/usecase-pharma-life-sciences.pdf" class="problem-download" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 11l5 5 5-5"/><path d="M3 20h18"/></svg>Datenblatt</a></div>
+    </div>
+    <div class="problem-card">
+      <img src="../assets/images/4.png" alt="Gebäude & Infrastruktur">
+      <div class="problem-card-body"><h3>Gebäude & Infrastruktur</h3><p class="problem-text">Strukturüberwachung von Brücken, Gebäuden und Türmen: kontinuierliche Langzeit-Trendanalyse für Sicherheit und Früherkennung.</p><details class="problem-more"><summary>Details</summary><p>Strukturüberwachung von Brücken, Gebäuden und Türmen – kontinuierliche Langzeit-Trendanalyse für Sicherheit und Früherkennung.</p></details><a href="../datasheets/usecase-gebaeude-infrastruktur.pdf" class="problem-download" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 11l5 5 5-5"/><path d="M3 20h18"/></svg>Datenblatt</a></div>
+    </div>
+    <div class="problem-card">
+      <img src="../assets/images/5.png" alt="Predictive Maintenance / Industrie">
+      <div class="problem-card-body"><h3>Predictive Maintenance / Industrie</h3><p class="problem-text">Maschinenüberwachung, Pumpen, Kompressoren: Verschleißerkennung und vorausschauende Wartung für störungsfreien Betrieb.</p><details class="problem-more"><summary>Details</summary><p>Maschinenüberwachung, Pumpen, Kompressoren – Verschleißerkennung und vorausschauende Wartung für störungsfreien Betrieb.</p></details><a href="../datasheets/usecase-predictive-maintenance.pdf" class="problem-download" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 11l5 5 5-5"/><path d="M3 20h18"/></svg>Datenblatt</a></div>
+    </div>
+    <div class="problem-card">
+      <img src="../assets/images/6.png" alt="Lager & Umgebungsmonitoring">
+      <div class="problem-card-body"><h3>Lager & Umgebungsmonitoring</h3><p class="problem-text">Klimatische Bedingungen in Lagern, Archiven und Reinräumen: präzise und kontinuierlich überwacht.</p><details class="problem-more"><summary>Details</summary><p>Klimatische Bedingungen in Lagern, Archiven und Reinräumen – präzise und kontinuierlich überwacht.</p></details><a href="../datasheets/usecase-lager-umgebungsmonitoring.pdf" class="problem-download" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 11l5 5 5-5"/><path d="M3 20h18"/></svg>Datenblatt</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="cta-eyebrow">GEMEINSAM GESTALTEN</p>
+  <h2 class="cta-title">Das passende Produkt oder etwas ganz Eigenes?</h2>
+  <p class="cta-sub">Jedes Sense-Produkt ist sofort einsatzbereit und modular erweiterbar. Haben Sie einen spezifischen Anwendungsfall, der über die Standardvarianten hinausgeht? Wir setzen individuelle Konfigurationen und Sonderlösungen um. Sprechen Sie uns einfach an.</p>
+  <a href="ContactUs.html" class="cta-btn">Kontakt aufnehmen →</a>
+</section>
+
+<footer>
+  <span class="f-copy">© 2025 Muniqo Performante GmbH</span>
+  <div class="f-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="cookies.html">Cookies</a>
+  </div>
+</footer>
+
+<script>  // Keep muted inline videos playing even when the browser is cautious with local files.
+  const autoplayVideos = document.querySelectorAll('.autoplay-video');
+  const playAutoplayVideos = () => {
+    autoplayVideos.forEach(video => {
+      video.muted = true;
+      video.defaultMuted = true;
+      const playPromise = video.play();
+      if (playPromise) playPromise.catch(() => {});
+    });
+  };
+  window.addEventListener('DOMContentLoaded', playAutoplayVideos);
+  window.addEventListener('load', playAutoplayVideos);
+  ['click','touchstart','scroll'].forEach(eventName => {
+    window.addEventListener(eventName, playAutoplayVideos, {once:true, passive:true});
+  });
+
+  // Mobile problem cards: tap anywhere on the card to open details.
+  const problemCardQuery = window.matchMedia('(max-width: 600px)');
+  document.querySelectorAll('.problem-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (!problemCardQuery.matches) return;
+      if (e.target.closest('a')) return;
+      const details = card.querySelector('.problem-more');
+      if (details) details.open = !details.open;
+    });
+  });
+
+  // ── Custom Sense Configurator ──
+  const configRoot = document.querySelector('[data-configurator]');
+  if (configRoot) {
+    const state = {
+      sampleRate: 'mid',
+      gRange: '8',
+      amplitude: 'medium',
+      precision: 'standard',
+      duration: 'day',
+      ruggedness: 'standard',
+      storage: '32',
+      liveBoxes: 'none',
+      modules: []
+    };
+
+    const labels = {
+      sampleRate: { low: 'unter 100 Hz', mid: 'unter 1 kHz', high: 'über 1 kHz' },
+      gRange: { 2: '2 g fein', 8: '8 g Standard', 16: '16 g robust', robust: 'Ultra robust' },
+      amplitude: { fine: 'sehr kleine Amplituden', medium: 'mittlere Amplituden', shock: 'sehr starke Amplituden / Schocks' },
+      precision: { simple: 'orientierend', standard: 'gut', high: 'sehr hoch' },
+      duration: { day: '5 Stunden', week: '24 Stunden', weeks: 'mehrere Tage' },
+      ruggedness: { standard: 'Standard', robust: 'Robust', ultra: 'Ultra robust' },
+      storage: { 32: '32 GB', 64: '64 GB' },
+      liveBoxes: { none: 'keine parallele Live-Auslesung', 1: '1 Box live', 2: '2 Boxen live', 4: 'bis 4 Boxen live' },
+      modules: { live: 'Livebetrieb', spectrogram: 'Spektrogramm', gps: 'GPS', temperature: 'Temperatur' }
+    };
+
+    const priceMap = {
+      sampleRate: { low: 0, mid: 0, high: 0 },
+      gRange: { 2: 60, 8: 0, 16: 90, robust: 220 },
+      amplitude: { fine: 50, medium: 0, shock: 140 },
+      precision: { simple: -40, standard: 0, high: 180 },
+      duration: { day: 0, week: 80, weeks: 180 },
+      ruggedness: { standard: 0, robust: 160, ultra: 340 },
+      storage: { 32: 0, 64: 45 },
+      modules: { live: 40, spectrogram: 40, gps: 40, temperature: 40 }
+    };
+
+    const sampleRateHz = { low: 100, mid: 1000, high: 5000 };
+    const durationDays = { day: 1, week: 5, weeks: 21 };
+    const priceEl = document.getElementById('configPrice');
+    const competitorPriceEl = document.getElementById('competitorPrice');
+    const recTitleEl = document.getElementById('configRecommendationTitle');
+    const recTextEl = document.getElementById('configRecommendationText');
+    const summarySampleEl = document.getElementById('summarySample');
+    const summaryGEl = document.getElementById('summaryG');
+    const summaryPrecisionEl = document.getElementById('summaryPrecision');
+    const summaryStorageEl = document.getElementById('summaryStorage');
+    const summaryLiveBoxesEl = document.getElementById('summaryLiveBoxes');
+    const summaryModulesEl = document.getElementById('summaryModules');
+    const requestLinkEl = document.getElementById('configRequestLink');
+    const resetEl = document.getElementById('configReset');
+
+    function formatPrice(value) {
+      return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
+    }
+
+    function getEffectiveSampleRate() {
+      return sampleRateHz[state.sampleRate];
+    }
+
+    function estimateStorageGbPerDay() {
+      const rate = getEffectiveSampleRate();
+      const channelFactor = state.modules.includes('temperature') ? 1.18 : 1;
+      const analysisFactor = state.modules.includes('spectrogram') ? 1.22 : 1;
+      return Math.max(0.3, (rate / 1000) * 2.0 * channelFactor * analysisFactor);
+    }
+
+    function getRecommendation() {
+      if (state.liveBoxes === '4' || state.liveBoxes === '2') {
+        return {
+          title: 'Empfehlung: synchroner Livebetrieb',
+          text: 'Bei mehreren Boxen gleichzeitig wird die Software deutlich wichtiger: Synchronisation, stabile Verbindung und gemeinsame Auswertung müssen sauber geplant werden.'
+        };
+      }
+      if (state.ruggedness === 'ultra' || state.gRange === 'robust' || state.amplitude === 'shock') {
+        return {
+          title: 'Empfehlung: ultra robuste Auslegung',
+          text: 'Für sehr große Kräfte, harte Montagepunkte oder lange Industrieeinsätze planen wir ein robusteres Gehäuse, höhere Belastbarkeit und mehr Reserve ein.'
+        };
+      }
+      if (state.precision === 'high') {
+        return {
+          title: 'Empfehlung: hohe Präzision',
+          text: 'Für sehr genaue Daten empfehlen wir bessere Kalibrierung, passende Sensorauflösung und eine auf die Amplitude abgestimmte Messbereichsauswahl.'
+        };
+      }
+      if (state.sampleRate === 'high' || state.modules.includes('spectrogram')) {
+        return {
+          title: 'Empfehlung: hochauflösende Analyse',
+          text: 'Für schnelle Peaks und Frequenzanalyse empfehlen wir eine höhere oder frei einstellbare Abtastfrequenz, ausreichend Speicher und optional das Spektrogramm-Modul.'
+        };
+      }
+      if (state.duration === 'weeks' || state.modules.includes('live')) {
+        return {
+          title: 'Empfehlung: Dauerbetrieb',
+          text: 'Für mehrere Wochen ist Livebetrieb oder größerer Speicher sinnvoll. Dadurch bleiben Daten verfügbar und kritische Ereignisse werden früher erkannt.'
+        };
+      }
+      if (state.sampleRate === 'low') {
+        return {
+          title: 'Empfehlung: speichersparende Messung',
+          text: 'Wenn langsame Bewegungen reichen, reduziert eine geringere Abtastfrequenz die Datenmenge deutlich und verlängert die praktische Laufzeit.'
+        };
+      }
+      return {
+        title: 'Empfohlene Standardauslegung',
+        text: 'Ein Frequenzbereich unter 1 kHz, 8 g Messbereich und 32 GB Speicher sind für viele Anwendungen ein sinnvoller Ausgangspunkt.'
+      };
+    }
+
+    function calculatePrice() {
+      let price = 499;
+      price += priceMap.sampleRate[state.sampleRate] || 0;
+      price += priceMap.gRange[state.gRange] || 0;
+      price += priceMap.amplitude[state.amplitude] || 0;
+      price += priceMap.precision[state.precision] || 0;
+      price += priceMap.duration[state.duration] || 0;
+      price += priceMap.ruggedness[state.ruggedness] || 0;
+      price += priceMap.storage[state.storage] || 0;
+      const boxFactor = state.liveBoxes === '4'
+        ? 3.4
+        : state.liveBoxes === '2'
+          ? 1.85
+          : 1;
+      price *= boxFactor;
+      state.modules.forEach(module => { price += priceMap.modules[module] || 0; });
+      return Math.max(499, price);
+    }
+
+    function calculateCompetitorPrice(ourPrice) {
+      const liveFactor = state.liveBoxes === '4' ? 1.35 : state.liveBoxes === '2' ? 1.2 : 1;
+      const precisionFactor = state.precision === 'high' ? 1.18 : 1;
+      return Math.round(Math.max(1190, ourPrice * 2.35 * liveFactor * precisionFactor) / 10) * 10;
+    }
+
+    function updateConfigUi() {
+      configRoot.querySelectorAll('[data-config-field]').forEach(group => {
+        const field = group.dataset.configField;
+        group.querySelectorAll('.config-option').forEach(option => {
+          option.classList.toggle('active', option.dataset.value === state[field]);
+        });
+      });
+
+      configRoot.querySelectorAll('[data-config-modules] input').forEach(input => {
+        input.checked = state.modules.includes(input.value);
+      });
+
+      const price = calculatePrice();
+      const competitorPrice = calculateCompetitorPrice(price);
+      const gbPerDay = estimateStorageGbPerDay();
+      const totalGb = gbPerDay * durationDays[state.duration];
+      const rec = getRecommendation();
+      const effectiveModules = state.liveBoxes !== 'none' && !state.modules.includes('live')
+        ? ['live', ...state.modules]
+        : state.modules;
+      const moduleText = effectiveModules.length
+        ? effectiveModules.map(module => labels.modules[module]).join(', ')
+        : 'Basis ohne Zusatzmodule';
+
+      priceEl.innerHTML = `voraussichtlich ab ${formatPrice(price)}<span>Vorläufiger Richtwert. Wir prüfen den finalen Preis manuell nach Anwendung, Stückzahl und technischem Lieferumfang.</span>`;
+      competitorPriceEl.innerHTML = `ca. ${formatPrice(competitorPrice)}<span>Grobe Vergleichsindikation für ähnliche Messsysteme mit vergleichbarem Funktionsumfang.</span>`;
+      recTitleEl.textContent = rec.title;
+      recTextEl.textContent = rec.text;
+      summarySampleEl.textContent = labels.sampleRate[state.sampleRate];
+      summaryGEl.textContent = labels.gRange[state.gRange];
+      summaryPrecisionEl.textContent = `${labels.amplitude[state.amplitude]} / ${labels.precision[state.precision]}`;
+      summaryStorageEl.textContent = `ca. ${gbPerDay.toLocaleString('de-DE', { maximumFractionDigits: 1 })} GB pro Tag, ${totalGb.toLocaleString('de-DE', { maximumFractionDigits: 0 })} GB gesamt`;
+      summaryLiveBoxesEl.textContent = labels.liveBoxes[state.liveBoxes];
+      summaryModulesEl.textContent = moduleText;
+
+      const params = new URLSearchParams({
+        betreff: 'Anfrage Customized Sense Box',
+        frequenz: labels.sampleRate[state.sampleRate],
+        abtastung: summarySampleEl.textContent,
+        messbereich: labels.gRange[state.gRange],
+        amplitude: labels.amplitude[state.amplitude],
+        praezision: labels.precision[state.precision],
+        messdauer: labels.duration[state.duration],
+        robustheit: labels.ruggedness[state.ruggedness],
+        speicher: labels.storage[state.storage],
+        live_boxen: labels.liveBoxes[state.liveBoxes],
+        module: moduleText,
+        vorlaeufiger_richtpreis: formatPrice(price)
+      });
+      requestLinkEl.href = `ContactUs.html?${params.toString()}`;
+    }
+
+    configRoot.querySelectorAll('[data-config-field]').forEach(group => {
+      const field = group.dataset.configField;
+      group.querySelectorAll('.config-option').forEach(option => {
+        option.addEventListener('click', () => {
+          state[field] = option.dataset.value;
+          updateConfigUi();
+        });
+      });
+    });
+
+    configRoot.querySelectorAll('[data-config-modules] input').forEach(input => {
+      input.addEventListener('change', () => {
+        state.modules = Array.from(configRoot.querySelectorAll('[data-config-modules] input:checked')).map(item => item.value);
+        updateConfigUi();
+      });
+    });
+
+    resetEl.addEventListener('click', () => {
+      state.sampleRate = 'mid';
+      state.gRange = '8';
+      state.amplitude = 'medium';
+      state.precision = 'standard';
+      state.duration = 'day';
+      state.ruggedness = 'standard';
+      state.storage = '32';
+      state.liveBoxes = 'none';
+      state.modules = [];
+      updateConfigUi();
+    });
+
+    updateConfigUi();
+  }
+
+  // CANVAS IMAGE-SEQUENCE SCRUB (120 frames @ 1280px, ~2.6 MB total)
+  const scrubCanvas = document.getElementById('videoFixed');
+  const scrubCtx = scrubCanvas.getContext('2d');
+  const videoOverlay = document.getElementById('videoFixedOverlay');
+  const fadeSection = document.querySelector('#products');
+  const TOTAL_FRAMES = 120;
+  const frameImages = new Array(TOTAL_FRAMES);
+  let framesReady = false;
+  let lastFrameIndex = -1;
+
+  function resizeScrubCanvas() {
+    const dpr = window.devicePixelRatio || 1;
+    scrubCanvas.width  = scrubCanvas.offsetWidth  * dpr;
+    scrubCanvas.height = scrubCanvas.offsetHeight * dpr;
+    scrubCtx.imageSmoothingEnabled = true;
+    scrubCtx.imageSmoothingQuality = 'high';
+    if (framesReady && lastFrameIndex >= 0) drawScrubFrame(lastFrameIndex);
+  }
+  window.addEventListener('resize', resizeScrubCanvas, {passive: true});
+  resizeScrubCanvas();
+
+  function drawScrubFrame(index) {
+    const img = frameImages[index];
+    if (!img || !img.complete || !img.naturalWidth) return;
+    const cw = scrubCanvas.width, ch = scrubCanvas.height;
+    const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
+    const sw = img.naturalWidth * scale, sh = img.naturalHeight * scale;
+    scrubCtx.drawImage(img, (cw - sw) / 2, (ch - sh) / 2, sw, sh);
+    lastFrameIndex = index;
+  }
+
+  let loadedCount = 0;
+  for (let i = 0; i < TOTAL_FRAMES; i++) {
+    const img = new Image();
+    img.onload = () => { if (++loadedCount === TOTAL_FRAMES) { framesReady = true; drawScrubFrame(0); } };
+    img.src = `../assets/frames/sensebox_frames/frame${String(i + 1).padStart(3, '0')}.jpg`;
+    frameImages[i] = img;
+  }
+
+  (function scrubLoop() {
+    requestAnimationFrame(scrubLoop);
+    if (!framesReady) return;
+    const progress = Math.max(0, Math.min(1, window.scrollY / window.innerHeight));
+    const idx = Math.min(Math.round((1 - progress) * (TOTAL_FRAMES - 1)), TOTAL_FRAMES - 1);
+    if (idx !== lastFrameIndex) drawScrubFrame(idx);
+  })();
+
+  // Cache section offset — avoids getBoundingClientRect() on every scroll event
+  let fadeSectionOffset = 0;
+  const cacheFadeOffset = () => { if (fadeSection) fadeSectionOffset = fadeSection.getBoundingClientRect().top + window.scrollY; };
+  window.addEventListener('load', cacheFadeOffset);
+  window.addEventListener('resize', cacheFadeOffset, {passive:true});
+
+  // Single combined scroll handler with rAF + passive for smooth animation
+  let scrollRaf = null;
+  window.addEventListener('scroll', () => {
+    if (scrollRaf) return;
+    scrollRaf = requestAnimationFrame(() => {
+      scrollRaf = null;
+      const st = window.scrollY;
+      if (fadeSection) {
+        const rectTop = fadeSectionOffset - st;
+        const fadeRange = window.innerHeight;
+        const fadeProgress = Math.max(0, Math.min(1, (window.innerHeight * 1.8 - rectTop) / fadeRange));
+        scrubCanvas.style.opacity = 1 - fadeProgress;
+        videoOverlay.style.opacity = 1 - fadeProgress;
+      }
+    });
+  }, {passive: true});
+
+  // ── Product Tabs ──
+  const ptBadgeMap = {
+    vibrasense: 'VibraSense',
+    predictive: 'Live-Monitoring-System',
+    custom: 'Individuelle Lösung'
+  };
+  const ptTabs = document.querySelectorAll('.pt-rail .pt-tab');
+  const ptPanels = document.querySelectorAll('.pt-panel');
+  const ptBadgeText = document.getElementById('ptBadgeText');
+
+  const workflowData = {
+    vibrasense: {
+      eyebrow: 'VibraSense · Workflow',
+      title: 'In vier Schritten zur präzisen Vibrationsmessung.',
+      steps: [
+        { num: '01', title: 'Platzieren & Aufzeichnung starten', text: 'VibraSense kabellos einschalten, am Messobjekt fixieren — die Aufzeichnung startet automatisch.' },
+        { num: '02', title: 'SD-Karte entnehmen', text: 'Nach abgeschlossener Messung Gerät ausschalten und die SD-Karte mit allen geloggten Daten entnehmen.' },
+        { num: '03', title: 'Datei am Computer hochladen', text: 'SD-Karte mit dem Laptop verbinden und die Messdatei in die Software übertragen.' },
+        { num: '04', title: 'Analyse starten', text: 'Software öffnen, Datei hochladen und mit einem Klick die automatisierte Analyse aller aufgezeichneten Daten starten.' },
+      ]
+    },
+    predictive: {
+      eyebrow: 'Predictive Sense · Workflow',
+      title: 'Einmal installiert — dauerhaft im Blick.',
+      steps: [
+        { num: '01', title: 'Fixieren & anschließen', text: 'Predictive Sense dauerhaft am Messobjekt befestigen und per Kabel anschließen — bereit für den Dauerbetrieb.' },
+        { num: '02', title: 'Start & Kalibrierung', text: 'Einmal Start drücken: Das System kalibriert sich selbst und lernt das gesunde Schwingungsverhalten der Maschine.' },
+        { num: '03', title: 'Alarm bei Anomalie', text: 'Ändert sich das Schwingungsverhalten, erkennt das System die Abweichung sofort und sendet einen Alarm.' },
+        { num: '04', title: 'Daten analysieren', text: 'Box anschließen, unsere Software öffnen und die aufgezeichneten Daten im Detail auswerten.' },
+      ]
+    },
+    custom: {
+      eyebrow: 'Custom Sense · Workflow',
+      title: 'Ihr Produkt — von der Idee bis zur fertigen Lösung.',
+      steps: [
+        { num: '01', title: 'Anforderungen definieren', text: 'Gemeinsam klären wir Sensoren, Übertragungswege, Gehäuse und Integrationsziele — präzise auf Ihren Anwendungsfall abgestimmt.' },
+        { num: '02', title: 'Konzept & Prototyp', text: 'Wir entwickeln einen maßgeschneiderten Prototypen und validieren ihn unter realen Bedingungen.' },
+        { num: '03', title: 'Integration & Test', text: 'Custom Sense wird in Ihre bestehenden Systeme, Software oder Prozesse integriert und vollständig getestet.' },
+        { num: '04', title: 'Serienreife & Support', text: 'Übergang in die Serienproduktion mit laufendem Support — skalierbar von Einzelstück bis Großserie.' },
+      ]
+    }
+  };
+
+
+  const wfEyebrow = document.getElementById('workflowEyebrow');
+  const wfTitle = document.getElementById('workflowTitle');
+  const wfSteps = document.getElementById('workflowSteps');
+  const wfHeader = document.querySelector('.workflow-header');
+
+  function updateWorkflow(key) {
+    const data = workflowData[key];
+    if (!data) return;
+    wfEyebrow.textContent = data.eyebrow;
+    wfTitle.textContent = data.title;
+    wfSteps.innerHTML = data.steps.map(s => `
+      <div class="workflow-step">
+        <div class="workflow-dot"></div>
+        <p class="workflow-num">${s.num}</p>
+        <h3>${s.title}</h3>
+        <p>${s.text}</p>
+      </div>`).join('');
+    wfHeader.classList.remove('switching');
+    wfSteps.classList.remove('switching');
+    void wfHeader.offsetWidth;
+    void wfSteps.offsetWidth;
+    wfHeader.classList.add('switching');
+    wfSteps.classList.add('switching');
+  }
+
+  function activateTab(key) {
+    ptTabs.forEach(t => {
+      const isActive = t.dataset.tab === key;
+      t.classList.toggle('active', isActive);
+      t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    ptPanels.forEach(p => p.classList.toggle('active', p.id === 'pt-' + key));
+    if (ptBadgeText && ptBadgeMap[key]) ptBadgeText.textContent = ptBadgeMap[key];
+    pt360SwitchTab(key);
+    updateWorkflow(key);
+
+  }
+
+  ptTabs.forEach(tab => {
+    tab.addEventListener('click', () => activateTab(tab.dataset.tab));
+  });
+
+  // Varianten cards: switch tab + smooth-scroll to product section
+  document.querySelectorAll('[data-scroll-tab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.scrollTab;
+      activateTab(key);
+      const rail = document.querySelector('.pt-rail');
+      if (rail) rail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Hero pills: switch tab + smooth-scroll to product section
+  document.querySelectorAll('[data-pill-tab]').forEach(pill => {
+    pill.addEventListener('click', (e) => {
+      const key = pill.dataset.pillTab;
+      activateTab(key);
+    });
+  });
+
+  // ── 360° concept viewer; current production design is shown as an overlay ──
+  const pt360Wrap = document.getElementById('pt360Wrap');
+  const pt360Canvas = document.getElementById('pt360Video');
+  const pt360Ctx = pt360Canvas.getContext('2d');
+  const PT360_FRAMES = 120;
+  const PT360_SENSITIVITY = 900;
+  const pt360Sets = { vibrasense: null, predictive: null, custom: null };
+  const pt360Dirs = { vibrasense: 'sensebox360_frames', predictive: 'predictivesense360_frames', custom: 'customsense360_frames' };
+  let pt360ActiveSet = null;
+  let pt360Ready = false, pt360CurrentIdx = 0;
+
+  function pt360Resize() {
+    const dpr = window.devicePixelRatio || 1;
+    pt360Canvas.width = pt360Canvas.offsetWidth * dpr;
+    pt360Canvas.height = pt360Canvas.offsetHeight * dpr;
+    pt360Ctx.imageSmoothingEnabled = true;
+    pt360Ctx.imageSmoothingQuality = 'high';
+    if (pt360Ready) pt360Draw(pt360CurrentIdx);
+  }
+  window.addEventListener('resize', pt360Resize, {passive:true});
+  pt360Resize();
+
+  function pt360Draw(index) {
+    if (!pt360ActiveSet) return;
+    const img = pt360ActiveSet[index];
+    if (!img || !img.complete || !img.naturalWidth) return;
+    const cw = pt360Canvas.width, ch = pt360Canvas.height;
+    const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
+    const sw = img.naturalWidth * scale, sh = img.naturalHeight * scale;
+    pt360Ctx.drawImage(img, (cw - sw) / 2, (ch - sh) / 2, sw, sh);
+    pt360CurrentIdx = index;
+  }
+
+  function pt360SwitchTab(key) {
+    const set = pt360Sets[key];
+    pt360Wrap.style.display = pt360Dirs[key] ? '' : 'none';
+    if (pt360Hint) pt360Hint.style.display = pt360Dirs[key] ? '' : 'none';
+    if (!set) return;
+    pt360ActiveSet = set;
+    pt360CurrentIdx = 0;
+    pt360Resize();
+  }
+
+  Object.entries(pt360Dirs).forEach(([key, dir]) => {
+    const imgs = new Array(PT360_FRAMES);
+    let loaded = 0;
+    for (let i = 0; i < PT360_FRAMES; i++) {
+      const img = new Image();
+      img.onload = () => {
+        if (++loaded === PT360_FRAMES) {
+          pt360Sets[key] = imgs;
+          if (key === 'vibrasense') {
+            pt360ActiveSet = imgs;
+            pt360Ready = true;
+            pt360Draw(0);
+          }
+        }
+      };
+      img.src = `../assets/frames/${dir}/frame${String(i + 1).padStart(3, '0')}.jpg`;
+      imgs[i] = img;
+    }
+  });
+
+  let pt360Active = false, pt360StartX = 0, pt360StartIdx = 0;
+  const pt360Hint = document.getElementById('pt360Hint');
+  function pt360Start(x) {
+    pt360Active = true;
+    pt360StartX = x;
+    pt360StartIdx = pt360CurrentIdx;
+    pt360Wrap.classList.add('dragging');
+  }
+  function pt360Move(x) {
+    if (!pt360Active || !pt360Ready) return;
+    const delta = Math.round(((x - pt360StartX) / PT360_SENSITIVITY) * PT360_FRAMES);
+    pt360Draw(((pt360StartIdx + delta) % PT360_FRAMES + PT360_FRAMES) % PT360_FRAMES);
+  }
+  function pt360End() {
+    pt360Active = false;
+    pt360Wrap.classList.remove('dragging');
+  }
+  pt360Wrap.addEventListener('mousedown', e => { e.preventDefault(); pt360Start(e.clientX); });
+  window.addEventListener('mousemove', e => pt360Move(e.clientX));
+  window.addEventListener('mouseup', pt360End);
+  pt360Wrap.addEventListener('touchstart', e => pt360Start(e.touches[0].clientX), {passive:true});
+  window.addEventListener('touchmove', e => { if (pt360Active) pt360Move(e.touches[0].clientX); }, {passive:true});
+  window.addEventListener('touchend', pt360End);
+</script>
+<script src="../assets/js/shared.js"></script>
+<script>
+(function(){
+  document.querySelectorAll('.config-block').forEach(function(block) {
+    const row = block.querySelector('.config-label-row');
+    if (!row) return;
+
+    // Info butonu
+    const helpEl = row.querySelector('.config-help');
+    if (helpEl) {
+      const helpText = helpEl.textContent.trim();
+      helpEl.style.display = 'none';
+      const infoBtn = document.createElement('button');
+      infoBtn.type = 'button';
+      infoBtn.className = 'config-info-btn';
+      infoBtn.setAttribute('aria-label', 'Info');
+      infoBtn.innerHTML = 'i';
+      const tooltip = document.createElement('div');
+      tooltip.className = 'config-info-tooltip';
+      tooltip.textContent = helpText;
+      infoBtn.appendChild(tooltip);
+      infoBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = infoBtn.classList.contains('open');
+        document.querySelectorAll('.config-info-btn.open').forEach(function(b) { b.classList.remove('open'); });
+        if (!isOpen) infoBtn.classList.add('open');
+      });
+      const labelEl = row.querySelector('.config-label');
+      if (labelEl) {
+        const titleRow = document.createElement('div');
+        titleRow.style.cssText = 'display:flex;align-items:center;gap:8px;';
+        labelEl.parentNode.insertBefore(titleRow, labelEl);
+        titleRow.appendChild(labelEl);
+        titleRow.appendChild(infoBtn);
+      } else {
+        row.appendChild(infoBtn);
+      }
+    }
+
+    // Chevron
+    const chevron = document.createElement('span');
+    chevron.className = 'config-chevron';
+    chevron.innerHTML = '&#9660;';
+    row.appendChild(chevron);
+
+    // Body wrapper
+    const body = document.createElement('div');
+    body.className = 'config-block-body';
+    Array.from(block.children).forEach(function(child) {
+      if (child !== row) body.appendChild(child);
+    });
+    block.appendChild(body);
+
+    row.addEventListener('click', function() {
+      block.classList.toggle('open');
+    });
+  });
+
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.config-info-btn.open').forEach(function(b) { b.classList.remove('open'); });
+  });
+})();
+</script>
+</body>
+</html>

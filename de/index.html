@@ -1,158 +1,961 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muniqo Performante - Vibrationsreduzierung durch Innovation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Muniqo Performante – Vibration Control</title>
+  <link rel="icon" href="../assets/images/Logo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/shared.css">
 
-    <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+  /* ════════════════════════════════
+       HERO
+    ════════════════════════════════ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-    <link rel="icon" href="../Logo.png" type="image/x-icon">
+    /* ── Fixed Video Background ── */
+    .video-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+    .video-bg video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .hero video {
+      display: none;
+    }
+
+    /* Gradient vignette like Kimi */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      z-index: 1;
+    }
+
+    .hero-title {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: 10002;
+      text-align: center;
+      letter-spacing: .28em;
+      width: max-content;
+      transform: translate(-50%, -50%);
+      transform-origin: center;
+      will-change: left, top, transform, opacity;
+    }
+    @media(max-width:900px){
+      .hero-title {
+        position: relative;
+        top: auto;
+        left: auto;
+        z-index: 2;
+        width: auto;
+        transform: none !important;
+      }
+    }
+
+    .nav-wordmark {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: var(--white);
+      text-decoration: none;
+      line-height: 1;
+      opacity: .9;
+    }
+    .nav-wordmark-main {
+      font-family: 'Syne', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .nav-wordmark-sub {
+      margin-top: 5px;
+      font-family: var(--font-cond);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: .32em;
+      color: rgba(244, 242, 238, .7);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-logo > a:first-child {
+      display: flex;
+      align-items: center;
+    }
+    .nav-logo img {
+      height: 64px;
+      margin-top: 0;
+    }
+
+    .hero-title .wordmark {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: clamp(60px, 10vw, 140px);
+      line-height: 1;
+      color: var(--white);
+      letter-spacing: .18em;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1.4s cubic-bezier(.16,1,.3,1) .3s forwards;
+    }
+
+    .hero-title .sub {
+      font-family: var(--font-cond);
+      font-weight: 300;
+      font-size: clamp(26px, 2.4vw, 42px);
+      letter-spacing: .45em;
+      color: rgba(244, 242, 238, 0.698);
+      margin-top: 16px;
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(.16,1,.3,1) .8s forwards;
+    }
+
+    /* Bottom info bar – like Kimi's 3-column bottom */
+    .hero-bottom.hero-bottom--mobile { display: none; }
+    .scroll-hint { display: block; position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.45); animation: scrollBounce 1.8s ease-in-out infinite; background: none; border: none; padding: 12px; z-index: 10; }
+    .scroll-hint svg { width: 32px; height: 32px; display: block; }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: .5; }
+      50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+    }
+    .hero-bottom {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: transparent;
+    }
+
+    .hero-bottom-card {
+      background: linear-gradient(to bottom, var(--card-top), var(--card-bottom));
+      backdrop-filter: blur(12px);
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      opacity: 0;
+      animation: fadeUp .9s ease .6s forwards;
+      transition: background .3s;
+    }
+    .hero-bottom-card:hover { background: linear-gradient(to bottom, rgba(9,9,10,0.50), rgba(9,9,10,0.50)); }
+
+    .hero-bottom-card .label {
+      font-family: var(--font-cond);
+      font-size: 13px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .hero-bottom-card h3 {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.35;
+    }
+
+    .hero-bottom-card p {
+      font-size: 13px;
+      color: var(--white-dim);
+      line-height: 1.65;
+    }
+
+    .arrow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-cond);
+      font-size: 12px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      margin-top: 8px;
+      transition: color .3s, gap .3s;
+    }
+    .arrow-link:hover { color: var(--white); gap: 14px; }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(24px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ════════════════════════════════
+       PRODUCTS
+    ════════════════════════════════ */
+    .products {
+      padding: 100px 64px;
+      background: rgba(9,9,10,.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255,255,255,.07);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-cond);
+      font-size: 14px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 70px;
+      max-width: 800px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .product-card {
+      position: relative;
+      aspect-ratio: 16/8;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-decoration: none;
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.08) inset,
+        0 24px 64px rgba(0,0,0,0.45),
+        0 2px 12px rgba(0,0,0,0.3);
+      transition: border-color .4s, box-shadow .4s, transform .5s cubic-bezier(.16,1,.3,1);
+    }
+    .product-card:hover {
+      border-color: rgba(255,255,255,0.18);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.12) inset,
+        0 32px 80px rgba(0,0,0,0.55),
+        0 2px 16px rgba(0,0,0,0.35);
+      transform: translateY(-3px);
+    }
+
+    /* Freigestelltes Produktbild – schwebt mittig in der Karte */
+    .product-card .product-img {
+      position: absolute;
+      left: 50%;
+      top: 46%;
+      transform: translate(-50%, -50%);
+      width: 72%;
+      height: 75%;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 40px rgba(0,0,0,0.6)) drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+      transition: transform .7s cubic-bezier(.16,1,.3,1), filter .7s ease;
+      pointer-events: none;
+      user-select: none;
+    }
+    .product-card:last-child .product-img {
+      top: 40%;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7)) drop-shadow(0 3px 8px rgba(0,0,0,0.5));
+    }
+
+    .product-card:first-child .product-img {
+      width: 70%;
+      height: 78%;
+      top: 36%;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7)) drop-shadow(0 3px 8px rgba(0,0,0,0.5));
+    }
+    .product-card:hover .product-img {
+      transform: translate(-50%, -53%) scale(1.04);
+      filter: drop-shadow(0 16px 30px rgba(0,0,0,0.65)) drop-shadow(0 5px 12px rgba(0,0,0,0.45));
+    }
+
+    /* ── VibraSense 3-Bild-Stack ── */
+    .product-img-stack {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .product-img-stack .product-img {
+  position: absolute;
+  width: 55%;
+  height: 70%;
+  top: 46%;
+  left: unset; right: unset;
+  transform: translateY(-50%);
+  object-fit: contain;
+  filter: drop-shadow(0 20px 36px rgba(0,0,0,0.6)) drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+  transition: transform .7s cubic-bezier(.16,1,.3,1), filter .7s ease;
+}
+.product-img--1 { left: 4% !important;  top: 62% !important; transform: translateY(-65%) !important; z-index: 6; }
+.product-img--2 { left: 22% !important; top: 46% !important; transform: translateY(-45%) !important; z-index: 4; }
+.product-img--3 { left: 40% !important; top: 30% !important; transform: translateY(-25%) !important; z-index: 2; }
+
+.product-card:hover .product-img--1 { left: 4% !important;  top: 62% !important; transform: translateY(-70%) !important; }
+.product-card:hover .product-img--2 { left: 22% !important; top: 46% !important; transform: translateY(-55%) !important; }
+.product-card:hover .product-img--3 { left: 40% !important; top: 30% !important; transform: translateY(-38%) !important; }
+
+    /* Subtle inner glow at top edge */
+    .product-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .product-card-overlay {
+      position: relative;
+      z-index: 1;
+      padding: 32px 36px;
+    }
+    .card-cta-btn {
+      position: absolute; top: 20px; right: 20px;
+      display: inline-flex; align-items: center;
+      background: linear-gradient(135deg,rgba(200,168,75,.45),rgba(200,168,75,.15));
+      color: var(--accent); border: 1px solid rgba(200,168,75,.55);
+      backdrop-filter: blur(12px);
+      font-family: var(--font-cond); font-size: 11px; letter-spacing: .18em;
+      text-transform: uppercase; font-weight: 900;
+      padding: 8px 18px; border-radius: 999px;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+
+    .product-card-overlay .tag {
+      font-family: var(--font-cond);
+      font-size: 13px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .product-card-overlay h3 {
+      font-family: var(--font-display);
+      font-size: 30px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .product-card-overlay p {
+      font-size: 14px;
+      color: var(--white-dim);
+      max-width: 380px;
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════
+       PARTNERS STRIP
+    ════════════════════════════════ */
+    .partners {
+      padding: 60px 0;
+      background: linear-gradient(to bottom, rgba(30,30,32,.6), rgba(72,72,76,.85) 40%, rgba(72,72,76,.85) 60%, rgba(30,30,32,.6));
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255,255,255,.1);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .partners-label {
+      font-family: var(--font-cond);
+      font-size: 18px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: rgba(244, 242, 238, 0.8);
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 0 64px;
+    }
+
+    .ticker-wrap {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .ticker {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .ticker img {
+      height: 43px;
+      width: auto;
+      max-width: 168px;
+      max-height: 43px;
+      object-fit: contain;
+      opacity: .75;
+      transition: opacity .3s;
+      flex-shrink: 0;
+    }
+    .ticker img:hover { opacity: .85; }
+    .ticker img.eu-logo { height: 60px; max-height: 60px; max-width: 235px; opacity: 1; }
+    .ticker img[alt="Sprind"] { height: 37px; max-height: 37px; max-width: 143px; }
+    .ticker img[alt="München"] { height: 56px; max-height: 56px; max-width: 218px; }
+    .ticker img[alt="Feuerwehr München"] { height: 73px; max-height: 73px; max-width: 283px; }
+
+    .ticker a {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    /* ════════════════════════════════
+       STATEMENT SECTION
+    ════════════════════════════════ */
+    .statement {
+      padding: 140px 64px;
+      background: rgba(9,9,10,.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .statement-left p {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 38px);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--white);
+    }
+
+    .statement-right p {
+      font-size: 18px;
+      color: var(--white-dim);
+      line-height: 1.85;
+      max-width: 420px;
+    }
+
+    /* ════════════════════════════════
+       FOOTER
+    ════════════════════════════════ */
+    
+
+    
+
+    .f-links {
+      display: flex;
+      gap: 28px;
+    }
+    
+    
+
+    /* ── Hamburger Button ── */
+    .mob-toggle {
+      display: none;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+    .mob-toggle span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--white);
+      margin: 5px 0;
+    }
+
+    /* ════════════════════════════════
+       TOUCH DEVICES
+    ════════════════════════════════ */
+    @media (hover: none), (pointer: coarse) {
+      body, *, a, button, [role="button"], input, textarea, select { cursor: auto !important; }
+      .c-dot, .trail, .ripple { display: none !important; }
+    }
+
+    /* ════════════════════════════════
+       MOBILE
+    ════════════════════════════════ */
+    @media (max-width: 900px) {
+      header { padding: calc(18px + env(safe-area-inset-top)) 20px 18px !important; }
+
+      .nav-logo { gap: 10px; }
+      .nav-logo img { height: 46px; margin-top: 0; transform: none; }
+      .nav-wordmark-main { font-size: 20px; }
+      .nav-wordmark-sub { font-size: 10px; margin-top: 4px; }
+
+      /* Vollbild-Menü Overlay */
+      .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;flex-direction:column;justify-content:center;align-items:center;background:#09090a;gap:28px;z-index:99998;overscroll-behavior:contain;}
+      .nav-links.open{display:flex !important;}.nav-links a:hover,.nav-links a.active{color:#fff;}
+      .nav-links a{font-family:var(--font-cond);font-size:20px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .3s;}
+
+      .mob-toggle { display: block; z-index: 10001; }
+
+      .lang-switch { font-size: 12px; margin-right: 8px; }
+
+      .scroll-progress { right: 10px; height: 200px; }
+
+      /* Hero */
+      .hero-title .wordmark { font-size: clamp(44px, 13vw, 80px); letter-spacing: .1em; }
+      .hero-title .sub { font-size: clamp(18px, 5vw, 28px); letter-spacing: .25em; }
+      .hero { height: 100svh; }
+      .scroll-hint { display: block; position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.45); animation: scrollBounce 1.8s ease-in-out infinite; background: none; border: none; padding: 12px; z-index: 10; cursor: pointer !important; }
+      .scroll-hint svg { width: 32px; height: 32px; display: block; }
+      .hero-bottom.hero-bottom--desktop { display: none; }
+      .hero-bottom.hero-bottom--mobile { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: transparent; position: relative; z-index: 2; }
+      .hero-bottom--mobile .hero-bottom-card { padding: 24px 20px; opacity: 1; animation: none; }
+      .hero-bottom--mobile .hero-bottom-card h3 { font-size: 17px; }
+      .hero-bottom--mobile .hero-bottom-card p { display: none; }
+
+      /* Products */
+      .products { padding: 72px 20px; }
+      .section-title { font-size: clamp(26px, 7vw, 40px); margin-bottom: 48px; }
+      .product-grid { grid-template-columns: 1fr; gap: 14px; }
+      .product-card { aspect-ratio: 16/9; }
+      .product-card-overlay { padding: 24px 22px; }
+      .product-card-overlay h3 { font-size: 22px; }
+      .product-card .product-img {
+        left: auto;
+        right: 12px;
+        top: 10%;
+        transform: none;
+        width: 42%;
+        height: 56%;
+        filter: none;
+      }
+      .product-card:first-child .product-img {
+        width: 48%;
+        height: 62%;
+        right: 6px;
+        top: 6%;
+        filter: none;
+      }
+      .product-card:last-child .product-img {
+        filter: none;
+      }
+      .product-card:hover .product-img {
+        transform: none;
+        filter: none;
+      }
+
+      /* Partners */
+      .partners-label { font-size: 13px; padding: 0 20px; }
+      .ticker { gap: 48px; }
+
+      /* Statement */
+      .statement { grid-template-columns: 1fr; gap: 32px; padding: 72px 20px; }
+      .statement-right p { max-width: 100%; }
+
+      footer { flex-direction: column; gap: 16px; padding: 38px 20px 34px; text-align: center; }
+      
+      .f-links { width: 100%; justify-content: center; gap: 22px; flex-wrap: wrap; }
+      
+    }
+
+    @media (max-width: 600px) {
+      .scroll-progress { display: none; }
+      .products { padding: 56px 18px; }
+      .section-eyebrow { font-size: 12px; letter-spacing: .24em; }
+      .section-title { margin-bottom: 32px; }
+      .product-grid { gap: 12px; }
+      .product-card {
+        aspect-ratio: auto;
+        min-height: 260px;
+        justify-content: flex-end;
+        border-radius: 12px;
+      }
+      .product-card-overlay {
+        padding: 16px 20px 22px;
+        background: linear-gradient(to top, rgba(9,9,10,0.92) 40%, transparent 100%);
+      }
+      .product-card-overlay .tag {
+        font-size: 12px;
+        letter-spacing: .22em;
+        margin-bottom: 5px;
+      }
+      .product-card-overlay h3 {
+        font-size: clamp(21px, 6.8vw, 26px);
+        line-height: 1.1;
+        margin-bottom: 4px;
+      }
+      .product-card-overlay p {
+        font-size: 13px;
+        line-height: 1.55;
+        max-width: 100%;
+      }
+      .product-card .product-img,
+      .product-card:first-child .product-img,
+      .product-card:last-child .product-img {
+        top: 32%;
+        left: 50%;
+        right: auto;
+        width: 48%;
+        height: 54%;
+        transform: translate(-50%, -50%);
+        filter: drop-shadow(0 10px 22px rgba(0,0,0,0.6)) drop-shadow(0 3px 8px rgba(0,0,0,0.4));
+      }
+      .product-card:first-child .product-img {
+        width: 68%;
+        height: 74%;
+        top: 27%;
+      }
+      .product-card:hover .product-img {
+        transform: translate(-50%, -58%);
+      }
+      .statement { padding: 56px 18px; }
+      .hero-bottom-card { padding: 20px 18px; }
+    }
+  </style>
 </head>
 
 <body>
 
+<!-- ── Mobile Nav Overlay ── -->
+<nav id="navLinks" class="nav-links">
+  <button class="nav-close" id="navClose" aria-label="Schließen"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1"/><line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1"/></svg></button>
+    <a href="index.html" class="active">Home</a>
+    <a href="SenseReihe.html">Sense Reihe</a>
+    <a href="VibraLifeGuard.html">VibraLifeGuard</a>
+    <a href="AboutUs.html">Über Uns</a>
+    <a href="Career.html">Karriere</a>
+    <a href="ContactUs.html">Kontakt</a>
+  </nav>
+
+<!-- ── Fixed Video Background ── -->
+<div class="video-bg">
+  <video autoplay muted loop playsinline>
+    <source src="../assets/videos/background-video.mp4" type="video/mp4">
+    <source src="../assets/videos/background-video.webm" type="video/webm">
+  </video>
+</div>
+
+<!-- ── Cursor ── -->
+<div class="c-dot" id="cDot"></div>
+
+<!-- ── Scroll Progress ── -->
+<div class="scroll-progress">
+  <div class="scroll-progress-top" id="scrollProgressTop"></div>
+  <div class="scroll-progress-dot" id="scrollProgressDot"></div>
+  <div class="scroll-progress-bottom" id="scrollProgressBottom"></div>
+</div>
+
+<!-- ════════ HEADER ════════ -->
 <header id="header">
-    <div class="container">
-        <div class="logo-title">
-            <a href="index.html"><img src="../Logo.png" class="logo" alt="Logo"></a>
-            <a href="index.html"><h1>Muniqo Performante</h1></a>
-        </div>
+  <div class="nav-logo">
+    <a href="index.html" aria-label="Muniqo Performante Startseite">
+      <img src="../assets/images/Logo.png" alt="">
+    </a>
+    <a href="index.html" class="nav-wordmark" aria-label="Muniqo Performante">
+      <span class="nav-wordmark-main">MUNIQO</span>
+      <span class="nav-wordmark-sub">Performante</span>
+    </a>
+  </div>
 
-        <!-- Hamburger -->
-        <div id="menu-toggle" class="menu-toggle">&#9776;</div>
+  <!-- nav moved to body -->
 
-        <nav id="nav">
-            <ul>
-                <li><a href="VibraSense.html">VibraSense</a></li>
-                <li><a href="VibraLifeGuard.html">VibraLifeGuard</a></li>
-                <li><a href="AboutUs.html">Über Uns</a></li>
-                <li><a href="Career.html">Karriere</a></li>
-                <li><a href="ContactUs.html">Kontakt</a></li>
-                <li class="language-switch">
-                    <a href="../en/index.html">EN</a> | <a href="index.html">DE</a>
-                </li>
-            </ul>
-        </nav>
+  <div class="nav-right">
+    <div class="lang-switch">
+      <a href="../en/index.html">EN</a>
+      <span>/</span>
+      <a href="index.html" class="active">DE</a>
     </div>
+  </div>
+  <button class="mob-toggle" id="mobToggle" aria-label="Menü"><span></span><span></span><span></span></button>
 </header>
 
-<section id="home" class="landing">
-    <video autoplay muted loop playsinline id="background-video">
-        <source src="../background-video.mp4" type="video/mp4">
-        <source src="../background-video.webm" type="video/webm">
-        Ihr Browser unterstützt das Video-Tag nicht.
-    </video>
-    <div class="landing-content">
-        <img src="../Logo.png" alt="Muniqo Performante Logo" class="landing-logo">
-        <h2>Engineering the Future of Vibration Control and Isolation Techniques</h2>
-        <p>Unsere innovative Lösung bietet herausragende Vibrationskontrolle und optimiert Ihre Prozesse für maximale Leistung.</p>
-    </div>
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-title">
+    <div class="wordmark">MUNIQO</div>
+    <div class="sub">Performante</div>
+  </div>
+
+  <!-- Scroll hint arrow (mobile only) -->
+  <button class="scroll-hint" aria-label="Nach unten scrollen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+
 </section>
 
-<section id="products" class="products-section">
+<!-- Bottom 3-column bar (desktop: below hero, below fold) -->
+<div class="hero-bottom hero-bottom--desktop">
+  <div class="hero-bottom-card">
+    <span class="label">Vibrationskontrolle</span>
+    <h3>Schwingungen gezielt beherrschen</h3>
+    <p>Wir entwickeln Lösungen, die Vibrationen präzise erfassen, analysieren und wirksam reduzieren.</p>
+  </div>
+  <div class="hero-bottom-card">
+    <span class="label">Technologie</span>
+    <h3>Messen und aktiv reduzieren</h3>
+    <p>Intelligente Sensorik und aktive Antivibrationssysteme schaffen kontrollierte Bedingungen für sensible Anwendungen.</p>
+  </div>
+  <div class="hero-bottom-card">
+    <span class="label">Anwendungen</span>
+    <h3>Für Medizin, Industrie und Forschung</h3>
+    <p>Unsere Technologien sind überall dort einsetzbar, wo Präzision, Sicherheit und stabile Prozesse entscheidend sind.</p>
+  </div>
+</div>
 
-    <h2>Erleben Sie unsere Technologie</h2>
+<!-- Bottom 3-column bar (mobile: outside hero, below fold) -->
+<div class="hero-bottom hero-bottom--mobile">
+  <div class="hero-bottom-card">
+    <span class="label">Vibrationskontrolle</span>
+    <h3>Schwingungen gezielt beherrschen</h3>
+  </div>
+  <div class="hero-bottom-card">
+    <span class="label">Technologie</span>
+    <h3>Messen und aktiv reduzieren</h3>
+  </div>
+  <div class="hero-bottom-card">
+    <span class="label">Anwendungen</span>
+    <h3>Medizin, Industrie und Forschung</h3>
+  </div>
+</div>
 
-    <div class="products-grid">
+<!-- ════════ PRODUCTS ════════ -->
+<section class="products">
+  <p class="section-eyebrow">Unsere Technologie</p>
+  <h2 class="section-title">Erleben Sie die Zukunft der Vibrationskontrolle</h2>
 
-        <a href="VibraSense.html" class="product-box">
-            <div class="product-image">
-                <img src="../vibrationsmessboxbild.jpg" alt="VibraSense">
-            </div>
-            <div class="product-content">
-                <h3>VibraSense</h3>
-                <p>Präzise Vibrationsüberwachung für zuverlässige Diagnostik und Analyse.</p>
-            </div>
-        </a>
-
-        <a href="VibraLifeGuard.html" class="product-box">
-            <div class="product-image">
-                <img src="../PT.png" alt="VibraLifeGuard">
-            </div>
-            <div class="product-content">
-                <h3>VibraLifeGuard</h3>
-                <p>Aktive Vibrationskontrolle für sicheren und stabilen Patiententransport.</p>
-            </div>
-        </a>
-
-    </div>
+  <div class="product-grid">
+    <a href="SenseReihe.html" class="product-card">
+      <span class="card-cta-btn" onclick="event.preventDefault();event.stopPropagation();window.location.href='SenseReihe.html#custom-configurator'">Jetzt konfigurieren</span>
+      <img class="product-img" src="../assets/images/vibrasense_icon.png" alt="VibraSense">
+      <div class="product-card-overlay">
+        <span class="tag">Messsystem</span>
+        <h3>Sense Reihe</h3>
+        <p>Intelligente Sensorlösungen zur Erfassung, Analyse und Überwachung von Vibrationen und Umgebungsbedingungen.</p>
+      </div>
+    </a>
+    <a href="VibraLifeGuard.html" class="product-card">
+      <img class="product-img" src="../assets/images/vibralifeguard.png" alt="VibraLifeGuard">
+      <div class="product-card-overlay">
+        <span class="tag">Medizin</span>
+        <h3>VibraLifeGuard</h3>
+        <p>Aktive Vibrationskontrolle für sicheren und stabilen Patiententransport.</p>
+      </div>
+    </a>
+  </div>
 </section>
 
-<section id="partners">
-    <h2>Förderer, Sponsoren & Unterstützer</h2>
-    <div class="carousel funders">
-        <div class="carousel-track">
-            <div class="item"><a href="https://tum.de"><img src="../partner-logo1.png" alt="Förderer TUM"></a></div>
-            <div class="item"><a href="https://www.3ds.com/de/"><img src="../Dassault-Systemes.png" class="carousel-img-dassault" alt="Förderer Dassault Systèmes"></a></div>
-            <div class="item"><a href="https://unternehmertum.de"><img src="../logo-unternehmertum.svg" alt="Förderer UnternehmerTUM"></a></div>
-            <div class="item"><a href="https://www.muenchen.de/"><img src="../muenchen.png" alt="Förderer Stadt München"></a></div>
-            <div class="item"><a href="https://www.tum-venture-labs.de/"><img src="../partner-logo2.png" alt="Förderer TUM Venture Labs"></a></div>
-            <div class="item"><a href="https://maker-space.de/"><img src="../Makerspace.png" alt="Förderer MakerSpace"></a></div>
-            <div class="item"><a href="https://europa.eu/"><img src="../EU.png" class="carousel-img-eu" alt="Förderer Europäische Union"></a></div>
-            <div class="item"><a href="https://www.exist.de/"><img src="../Exist.svg" alt="Förderer EXIST"></a></div>
-
-            <!-- Duplizierte Elemente für Looping bleiben gleich -->
-            <div class="item"><a href="https://tum.de"><img src="../partner-logo1.png" alt="Förderer TUM"></a></div>
-            <div class="item"><a href="https://www.3ds.com/de/"><img src="../Dassault-Systemes.png" class="carousel-img-dassault" alt="Förderer Dassault Systèmes"></a></div>
-            <div class="item"><a href="https://unternehmertum.de"><img src="../logo-unternehmertum.svg" alt="Förderer UnternehmerTUM"></a></div>
-            <div class="item"><a href="https://www.muenchen.de/"><img src="../muenchen.png" alt="Förderer Stadt München"></a></div>
-            <div class="item"><a href="https://www.tum-venture-labs.de/"><img src="../partner-logo2.png" alt="Förderer TUM Venture Labs"></a></div>
-            <div class="item"><a href="https://maker-space.de/"><img src="../Makerspace.png" alt="Förderer MakerSpace"></a></div>
-            <div class="item"><a href="https://europa.eu/"><img src="../EU.png" class="carousel-img-eu" alt="Förderer Europäische Union"></a></div>
-            <div class="item"><a href="https://www.exist.de/"><img src="../Exist.svg" alt="Förderer EXIST"></a></div>
-        </div>
+<!-- ════════ PARTNERS ════════ -->
+<section class="partners">
+  <p class="partners-label">Förderer, Sponsoren & Kooperationspartner</p>
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <a href="https://tum.de" target="_blank"><img src="../assets/images/partner-logo1.png" alt="TUM"></a>
+      <a href="https://www.3ds.com/de/" target="_blank"><img src="../assets/images/Dassault-Systemes.png" alt="Dassault"></a>
+      <a href="https://unternehmertum.de" target="_blank"><img src="../assets/images/logo-unternehmertum.svg" alt="UnternehmerTUM"></a>
+      <a href="https://www.muenchen.de/" target="_blank"><img src="../assets/images/muenchen.png" alt="München"></a>
+      <a href="https://www.tum-venture-labs.de/" target="_blank"><img src="../assets/images/partner-logo2.png" alt="TUM Venture Labs"></a>
+      <a href="https://maker-space.de/" target="_blank"><img src="../assets/images/Makerspace.png" alt="Makerspace"></a>
+      <a href="https://europa.eu/" target="_blank"><img class="eu-logo" src="../assets/images/EU-original.svg" alt="Kofinanziert von der Europäischen Union"></a>
+      <a href="https://www.exist.de/" target="_blank"><img src="../assets/images/Exist.svg" alt="EXIST"></a>
+      <a href="https://www.fraunhofer.de/" target="_blank"><img src="../assets/images/fraunhofer.svg" alt="Fraunhofer"></a>
+      <a href="https://www.mcv-group.de/" target="_blank"><img src="../assets/images/Medcare.svg" alt="Medcare"></a>
+      <a href="https://stadt.muenchen.de/rathaus/verwaltung/kreisverwaltungsreferat/branddirektion.html" target="_blank"><img src="../assets/images/Feuerwehr.png" alt="Feuerwehr München"></a>
+      <a href="https://www.deutsches-herzzentrum-muenchen.de/" target="_blank"><img src="../assets/images/deutsches.png" alt="Deutsches Herzzentrum"></a>
+      <a href="https://solderthal.com" target="_blank"><img src="../assets/images/solderthal.png" alt="Solderthal"></a>
+      <a href="https://www.we-online.com/de" target="_blank"><img src="../assets/images/Logo_WE_MTYE_RGB_pos.png" alt="Würth Electronics"></a>
+      <a href="https://www.lmu.de/" target="_blank"><img src="../assets/images/LMU.png" alt="LMU"></a>
+      <a href="https://www.sprind.org/" target="_blank"><img src="../assets/images/Sprind.png" alt="Sprind"></a>
+      <a href="https://www.binz.com/" target="_blank"><img src="../assets/images/binz.png" alt="Binz"></a>
     </div>
-
-    <h2 class="collab-heading">Kooperationspartner</h2>
-    <div class="carousel collaborations">
-        <div class="carousel-track">
-            <div class="item"><a href="https://www.fraunhofer.de/" target="_blank"><img src="../fraunhofer.svg" alt="Kooperation Fraunhofer"></a></div>
-            <div class="item"><a href="https://www.mcv-group.de/"><img src="../Medcare.svg" alt="Kooperation MCV Group"></a></div>
-            <div class="item"><a href="https://stadt.muenchen.de/rathaus/verwaltung/kreisverwaltungsreferat/branddirektion.html"><img src="../Feuerwehr.png" class="carousel-img-feuerwehr" alt="Kooperation Feuerwehr München"></a></div>
-            <div class="item"><a href="https://www.deutsches-herzzentrum-muenchen.de/"><img src="../deutsches.png" alt="Kooperation Deutsches Herzzentrum München"></a></div>
-            <div class="item"><a href="https://solderthal.com"><img src="../solderthal.svg" alt="Kooperation Solderthal"></a></div>
-            <div class="item"><a href="https://www.we-online.com/de"><img src="../Logo_WE_MTYE_RGB_pos.svg" alt="Kooperation Würth"></a></div>
-            <div class="item"><a href="https://www.ee.cit.tum.de/lbe/home/"><img src="../partner-logo1.png" alt="Kooperation TUM"></a></div>
-
-            <!-- Dupliziert für Looping -->
-            <div class="item"><a href="https://www.fraunhofer.de/" target="_blank"><img src="../fraunhofer.svg" alt="Kooperation Fraunhofer"></a></div>
-            <div class="item"><a href="https://www.mcv-group.de/"><img src="../Medcare.svg" alt="Kooperation MCV Group"></a></div>
-            <div class="item"><a href="https://stadt.muenchen.de/rathaus/verwaltung/kreisverwaltungsreferat/branddirektion.html"><img src="../Feuerwehr.png" class="carousel-img-feuerwehr" alt="Kooperation Feuerwehr München"></a></div>
-            <div class="item"><a href="https://www.deutsches-herzzentrum-muenchen.de/"><img src="../deutsches.png" alt="Kooperation Deutsches Herzzentrum München"></a></div>
-            <div class="item"><a href="https://solderthal.com"><img src="../solderthal.svg" alt="Kooperation Solderthal"></a></div>
-            <div class="item"><a href="https://www.we-online.com/de"><img src="../Logo_WE_MTYE_RGB_pos.svg" alt="Kooperation Würth"></a></div>
-            <div class="item"><a href="https://www.ee.cit.tum.de/lbe/home/"><img src="../partner-logo1.png" alt="Kooperation TUM"></a></div>
-        </div>
-    </div>
+  </div>
 </section>
 
+<!-- ════════ STATEMENT ════════ -->
+<section class="statement">
+  <div class="statement-left">
+    <p>Vibration ist überall.</p>
+    <p>Wir machen sie beherrschbar.</p>
+  </div>
+  <div class="statement-right">
+    <p>Muniqo Performante entwickelt innovative Lösungen zur Vibrationsreduktion und -überwachung – für industrielle Prozesse, medizinische Transporte und kritische Infrastrukturen. Gegründet an der TU München, getrieben von Präzision.</p>
+    <br>
+    <a href="AboutUs.html" class="arrow-link" style="color:var(--white-dim);">Über uns →</a>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
 <footer>
-    <p>&copy; 2024 Muniqo Performante. Alle Rechte vorbehalten.</p>
-    <div class="footer-links">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-        <a href="cookies.html">Cookies</a>
-    </div>
+  <span class="f-copy">© 2025 Muniqo Performante GmbH</span>
+  <div class="f-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="cookies.html">Cookies</a>
+  </div>
 </footer>
 
-<script src="../script.js"></script>
-<script src="../cookie.js"></script>
-
-
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const menuToggle = document.querySelector(".menu-toggle");
-        const nav = document.querySelector("header");
-        const navLinks = document.querySelectorAll("nav ul li a");
-        menuToggle.addEventListener("click", () => nav.classList.toggle("nav-open"));
-        navLinks.forEach(link => link.addEventListener("click", () => nav.classList.remove("nav-open")));
+  window.__headerScrollT = function(st) {
+    const hero = document.querySelector('.hero');
+    if (!hero) return Math.min(Math.max((st - 100) / 300, 0), 1);
+    const heroBottom = hero.offsetTop + hero.offsetHeight;
+    const fadeStart = heroBottom - 700;
+    const fadeEnd = heroBottom;
+    return Math.min(Math.max((st - fadeStart) / (fadeEnd - fadeStart), 0), 1);
+  };
+
+  (function () {
+    const ticker = document.querySelector('.ticker');
+    if (!ticker) return;
+
+    Array.from(ticker.children).forEach(el => ticker.appendChild(el.cloneNode(true)));
+
+    let pos = 0;
+    let halfWidth = 0;
+    let paused = false;
+    let speed = window.matchMedia('(max-width: 600px)').matches ? 0.48 : 0.72;
+
+    function measure() {
+      halfWidth = ticker.scrollWidth / 2;
+    }
+
+    function updateSpeed() {
+      speed = window.matchMedia('(max-width: 600px)').matches ? 0.48 : 0.72;
+    }
+
+    function tick() {
+      if (!paused) {
+        pos += speed;
+        if (pos >= halfWidth) pos -= halfWidth;
+        ticker.style.transform = `translateX(-${pos}px)`;
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+    ticker.addEventListener('mouseenter', () => {
+      if (canHover.matches) paused = true;
+    });
+    ticker.addEventListener('mouseleave', () => { paused = false; });
+    window.addEventListener('pageshow', () => { paused = false; });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) paused = false;
     });
 
-    const features = document.querySelectorAll('.feature');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    features.forEach(f => observer.observe(f));
+    const imgs = Array.from(ticker.querySelectorAll('img'));
+    Promise.all(imgs.map(img => img.decode ? img.decode().catch(() => {}) : Promise.resolve()))
+      .finally(() => {
+        measure();
+        requestAnimationFrame(tick);
+      });
+
+    window.addEventListener('resize', () => {
+      measure();
+      updateSpeed();
+    }, { passive: true });
+  })();
+
+  document.querySelector('.scroll-hint')?.addEventListener('click', () => {
+    const isMobile = window.innerWidth <= 900;
+    const target = document.querySelector(isMobile ? '.hero-bottom--mobile' : '.hero-bottom--desktop');
+    if (target) window.scrollTo({top: target.offsetTop - window.innerHeight * 0.15, behavior: 'smooth'});
+  });
 </script>
+
+<script src="../assets/js/shared.js"></script>
+<script>
+(function(){
+  const heroTitle = document.querySelector('.hero-title');
+  const navWordmark = document.querySelector('.nav-wordmark');
+  const hero = document.querySelector('.hero');
+  if (!heroTitle || !navWordmark || !hero) return;
+
+  let titleWidth = 1;
+  let titleHeight = 1;
+  let endScale = .2;
+
+  navWordmark.style.transition = 'opacity .25s';
+
+  function ease(t){ return t<.5 ? 2*t*t : -1+(4-2*t)*t; }
+
+  function update(){
+    if (window.innerWidth <= 900) {
+      heroTitle.style.left = '';
+      heroTitle.style.top = '';
+      heroTitle.style.opacity = '';
+      navWordmark.style.opacity = '.9';
+      return;
+    }
+
+    const progress = Math.min(Math.max(window.scrollY / (hero.offsetHeight * 0.55), 0), 1);
+    const ep = ease(progress);
+    const scale = 1 + (endScale - 1) * ep;
+    const startX = window.innerWidth / 2;
+    const startY = window.innerHeight / 2;
+    const targetRect = navWordmark.getBoundingClientRect();
+    const endX = targetRect.left + targetRect.width / 2;
+    const endY = targetRect.top + targetRect.height / 2;
+
+    heroTitle.style.left = (startX + (endX - startX) * ep) + 'px';
+    heroTitle.style.top = (startY + (endY - startY) * ep) + 'px';
+    heroTitle.style.transform = `translate(-50%, -50%) scale(${scale})`;
+
+    if (progress >= 1) {
+      heroTitle.style.opacity = '0';
+      navWordmark.style.opacity = '.9';
+    } else {
+      heroTitle.style.opacity = '1';
+      navWordmark.style.opacity = '0';
+    }
+  }
+
+  function init() {
+    if (window.innerWidth > 900) {
+      titleWidth = heroTitle.offsetWidth || 1;
+      titleHeight = heroTitle.offsetHeight || 1;
+      endScale = Math.min(
+        navWordmark.offsetWidth / titleWidth,
+        navWordmark.offsetHeight / titleHeight,
+        .24
+      );
+    }
+    update();
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', init);
+  window.addEventListener('load', function() {
+    init();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(init);
+    }
+  });
+  update();
+})();
+</script>
+</body>
+</html>

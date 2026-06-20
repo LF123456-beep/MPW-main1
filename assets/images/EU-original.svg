@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 910 922" role="img" aria-labelledby="title">
+  <title id="title">Kofinanziert von der Europäischen Union</title>
+  <rect width="910" height="922" rx="8" fill="#fff"/>
+
+  <rect x="88" y="92" width="734" height="490" fill="#003399"/>
+
+  <defs>
+    <path id="star" d="M0-25 5.88-8.09 23.78-7.73 9.51 3.09 14.69 20.23 0 10-14.69 20.23-9.51 3.09-23.78-7.73-5.88-8.09Z" fill="#ffcc00"/>
+  </defs>
+
+  <g transform="translate(455 337)">
+    <use href="#star" transform="translate(0 -155)"/>
+    <use href="#star" transform="translate(77.5 -134.23)"/>
+    <use href="#star" transform="translate(134.23 -77.5)"/>
+    <use href="#star" transform="translate(155 0)"/>
+    <use href="#star" transform="translate(134.23 77.5)"/>
+    <use href="#star" transform="translate(77.5 134.23)"/>
+    <use href="#star" transform="translate(0 155)"/>
+    <use href="#star" transform="translate(-77.5 134.23)"/>
+    <use href="#star" transform="translate(-134.23 77.5)"/>
+    <use href="#star" transform="translate(-155 0)"/>
+    <use href="#star" transform="translate(-134.23 -77.5)"/>
+    <use href="#star" transform="translate(-77.5 -134.23)"/>
+  </g>
+
+  <text x="455" y="700" fill="#003399" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" text-anchor="middle">
+    <tspan x="455">Kofinanziert von der</tspan>
+    <tspan x="455" dy="92">Europäischen Union</tspan>
+  </text>
+</svg>

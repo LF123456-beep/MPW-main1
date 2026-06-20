@@ -2,167 +2,208 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muniqo Performante - Vibration Reduction through Innovation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contact – Muniqo Performante</title>
+  <link rel="icon" href="../assets/images/Logo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/shared.css">
+  <style>
+  /* Page Hero */
+    .page-hero{min-height:75vh;display:flex;align-items:flex-end;padding:140px 64px 80px;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,168,75,0.05) 0%,transparent 60%);}
+    .ph-eyebrow{font-family:var(--font-cond);font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;opacity:0;animation:fadeUp .8s ease .2s forwards;}
+    .ph-title{font-family:var(--font-display);font-size:clamp(56px,8vw,120px);font-weight:700;line-height:1;letter-spacing:-.02em;color:var(--white);opacity:0;animation:fadeUp 1s cubic-bezier(.16,1,.3,1) .4s forwards;}
+    .ph-sub{font-family:var(--font-cond);font-size:clamp(16px,2vw,22px);letter-spacing:.12em;color:var(--white-dim);margin-top:20px;max-width:600px;opacity:0;animation:fadeUp .8s ease .7s forwards;}
 
-  <link rel="stylesheet" href="../style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    /* Contact Section */
+    .contact-section{padding:100px 64px;background:rgba(9,9,10,.5);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.07);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    .contact-left h2{font-family:var(--font-display);font-size:clamp(28px,3.5vw,48px);font-weight:300;color:var(--white);margin-bottom:16px;}
+    .contact-left p{font-size:14px;color:var(--white-dim);line-height:1.8;margin-bottom:32px;}
+    .email-display{font-family:var(--font-display);font-size:clamp(16px,2vw,22px);color:var(--white);margin-bottom:8px;letter-spacing:.02em;}
+    .copy-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:none;border:1px solid rgba(200,168,75,.4);padding:10px 20px;border-radius:6px;transition:border-color .3s,background .3s;}
+    .copy-btn:hover{border-color:var(--accent);background:rgba(200,168,75,.08);}
+    .copy-confirm{font-family:var(--font-cond);font-size:11px;letter-spacing:.15em;color:var(--accent);opacity:0;margin-left:12px;transition:opacity .3s;}
+    .copy-confirm.show{opacity:1;}
 
-  <!-- Add Favicon -->
-  <link rel="icon" href="../Logo.png" type="image/x-icon">
+    /* Form */
+    .contact-form{display:flex;flex-direction:column;gap:20px;}
+    .contact-form h2{font-family:var(--font-display);font-size:22px;font-weight:300;color:var(--white);margin-bottom:8px;}
+    .form-group{display:flex;flex-direction:column;gap:8px;}
+    .form-group label{font-family:var(--font-cond);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,242,238,.5);}
+    .form-group input,.form-group textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:16px 20px;color:var(--white);font-family:var(--font-body);font-size:14px;font-weight:300;transition:border-color .3s,background .3s;outline:none;width:100%;}
+    .form-group input:focus,.form-group textarea:focus{border-color:rgba(200,168,75,.5);background:rgba(255,255,255,0.06);}
+    .form-group textarea{min-height:140px;resize:vertical;}
+    .form-submit{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-cond);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--white);border:none;padding:18px 36px;border-radius:6px;transition:background .3s,gap .3s;align-self:flex-start;}
+    .form-submit:hover{background:var(--accent);gap:16px;}
 
+    /* Footer */
+    
+    
+    
+    
+    
+
+    @media(hover:none),(pointer:coarse){
+      body,*,a,button,[role="button"],input,textarea,select{cursor:auto !important;}
+      .c-dot,.trail,.ripple{display:none !important;}
+    }
+    @media(max-width:900px){
+      header{padding:calc(18px + env(safe-area-inset-top)) 20px 18px !important;}
+      .nav-logo img{height:48px;margin-top:0;transform:translateY(5px) scale(1.12);transform-origin:left center;}
+      .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;flex-direction:column;justify-content:center;align-items:center;background:#09090a;gap:28px;z-index:99998;overscroll-behavior:contain;}
+      .nav-links a{font-family:var(--font-cond);font-size:20px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .3s;}
+      .nav-links.open{display:flex !important;}.nav-links a:hover,.nav-links a.active{color:#fff;}
+      .mob-toggle{display:block;z-index:10001;}
+      .lang-switch{font-size:12px;margin-right:8px;}
+      .scroll-progress{right:10px;height:200px;}
+      .page-hero{padding:150px 20px 56px !important;min-height:auto;}
+      .ph-title{font-size:clamp(48px,14vw,84px);}
+      .ph-sub{font-size:15px;letter-spacing:.06em;}
+      .contact-section{grid-template-columns:1fr;gap:48px;padding:64px 20px;}
+      .contact-left h2{font-size:24px;}
+      .form-group input,.form-group textarea{min-height:48px;font-size:16px;}
+      .form-group textarea{min-height:140px;}
+      .form-submit{min-height:48px;width:100%;justify-content:center;}
+      .copy-btn{padding:14px 20px;min-height:44px;}
+      footer{flex-direction:column;gap:16px;padding:38px 20px 34px;text-align:center;}
+      
+      
+      
+    }
+    @media(max-width:600px){
+      .page-hero{padding:200px 20px 48px !important;}
+      .contact-section{padding:56px 20px;}
+    }
+  </style>
 </head>
-
-
 <body>
-<!-- Header Section -->
+
+<nav id="navLinks" class="nav-links">
+  <button class="nav-close" id="navClose" aria-label="Close"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1"/><line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1"/></svg></button>
+    <a href="index.html">Home</a>
+    <a href="SenseReihe.html">Sense Series</a>
+    <a href="VibraLifeGuard.html">VibraLifeGuard</a>
+    <a href="AboutUs.html">About Us</a>
+    <a href="Career.html">Career</a>
+    <a href="ContactUs.html" class="active">Contact</a>
+  </nav>
+
+<div style="position:fixed;inset:0;z-index:0;">
+  <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;opacity:.75;">
+    <source src="../assets/videos/Heli2.mp4" type="video/mp4">
+    <source src="../assets/videos/background-video.webm" type="video/webm">
+  </video>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(9,9,10,.15),rgba(9,9,10,.4));"></div>
+</div>
+
+<div class="c-dot" id="cDot"></div>
+<div class="scroll-progress">
+  <div class="scroll-progress-top" id="scrollProgressTop"></div>
+  <div class="scroll-progress-dot" id="scrollProgressDot"></div>
+  <div class="scroll-progress-bottom" id="scrollProgressBottom"></div>
+</div>
+
 <header id="header">
-  <div class="container">
-    <div class="logo-title">
-      <a href="index.html"><img src="../Logo.png" alt="Muniqo Performante Logo" class="logo"></a>
-      <a href="index.html"><h1>Muniqo Performante</h1></a>
-    </div>
-
-    <!-- Hamburger für Mobile -->
-    <div id="menu-toggle" class="menu-toggle">&#9776;</div>
-
-    <!-- Navigation -->
-    <nav id="nav">
-      <ul>
-        <li><a href="VibraSense.html">VibraSense</a></li>
-        <li><a href="VibraLifeGuard.html">VibraLifeGuard</a></li>
-        <li><a href="AboutUs.html">About Us</a></li>
-        <li><a href="Career.html">Career</a></li>
-        <li><a href="ContactUs.html">Contact Us</a></li>
-        <li class="language-switch">
-          <a href="ContactUs.html">EN</a> |
-          <a href="../de/ContactUs.html">DE</a>
-        </li>
-      </ul>
-    </nav>
+  <div class="nav-logo"><a href="index.html"><img src="../assets/images/Logo.png" alt="Muniqo Performante"></a></div>
+  <div class="nav-right">
+    <div class="lang-switch"><a href="ContactUs.html" class="active">EN</a><span>/</span><a href="../de/ContactUs.html">DE</a></div>
   </div>
+  <button class="mob-toggle" id="mobToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
+<section class="page-hero">
+  <div style="position:relative;z-index:1;">
+    <p class="ph-eyebrow">Get In Touch</p>
+    <h1 class="ph-title">Contact</h1>
+    <p class="ph-sub">We look forward to hearing from you — whether for partnership, press, or product inquiries.</p>
+  </div>
+</section>
 
-<!-- Contact Form Section -->
-<section id="contact">
-  <video autoplay muted loop playsinline id="contact-background-video">
-    <source src="../Heli2.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <div class="contact-wrapper">
-    <div class="email-box">
-      <h2>Contact Us</h2>
-      <p>Reach out via email at:</p>
-      <p id="email-display" style="font-weight: bold;">info@muniqoperformante.com</p>
-      <button id="copy-email-button" style="margin-top: 10px;">Copy Email to Clipboard</button>
+<section class="contact-section">
+  <div class="contact-left">
+    <h2>Email Contact</h2>
+    <p>For quick questions or direct discussions, reach us at:</p>
+    <p class="email-display">info@muniqoperformante.com</p>
+    <div style="display:flex;align-items:center;gap:0;">
+      <button class="copy-btn" id="copyBtn">Copy Address</button>
+      <span class="copy-confirm" id="copyConfirm">✓ Copied</span>
     </div>
+    <div id="phone" style="margin-top:36px;scroll-margin-top:120px;">
+      <h2 style="margin-bottom:12px;">Phone</h2>
+      <p>For a direct conversation, call us at:</p>
+      <a href="tel:+4915781299011" class="email-display" style="display:inline-block;text-decoration:none;">+49 157 812 990 11</a>
+    </div>
+  </div>
 
-
-    <!-- JavaScript für das Kopieren der E-Mail-Adresse in die Zwischenablage -->
-    <script>
-      document.getElementById('copy-email-button').addEventListener('click', function() {
-        // Die sichtbare E-Mail-Adresse aus dem Text des Elements kopieren
-        const email = document.getElementById('email-display').innerText;
-
-        // Erstelle ein temporäres Textfeld zum Kopieren
-        const tempInput = document.createElement('input');
-        tempInput.value = email;
-        document.body.appendChild(tempInput);
-
-        // Wähle und kopiere den Inhalt
-        tempInput.select();
-        document.execCommand('copy');
-
-        // Entferne das temporäre Textfeld
-        document.body.removeChild(tempInput);
-
-        // Optional: Feedback für den Benutzer
-        alert('Email copied to clipboard: ' + email);
-      });
-    </script>
-
-
-
-
-    <!-- modify this form HTML and place wherever you want your form -->
-    <form
-            action="https://formspree.io/f/xbljleqz"
-            method="POST"
-            class="contact-form"
-    >
-      <h2>Or Message us here</h2>
-      <label>
-        Name
-        <input type="text" name="First Name" required>
-      </label>
-      <label>
-        Your email:
-        <input type="email" name="email">
-      </label>
-      <label>
-        Your message:
-        <textarea name="message">No special message, just a contact request</textarea>
-      </label>
-      <button type="submit">Send</button>
+  <div>
+    <form action="https://formspree.io/f/xbljleqz" method="POST" class="contact-form">
+      <h2>Contact Form</h2>
+      <input type="hidden" name="_subject" id="formSubject" value="New website inquiry">
+      <input type="hidden" name="Configuration" id="formConfiguration" value="">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="First Name" required placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" id="contactMessage" required placeholder="Your message..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send →</button>
     </form>
   </div>
 </section>
 
-
-
-
-<!-- Footer -->
 <footer>
-  <p>&copy; 2024 Muniqo Performante. All rights reserved.</p>
-  <div class="footer-links">
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Data Privacy</a>
-    <a href="cookies.html">Cookie</a>
+  <span class="f-copy">© 2025 Muniqo Performante GmbH</span>
+  <div class="f-links">
+    <a href="impressum.html">Legal Notice</a>
+    <a href="datenschutz.html">Privacy</a>
+    <a href="cookies.html">Cookies</a>
   </div>
 </footer>
 
-
-<!-- JavaScript -->
-<script src="../script.js"></script>
-<script src="../cookie.js"></script>
-
-
-
-<script>
-  // Menü-Umschaltfunktion für mobile Ansicht und Schließen der Navigation bei Link-Klick
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("header");
-    const navLinks = document.querySelectorAll("nav ul li a");
-
-    // Menü-Umschaltfunktion für das Hamburger-Icon
-    menuToggle.addEventListener("click", () => {
-      nav.classList.toggle("nav-open");
-    });
-
-    // Schließen der Navigation, wenn ein Link geklickt wird
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("nav-open");
-      });
+<script>  document.getElementById('copyBtn').addEventListener('click',()=>{
+    navigator.clipboard.writeText('info@muniqoperformante.com').then(()=>{
+      const c=document.getElementById('copyConfirm');c.classList.add('show');setTimeout(()=>c.classList.remove('show'),2000);
     });
   });
 
-  const features = document.querySelectorAll('.feature');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
+  (function prefillConfiguratorRequest() {
+    const params = new URLSearchParams(window.location.search);
+    if (!params.has('subject')) return;
+    const fields = [
+      ['Frequency range','frequency'],
+      ['Measurement range','measurement_range'],
+      ['Precision','precision'],
+      ['Measurement duration','duration'],
+      ['Ruggedness','ruggedness'],
+      ['Storage','storage'],
+      ['Live readout','live_boxes'],
+      ['Modules','modules'],
+      ['Preliminary price','preliminary_price']
+    ];
+    const configuration = fields
+      .map(([label,key]) => params.get(key) ? `${label}: ${params.get(key)}` : '')
+      .filter(Boolean)
+      .join('\n');
+    document.getElementById('formSubject').value = params.get('subject');
+    document.getElementById('formConfiguration').value = configuration;
+    document.getElementById('contactMessage').value =
+      `Hello,\n\nI am interested in the following configuration:\n\n${configuration}\n\nPlease send me further information and a non-binding quotation.\n`;
+  })();
 
-  features.forEach(f => observer.observe(f));
+  document.getElementById('navClose')?.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+    const sy = parseFloat(document.body.dataset.scrollY || 0);
+    document.body.style.cssText = '';
+    window.scrollTo(0, sy);
+  });
 </script>
-
-
-
-
-
+<script src="../assets/js/shared.js"></script>
+</body>
+</html>

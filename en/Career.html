@@ -2,289 +2,205 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muniqo Performante - Vibration Reduction through Innovation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Career – Muniqo Performante</title>
+  <link rel="icon" href="../assets/images/Logo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/shared.css">
+  <style>
+  /* PAGE HERO */
+    .page-hero{min-height:75vh;display:flex;align-items:flex-end;padding:140px 64px 80px;position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,168,75,0.05) 0%,transparent 60%);}
+    .page-hero-content{position:relative;z-index:1;}
+    .page-hero-eyebrow{font-family:var(--font-cond);font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;opacity:0;animation:fadeUp .8s ease .2s forwards;}
+    .page-hero-title{font-family:var(--font-display);font-size:clamp(56px,8vw,120px);font-weight:700;line-height:1;letter-spacing:-.02em;color:var(--white);opacity:0;animation:fadeUp 1s cubic-bezier(.16,1,.3,1) .4s forwards;}
+    .page-hero-sub{font-family:var(--font-cond);font-size:clamp(16px,2vw,22px);letter-spacing:.12em;color:var(--white-dim);margin-top:20px;max-width:600px;opacity:0;animation:fadeUp .8s ease .7s forwards;}
 
-  <link rel="stylesheet" href="../style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    /* CAREER SECTION */
+    .career-section{padding:100px 64px;background:rgba(9,9,10,.5);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.07);}
+    .career-intro{font-family:var(--font-display);font-size:clamp(24px,3vw,40px);font-weight:300;color:var(--white);margin-bottom:64px;max-width:1100px;line-height:1.4;}
+    .career-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .career-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:40px 36px;backdrop-filter:blur(8px);display:flex;flex-direction:column;gap:16px;overflow:hidden;}
+    .career-tag{font-family:var(--font-cond);font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);}
+    .career-card h3{font-family:var(--font-display);font-size:24px;font-weight:400;color:var(--white);line-height:1.3;}
+    .career-short{font-size:14px;color:var(--white-dim);line-height:1.7;}
+    .career-more{display:flex;flex-direction:column;gap:16px;flex:1;}
+    .career-more p{font-size:13px;color:var(--white-dim);line-height:1.75;}
+    .career-meta{font-family:var(--font-cond);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:rgba(244,242,238,.4);padding-top:16px;border-top:1px solid rgba(255,255,255,.07);}
 
-  <!-- Add Favicon -->
-  <link rel="icon" href="../Logo.png" type="image/x-icon">
+    /* CTA */
+    .career-cta-section{padding:100px 64px;background:rgba(9,9,10,0.2);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.07);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .career-cta-left p{font-family:var(--font-display);font-size:clamp(28px,3.5vw,52px);font-weight:300;color:var(--white);line-height:1.3;}
+    .career-cta-right p{font-size:14px;color:var(--white-dim);line-height:1.85;max-width:440px;margin-bottom:32px;}
+    .cta-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-cond);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--white);padding:18px 36px;border-radius:6px;text-decoration:none;transition:background .3s,gap .3s;}
+    .cta-btn:hover{background:var(--accent);gap:18px;}
 
+    /* Footer */
+    
+    
+    
+    
+    
+
+    @media(hover:none),(pointer:coarse){
+      body,*,a,button,[role="button"],input,textarea,select{cursor:auto !important;}
+      .c-dot,.trail,.ripple{display:none !important;}
+    }
+    @media(max-width:900px){
+      header{padding:calc(18px + env(safe-area-inset-top)) 20px 18px !important;}
+      .nav-logo img{height:48px;margin-top:0;transform:translateY(5px) scale(1.12);transform-origin:left center;}
+      .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;flex-direction:column;justify-content:center;align-items:center;background:#09090a;gap:28px;z-index:99998;overscroll-behavior:contain;}
+      .nav-links a{font-family:var(--font-cond);font-size:20px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .3s;}
+      .nav-links.open{display:flex !important;}.nav-links a:hover,.nav-links a.active{color:#fff;}
+      .mob-toggle{display:block;z-index:10001;}
+      .lang-switch{font-size:12px;margin-right:8px;}
+      .scroll-progress{right:10px;height:200px;}
+      .page-hero{padding:150px 20px 56px !important;min-height:auto;}
+      .page-hero-title{font-size:clamp(40px,11vw,72px);}
+      .page-hero-sub{font-size:15px;letter-spacing:.06em;}
+      .career-section,.career-cta-section{padding:72px 20px;}
+      .career-grid{grid-template-columns:1fr;gap:20px;}
+      .career-card{padding:32px 24px;}
+      .career-card h3{font-size:22px;}
+      .career-cta-section{grid-template-columns:1fr;gap:32px;}
+      .career-cta-left,.career-cta-right{text-align:center;}
+      .career-cta-right p{max-width:100%;}
+      .cta-btn{align-self:center;}
+      .career-tag{font-size:13px;}
+      .career-meta{font-size:13px;}
+      footer{flex-direction:column;gap:16px;padding:38px 20px 34px;text-align:center;}
+      
+      
+      
+    }
+    @media(max-width:600px){
+      .page-hero{padding:200px 20px 48px !important;}
+      .career-section,.career-cta-section{padding:56px 20px;}
+    }
+  </style>
 </head>
-
-
 <body>
-<!-- Header Section -->
+
+<nav id="navLinks" class="nav-links">
+  <button class="nav-close" id="navClose" aria-label="Close"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1"/><line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1"/></svg></button>
+    <a href="index.html">Home</a>
+    <a href="SenseReihe.html">Sense Series</a>
+    <a href="VibraLifeGuard.html">VibraLifeGuard</a>
+    <a href="AboutUs.html">About Us</a>
+    <a href="Career.html" class="active">Career</a>
+    <a href="ContactUs.html">Contact</a>
+  </nav>
+
+<div style="position:fixed;inset:0;z-index:0;">
+  <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;opacity:.75;">
+    <source src="../assets/videos/team.mp4" type="video/mp4">
+  </video>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(9,9,10,.15),rgba(9,9,10,.35));"></div>
+</div>
+
+<div class="c-dot" id="cDot"></div>
+<div class="scroll-progress">
+  <div class="scroll-progress-top" id="scrollProgressTop"></div>
+  <div class="scroll-progress-dot" id="scrollProgressDot"></div>
+  <div class="scroll-progress-bottom" id="scrollProgressBottom"></div>
+</div>
+
 <header id="header">
-  <div class="container">
-    <div class="logo-title">
-      <a href="index.html"><img src="../Logo.png" alt="Muniqo Performante Logo" class="logo"></a>
-      <a href="index.html"><h1>Muniqo Performante</h1></a>
-    </div>
-
-    <!-- Hamburger für Mobile -->
-    <div id="menu-toggle" class="menu-toggle">&#9776;</div>
-
-    <!-- Navigation -->
-    <nav id="nav">
-      <ul>
-        <li><a href="VibraSense.html">VibraSense</a></li>
-        <li><a href="VibraLifeGuard.html">VibraLifeGuard</a></li>
-        <li><a href="AboutUs.html">About Us</a></li>
-        <li><a href="Career.html">Career</a></li>
-        <li><a href="ContactUs.html">Contact Us</a></li>
-        <li class="language-switch">
-          <a href="Career.html">EN</a> |
-          <a href="../de/Career.html">DE</a>
-        </li>
-      </ul>
-    </nav>
+  <div class="nav-logo"><a href="index.html"><img src="../assets/images/Logo.png" alt="Muniqo Performante"></a></div>
+  <div class="nav-right">
+    <div class="lang-switch"><a href="Career.html" class="active">EN</a><span>/</span><a href="../de/Career.html">DE</a></div>
   </div>
+  <button class="mob-toggle" id="mobToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
-<section id="career" class="career-section">
-  <div class="career-container">
+<section class="page-hero">
+  <div class="page-hero-content">
+    <p class="page-hero-eyebrow">Join the Team</p>
+    <h1 class="page-hero-title">Career</h1>
+    <p class="page-hero-sub">Develop technology, translate research into practice, and create new applications with us.</p>
+  </div>
+</section>
 
-    <h2 class="career-title">Careers at Muniqo Performante</h2>
-    <p class="career-subtitle">
-      Join us in shaping the future of vibration control and high-performance engineering.
-    </p>
+<section class="career-section">
+  <p class="career-intro">We welcome unsolicited applications from people who want to shape technology, research, and company building with us.</p>
+  <div class="career-grid">
 
-    <div class="career-grid">
-
-      <!-- Job Card 1 -->
-      <div class="career-card">
-        <h3>Engineer</h3>
-
-        <p class="career-short">
-          Join our team as a full-time Engineer and help create innovative solutions in vibration control.        </p>
-
-        <div class="career-more">
-          <p>
-            As a full-time Engineer, you will design, implement, and maintain cutting-edge products. Collaborate with cross-functional teams, participate in R&D projects, and help shape the future of vibration control technology. Candidates with a Master’s degree in an engineering-related field are welcome. Strong analytical and problem-solving skills and a hands-on approach are essential.          </p>
-        </div>
-
-        <span class="career-meta">Munich · Full-time</span>
+    <div class="career-card">
+      <span class="career-tag">Full-Time</span>
+      <h3>Engineering, Business & Sales</h3>
+      <p class="career-short">Would you like to take long-term responsibility and help build a technology-driven company?</p>
+      <div class="career-more">
+        <p>We are open to unsolicited applications from technical, commercial, and sales backgrounds. What matters is not a fixed profile, but how your experience, perspective, and working style fit our current challenges.</p>
       </div>
-
-      <!-- Job Card 2 -->
-      <div class="career-card">
-        <h3>Operations</h3>
-
-        <p class="career-short">
-          Support our growth in Operations, helping improve processes and support cross-functional projects.        </p>
-        <div class="career-more">
-          <p>
-            In this full-time Operations role, you will contribute to the company’s operational excellence. Tasks include project coordination, process optimization, reporting, and supporting teams across different functions. Ideal candidates are proactive, flexible, and have a degree in business, management, or a related field. Strong communication and analytical skills are key.          </p>
-        </div>
-
-        <span class="career-meta">Munich · Full-time</span>
-      </div>
-
-      <!-- Job Card 3 -->
-      <div class="career-card">
-        <h3>Working Student/Intern</h3>
-
-        <p class="career-short">
-          Gain hands-on experience in engineering projects, either through an internship or a part-time working student position.</p>
-
-        <div class="career-more">
-          <p>
-            Support our engineering teams on real projects, gaining practical experience in vibration monitoring systems and product development. Tasks include testing, documentation, analysis, and collaborating with experienced engineers. We welcome unsolicited applications for (master/bachelor) theses, study programs, and engineering internships.              </p>
-          <button class="career-button" id="maschinenBtn">
-            Working Student Maschinenbau-Ingenieur:in (m/w/d)
-          </button></div>
-
-
-
-        <span class="career-meta">Munich · Part-time/Full-time</span>
-      </div>
-
+      <span class="career-meta">Unsolicited Application · Full-Time</span>
     </div>
 
-    <div class="career-cta">
-      <p>Interested in joining us? Send us your application.</p>
-      <a href="ContactUs.html" class="career-button">
-        Apply now
-      </a>
+    <div class="career-card">
+      <span class="career-tag">Students</span>
+      <h3>Working Student & Internship</h3>
+      <p class="career-short">Work on real technical or entrepreneurial challenges and gain practical experience in an interdisciplinary environment.</p>
+      <div class="career-more">
+        <p>Working student positions and internships are generally possible in engineering, research, software, business, and sales. Tasks, scope, and timing are agreed individually.</p>
+      </div>
+      <span class="career-meta">Working Student · Internship</span>
+    </div>
+
+    <div class="career-card">
+      <span class="career-tag">Research</span>
+      <h3>Bachelor's & Master's Theses</h3>
+      <p class="career-short">Work on a scientifically demanding topic with direct relevance to development, testing, or application.</p>
+      <div class="career-more">
+        <p>Our environment is strongly research-driven. More than 30 high-quality thesis projects have already been completed with students, particularly in cooperation with the Technical University of Munich. Topics arise from real R&D questions and are defined individually.</p>
+      </div>
+      <span class="career-meta">Bachelor's Thesis · Master's Thesis</span>
     </div>
 
   </div>
 </section>
 
-
-<script>
-  document.querySelectorAll('.career-card').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('active');
-    });
-  });
-</script>
-
-<div class="page-modal" id="jobModal" aria-hidden="true">
-  <div class="page-modal-content word-style">
-    <button class="page-close" aria-label="Close">&times;</button>
-
-    <div class="page-body">
-      <h1>Working Student: Mechanical Engineering for Experimental Testing</h1>
-
-      <p class="intro">
-        At <strong>Muniqo Performante</strong>, we are developing an innovative
-        anti-vibration system for the transport of premature and critically
-        ill patients. We combine lightweight design methods with
-        classical control engineering and machine learning.
-      </p>
-
-      <p>
-        Our goal: improve medical care, create real societal impact,
-        and develop a universally applicable technology.
-      </p>
-
-      <p>
-        For our government-funded validation project, we are looking for a
-        <strong>Working Student in Mechanical Engineering (m/f/d) for Experimental Testing</strong>.
-      </p>
-
-      <h2>Your Tasks</h2>
-      <ul>
-        <li>Planning and execution of exploratory validation tests</li>
-        <li>Construction, development, and optimization of hardware prototypes</li>
-        <li>Mechanical work on magnetic assemblies</li>
-        <li>Design & rapid prototyping (3D printing, CNC)</li>
-        <li>Thermal analysis & FEM simulations (SolidWorks, COMSOL, Simulia)</li>
-        <li>Collaboration with embedded and control engineers</li>
-      </ul>
-
-      <h2>What You Bring</h2>
-
-      <h3>Technical Skills</h3>
-      <ul>
-        <li>Experience in hardware design and experimental testing</li>
-        <li>Good CAD skills (SolidWorks)</li>
-        <li>Basic understanding of control engineering & microcontrollers (STM32, Arduino)</li>
-        <li>Laboratory experience and high precision</li>
-        <li>Fluent in German (C1)</li>
-      </ul>
-
-      <h3>Personal Skills</h3>
-      <ul>
-        <li>Hands-on mentality & pragmatism</li>
-        <li>Structured way of working</li>
-        <li>Teamwork & strong communication skills</li>
-        <li>Interest in MedTech & societal impact</li>
-        <li>Willingness to commit 15 hours per week</li>
-      </ul>
-
-      <h2>What We Offer</h2>
-
-      <p>
-        We offer an agile startup environment with flat hierarchies,
-        flexible working hours, hybrid work options, and the opportunity
-        to take early responsibility.
-      </p>
-
-      <p>
-        You will work on a system that uniquely combines hardware and software
-        and creates real impact — with a genuine perspective for a future
-        leadership role.
-      </p>
-
-      <h2>Interested?</h2>
-      <p>
-        Then we look forward to receiving your application:
-        <br>
-        📧 <strong>info@muniqoperformante.com</strong>
-      </p>
-
-      <hr>
-
-      <p class="footer">
-        Muniqo Performante GmbH<br>
-        Company Headquarters: Munich, Bavaria, DE<br>
-        Managing Directors: Luca Fabiano, Sebastian Wann<br>
-        HRB 302737 · Local Court Munich<br>
-        www.muniqoperformante.com
-      </p>
-    </div>
+<section class="career-cta-section">
+  <div class="career-cta-left">
+    <p>Interested?<br>Let's talk.</p>
   </div>
-</div>
+  <div class="career-cta-right">
+    <p>Tell us briefly what you would like to work on, what background you bring, and what timeframe suits you. We will assess whether there is a meaningful opportunity to work together.</p>
+    <a href="mailto:info@muniqoperformante.com?subject=Unsolicited%20Application%20Muniqo%20Performante" class="cta-btn">Apply proactively →</a>
+  </div>
+</section>
 
 
-<!-- Footer -->
 <footer>
-  <p>&copy; 2024 Muniqo Performante. All rights reserved.</p>
-  <div class="footer-links">
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Data Privacy</a>
-    <a href="cookies.html">Cookie</a>
+  <span class="f-copy">© 2025 Muniqo Performante GmbH</span>
+  <div class="f-links">
+    <a href="impressum.html">Legal Notice</a>
+    <a href="datenschutz.html">Privacy</a>
+    <a href="cookies.html">Cookies</a>
   </div>
 </footer>
 
-<!-- Cookie Consent -->
-
-
-<!-- JavaScript -->
-<script src="../script.js"></script>
-<script src="../cookie.js"></script>
-
-
-
-<script>
-  // Menü-Umschaltfunktion für mobile Ansicht und Schließen der Navigation bei Link-Klick
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("header");
-    const navLinks = document.querySelectorAll("nav ul li a");
-
-    // Menü-Umschaltfunktion für das Hamburger-Icon
-    menuToggle.addEventListener("click", () => {
-      nav.classList.toggle("nav-open");
-    });
-
-    // Schließen der Navigation, wenn ein Link geklickt wird
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("nav-open");
-      });
+<script>  const closeModal=modal=>{modal.classList.remove('active');modal.setAttribute('aria-hidden','true');};
+  document.querySelectorAll('[data-modal-target]').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      e.stopPropagation();
+      const modal=document.getElementById(btn.dataset.modalTarget);
+      if(!modal) return;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden','false');
     });
   });
-
-  const features = document.querySelectorAll('.feature');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  features.forEach(f => observer.observe(f));
-
-  const jobModal = document.getElementById('jobModal');
-  const openJobBtn = document.getElementById('maschinenBtn');
-  const closeJobBtn = jobModal.querySelector('.page-close');
-
-  openJobBtn.addEventListener('click', () => {
-    jobModal.classList.add('active');
-    jobModal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('modal-open'); // 🔒 lock background
+  document.querySelectorAll('.page-modal').forEach(modal=>{
+    modal.querySelector('.page-close').addEventListener('click',()=>closeModal(modal));
+    modal.addEventListener('click',e=>{if(e.target===modal) closeModal(modal);});
   });
 
-  closeJobBtn.addEventListener('click', () => {
-    jobModal.classList.remove('active');
-    jobModal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('modal-open'); // 🔓 unlock background
+  document.getElementById('navClose')?.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+    const sy = parseFloat(document.body.dataset.scrollY || 0);
+    document.body.style.cssText = '';
+    window.scrollTo(0, sy);
   });
-
 </script>
-
-
-
-
-
-
-
-
-
-
+<script src="../assets/js/shared.js"></script>
+</body>
+</html>
