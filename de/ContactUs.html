@@ -181,16 +181,16 @@
     if (!params.has('betreff')) return;
 
     const fields = [
-      ['Frequenzbereich', 'frequenz'],
-      ['Messbereich', 'messbereich'],
-      ['Amplitude', 'amplitude'],
-      ['Präzision', 'praezision'],
-      ['Messdauer', 'messdauer'],
-      ['Robustheit', 'robustheit'],
-      ['Speicher', 'speicher'],
-      ['Live-Auslesung', 'live_boxen'],
-      ['Module', 'module'],
-      ['Vorläufiger Richtpreis', 'vorlaeufiger_richtpreis']
+      ['Maximale Beschleunigung',       'maximale_beschleunigung'],
+      ['Messdauer und Einsatz',          'messdauer_und_einsatz'],
+      ['Frequenz der Anwendung',         'frequenz'],
+      ['Benötigte Präzision',            'benoetigte_praezision'],
+      ['Präzision und Robustheit',       'praezision_und_robustheit'],
+      ['Speicher',                       'speicher'],
+      ['Softwaremodule',                 'softwaremodule'],
+      ['Live-Auslesung mehrerer Boxen',  'live_boxen'],
+      ['Sensor-Optionen',                'sensor_optionen'],
+      ['Vorläufiger Richtpreis',         'vorlaeufiger_richtpreis']
     ];
 
     const configuration = fields
@@ -203,6 +203,10 @@
     document.getElementById('formConfiguration').value = configuration;
     document.getElementById('contactMessage').value =
       `Guten Tag,\n\nich interessiere mich für folgende Konfiguration:\n\n${configuration}\n\nBitte senden Sie mir weitere Informationen und ein unverbindliches Angebot.\n`;
+
+    setTimeout(() => {
+      document.querySelector('.contact-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
   })();
 </script>
 <script src="../assets/js/shared.js"></script>

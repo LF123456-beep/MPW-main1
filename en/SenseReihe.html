@@ -1296,7 +1296,7 @@
   var state = {
     sampleRate:'mid', gRange:'8', precision:'standard',
     duration:'day', ruggedness:'standard', storage:'32', liveBoxes:'none',
-    sensors:[], modules:[]
+    sensors:[], modules:[], tempQuality:'standard'
   };
   var labels = {
     sampleRate:{ low:'below 100 Hz', mid:'below 1 kHz', high:'above 1 kHz' },
@@ -1349,16 +1349,21 @@
     document.getElementById('sModules').textContent=allModules.length
       ? allModules.map(function(item){return labels.modules[item]||labels.sensors[item]||item;}).join(', ')
       : 'Base configuration';
+    var sensorText=state.sensors.map(function(s){
+      if(s==='temp') return 'Temperature Sensor ('+(state.tempQuality==='precision'?'Precision':'Standard')+')';
+      return labels.sensors[s]||s;
+    }).join(', ');
     var params=new URLSearchParams({
       subject:'Customized Sense Box Inquiry',
+      max_acceleration:labels.gRange[state.gRange],
+      measurement_duration:labels.duration[state.duration],
       frequency:labels.sampleRate[state.sampleRate],
-      measurement_range:labels.gRange[state.gRange],
-      precision:labels.precision[state.precision],
-      duration:labels.duration[state.duration],
-      ruggedness:labels.ruggedness[state.ruggedness],
+      required_precision:labels.precision[state.precision],
+      precision_and_ruggedness:labels.ruggedness[state.ruggedness],
       storage:labels.storage[state.storage],
-      live_boxes:labels.liveBoxes[state.liveBoxes],
-      modules:state.modules.length?state.modules.map(function(m){return labels.modules[m]||m;}).join(', '):'Base configuration',
+      software_modules:state.modules.length?state.modules.map(function(m){return labels.modules[m]||m;}).join(', '):'',
+      live_readout:labels.liveBoxes[state.liveBoxes],
+      sensor_options:sensorText,
       preliminary_price:'€'+p.our.toLocaleString('en-US')
     });
     document.getElementById('cfgCTA').href='ContactUs.html?'+params.toString();
@@ -1383,6 +1388,12 @@
       });
     });
   }
+  document.querySelectorAll('input[name="tempQuality"]').forEach(function(radio){
+    radio.addEventListener('change',function(){
+      state.tempQuality=radio.value;
+      render();
+    });
+  });
   var modWrap=document.querySelector('[data-config-modules]');
   if(modWrap){
     modWrap.querySelectorAll('input[type=checkbox]').forEach(function(cb){
@@ -1402,6 +1413,8 @@
     });
     if(sensWrap) sensWrap.querySelectorAll('input[type=checkbox]').forEach(function(cb){cb.checked=false;});
     if(modWrap) modWrap.querySelectorAll('input[type=checkbox]').forEach(function(cb){cb.checked=false;});
+    state.tempQuality='standard';
+    document.querySelectorAll('input[name="tempQuality"]').forEach(function(r){r.checked=r.value==='standard';});
     render();
   });
   render();

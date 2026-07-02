@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gender Equality Plan – Muniqo Performante</title>
+  <link rel="icon" href="../assets/images/Logo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/shared.css">
+  <style>
+  /* Legal page */
+    .legal-page{padding:160px 64px 120px;max-width:900px;margin:0 auto;}
+    .legal-eyebrow{font-family:var(--font-cond);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;opacity:0;animation:fadeUp .8s ease .2s forwards;}
+    .legal-title{font-family:var(--font-display);font-size:clamp(48px,6vw,90px);font-weight:700;line-height:1;letter-spacing:-.02em;color:var(--white);margin-bottom:64px;opacity:0;animation:fadeUp 1s cubic-bezier(.16,1,.3,1) .4s forwards;}
+    .legal-body h2{font-family:var(--font-display);font-size:clamp(20px,2.5vw,28px);font-weight:400;color:var(--white);margin:48px 0 16px;padding-top:48px;border-top:1px solid rgba(255,255,255,.07);}
+    .legal-body h2:first-child{margin-top:0;padding-top:0;border-top:none;}
+    .legal-body h3{font-family:var(--font-display);font-size:18px;font-weight:400;color:var(--white);margin:28px 0 10px;}
+    .legal-body p{font-size:14px;color:var(--white-dim);line-height:1.85;margin-bottom:12px;}
+    .legal-body ul{padding-left:20px;margin-bottom:12px;}
+    .legal-body li{font-size:14px;color:var(--white-dim);line-height:1.85;margin-bottom:4px;}
+    .legal-body a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(200,168,75,.3);transition:border-color .3s;}
+    .legal-body a:hover{border-color:var(--accent);}
+    .legal-divider{border:none;border-top:1px solid rgba(255,255,255,.1);margin:64px 0;}
+
+    .gep-block{max-width:860px;}
+    .gep-block h3{font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--white);margin:48px 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.08);}
+    .gep-block h3:first-of-type{margin-top:0;}
+    .gep-block h4{font-family:var(--font-cond);font-size:16px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:28px 0 10px;}
+    .gep-block p{font-size:18px;color:var(--white-dim);line-height:1.8;margin-bottom:16px;}
+    .gep-block ul{margin:0 0 16px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .gep-block ul li{font-size:18px;color:var(--white-dim);line-height:1.7;padding-left:20px;position:relative;}
+    .gep-block ul li::before{content:'—';position:absolute;left:0;color:var(--accent);font-size:13px;top:3px;}
+    .gep-table{width:100%;border-collapse:collapse;margin:16px 0 32px;}
+    .gep-table th{font-family:var(--font-cond);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);text-align:left;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.12);}
+    .gep-table td{font-size:17px;color:var(--white-dim);padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);}
+    .gep-contact{margin-top:40px;padding:28px 32px;border:1px solid rgba(200,168,75,.3);background:rgba(200,168,75,.06);}
+    .gep-contact p{margin:0 0 6px;}
+    .gep-block a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(200,168,75,.3);transition:border-color .3s;}
+    .gep-block a:hover{border-color:var(--accent);}
+    .gep-meta{margin-top:48px;font-family:var(--font-cond);font-size:14px;letter-spacing:.15em;text-transform:uppercase;color:rgba(244,242,238,.3);}
+
+    @media(hover:none),(pointer:coarse){
+      body,*,a,button,[role="button"],input,textarea,select{cursor:auto !important;}
+      .c-dot,.trail,.ripple{display:none !important;}
+    }
+    @media(max-width:900px){
+      header{padding:18px 20px !important;}
+      .nav-logo img{height:48px;margin-top:0;transform:translateY(5px) scale(1.12);transform-origin:left center;}
+      .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;flex-direction:column;justify-content:center;align-items:center;background:#09090a;gap:28px;z-index:99998;overscroll-behavior:contain;}
+      .nav-links a{font-family:var(--font-cond);font-size:20px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.75);text-decoration:none;transition:color .3s;}
+      .nav-links.open{display:flex !important;}.nav-links a:hover,.nav-links a.active{color:#fff;}
+      .mob-toggle{display:block;z-index:10001;}
+      .lang-switch{font-size:12px;margin-right:8px;}
+      .legal-page{padding:120px 20px 64px;}
+      .legal-title{font-size:clamp(40px,12vw,72px);margin-bottom:48px;}
+      .legal-body{word-break:break-word;}
+      .legal-body h2{padding-top:32px;margin:32px 0 14px;}
+      .legal-body h3{margin:20px 0 8px;}
+      .legal-body p,.legal-body li{font-size:14.5px;}
+      .gep-block h3{font-size:20px;}
+      .gep-block p,.gep-block ul li{font-size:16px;}
+      footer{flex-direction:column;gap:16px;padding:38px 20px 34px;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Mobile Nav Overlay ── -->
+<nav id="navLinks" class="nav-links">
+  <button class="nav-close" id="navClose" aria-label="Schließen"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1"/><line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1"/></svg></button>
+    <a href="index.html">Home</a>
+    <a href="SenseReihe.html">Sense Reihe</a>
+    <a href="VibraLifeGuard.html">VibraLifeGuard</a>
+    <a href="AboutUs.html">Über Uns</a>
+    <a href="Career.html">Karriere</a>
+    <a href="ContactUs.html">Kontakt</a>
+  </nav>
+<div style="position:fixed;inset:0;z-index:-1;background:var(--black);"></div>
+<div class="c-dot" id="cDot"></div>
+
+<header id="header">
+  <div class="nav-logo"><a href="index.html"><img src="../assets/images/Logo.png" alt="Muniqo Performante"></a></div>
+  <!-- nav moved to body -->
+  <div class="nav-right">
+    <div class="lang-switch"><a href="../en/gender-equality-plan.html">EN</a><span>/</span><a href="gender-equality-plan.html" class="active">DE</a></div>
+  </div>
+  <button class="mob-toggle" id="mobToggle" aria-label="Menü"><span></span><span></span><span></span></button>
+</header>
+
+<div class="legal-page">
+  <h1 class="legal-title">Gender Equality Plan</h1>
+
+  <div class="gep-block">
+
+    <h3>1. Engagement der Unternehmensleitung</h3>
+    <p>Muniqo Performante GmbH bekennt sich zu als zentralem Grundsatz unserer Unternehmenskultur und als Treiber von Innovationsqualität. Wir sind überzeugt, dass diverse Teams bessere Entscheidungen treffen, robustere Produkte entwickeln und widerstandsfähigere Unternehmen aufbauen. Als Deep-Tech-MedTech-Startup, das Technologien für schutzbedürftig Patientengruppen entwickelt, sind wir uns besonders bewusst, dass inklusive Teams patientenorientiertere Lösungen hervorbringen. Dieses Gender Equality Plan spiegelt unser Engagement wider, diese Überzeugung in konkrete, messbare Maßnahmen in den Bereichen Recruiting, Teamentwicklung und Unternehmenskultur zu übersetzen.</p>
+    <p>Verantwortliche: Marie Hesel, Business Lead<br>
+    Unterstützung der Geschäftsführung: Luca Fabiano (CEO), Sebastian Wann (CTO)</p>
+
+    <h3>2. Aktueller Stand</h3>
+    <p>Stand Juni 2026 setzt sich das Team von Muniqo Performante wie folgt zusammen:</p>
+    <table class="gep-table">
+      <thead><tr><th>Rolle</th><th>Geschlecht</th></tr></thead>
+      <tbody>
+        <tr><td>CEO (Co-Founder)</td><td>Männlich</td></tr>
+        <tr><td>CTO (Co-Founder)</td><td>Männlich</td></tr>
+        <tr><td>Business Lead</td><td>Weiblich</td></tr>
+        <tr><td>Engineering (Werkstudenten / Projektmitarbeitende)</td><td>Überwiegend männlich</td></tr>
+      </tbody>
+    </table>
+    <p>Die aktuelle Geschlechterbalance auf Führungsebene beträgt 1 Frau und 2 Männer (33 % Frauenanteil im Kernführungsteam). Auf der breiteren Teamebene spiegelt die ingenieurslastige Zusammensetzung in der aktuellen Entwicklungsphase eine strukturelle Herausforderung wider, die Deep-Tech- und MedTech-Startups häufig betrifft: Der verfügbare Talentpool in relevanten technischen Disziplinen ist nach wie vor männerdominiert. Muniqo erkennt dies als aktives Verbesserungsfeld an.</p>
+
+    <h3>3. Ziele</h3>
+    <p>Muniqo setzt sich folgende konkrete Ziele für den Zeitraum 2026–2028, abgestimmt auf das geplante Wachstum des Unternehmens während und nach der EIC-Accelerator-Projektphase:</p>
+    <h4>Recruiting</h4>
+    <ul>
+      <li>Für jede offene Stelle wird, sofern der Bewerberinnenpool es erlaubt, mindestens eine qualifizierte weibliche Kandidatin in die finale Interviewrunde einbezogen.</li>
+      <li>Stellenbeschreibungen werden durchgehend in gendersensibler Sprache verfasst und vor Veröffentlichung geprüft.</li>
+      <li>Für die geplanten Schlüsseleinstellungen während der EIC-Projektphase wird aktiv über relevante Netzwerke — darunter TUM, UnternehmerTUM und MedTech-spezifische Talentplattformen — auf weibliche Kandidatinnen zugegangen.</li>
+    </ul>
+    <h4>Führung und Seniorität</h4>
+    <p>Muniqo strebt bis Ende 2028 einen Frauenanteil von mindestens 40 % in Führungs- und leitenden Fachpositionen an, während das Team von seiner aktuellen Größe auf die geplante Struktur von 10+ Mitarbeitenden wächst.</p>
+    <h4>Teamkultur</h4>
+    <ul>
+      <li>Flexible Arbeitszeitmodelle werden standardmäßig für alle Rollen angeboten, um die Work-Life-Balance aller Teammitglieder unabhängig vom Geschlecht zu unterstützen.</li>
+      <li>Ein halbjährlicher Team-Review umfasst eine explizite Diskussion über Geschlechterbalance, inklusive Kultur und etwaige Anliegen der Teammitglieder.</li>
+    </ul>
+
+    <h3>4. Maßnahmen</h3>
+    <h4>4.1 Recruiting und Einstellung</h4>
+    <p>Für jede offene Stelle wird Muniqo anstreben, mindestens eine qualifizierte weibliche Kandidatin in die finale Interviewrunde einzubeziehen, sofern der Bewerberinnenpool dies ermöglicht. Kann über die ursprünglichen Kanäle keine qualifizierte weibliche Kandidatin identifiziert werden, wird vor Abschluss der finalen Interviewrunde — sofern zeitlich und stellenbezogen möglich — eine zusätzliche Ansprache über Hochschul-, Startup-, MedTech- und Women-in-Tech-Netzwerke unternommen.</p>
+    <h4>4.2 Work-Life-Balance</h4>
+    <p>Alle Stellen bei Muniqo werden mit flexiblen Arbeitszeiten und der Option auf hybrides oder remote Arbeiten angeboten, sofern betrieblich umsetzbar. Teilzeitregelungen können für alle Positionen besprochen werden. Diese Regelungen gelten gleichermaßen für alle Teammitglieder und sollen sowohl Betreuungspflichten als auch die persönliche Weiterentwicklung neben der beruflichen Tätigkeit unterstützen.</p>
+    <h4>4.3 Bewusstsein und Kultur</h4>
+    <p>Die flache Hierarchie und direkte Kommunikationskultur von Muniqo sind grundlegend für das Unternehmen. Alle Teammitglieder werden ermutigt, Anliegen, Ideen und Feedback direkt an das Führungsteam heranzutragen. Die verantwortliche GEP-Leitung (Marie Hesel) steht als Anlaufstelle für alle Teammitglieder zur Verfügung, die Anliegen zu Gleichstellung, Diskriminierung oder Unternehmenskultur — auch vertraulich — vorbringen möchten.</p>
+    <h4>Sensibilisierung und Schulung</h4>
+    <ul>
+      <li>Mindestens einmal jährlich bietet Muniqo eine interne Sensibilisierungsveranstaltung zu inklusivem Recruiting, unbewussten Vorurteilen, Antidiskriminierung und respektvoller Arbeitskultur an.</li>
+      <li>Neue Teammitglieder werden über den Gleichstellungsplan, die zuständige Ansprechperson und das verfügbare Verfahren zur Meldung von Anliegen informiert.</li>
+    </ul>
+    <h4>4.4 Geschlechterdimension in Forschung und Innovation</h4>
+    <p>Als Unternehmen, das medizinische Technologie für schutzbedürftig Patientengruppen — darunter Frühgeborene und kritisch Kranke — entwickelt, ist Muniqo für die Rolle von Geschlecht und Diversität sowohl in der klinischen Forschung als auch in der Produktentwicklung sensibilisiert. Wo relevante klinische Daten zu geschlechtsspezifischen Unterschieden bei Patientenergebnissen während des medizinischen Transports vorliegen, werden diese in Systemdesign, Validierungsprotokollen und Leistungsbenchmarking berücksichtigt. Muniqo wird aktiv diverse Perspektiven in seinem klinischen Partnernetzwerk und bei Pilotprojekten einbeziehen.</p>
+
+    <h3>5. Monitoring und Berichterstattung</h3>
+    <p>Die Fortschritte im Hinblick auf die in diesem GEP festgelegten Ziele werden alle sechs Monate von Marie Hesel als verantwortlicher Leitung überprüft und dem gesamten Führungsteam berichtet. Der GEP wird jährlich aktualisiert, um Änderungen in der Teamzusammensetzung, Recruiting-Ergebnissen und neu eingeführten Maßnahmen Rechnung zu tragen. Aktualisierte Versionen werden auf der Unternehmenswebsite veröffentlicht.</p>
+    <p>Muniqo Performante wird der Umsetzung und Überprüfung dieses Gleichstellungsplans dedizierte Managementzeit widmen. Die verantwortliche Leitung koordiniert das Monitoring, dokumentiert Fortschritte und bringt relevante Themen in den halbjährlichen Führungsreview ein. Mit dem Wachstum des Unternehmens werden bei Bedarf angemessene Ressourcen für inklusives Recruiting, Sensibilisierungsmaßnahmen und externe Unterstützung bereitgestellt.</p>
+
+    <h3>6. Kontakt</h3>
+    <div class="gep-contact">
+      <p>Bei Fragen zu diesem Gleichstellungsplan wenden Sie sich bitte an:</p>
+      <p><strong style="color:var(--white);">Marie Hesel</strong> — Business Lead<br>
+      <a href="mailto:marie.hesel@muniqoperformante.com">marie.hesel@muniqoperformante.com</a><br>
+      Muniqo Performante GmbH, München</p>
+    </div>
+
+    <p class="gep-meta">Dieser Gleichstellungsplan wird alle sechs Monate überprüft und mindestens einmal jährlich aktualisiert. · Zuletzt aktualisiert: Juni 2026</p>
+
+  </div>
+</div>
+
+<footer>
+  <span class="f-copy">© 2025 Muniqo Performante GmbH</span>
+  <div class="f-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="cookies.html">Cookies</a>
+  </div>
+</footer>
+
+<script src="../assets/js/shared.js"></script>
+</body>
+</html>

@@ -223,17 +223,17 @@
       border-top: 1px solid rgba(255,255,255,.07);
     }
     .timeline-section h2 { font-family:var(--font-display); font-size:clamp(28px,3.5vw,48px); font-weight:300; color:var(--white); margin-bottom:64px; }
-    .timeline { --timeline-indent:40px; position:relative; padding-left:var(--timeline-indent); }
-    .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:1px; background:rgba(255,255,255,.1); }
-    .timeline-item { position:relative; padding:0 0 56px 40px; }
-    .timeline-dot { position:absolute; left:calc(-1 * var(--timeline-indent) - 4px); top:8px; width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px rgba(200,168,75,.5); }
+    .timeline { position:relative; display:grid; grid-template-columns:repeat(5,1fr); gap:0; }
+    .timeline::before { content:''; position:absolute; top:8px; left:0; right:0; height:1px; background:rgba(255,255,255,.1); }
+    .timeline-item { position:relative; padding:32px 24px 0 0; }
+    .timeline-dot { position:absolute; top:4px; left:0; width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px rgba(200,168,75,.5); }
     .timeline-item h3 { font-family:var(--font-display); font-size:22px; font-weight:400; color:var(--white); margin-bottom:6px; }
-    .timeline-item > p { font-size:18px; color:var(--white-dim); font-style:italic; margin-bottom:16px; }
-    .timeline-item details summary { font-family:var(--font-cond); font-size:15px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); opacity:.8; list-style:none; display:inline-flex; align-items:center; gap:8px; transition:opacity .3s; }
+    .timeline-item > p { font-size:15px; color:var(--white-dim); font-style:italic; margin-bottom:16px; }
+    .timeline-item details summary { font-family:var(--font-cond); font-size:13px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); opacity:.8; list-style:none; display:inline-flex; align-items:center; gap:8px; transition:opacity .3s; }
     .timeline-item details summary:hover { opacity:1; }
     .timeline-item details[open] summary::after { content:'↑'; }
     .timeline-item details summary::after { content:'→'; }
-    .timeline-item details p { margin-top:16px; font-size:16px; color:var(--white-dim); line-height:1.75; max-width:640px; }
+    .timeline-item details p { margin-top:16px; font-size:14px; color:var(--white-dim); line-height:1.75; }
 
     /* ── INVESTMENT ── */
     .investment-section {
@@ -308,6 +308,16 @@
     .impact-card p { font-size:16px; color:var(--white-dim); line-height:1.75; flex-grow:1; }
     .sdg { display:inline-block; margin-top:20px; font-family:var(--font-cond); font-size:13.65px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); opacity:.8; }
 
+    /* ── GEP ── */
+    .gep-section { padding:100px 64px; background:rgba(9,9,10,.6); backdrop-filter:blur(8px); border-top:1px solid rgba(255,255,255,.07); }
+    .gep-section h2 { font-family:var(--font-display); font-size:clamp(28px,3.5vw,48px); font-weight:300; color:var(--white); margin:0; }
+    .gep-link { display:inline-flex; align-items:center; gap:14px; text-decoration:none; }
+    .gep-link:hover h2 { opacity:.85; }
+    .gep-link-icon { flex-shrink:0; width:26px; height:26px; border-radius:50%; border:1px solid rgba(200,168,75,.4); display:flex; align-items:center; justify-content:center; font-size:13px; color:var(--accent); transition:transform .3s,border-color .3s; }
+    .gep-link:hover .gep-link-icon { border-color:var(--accent); transform:translateX(4px); }
+    .gep-link-icon::before { content:'→'; }
+    .gep-teaser { max-width:640px; margin-top:20px; font-size:16px; color:var(--white-dim); line-height:1.7; }
+
     /* Footer */
     footer { padding:48px 64px; background:rgba(9,9,10,.7); backdrop-filter:blur(16px); border-top:1px solid rgba(255,255,255,.07); display:flex; align-items:center; justify-content:space-between; }
     
@@ -357,8 +367,10 @@
       .founder-info ul { grid-area:list; margin-top:16px; margin-bottom:0; }
       .sdg { font-size:13px; }
       .timeline-section { padding-left:24px; padding-right:24px; }
-      .timeline { --timeline-indent:20px; padding-left:var(--timeline-indent); }
-      .timeline-item { padding:0 0 48px 24px; }
+      .timeline { grid-template-columns:1fr 1fr; gap:32px; }
+      .timeline::before { display:none; }
+      .timeline-item { padding:24px 0 0 20px; border-left:1px solid rgba(255,255,255,.1); }
+      .timeline-dot { top:24px; left:-5px; }
       .timeline-item details summary { font-size:13px; }
       .impact-grid { grid-template-columns:1fr; }
       .impact-card { padding:32px 24px; }
@@ -693,7 +705,14 @@
   </div>
 </section>
 
-
+<!-- GEP -->
+<section class="gep-section">
+  <a href="gender-equality-plan.html" class="gep-link">
+    <h2>Gender Equality Plan</h2>
+    <span class="gep-link-icon" aria-hidden="true"></span>
+  </a>
+  <p class="gep-teaser">Unser vollständiger Gleichstellungsplan mit Zielen, Maßnahmen und Monitoring für den Zeitraum 2026–2028.</p>
+</section>
 
 <footer>
   <span class="f-copy">© 2025 Muniqo Performante GmbH</span>

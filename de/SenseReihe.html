@@ -1020,7 +1020,9 @@
       ruggedness: 'standard',
       storage: '32',
       liveBoxes: 'none',
-      modules: []
+      modules: [],
+      sensors: [],
+      tempQuality: 'standard'
     };
 
     const labels = {
@@ -1032,7 +1034,8 @@
       ruggedness: { standard: 'Standard', robust: 'Robust', ultra: 'Ultra robust' },
       storage: { 32: '32 GB', 64: '64 GB' },
       liveBoxes: { none: 'keine parallele Live-Auslesung', 1: '1 Box live', 2: '2 Boxen live', 4: 'bis 4 Boxen live' },
-      modules: { live: 'Livebetrieb', spectrogram: 'Spektrogramm', gps: 'GPS', temperature: 'Temperatur' }
+      modules: { live: 'Livebetrieb', spectrogram: 'Spektrogramm', gps: 'GPS', temperature: 'Temperatur' },
+      sensors: { humidity: 'Feuchtigkeit', pressure: 'Druck', temp: 'Temperatursensor', dust: 'Feinstaub & Partikel', sound: 'Schall', light: 'Licht' }
     };
 
     const priceMap = {
@@ -1156,6 +1159,13 @@
         input.checked = state.modules.includes(input.value);
       });
 
+      configRoot.querySelectorAll('[data-config-sensors] input[type="checkbox"]').forEach(input => {
+        input.checked = state.sensors.includes(input.value);
+      });
+      configRoot.querySelectorAll('input[name="tempQuality"]').forEach(radio => {
+        radio.checked = radio.value === state.tempQuality;
+      });
+
       const price = calculatePrice();
       const competitorPrice = calculateCompetitorPrice(price);
       const gbPerDay = estimateStorageGbPerDay();
@@ -1179,18 +1189,23 @@
       summaryLiveBoxesEl.textContent = labels.liveBoxes[state.liveBoxes];
       summaryModulesEl.textContent = moduleText;
 
+      const sensorText = state.sensors.map(s =>
+        s === 'temp'
+          ? `Temperatursensor (${state.tempQuality === 'precision' ? 'Präzision' : 'Standard'})`
+          : (labels.sensors[s] || s)
+      ).join(', ');
+
       const params = new URLSearchParams({
         betreff: 'Anfrage Customized Sense Box',
+        maximale_beschleunigung: labels.gRange[state.gRange],
+        messdauer_und_einsatz: labels.duration[state.duration],
         frequenz: labels.sampleRate[state.sampleRate],
-        abtastung: summarySampleEl.textContent,
-        messbereich: labels.gRange[state.gRange],
-        amplitude: labels.amplitude[state.amplitude],
-        praezision: labels.precision[state.precision],
-        messdauer: labels.duration[state.duration],
-        robustheit: labels.ruggedness[state.ruggedness],
+        benoetigte_praezision: labels.precision[state.precision],
+        praezision_und_robustheit: labels.ruggedness[state.ruggedness],
         speicher: labels.storage[state.storage],
+        softwaremodule: moduleText,
         live_boxen: labels.liveBoxes[state.liveBoxes],
-        module: moduleText,
+        sensor_optionen: sensorText,
         vorlaeufiger_richtpreis: formatPrice(price)
       });
       requestLinkEl.href = `ContactUs.html?${params.toString()}`;
@@ -1213,6 +1228,20 @@
       });
     });
 
+    configRoot.querySelectorAll('[data-config-sensors] input[type="checkbox"]').forEach(input => {
+      input.addEventListener('change', () => {
+        state.sensors = Array.from(configRoot.querySelectorAll('[data-config-sensors] input[type="checkbox"]:checked')).map(i => i.value);
+        updateConfigUi();
+      });
+    });
+
+    configRoot.querySelectorAll('input[name="tempQuality"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        state.tempQuality = radio.value;
+        updateConfigUi();
+      });
+    });
+
     resetEl.addEventListener('click', () => {
       state.sampleRate = 'mid';
       state.gRange = '8';
@@ -1223,6 +1252,10 @@
       state.storage = '32';
       state.liveBoxes = 'none';
       state.modules = [];
+      state.sensors = [];
+      state.tempQuality = 'standard';
+      configRoot.querySelectorAll('[data-config-sensors] input[type="checkbox"]').forEach(cb => { cb.checked = false; });
+      configRoot.querySelectorAll('input[name="tempQuality"]').forEach(radio => { radio.checked = radio.value === 'standard'; });
       updateConfigUi();
     });
 

@@ -177,15 +177,16 @@
     const params = new URLSearchParams(window.location.search);
     if (!params.has('subject')) return;
     const fields = [
-      ['Frequency range','frequency'],
-      ['Measurement range','measurement_range'],
-      ['Precision','precision'],
-      ['Measurement duration','duration'],
-      ['Ruggedness','ruggedness'],
-      ['Storage','storage'],
-      ['Live readout','live_boxes'],
-      ['Modules','modules'],
-      ['Preliminary price','preliminary_price']
+      ['Maximum Acceleration',          'max_acceleration'],
+      ['Measurement Duration',          'measurement_duration'],
+      ['Frequency of Application',      'frequency'],
+      ['Required Precision',            'required_precision'],
+      ['Precision and Ruggedness',      'precision_and_ruggedness'],
+      ['Storage',                       'storage'],
+      ['Software Modules',              'software_modules'],
+      ['Live Readout of Multiple Boxes','live_readout'],
+      ['Sensor Options',                'sensor_options'],
+      ['Preliminary Price',             'preliminary_price']
     ];
     const configuration = fields
       .map(([label,key]) => params.get(key) ? `${label}: ${params.get(key)}` : '')
@@ -195,6 +196,10 @@
     document.getElementById('formConfiguration').value = configuration;
     document.getElementById('contactMessage').value =
       `Hello,\n\nI am interested in the following configuration:\n\n${configuration}\n\nPlease send me further information and a non-binding quotation.\n`;
+
+    setTimeout(() => {
+      document.querySelector('.contact-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
   })();
 
   document.getElementById('navClose')?.addEventListener('click', () => {
