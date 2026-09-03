@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Muniqo Performante – Vibration Control</title>
-  <link rel="icon" href="../assets/images/Logo.png" type="image/x-icon">
+  <link rel="icon" href="../assets/images/Logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/shared.css">
@@ -340,7 +340,7 @@
       padding: 32px 36px;
     }
     .card-cta-btn {
-      position: absolute; top: 20px; right: 20px;
+      position: absolute; top: 20px; right: 20px; z-index: 2;
       display: inline-flex; align-items: center;
       background: linear-gradient(135deg,rgba(200,168,75,.45),rgba(200,168,75,.15));
       color: var(--accent); border: 1px solid rgba(200,168,75,.55);
@@ -452,6 +452,11 @@
 
     .statement-left {
       transform: translateY(-16px);
+      min-width: 0;
+    }
+
+    .statement-right {
+      min-width: 0;
     }
 
     .statement-left p {
@@ -468,6 +473,8 @@
       font-weight: 300;
       color: var(--white-dim);
       line-height: 1.85;
+      max-width: 420px;
+      overflow-wrap: break-word;
     }
 
     /* ════════════════════════════════
@@ -649,7 +656,7 @@
   <button class="nav-close" id="navClose" aria-label="Schließen"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1"/><line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1"/></svg></button>
     <a href="index.html" class="active">Home</a>
     <a href="SenseReihe.html">Sense Reihe</a>
-    <a href="VibraLifeGuard.html">VibraLifeGuard</a>
+    <a href="AVIS.html">AVIS</a>
     <a href="AboutUs.html">Über Uns</a>
     <a href="Career.html">Karriere</a>
     <a href="ContactUs.html">Kontakt</a>
@@ -727,7 +734,7 @@
   </div>
   <div class="hero-bottom-card">
     <span class="label">Anwendungen</span>
-    <h3>Für Medizin, Industrie und Forschung</h3>
+    <h3>Für Transport, Industrie und Forschung</h3>
     <p>Unsere Technologien sind überall dort einsetzbar, wo Präzision, Sicherheit und stabile Prozesse entscheidend sind.</p>
   </div>
 </div>
@@ -763,12 +770,12 @@
         <p>Intelligente Sensorlösungen zur Erfassung, Analyse und Überwachung von Vibrationen und Umgebungsbedingungen.</p>
       </div>
     </a>
-    <a href="VibraLifeGuard.html" class="product-card">
-      <img class="product-img" src="../assets/images/vibralifeguard.png" alt="VibraLifeGuard">
+    <a href="AVIS.html" class="product-card">
+      <img class="product-img" src="../assets/images/vibralifeguard.png" alt="AVIS">
       <div class="product-card-overlay">
-        <span class="tag">Medizin</span>
-        <h3>VibraLifeGuard</h3>
-        <p>Aktive Vibrationskontrolle für sicheren und stabilen Patiententransport.</p>
+        <span class="tag">Kompensation</span>
+        <h3>AVIS</h3>
+        <p>Aktive Vibrationskontrolle für sicheren und stabilen Frühgeborenentransport.</p>
       </div>
     </a>
   </div>
@@ -807,7 +814,7 @@
     <p>Wir machen sie beherrschbar.</p>
   </div>
   <div class="statement-right">
-    <p class="statement-desc">Muniqo Performante entwickelt innovative Lösungen zur Vibrationsreduktion und -überwachung – für industrielle Prozesse, medizinische Transporte und kritische Infrastrukturen. Gegründet an der TU München, getrieben von Präzision.</p>
+    <p class="statement-desc">Muniqo Performante entwickelt innovative Lösungen zur Vibrationsreduktion und -überwachung – für industrielle Prozesse, Patiententransport und kritische Infrastrukturen. Gegründet an der TU München, getrieben von Präzision.</p>
     <a href="AboutUs.html" class="arrow-link" style="color:var(--white-dim);margin-top:20px;">Über uns →</a>
   </div>
 </section>

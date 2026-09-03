@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AVIS – Muniqo Performante</title>
+  <link rel="icon" href="../assets/images/Logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/shared.css">
+  <style>
+    /* HERO – video */
+    .vlg-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 64px 80px;
+      overflow: hidden;
+    }
+
+    .vlg-hero-video {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .vlg-hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .vlg-hero-video::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(9, 9, 10, .35) 0%, rgba(9, 9, 10, .1) 40%, rgba(9, 9, 10, .85) 100%);
+    }
+
+    .vlg-hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: flex-end;
+    }
+
+    .vlg-hero-left {}
+
+    .vlg-hero-tag {
+      font-family: var(--font-cond);
+      font-size: 13px;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp .8s ease .3s forwards;
+    }
+
+    .vlg-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 8vw, 120px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: var(--white);
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(.16, 1, .3, 1) .5s forwards;
+    }
+
+    .vlg-hero-right {
+      opacity: 0;
+      animation: fadeUp .8s ease .9s forwards;
+      max-width: none;
+    }
+
+    .vlg-hero-right h2 {
+      font-family: var(--font-cond);
+      font-size: clamp(15px, 1.6vw, 20px);
+      font-weight: 300;
+      letter-spacing: .08em;
+      color: var(--white-dim);
+      line-height: 1.45;
+      margin-bottom: 0;
+    }
+
+    .vlg-hero-right p {
+      font-size: 13px;
+      color: var(--white-dim);
+      line-height: 1.8;
+      margin-top: 14px;
+    }
+
+    /* STATS */
+    .stats-section {
+      position: relative;
+      padding: 0;
+      background: rgba(9, 9, 10, .6);
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      overflow: hidden;
+    }
+
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 55%, black 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 55%, black 100%);
+    }
+
+    .stats-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, .07);
+    }
+
+    .stat-item {
+      background: rgba(9, 9, 10, .5);
+      padding: 60px 48px;
+      backdrop-filter: blur(8px);
+      transition: background .3s;
+    }
+
+    .stat-item:hover {
+      background: rgba(9, 9, 10, .7);
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 72px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .stat-label {
+      font-family: var(--font-cond);
+      font-size: 13px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(244, 242, 238, .5);
+    }
+
+    .stats-wideshot {
+      position: relative;
+      line-height: 0;
+      background: rgba(9, 9, 10, .6);
+      overflow: hidden;
+      margin-top: -24px;
+      margin-bottom: -300px;
+      z-index: 0;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 84%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 84%, transparent 100%);
+    }
+
+    .stats-wideshot canvas {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: block;
+      filter: brightness(.82);
+    }
+
+    /* FEATURES – editorial split layout */
+    .feat-section {
+      position: relative;
+      z-index: 1;
+      padding: 140px 120px 180px;
+      border-top: none;
+      margin-top: 0;
+      padding-top: 20px;
+    }
+
+    .feat-section::before {
+      display: none;
+    }
+
+    .feat-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(to bottom, rgba(9, 9, 10, 0) 0%, rgba(9, 9, 10, .4) 20%, rgba(9, 9, 10, .7) 40%, rgba(9, 9, 10, .9) 60%, #09090a 80%);
+      pointer-events: none;
+    }
+
+    .feat-eyebrow {
+      font-family: var(--font-cond);
+      font-size: 13px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .feat-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -.01em;
+    }
+
+    .feat-title em {
+      font-style: normal;
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .feat-lede {
+      font-size: 16px;
+      color: var(--white-dim);
+      line-height: 1.7;
+      margin-top: 24px;
+      max-width: 560px;
+    }
+
+    .feat-header {
+      display: flex;
+      justify-content: flex-start;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 88px;
+      padding-bottom: 0;
+      max-width: none;
+    }
+
+    .feat-intro {
+      max-width: 560px;
+    }
+
+    .feat-meta {
+      display: flex;
+      gap: 56px;
+      align-items: flex-start;
+      margin-top: 0;
+      flex-shrink: 0;
+      padding-left: 56px;
+      border-left: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .feat-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .feat-meta-num {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -.01em;
+    }
+
+    .feat-meta-num .accent {
+      color: var(--accent);
+    }
+
+    .feat-meta-lbl {
+      font-family: var(--font-cond);
+      font-size: 11px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: rgba(244, 242, 238, .5);
+    }
+
+    .feat-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      padding-top: 56px;
+    }
+
+    .feat-item {
+      padding: 0 40px;
+      border-right: 1px solid rgba(255, 255, 255, .1);
+      transition: background .35s ease;
+      cursor: pointer;
+    }
+
+    .feat-item:first-child {
+      padding-left: 0;
+    }
+
+    .feat-item:last-child {
+      padding-right: 0;
+      border-right: none;
+    }
+
+    .feat-item:hover .feat-item-num {
+      color: var(--accent);
+    }
+
+    .feat-item:hover .feat-item-title::after {
+      width: 32px;
+    }
+
+    .feat-item-num {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .35);
+      letter-spacing: .1em;
+      display: block;
+      margin-bottom: 24px;
+      transition: color .35s;
+    }
+
+    .feat-item-label {
+      font-family: var(--font-cond);
+      font-size: 11px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .feat-item-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 14px;
+      display: inline-block;
+      position: relative;
+      line-height: 1.3;
+    }
+
+    .feat-item-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width .4s ease;
+    }
+
+    .feat-item p {
+      font-size: 14.5px;
+      color: var(--white-dim);
+      line-height: 1.7;
+    }
+
+    /* IMPACT – narrative + signal layout */
+    .impact-area {
+      position: relative;
+      z-index: 2;
+      margin-top: -24px;
+      overflow: hidden;
+    }
+
+    .impact-area::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(244, 242, 238, .16);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .impact-section {
+      position: relative;
+      padding: 72px 120px 24px;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      border-top: none;
+    }
+
+    .impact-video {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .impact-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+
+    .impact-video::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(9, 9, 10, .7) 0%, rgba(9, 9, 10, .55) 50%, rgba(9, 9, 10, .7) 100%);
+    }
+
+    .impact-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .impact-statement {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      margin-bottom: 120px;
+      align-items: end;
+    }
+
+    .impact-statement-left {}
+
+    .impact-statement-right {
+      font-size: 17px;
+      color: rgba(244, 242, 238, .78);
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    .impact-statement-right strong {
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    /* Big stat band – horizontal, no boxes */
+    .stats-bar-section {
+      position: relative;
+      z-index: 2;
+      padding: 0;
+      background: rgba(32, 32, 32, 0.65);
+      backdrop-filter: blur(14px);
+      overflow: hidden;
+    }
+
+    .impact-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .impact-stat {
+      padding: 48px 40px 48px 40px;
+      border-right: 1px solid rgba(255, 255, 255, .15);
+      align-self: stretch;
+    }
+
+    .impact-stat:first-child {
+      padding-left: 120px;
+    }
+
+    .impact-stat:last-child {
+      border-right: none;
+      padding-right: 120px;
+    }
+
+    .impact-stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin-bottom: 14px;
+    }
+
+    .impact-stat-num .accent {
+      color: var(--accent);
+    }
+
+    .impact-stat-lbl {
+      font-family: var(--font-cond);
+      font-size: 11px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: rgba(244, 242, 238, .55);
+      margin-bottom: 12px;
+    }
+
+    .impact-stat p {
+      font-size: 13.5px;
+      color: var(--white-dim);
+      line-height: 1.65;
+      max-width: 300px;
+    }
+
+    /* Use-case rows – minimal, no cards */
+    /* USE CASES – equal 2x2 grid */
+
+    .usecase-section {
+      position: relative;
+      padding: 120px 120px 140px;
+      background: rgba(9, 9, 10, .45);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .usecase-header {
+      margin-bottom: 64px;
+    }
+
+    .usecase-eyebrow {
+      font-family: var(--font-cond);
+      font-size: 12px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .usecase-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -.01em;
+      margin: 0;
+    }
+
+    .usecase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, .10);
+      border-top: 1px solid rgba(255, 255, 255, .10);
+      border-left: 1px solid rgba(255, 255, 255, .10);
+    }
+
+    .usecase-card {
+      position: relative;
+      min-height: 310px;
+      padding: 40px 44px 44px;
+      background: rgba(9, 9, 10, .72);
+      border-right: 1px solid rgba(255, 255, 255, .10);
+      border-bottom: 1px solid rgba(255, 255, 255, .10);
+      transition: background .35s ease;
+    }
+
+    .usecase-card:hover {
+      background: rgba(255, 255, 255, .045);
+    }
+
+    .usecase-number {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .35);
+      letter-spacing: .1em;
+      margin-bottom: 38px;
+      transition: color .35s ease;
+    }
+
+    .usecase-card:hover .usecase-number {
+      color: var(--accent);
+    }
+
+    .usecase-label {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: -.01em;
+      text-transform: none;
+      color: var(--accent);
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
+
+    .usecase-card h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.3;
+      margin: 0 0 18px;
+      max-width: 480px;
+    }
+
+    .usecase-application {
+      font-family: var(--font-cond);
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: .08em;
+      color: var(--white);
+      margin: -6px 0 8px;
+      line-height: 1.3;
+    }
+
+    .usecase-description {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(244, 242, 238, .55);
+      line-height: 1.5;
+      max-width: 480px;
+      margin: 0;
+    }
+
+    .usecase-prefix {
+      color: var(--white);
+      font-weight: 300;
+    }
+
+    .usecase-row:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .usecase-row:hover {
+      padding-left: 8px;
+    }
+
+    .usecase-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .usecase-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.2;
+    }
+
+    .usecase-card {
+      position: relative;
+    }
+
+    .usecase-row h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .usecase-row p {
+      font-size: 14.5px;
+      color: var(--white-dim);
+      line-height: 1.7;
+    }
+
+    .usecase-row p strong {
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .facts-video-banner {
+      position: relative;
+      width: 100%;
+      line-height: 0;
+      margin-top: -160px;
+      margin-bottom: -80px;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .facts-video-banner video {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(.78);
+      transform: scale(1.1);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 70%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 70%, transparent 100%);
+    }
+
+    @media(max-width:900px) {
+      .facts-video-banner video {
+        transform: scale(1.2);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 50%, transparent 85%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 50%, transparent 85%);
+      }
+    }
+
+    /* CASE STUDY */
+    .case-section {
+      position: relative;
+      z-index: 1;
+      padding: 110px 64px 100px;
+      border-top: none;
+    }
+
+    .case-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: rgba(9, 9, 10, .6);
+      backdrop-filter: blur(14px);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+    }
+
+    .case-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: center;
+    }
+
+    .case-eyebrow {
+      font-family: var(--font-cond);
+      font-size: 12px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .case-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .case-lead {
+      font-size: 16px;
+      color: var(--white);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .case-text p {
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .case-right {
+      border-left: 1px solid rgba(255, 255, 255, .1);
+      padding-left: 64px;
+    }
+
+    .case-right p {
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .case-evidence-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--accent);
+      margin-bottom: 20px;
+      margin-top: 0;
+      letter-spacing: -.01em;
+    }
+
+    .case-quote {
+      border-left: 2px solid var(--accent);
+      padding-left: 20px;
+      margin-top: 36px;
+    }
+
+    .case-quote blockquote {
+      font-size: 14px;
+      color: var(--white-dim);
+      line-height: 1.85;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .case-quote cite {
+      font-family: var(--font-cond);
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .case-logos {
+      margin-top: 40px;
+    }
+
+    .case-logos span {
+      font-family: var(--font-cond);
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(244, 242, 238, .4);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .logo-row {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-row img {
+      height: 28px;
+      filter: brightness(0) invert(1);
+      opacity: 0.5;
+      transition: opacity .3s;
+    }
+
+    .logo-row img:hover {
+      opacity: .75;
+    }
+
+    /* PROBLEMS */
+    .problems-section {
+      padding: 100px 64px;
+      background: rgba(9, 9, 10, .5);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .problems-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 64px;
+      max-width: 800px;
+      line-height: 1.3;
+    }
+
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .problem-card {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 12px;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+      transition: border-color .3s, transform .4s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .problem-card:hover {
+      border-color: rgba(255, 255, 255, .18);
+      transform: translateY(-4px);
+    }
+
+    .problem-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background: #09090a;
+      filter: brightness(.85);
+      transition: filter .4s;
+    }
+
+    .problem-card:hover img {
+      filter: brightness(.9);
+    }
+
+    .problem-card-body {
+      padding: 28px 28px 32px;
+    }
+
+    .problem-card h3 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .problem-card p {
+      font-size: 13px;
+      color: var(--white-dim);
+      line-height: 1.7;
+    }
+
+    /* COMPARISON */
+    .compare-section {
+      padding: 100px 64px;
+      background: rgba(9, 9, 10, .45);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .compare-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 64px;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    .compare-table th {
+      font-family: var(--font-cond);
+      font-size: 12px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 20px 28px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .compare-table th:last-child {
+      color: var(--accent);
+    }
+
+    .compare-table td {
+      padding: 20px 28px;
+      font-size: 14px;
+      color: var(--white-dim);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+      line-height: 1.5;
+    }
+
+    .compare-table td:first-child {
+      font-family: var(--font-cond);
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(244, 242, 238, .5);
+    }
+
+    .compare-table td.highlight {
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .compare-table tr:hover td {
+      background: rgba(255, 255, 255, .02);
+    }
+
+    .cta-section {
+      padding: 140px 64px;
+      background: rgba(9, 9, 10, .55);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-eyebrow {
+      font-family: var(--font-cond);
+      font-size: 13px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 68px);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.1;
+      letter-spacing: -.01em;
+    }
+
+    .cta-sub {
+      font-size: 15px;
+      color: var(--white-dim);
+      margin-bottom: 48px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-cond);
+      font-size: 13px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--white);
+      padding: 18px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background .3s, gap .3s;
+    }
+
+    .cta-btn:hover {
+      background: var(--accent);
+      gap: 18px;
+    }
+
+
+
+
+
+
+    @media(hover:none), (pointer:coarse) {
+
+      body,
+      *,
+      a,
+      button,
+      [role="button"],
+      input,
+      textarea,
+      select {
+        cursor: auto !important;
+      }
+
+      .c-dot,
+      .trail,
+      .ripple {
+        display: none !important;
+      }
+    }
+
+    @media(max-width:900px) {
+      header {
+        padding: calc(18px + env(safe-area-inset-top)) 20px 18px !important;
+      }
+
+      .nav-logo img {
+        height: 48px;
+        margin-top: 0;
+        transform: translateY(5px) scale(1.12);
+        transform-origin: left center;
+      }
+
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #09090a;
+        gap: 28px;
+        z-index: 99998;
+        overscroll-behavior: contain;
+      }
+
+      .nav-links a {
+        font-family: var(--font-cond);
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        transition: color .3s;
+      }
+
+      .nav-links.open {
+        display: flex !important;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #fff;
+      }
+
+      .mob-toggle {
+        display: block;
+        z-index: 10001;
+      }
+
+      .lang-switch {
+        font-size: 12px;
+        margin-right: 8px;
+      }
+
+      .scroll-progress {
+        right: 10px;
+        height: 200px;
+      }
+
+      .vlg-hero {
+        padding: 140px 20px 18vh;
+        min-height: 85svh;
+      }
+
+      .vlg-hero-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .vlg-hero-title {
+        font-size: clamp(44px, 11vw, 64px);
+        letter-spacing: -.02em;
+      }
+
+      .vlg-hero-right h2 {
+        display: none;
+      }
+
+      .mob-hide {
+        display: none;
+      }
+
+      .vlg-hero-right p {
+        display: block;
+        font-family: var(--font-cond);
+        font-size: 16px;
+        letter-spacing: .08em;
+        color: var(--white-dim);
+        font-weight: 300;
+        line-height: 1.55;
+      }
+
+      .vlg-hero-video::after {
+        background: linear-gradient(to bottom, rgba(9, 9, 10, .7) 0%, rgba(9, 9, 10, .4) 40%, rgba(9, 9, 10, .9) 100%);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+      }
+
+      .stat-item {
+        padding: 28px 16px;
+      }
+
+      .stat-num {
+        font-size: clamp(24px, 7vw, 36px);
+      }
+
+      .stat-label {
+        font-size: 11px;
+        letter-spacing: .1em;
+      }
+
+      .impact-section {
+        padding: 64px 20px 24px !important;
+      }
+
+      .stats-bar-section {
+        padding: 0;
+      }
+
+      .case-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .case-right {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, .1);
+        padding-top: 32px;
+      }
+
+      .logo-row {
+        flex-wrap: nowrap;
+        gap: 14px;
+      }
+
+      .logo-row img {
+        height: 20px;
+      }
+
+      .problems-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .problem-card img {
+        height: 140px;
+      }
+
+      .problem-card-body {
+        padding: 22px;
+      }
+
+      .feat-section,
+      .impact-section,
+      .case-section,
+      .problems-section,
+      .compare-section,
+      .cta-section {
+        padding: 72px 20px;
+      }
+
+      .feat-section {
+        padding-top: 20px !important;
+        margin-top: 40px;
+      }
+
+      .feat-section::after {
+        background: linear-gradient(to bottom, rgba(9, 9, 10, 0) 0%, rgba(9, 9, 10, 0) 30%, rgba(9, 9, 10, .5) 50%, rgba(9, 9, 10, .9) 65%, #09090a 80%);
+      }
+
+      .feat-header {
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 56px;
+        align-items: flex-start;
+      }
+
+      .feat-meta {
+        border-left: none;
+        padding-left: 0;
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+
+      .feat-list {
+        grid-template-columns: 1fr;
+      }
+
+      .feat-item {
+        padding: 32px 0 !important;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+      }
+
+      .feat-item:last-child {
+        border-bottom: none;
+      }
+
+      .impact-statement {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 48px;
+      }
+
+      .impact-stats {
+        grid-template-columns: repeat(2, 1fr);
+        border-bottom: none;
+      }
+
+      .impact-stat {
+        padding: 32px 20px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
+      }
+
+      .impact-stat:first-child {
+        padding-left: 20px !important;
+      }
+
+      .impact-stat:last-child {
+        padding-right: 20px !important;
+      }
+
+      .impact-stat:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, .08) !important;
+      }
+
+      .impact-stat:nth-last-child(-n+2) {
+        border-bottom: none !important;
+      }
+
+      .usecase-row {
+        grid-template-columns: 40px 1fr;
+        gap: 20px;
+        padding: 32px 0;
+      }
+
+      .usecase-row p {
+        grid-column: 1 / -1;
+      }
+
+      .usecase-row h3 {
+        font-size: 19px;
+      }
+
+      .compare-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+      }
+
+      .compare-table {
+        min-width: 480px;
+        white-space: nowrap;
+      }
+
+      .compare-table th,
+      .compare-table td {
+        padding: 14px 14px;
+        font-size: 13px;
+        white-space: normal;
+      }
+
+      .stats-wideshot {
+        margin-top: -60px;
+        margin-bottom: -160px;
+      }
+
+      .stats-wideshot canvas {
+        width: 250%;
+        margin-left: -75%;
+      }
+
+      .facts-video-banner {
+        margin-top: -20px;
+        margin-bottom: 0;
+      }
+
+      .feat-item-label {
+        font-size: 13px;
+      }
+
+      .feat-meta-lbl {
+        font-size: 13px;
+      }
+
+      .impact-stat-lbl {
+        font-size: 13px;
+      }
+
+      .case-quote cite {
+        font-size: 13px;
+      }
+
+      .case-right {
+        padding-top: 32px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 16px;
+        padding: 38px 20px 34px;
+        text-align: center;
+      }
+
+
+
+    }
+
+    @media(max-width:600px) {
+      .compare-table-wrap {
+        overflow-x: visible;
+      }
+
+      .compare-table {
+        min-width: 0;
+        white-space: normal;
+        table-layout: fixed;
+        width: 100%;
+      }
+
+      .compare-table th {
+        font-size: 8px;
+        letter-spacing: .08em;
+        padding: 10px 6px;
+      }
+
+      .compare-table td {
+        font-size: 11px;
+        padding: 10px 6px;
+        line-height: 1.4;
+      }
+
+      .compare-table td:first-child {
+        font-size: 9px;
+        letter-spacing: .05em;
+        width: 28%;
+      }
+
+      .problems-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .impact-stat:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, .08) !important;
+      }
+
+      .impact-stat {
+        border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
+      }
+
+      .impact-stat:nth-last-child(-n+2) {
+        border-bottom: none !important;
+      }
+
+      .impact-stat-num {
+        font-size: clamp(28px, 8vw, 48px);
+      }
+
+      .impact-stat p {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .feat-meta {
+        flex-direction: column;
+        gap: 24px;
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .vlg-hero {
+        padding: 120px 18px 32px;
+      }
+
+      .feat-section,
+      .impact-section,
+      .case-section,
+      .problems-section,
+      .compare-section,
+      .cta-section {
+        padding: 56px 18px;
+      }
+
+      .vlg-hero-title {
+        font-size: clamp(44px, 11vw, 64px);
+      }
+
+      .usecase-row {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Mobile Nav Overlay ── -->
+  <nav id="navLinks" class="nav-links">
+    <button class="nav-close" id="navClose" aria-label="Schließen"><svg width="18" height="18" viewBox="0 0 18 18"
+        fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1" />
+        <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1" />
+      </svg></button>
+    <a href="index.html">Home</a>
+    <a href="SenseReihe.html">Sense Reihe</a>
+    <a href="AVIS.html" class="active">AVIS</a>
+    <a href="AboutUs.html">Über Uns</a>
+    <a href="Career.html">Karriere</a>
+    <a href="ContactUs.html">Kontakt</a>
+  </nav>
+
+  <div class="c-dot" id="cDot"></div>
+  <div class="scroll-progress">
+    <div class="scroll-progress-top" id="scrollProgressTop"></div>
+    <div class="scroll-progress-dot" id="scrollProgressDot"></div>
+    <div class="scroll-progress-bottom" id="scrollProgressBottom"></div>
+  </div>
+
+  <header id="header">
+    <div class="nav-logo"><a href="index.html"><img src="../assets/images/Logo.png" alt="Muniqo Performante"></a></div>
+    <!-- nav moved to body -->
+    <div class="nav-right">
+      <div class="lang-switch"><a href="../en/AVIS.html">EN</a><span>/</span><a href="AVIS.html" class="active">DE</a>
+      </div>
+    </div>
+    <button class="mob-toggle" id="mobToggle" aria-label="Menü"><span></span><span></span><span></span></button>
+  </header>
+
+  <!-- HERO -->
+  <section class="vlg-hero">
+    <div class="vlg-hero-video">
+      <video autoplay muted loop playsinline>
+        <source src="../assets/videos/Rettungsdienst.mp4" type="video/mp4">
+        <source src="../assets/videos/rettungsdienst.webm" type="video/webm">
+      </video>
+    </div>
+
+    <div class="vlg-hero-content">
+      <div class="vlg-hero-left">
+        <h1 class="vlg-hero-title">AVIS</h1>
+      </div>
+
+      <div class="vlg-hero-right">
+        <h3 style="font-size: 32px; font-weight: 300; margin-top: -30px; margin-bottom: 8px;">
+          Active Vibration-Isolation System
+        </h3>
+
+        <h2>
+          Die Lösung für vibrationsfreien Frühgeborenentransport.<br>
+          Sorgt für maximale Vibrationsreduzierung während des Transports von Frühgeborenen – auf Straße und in der Luft
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">10M+</div>
+        <div class="stat-label">Patiententransporte pro Jahr in Deutschland</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">500K+</div>
+        <div class="stat-label">Hochrisiko, vibrationssensible Transporte</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">99,9%</div>
+        <div class="stat-label">Vibrationskompensation möglich</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WIDESHOT -->
+  <div class="facts-video-banner">
+    <video src="../assets/videos/vibralifeguard_facts.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+
+  <!-- FEATURES – editorial split -->
+  <section class="feat-section">
+    <div class="feat-header">
+      <div class="feat-intro">
+        <h2 class="feat-title"><span style="color:var(--accent);">Null Toleranz</span><br><span
+            style="color:var(--white);">für Erschütterungen.</span></h2>
+        <p class="feat-lede">Eine magnetisch aufgehängte Plattform, die durch KI in Echtzeit <strong>99,9 %</strong>
+          jeder Erschütterung ausgleicht – noch bevor sie den Körper erreicht.</p>
+      </div>
+    </div>
+    <ul class="feat-list">
+      <li class="feat-item">
+        <span class="feat-item-num">01</span>
+        <p class="feat-item-label">Magnetische Aufhängung</p>
+        <h3 class="feat-item-title">Stabil – unabhängig vom Fahrstil</h3>
+        <p>Die berührungsfreie Magnet-Plattform isoliert das Frühgeborene mechanisch vom Fahrzeug. Kein Wackeln, kein
+          Driften, keine ständige Korrektur durch das Personal.</p>
+      </li>
+      <li class="feat-item">
+        <span class="feat-item-num">02</span>
+        <p class="feat-item-label">KI-Echtzeitsteuerung</p>
+        <h3 class="feat-item-title">Reagiert in Millisekunden</h3>
+        <p>Sensoren erfassen jede Beschleunigung, ein KI-Modell rechnet sie weg – schneller als jeder Stoß ankommt. Auch
+          bei Turbulenzen oder schlechtem Asphalt.</p>
+      </li>
+      <li class="feat-item">
+        <span class="feat-item-num">03</span>
+        <p class="feat-item-label">Modular & fahrzeugunabhängig</p>
+        <h3 class="feat-item-title">Passt in jedes System</h3>
+        <p>Lässt sich als Zusatzmodul in bestehende Inkubatoren, Tragen und Fahrzeuge integrieren – vom Rettungswagen
+          bis zum Hubschrauber, auch außerhalb des Fahrzeugs.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- IMPACT + STATS – shared video background -->
+  <div class="impact-area">
+    <div class="impact-video">
+      <video autoplay muted loop playsinline>
+        <source src="../assets/videos/Baby.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <section class="impact-section">
+      <div class="impact-content">
+        <div class="impact-statement">
+          <div class="impact-statement-left">
+            <p class="feat-eyebrow">Wirkung</p>
+            <h2 class="feat-title">Warum das<br>so wichtig ist.</h2>
+          </div>
+          <p class="impact-statement-right">
+            Jeder Transport eines kritischen Patienten ist ein Risiko – besonders für Frühgeborene. Vibrationen können
+            Blutungen verstärken, die Stabilität von Frakturen beeinträchtigen und zur Ermüdung des Personals beitragen.
+            <strong>AVIS neutralisiert bis zu 99,9 % davon</strong> – in Echtzeit, von der Neonatologie bis
+            zur Notfallversorgung.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-bar-section">
+      <div class="impact-stats">
+        <div class="impact-stat">
+          <div class="impact-stat-num">60.000<span class="accent">+</span></div>
+          <p class="impact-stat-lbl">Frühgeburten pro Jahr</p>
+          <p p style="font-size: 17px;">Allein in Deutschland – viele davon müssen direkt nach der Geburt verlegt
+            werden.</p>
+        </div>
+        <div class="impact-stat">
+          <p
+            style="font-family: var(--font-display); font-size: 25px; font-weight: 300; color: var(--white); line-height: 1.35; letter-spacing: -.01em; margin: 0;">
+            Führende Neonatologen fordern <span style="color: var(--accent); font-weight: 400;">vibrationsarme
+              Transporte:​</span>
+          <p style="font-size: 17px;">Kliniker gehen davon aus, dass transportbedingte Vibrationen das Risiko für
+            Komplikationen wie Hirnblutungen und Stress bei Neugeborenen erhöhen können.</p>
+          </p>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-stat-num">+88<span class="accent">%</span></div>
+          <p class="impact-stat-lbl">Über dem Grenzwert von Neugeborenen</p>
+          <p p style="font-size: 17px;">Beim Transport wirken auf Neugeborene Vibrationen, die selbst
+            Sicherheitsgrenzwerte für Erwachsene deutlich überschreiten.</p>+
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- FACTS VIDEO -->
+  <div class="stats-wideshot">
+    <canvas id="rotatingScrubVideo"></canvas>
+  </div>
+
+  <!-- CASE STUDY -->
+  <section class="case-section">
+    <div class="case-inner">
+      <div class="case-text">
+        <p class="case-eyebrow">Fallstudie</p>
+        <h2 class="case-title">Reale Daten.<br>Echte Wirkung.</h2>
+        <p class="case-lead">Wir tun, wozu die Wissenschaft schon lange aufruft.</p>
+        <p>In Zusammenarbeit mit MedCareVisions, der Feuerwehr München, dem Deutschen Herzzentrum und der TUM führten
+          wir eine realistische Simulation eines Neonatentransports durch – inklusive Patientenübergabe,
+          Inkubatortransfer und Fahrt durch das Münchner Stadtzentrum.</p>
+        <p>Dieses Pilotprojekt ermöglichte eine der ersten kontinuierlichen Echtzeit-Vibrationsaufzeichnungen während
+          eines kompletten Neonatentransports. Signifikante dynamische Kräfte wurden auf allen Achsen gemessen.</p>
+        <div class="case-logos">
+          <span>In Zusammenarbeit mit</span>
+          <div class="logo-row">
+            <img src="../assets/images/Medcare.svg" alt="MedCareVisions">
+            <img src="../assets/images/Feuerwehr.png" alt="Feuerwehr München">
+            <img src="../assets/images/partner-logo1.png" alt="TU München">
+            <img src="../assets/images/deutsches.png" alt="Deutsches Herzzentrum">
+            <img src="../assets/images/LMU.png" alt="LMU München">
+          </div>
+        </div>
+      </div>
+      <div class="case-right">
+        <h3 class="case-evidence-title">Technische Evidenz</h3>
+        <p>Vibrationen und mechanische Belastungen sind ein relevanter Faktor beim Transport von Patienten und
+          empfindlichen Gütern. Ihre Erfassung und Reduktion kann dazu beitragen, Transportbedingungen zu optimieren und
+          eine möglichst schonende Beförderung zu ermöglichen.</p>
+        <div class="case-quote">
+          <blockquote>„Das System von Muniqo Performante adressiert den Optimierungsbedarf im Bereich der mechanischen
+            Belastungsreduktion im Neugeborenentransport mit einem technisch anspruchsvollen Ansatz. Es kann dazu
+            beitragen, transportbedingte Vibrationen zu reduzieren und diese zugleich nachvollziehbar zu erfassen."
+          </blockquote>
+          <cite>— Dr. med. Mathias Klemme, Institut für Notfallmedizin und Medizinmanagement (INM) LMU München</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="usecase-section">
+    <div class="usecase-header">
+      <p class="usecase-eyebrow">Weitere Anwendungsbereiche</p>
+      <h2 class="usecase-title">
+        Wo AVIS den Unterschied macht.
+      </h2>
+    </div>
+
+    <div class="usecase-grid">
+
+      <article class="usecase-card">
+        <span class="usecase-number">01</span>
+        <p class="usecase-label">Präzisionstechnik</p>
+        <p class="usecase-application">
+          <span class="usecase-prefix"> Mögliche Anwendung:</span>
+          Halbleiterlithografie &amp; hochpräzise KMG-Messtechnik​
+        <p>
+        <p class="usecase-description">
+          Weniger Vibrationen schaffen die nötige Stabilität für präzise Messungen und zuverlässige Fertigungsprozesse.
+        </p>
+      </article>
+
+      <article class="usecase-card">
+        <span class="usecase-number">02</span>
+        <p class="usecase-label">Photonik</p>
+        <p class="usecase-application">
+          <span class="usecase-prefix">Mögliche Anwendung:</span>
+          Stabilisierung von Laserstrahlen &amp; optischen Tischen​
+        </p>
+        <p class="usecase-description">
+          Eine stabile Positionierung optischer Komponenten unterstützt präzise Strahlführungen und zuverlässige
+          optische Aufbauten.
+        </p>
+      </article>
+
+      <article class="usecase-card">
+        <span class="usecase-number">03</span>
+        <p class="usecase-label">Quantentechnologie</p>
+        <p class="usecase-application">
+          <span class="usecase-prefix">Mögliche Anwendung:</span>
+          Kryostabilisierung für QPUs
+        </p>
+        <p class="usecase-description">
+          Empfindliche Quantensysteme profitieren von einer möglichst vibrationsarmen Umgebung, um stabile und
+          reproduzierbare Messungen zu ermöglichen.
+        </p>
+      </article>
+
+      <article class="usecase-card">
+        <span class="usecase-number">04</span>
+        <p class="usecase-label">Luft- und Raumfahrt​</p>
+        <p class="usecase-application">
+          <span class="usecase-prefix">Mögliche Anwendung:</span>
+          Stabilisierung optischer Nutzlasten für die Satellitenkommunikation​
+        </p>
+        <p class="usecase-description">
+          Bei optischen Nutzlasten können ruhige Betriebsbedingungen die Präzision und Zuverlässigkeit der
+          Satellitenkommunikation unterstützen.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="compare-section">
+    <h2 class="compare-title">Muniqo vs. Standard</h2>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Kriterium</th>
+            <th>Standardtragen</th>
+            <th>Muniqo Transportplattform</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Stoßdämpfung</td>
+            <td>Minimal (statischer Schaum/Gummi)</td>
+            <td class="highlight">Aktiv, adaptive Entkopplung</td>
+          </tr>
+          <tr>
+            <td>Transportstabilität</td>
+            <td>Abhängig von Fahrkönnen</td>
+            <td class="highlight">Echtzeit-Stabilisierung</td>
+          </tr>
+          <tr>
+            <td>Lärm- & Vibrationsbelastung</td>
+            <td>Hoch – keine Isolation</td>
+            <td class="highlight">Niedrig – dynamische Dämpfung</td>
+          </tr>
+          <tr>
+            <td>Integration in Arbeitsabläufe</td>
+            <td>Manuelle Umgehungslösungen</td>
+            <td class="highlight">Plug & Play in bestehende Prozesse</td>
+          </tr>
+          <tr>
+            <td>Datenprotokollierung (für QI)</td>
+            <td>Nicht verfügbar</td>
+            <td class="highlight">Automatisch enthalten</td>
+          </tr>
+          <tr>
+            <td>Reduktion klinischer Risiken</td>
+            <td>Nicht adressiert</td>
+            <td class="highlight">Quantifizierbare Verbesserung</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <p class="cta-eyebrow">Bereit für den nächsten Schritt</p>
+    <h2 class="cta-title">AVIS für Ihre Anwendung</h2>
+    <p class="cta-sub">Sprechen Sie mit unserem Team — wir zeigen Ihnen, wie AVIS in Ihren Betrieb integriert
+      werden kann, und begleiten Sie vom ersten Gespräch bis zur Inbetriebnahme.</p>
+    <a href="ContactUs.html" class="cta-btn">Kontakt aufnehmen →</a>
+  </section>
+
+  <footer>
+    <span class="f-copy">© 2025 Muniqo Performante GmbH</span>
+    <div class="f-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="cookies.html">Cookies</a>
+    </div>
+  </footer>
+
+  <script>
+    // CANVAS IMAGE-SEQUENCE SCRUB (120 frames @ 2880px, forward playback)
+    const scrubCanvas = document.getElementById('rotatingScrubVideo');
+    const scrubCtx = scrubCanvas.getContext('2d');
+    const TOTAL_FRAMES = 120;
+    const frameImages = new Array(TOTAL_FRAMES);
+    let framesReady = false;
+    let lastFrameIndex = -1;
+
+    function resizeScrubCanvas() {
+      const dpr = window.devicePixelRatio || 1;
+      scrubCanvas.width = scrubCanvas.offsetWidth * dpr;
+      scrubCanvas.height = scrubCanvas.offsetHeight * dpr;
+      scrubCtx.imageSmoothingEnabled = true;
+      scrubCtx.imageSmoothingQuality = 'high';
+      if (framesReady && lastFrameIndex >= 0) drawScrubFrame(lastFrameIndex);
+    }
+    window.addEventListener('resize', resizeScrubCanvas, { passive: true });
+    resizeScrubCanvas();
+
+    function drawScrubFrame(index) {
+      const img = frameImages[index];
+      if (!img || !img.complete || !img.naturalWidth) return;
+      const cw = scrubCanvas.width, ch = scrubCanvas.height;
+      const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
+      const sw = img.naturalWidth * scale, sh = img.naturalHeight * scale;
+      scrubCtx.drawImage(img, (cw - sw) / 2, (ch - sh) / 2, sw, sh);
+      lastFrameIndex = index;
+    }
+
+    let loadedCount = 0;
+    for (let i = 0; i < TOTAL_FRAMES; i++) {
+      const img = new Image();
+      img.onload = () => { if (++loadedCount === TOTAL_FRAMES) { framesReady = true; drawScrubFrame(0); } };
+      img.src = `../assets/frames/vibralifeguard_frames/frame${String(i + 1).padStart(3, '0')}.jpg`;
+      frameImages[i] = img;
+    }
+
+    (function scrubLoop() {
+      requestAnimationFrame(scrubLoop);
+      if (!framesReady) return;
+      const rect = scrubCanvas.parentElement.getBoundingClientRect();
+      const start = window.innerHeight * 0.9, end = -rect.height * 0.8;
+      const progress = Math.min(Math.max((start - rect.top) / (start - end), 0), 1);
+      const idx = Math.min(Math.round(progress * (TOTAL_FRAMES - 1)), TOTAL_FRAMES - 1);
+      if (idx !== lastFrameIndex) drawScrubFrame(idx);
+    })();
+  </script>
+  <script src="../assets/js/shared.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Sense Series – Muniqo Performante</title>
-  <link rel="icon" href="../assets/images/Logo.png" type="image/x-icon">
+  <link rel="icon" href="../assets/images/Logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;600;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/shared.css">
@@ -366,6 +366,7 @@
     .config-default{font-family:var(--font-cond);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,168,75,.78);white-space:nowrap;padding-top:2px;}
     .config-options{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
     .config-options.four{grid-template-columns:repeat(4,1fr);}
+    .config-options.two{grid-template-columns:repeat(2,1fr);}
     .config-option{position:relative;min-height:104px;text-align:left;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035);border-radius:8px;padding:15px 15px 14px;color:inherit;transition:border-color .22s,background .22s,transform .22s;}
     .config-option:hover{border-color:rgba(200,168,75,.36);background:rgba(255,255,255,.055);transform:translateY(-2px);}
     .config-option.active{border-color:var(--accent);background:rgba(200,168,75,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);}
@@ -383,6 +384,10 @@
     .tq-opt{display:flex;align-items:center;gap:5px;font-family:var(--font-cond);font-size:12px;letter-spacing:.08em;color:rgba(244,242,238,.6);cursor:pointer;}
     .tq-opt input{width:13px;height:13px;accent-color:#c8a84b;position:static;top:auto;left:auto;}
     .tq-opt:has(input:checked){color:var(--white);}
+    .custom-sensor-toggle{padding-left:14px;}
+    .config-toggle input.custom-sensor-input{position:static;display:block;width:100%;height:auto;left:auto;top:auto;margin-top:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:8px 10px;font-family:var(--font-body,'Barlow',sans-serif);font-size:12.5px;color:var(--white);outline:none;transition:border-color .2s;accent-color:initial;}
+    .custom-sensor-input::placeholder{color:rgba(244,242,238,.4);}
+    .custom-sensor-input:focus{border-color:rgba(200,168,75,.55);}
     .config-result{background:rgba(9,9,10,.88);padding:30px;display:flex;flex-direction:column;gap:24px;position:relative;min-width:0;overflow:hidden;}
     .config-result::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent);opacity:.55;}
     .config-result-kicker{font-family:var(--font-cond);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);}
@@ -489,7 +494,7 @@
       .config-head{grid-template-columns:1fr;gap:22px;margin-bottom:28px;}
       .config-tool{grid-template-columns:1fr;}
       .config-form,.config-result{padding:24px;}
-      .config-options,.config-options.four{grid-template-columns:1fr 1fr;}
+      .config-options,.config-options.four,.config-options.two{grid-template-columns:1fr 1fr;}
       .config-toggles{grid-template-columns:1fr;}
       .vs-hero-pills{display:none;}
       .vs-hero-tag{font-size:12px;letter-spacing:.28em;max-width:100%;overflow-wrap:anywhere;}
@@ -535,7 +540,7 @@
       .config-form,.config-result{padding:20px;}
       .config-label-row{flex-direction:column;gap:8px;}
       .config-default{white-space:normal;}
-      .config-options,.config-options.four{grid-template-columns:1fr;}
+      .config-options,.config-options.four,.config-options.two{grid-template-columns:1fr;}
       .config-option{min-height:auto;}
       .config-summary-row{flex-direction:column;gap:4px;}
       .config-summary-row strong{text-align:left;}
@@ -567,7 +572,7 @@
   <button class="nav-close" id="navClose" aria-label="Close"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1"/><line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1"/></svg></button>
     <a href="index.html">Home</a>
     <a href="SenseReihe.html" class="active">Sense Series</a>
-    <a href="VibraLifeGuard.html">VibraLifeGuard</a>
+    <a href="AVIS.html">AVIS</a>
     <a href="AboutUs.html">About Us</a>
     <a href="Career.html">Career</a>
     <a href="ContactUs.html">Contact</a>
@@ -675,7 +680,7 @@
           <div class="pt-spec"><h4>Precise Measurement</h4><p>Low-noise 3-axis measurements up to 1000 Hz with high shock resistance.</p></div>
           <div class="pt-spec"><h4>Data Recording</h4><p>More than 40 hours of battery life and 32 GB of internal storage for continuous recordings.</p></div>
           <div class="pt-spec"><h4>GPS & Context Data</h4><p>Integrated GPS for synchronized vibration measurements and route-based analysis.</p></div>
-          <div class="pt-spec"><h4>Optional Temperature Measurement</h4><p>Vibration, position, and temperature can be recorded simultaneously and analyzed together.</p></div>
+          <div class="pt-spec"><h4>Optional Temperature<br>Measurement</h4><p>Vibration, position, and temperature can be recorded simultaneously and analyzed together.</p></div>
         </div>
       </div>
 
@@ -804,8 +809,8 @@
           </div>
           <div class="config-options four" data-config-field="gRange">
             <button class="config-option" type="button" data-value="2"><span>2 g</span><small>Best sensitivity for very fine vibrations.</small></button>
-            <button class="config-option" type="button" data-value="4"><span>4 g</span><small>For light vibrations and sensitive systems.</small></button>
-            <button class="config-option active" type="button" data-value="8"><span>8 g</span><span class="opt-std-badge">Standard</span><small>Balanced standard — covers most applications.</small></button>
+            <button class="config-option active" type="button" data-value="4"><span>4 g</span><span class="opt-std-badge">Standard</span><small>Balanced standard — covers most applications.</small></button>
+            <button class="config-option" type="button" data-value="8"><span>8 g</span><small>For stronger vibrations and more headroom.</small></button>
             <button class="config-option" type="button" data-value="16"><span>16 g</span><small>For strong impacts and rough environments.</small></button>
           </div>
         </div>
@@ -817,9 +822,8 @@
               <p class="config-help">How long should the box operate autonomously? Battery capacity and storage determine the maximum runtime.</p>
             </div>
           </div>
-          <div class="config-options" data-config-field="duration">
-            <button class="config-option active" type="button" data-value="day"><span>5 hours</span><small>Quick test, quality check or short transport segments.</small></button>
-            <button class="config-option" type="button" data-value="week"><span>24 hours</span><small>Extended campaigns, machine checks or shift monitoring.</small></button>
+          <div class="config-options two" data-config-field="duration">
+            <button class="config-option active" type="button" data-value="week"><span>24 hours</span><span class="opt-std-badge">Standard</span><small>Extended campaigns, machine checks or shift monitoring.</small></button>
             <button class="config-option" type="button" data-value="weeks"><span>Several days</span><small>Long-term monitoring with maximum autonomy.</small></button>
           </div>
         </div>
@@ -843,11 +847,10 @@
           <div class="config-label-row">
             <div>
               <h3 class="config-label">What is the approximate frequency of your application?</h3>
-              <p class="config-help">Lower frequencies provide greater sensitivity for fine vibration. Higher frequencies capture faster events but may be slightly less sensitive. This selection does not affect the price.</p>
+              <p class="config-help">Up to 1 kHz covers most technical applications. For faster events and higher frequencies, we recommend above 1 kHz.</p>
             </div>
           </div>
-          <div class="config-options" data-config-field="sampleRate">
-            <button class="config-option" type="button" data-value="low"><span>Below 100 Hz</span><small>High sensitivity for slow and particularly fine vibration.</small></button>
+          <div class="config-options two" data-config-field="sampleRate">
             <button class="config-option active" type="button" data-value="mid"><span>Below 1 kHz</span><span class="opt-std-badge">Standard</span><small>A balanced range for most technical applications.</small></button>
             <button class="config-option" type="button" data-value="high"><span>Above 1 kHz</span><small>For fast events and high frequencies, with slightly lower sensitivity.</small></button>
           </div>
@@ -856,28 +859,27 @@
         <div class="config-block">
           <div class="config-label-row">
             <div>
-              <h3 class="config-label">Required Precision</h3>
+              <h3 class="config-label">Measurement Accuracy / Required Precision</h3>
               <p class="config-help">Defines the resolution and noise floor of the measurements. Higher precision requires better components and calibration.</p>
             </div>
           </div>
           <div class="config-options" data-config-field="precision">
-            <button class="config-option" type="button" data-value="simple"><span>Indicative</span><small>Sufficient for rough trend detection.</small></button>
             <button class="config-option active" type="button" data-value="standard"><span>Standard</span><span class="opt-std-badge">Standard</span><small>Accurate measurements for industrial use.</small></button>
-            <button class="config-option" type="button" data-value="high"><span>High</span><small>Very high precision for research and analysis.</small></button>
+            <button class="config-option" type="button" data-value="precise"><span>Precise</span><small>Better calibration and higher resolution for more accurate results.</small></button>
+            <button class="config-option" type="button" data-value="high"><span>High Precision</span><small>Maximum calibration and resolution for the most demanding analysis.</small></button>
           </div>
         </div>
         <!-- Precision & Ruggedness -->
         <div class="config-block">
           <div class="config-label-row">
             <div>
-              <h3 class="config-label">Precision and Ruggedness</h3>
-              <p class="config-help">Choose between maximum measurement quality and mechanical resilience for harsh environments.</p>
+              <h3 class="config-label">Ruggedness / Maximum Sustained Load</h3>
+              <p class="config-help">Standard is sufficient for normal applications. For machinery with high forces or long deployments, we recommend Heavy Duty.</p>
             </div>
           </div>
-          <div class="config-options" data-config-field="ruggedness">
-            <button class="config-option active" type="button" data-value="standard"><span>Standard</span><small>Optimized measurement quality for lab and industry.</small></button>
-            <button class="config-option" type="button" data-value="robust"><span>Robust</span><small>Reinforced housing for rough environments and outdoor use.</small></button>
-            <button class="config-option" type="button" data-value="ultra"><span>Ultra Robust</span><small>For very harsh deployments, special housings, and increased protection.</small></button>
+          <div class="config-options two" data-config-field="ruggedness">
+            <button class="config-option active" type="button" data-value="standard"><span>Standard</span><span class="opt-std-badge">Standard</span><small>Optimized measurement quality for lab and industry.</small></button>
+            <button class="config-option" type="button" data-value="heavy"><span>Heavy Duty (&gt;8 g)</span><small>Reinforced housing for machinery, harder mounting, and sustained loads above 8 g.</small></button>
           </div>
         </div>
         <!-- Storage -->
@@ -885,12 +887,14 @@
           <div class="config-label-row">
             <div>
               <h3 class="config-label">Storage and Software Modules</h3>
-              <p class="config-help">32 GB is the standard. 64 GB is available for longer recordings. Live mode, spectrogram, GPS, and temperature can be added as modules.</p>
+              <p class="config-help">32 GB is the standard. 64 GB, 128 GB, or 256 GB are available for longer recordings. Live mode, spectrogram, GPS, and temperature can be added as modules.</p>
             </div>
           </div>
-          <div class="config-options" data-config-field="storage">
+          <div class="config-options four" data-config-field="storage">
             <button class="config-option active" type="button" data-value="32"><span>32 GB</span><span class="opt-std-badge">Standard</span><small>Sufficient for typical measurements and longer recordings.</small></button>
-            <button class="config-option" type="button" data-value="64"><span>64 GB</span><small>Maximum capacity for multi-week missions.</small></button>
+            <button class="config-option" type="button" data-value="64"><span>64 GB</span><small>More reserve for longer recordings.</small></button>
+            <button class="config-option" type="button" data-value="128"><span>128 GB</span><small>For extended measurement campaigns with high storage needs.</small></button>
+            <button class="config-option" type="button" data-value="256"><span>256 GB</span><small>Maximum capacity for multi-week missions.</small></button>
           </div>
           <div class="config-toggles" data-config-modules style="margin-top:14px;">
             <label class="config-toggle"><input type="checkbox" value="live"><span>Live Mode</span><small>Transmit data live, trigger alerts, and continuously monitor machinery.</small></label>
@@ -925,6 +929,13 @@
             <label class="config-toggle"><input type="checkbox" value="dust"><span>Fine Dust &amp; Particles</span><small>Particle concentration and air quality captured synchronously.</small></label>
             <label class="config-toggle"><input type="checkbox" value="sound"><span>Sound</span><small>Sound level and acoustic events for noise analysis.</small></label>
             <label class="config-toggle"><input type="checkbox" value="light"><span>Light</span><small>Illuminance for environment-correlated evaluation.</small></label>
+            <div class="config-toggle custom-sensor-toggle">
+              <div>
+                <span>Other Sensors on Request</span>
+                <small>Need a different sensor? Briefly describe what you need.</small>
+                <input type="text" class="custom-sensor-input" id="customSensorInput" placeholder="Enter your own …">
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -940,14 +951,10 @@
             <div class="config-price" id="cfgCompetitor">approx. €1,190<span>General comparison for measurement systems with a similar functional scope.</span></div>
           </div>
         </div>
-        <div class="config-recommend">
-          <h3 id="cfgModel">Sense Compact S</h3>
-          <p id="cfgDesc">Versatile entry model — ideal for standard industrial monitoring.</p>
-        </div>
         <div class="config-summary" id="cfgSummary">
-          <div class="config-summary-row"><span>Frequency range</span><strong id="sFreq">below 1 kHz</strong></div>
-          <div class="config-summary-row"><span>Measurement range</span><strong id="sGRange">8 g Standard</strong></div>
-          <div class="config-summary-row"><span>Precision</span><strong id="sPrecision">good</strong></div>
+          <div class="config-summary-row"><span>Frequency range</span><strong id="sFreq">below 1 kHz Standard</strong></div>
+          <div class="config-summary-row"><span>Measurement range</span><strong id="sGRange">4 g Standard</strong></div>
+          <div class="config-summary-row"><span>Precision</span><strong id="sPrecision">standard</strong></div>
           <div class="config-summary-row"><span>Storage</span><strong id="sStorage">32 GB</strong></div>
           <div class="config-summary-row"><span>Live boxes</span><strong id="sLive">no parallel live readout</strong></div>
           <div class="config-summary-row"><span>Modules</span><strong id="sModules">Base configuration</strong></div>
@@ -1294,52 +1301,51 @@
   if (configSection && workflowSection) workflowSection.before(configSection);
 
   var state = {
-    sampleRate:'mid', gRange:'8', precision:'standard',
-    duration:'day', ruggedness:'standard', storage:'32', liveBoxes:'none',
-    sensors:[], modules:[], tempQuality:'standard'
+    sampleRate:'mid', gRange:'4', precision:'standard',
+    duration:'week', ruggedness:'standard', storage:'32', liveBoxes:'none',
+    sensors:[], modules:[], tempQuality:'standard', customSensor:''
   };
   var labels = {
-    sampleRate:{ low:'below 100 Hz', mid:'below 1 kHz', high:'above 1 kHz' },
-    gRange:{ 2:'2 g fine', 4:'4 g light', 8:'8 g Standard', 16:'16 g robust' },
-    precision:{ simple:'indicative', standard:'good', high:'very high' },
-    duration:{ day:'5 hours', week:'24 hours', weeks:'several days' },
-    ruggedness:{ standard:'Standard', robust:'Robust', ultra:'Ultra Robust' },
-    storage:{ 32:'32 GB', 64:'64 GB' },
+    sampleRate:{ mid:'below 1 kHz Standard', high:'above 1 kHz' },
+    gRange:{ 2:'2 g fine', 4:'4 g Standard', 8:'8 g', 16:'16 g robust' },
+    precision:{ standard:'standard', precise:'precise', high:'high precision' },
+    duration:{ week:'24 hours Standard', weeks:'several days' },
+    ruggedness:{ standard:'Standard', heavy:'Heavy Duty (>8 g)' },
+    storage:{ 32:'32 GB', 64:'64 GB', 128:'128 GB', 256:'256 GB' },
     liveBoxes:{ none:'no parallel live readout', 1:'1 box live', 2:'2 boxes live', 4:'up to 4 boxes live' },
     modules:{ live:'Live Mode', spectrogram:'Spectrogram', gps:'GPS', temperature:'Temperature' },
     sensors:{ humidity:'Humidity', pressure:'Pressure', temp:'Temperature Sensor', dust:'Fine Dust & Particles', sound:'Sound', light:'Light' }
   };
   function price(){
     var base=499;
-    if(state.gRange==='2'){base+=60;}
-    if(state.gRange==='16'){base+=90;}
-    if(state.precision==='simple'){base-=40;}
-    if(state.precision==='high'){base+=180;}
-    if(state.duration==='week'){base+=80;}
-    if(state.duration==='weeks'){base+=180;}
-    if(state.ruggedness==='robust'){base+=160;}
-    if(state.ruggedness==='ultra'){base+=340;}
-    if(state.storage==='64'){base+=45;}
+    if(state.sampleRate==='high'){base+=45;}
+    if(state.gRange==='2'){base+=25;}
+    if(state.gRange==='8'){base+=50;}
+    if(state.gRange==='16'){base+=100;}
+    if(state.precision==='precise'){base+=30;}
+    if(state.precision==='high'){base+=150;}
+    if(state.duration==='weeks'){base+=100;}
+    if(state.ruggedness==='heavy'){base+=100;}
+    if(state.storage==='64'){base+=50;}
+    if(state.storage==='128'){base+=75;}
+    if(state.storage==='256'){base+=100;}
     if(state.liveBoxes==='2'){base*=1.85;}
     if(state.liveBoxes==='4'){base*=3.4;}
-    base+=state.modules.length*40;
+    var moduleRates={live:40,spectrogram:20,gps:50,temperature:40};
+    state.modules.forEach(function(m){ base+=moduleRates[m]||0; });
+    var sensorRates={humidity:50,pressure:50,dust:50,sound:50,light:50};
+    state.sensors.forEach(function(s){
+      base += s==='temp' ? (state.tempQuality==='precision'?50:39) : (sensorRates[s]||0);
+    });
     base=Math.max(499,Math.round(base));
     var liveFactor=state.liveBoxes==='4'?1.35:state.liveBoxes==='2'?1.2:1;
     var precisionFactor=state.precision==='high'?1.18:1;
     return{our:base,comp:Math.round(Math.max(1190,base*2.35*liveFactor*precisionFactor)/10)*10};
   }
-  function model(){
-    if(state.sampleRate==='high'||state.precision==='high') return{name:'Sense Pro L',desc:'High-precision model for demanding frequency analysis and research applications.'};
-    if(state.ruggedness==='robust') return{name:'Sense Field R',desc:'Ruggedized field device for harsh environments and outdoor use.'};
-    if(state.duration==='weeks') return{name:'Sense Long-Run XL',desc:'Multi-week autonomous monitoring with maximum storage capacity.'};
-    return{name:'Sense Compact S',desc:'Versatile entry model — ideal for standard industrial monitoring.'};
-  }
   function render(){
-    var p=price(),m=model();
+    var p=price();
     document.getElementById('cfgPrice').innerHTML='from €'+p.our.toLocaleString('en-US')+'<span>Preliminary estimate. We manually confirm the final price based on application, quantity, and technical scope.</span>';
     document.getElementById('cfgCompetitor').innerHTML='approx. €'+p.comp.toLocaleString('en-US')+'<span>General comparison for measurement systems with a similar functional scope.</span>';
-    document.getElementById('cfgModel').textContent=m.name;
-    document.getElementById('cfgDesc').textContent=m.desc;
     document.getElementById('sFreq').textContent=labels.sampleRate[state.sampleRate]||state.sampleRate;
     document.getElementById('sGRange').textContent=labels.gRange[state.gRange]||state.gRange;
     document.getElementById('sPrecision').textContent=labels.precision[state.precision]||state.precision;
@@ -1352,7 +1358,9 @@
     var sensorText=state.sensors.map(function(s){
       if(s==='temp') return 'Temperature Sensor ('+(state.tempQuality==='precision'?'Precision':'Standard')+')';
       return labels.sensors[s]||s;
-    }).join(', ');
+    });
+    if(state.customSensor.trim()) sensorText=sensorText.concat('Other: '+state.customSensor.trim());
+    sensorText=sensorText.join(', ');
     var params=new URLSearchParams({
       subject:'Customized Sense Box Inquiry',
       max_acceleration:labels.gRange[state.gRange],
@@ -1394,6 +1402,13 @@
       render();
     });
   });
+  var customSensorInputEl=document.getElementById('customSensorInput');
+  if(customSensorInputEl){
+    customSensorInputEl.addEventListener('input',function(){
+      state.customSensor=customSensorInputEl.value;
+      render();
+    });
+  }
   var modWrap=document.querySelector('[data-config-modules]');
   if(modWrap){
     modWrap.querySelectorAll('input[type=checkbox]').forEach(function(cb){
@@ -1404,7 +1419,7 @@
     });
   }
   document.getElementById('cfgReset').addEventListener('click',function(){
-    state={sampleRate:'mid',gRange:'8',precision:'standard',duration:'day',ruggedness:'standard',storage:'32',liveBoxes:'none',sensors:[],modules:[]};
+    state={sampleRate:'mid',gRange:'4',precision:'standard',duration:'week',ruggedness:'standard',storage:'32',liveBoxes:'none',sensors:[],modules:[],customSensor:''};
     document.querySelectorAll('[data-config-field]').forEach(function(wrap){
       var field=wrap.getAttribute('data-config-field');
       wrap.querySelectorAll('.config-option').forEach(function(btn){
@@ -1415,6 +1430,7 @@
     if(modWrap) modWrap.querySelectorAll('input[type=checkbox]').forEach(function(cb){cb.checked=false;});
     state.tempQuality='standard';
     document.querySelectorAll('input[name="tempQuality"]').forEach(function(r){r.checked=r.value==='standard';});
+    if(customSensorInputEl) customSensorInputEl.value='';
     render();
   });
   render();
